@@ -1,0 +1,224 @@
+{
+  "id": "inh-siamese",
+  "mode": "inherit",
+  "title": "Why Siamese cats have dark paws",
+  "title_es": "Por qué los gatos siameses tienen las patas oscuras",
+  "subtitle": "A recessive allele that likes the cold",
+  "subtitle_es": "Un alelo recesivo al que le gusta el frío",
+  "difficulty": "intermediate",
+  "estimatedDuration": 6,
+  "objective": "Fill in the Punnett squares for cat colour: dark all over is dominant and the Siamese pattern needs two copies of the changed allele.",
+  "objective_es": "Rellena los cuadros de Punnett del color de los gatos: oscuro por todo el cuerpo es dominante y el patrón siamés necesita dos copias del alelo cambiado.",
+  "description": "A Siamese cat is pale on the body and dark on its ears, face, paws and tail. The cause is an enzyme that works only in the cooler parts of the body.",
+  "description_es": "Un gato siamés es claro en el cuerpo y oscuro en las orejas, la cara, las patas y la cola. La causa es una enzima que solo funciona en las partes más frías del cuerpo.",
+  "organism": {
+    "id": "cat-siamese",
+    "commonName": "Domestic cat",
+    "commonName_es": "Gato doméstico",
+    "scientificName": "Felis catus",
+    "taxonomy": [
+      "Animalia",
+      "Chordata",
+      "Mammalia",
+      "Carnivora",
+      "Felidae",
+      "Felis"
+    ],
+    "targetTissue": "skin",
+    "targetOrganelle": "cytoplasm",
+    "description": "A pet with many coat patterns.",
+    "description_es": "Una mascota con muchos patrones de pelaje."
+  },
+  "exploration": [
+    {
+      "kind": "cell",
+      "label": "The pattern",
+      "label_es": "El patrón",
+      "title": "Dark where it is cool",
+      "title_es": "Oscuro donde hace fresco",
+      "description": "Kittens are born pale all over. The pigment appears later, only in the cooler extremities, as the cat grows.",
+      "description_es": "Los gatitos nacen claros por todas partes. El pigmento aparece después, solo en las extremidades más frías, a medida que el gato crece."
+    },
+    {
+      "kind": "dna",
+      "label": "The allele",
+      "label_es": "El alelo",
+      "title": "A heat-shy enzyme",
+      "title_es": "Una enzima sensible al calor",
+      "description": "The Siamese allele changes tyrosinase, the enzyme that makes the dark pigment. The changed enzyme works only when it is cool. Two changed copies are needed for the pattern.",
+      "description_es": "El alelo siamés cambia la tirosinasa, la enzima que fabrica el pigmento oscuro. La enzima cambiada solo funciona cuando hace fresco. Se necesitan dos copias cambiadas para el patrón."
+    }
+  ],
+  "inherit": {
+    "trait": "Coat pattern",
+    "trait_es": "Patrón del pelaje",
+    "alleles": [
+      "C",
+      "c"
+    ],
+    "phenotypes": {
+      "CC": "full",
+      "Cc": "full",
+      "cc": "pointed"
+    },
+    "phenotypeLabels": {
+      "full": "Dark all over",
+      "full_es": "Oscuro por todo el cuerpo",
+      "pointed": "Siamese pattern",
+      "pointed_es": "Patrón siamés"
+    },
+    "scenarios": [
+      {
+        "id": "s1",
+        "parent1": "cc",
+        "parent2": "cc",
+        "parent1Label": "Siamese",
+        "parent1Label_es": "Siamés",
+        "parent2Label": "Siamese",
+        "parent2Label_es": "Siamés",
+        "question": "Two Siamese cats (cc) have kittens. What is the probability that a kitten has the Siamese pattern?",
+        "question_es": "Dos gatos siameses (cc) tienen gatitos. ¿Qué probabilidad hay de que un gatito tenga el patrón siamés?",
+        "target": "pointed",
+        "explanation": "All four cells are cc: every kitten is Siamese (100%).",
+        "explanation_es": "Las cuatro casillas son cc: todos los gatitos son siameses (100 %)."
+      },
+      {
+        "id": "s2",
+        "parent1": "Cc",
+        "parent2": "Cc",
+        "parent1Label": "Dark, carries c",
+        "parent1Label_es": "Oscuro, lleva c",
+        "parent2Label": "Dark, carries c",
+        "parent2Label_es": "Oscuro, lleva c",
+        "question": "Two dark cats that both carry the Siamese allele have kittens. What is the probability of a Siamese kitten?",
+        "question_es": "Dos gatos oscuros que llevan los dos el alelo siamés tienen gatitos. ¿Qué probabilidad hay de un gatito siamés?",
+        "target": "pointed",
+        "explanation": "Only the cc cell is Siamese: 25%.",
+        "explanation_es": "Solo la casilla cc es siamesa: 25 %."
+      },
+      {
+        "id": "s3",
+        "parent1": "Cc",
+        "parent2": "cc",
+        "parent1Label": "Dark, carries c",
+        "parent1Label_es": "Oscuro, lleva c",
+        "parent2Label": "Siamese",
+        "parent2Label_es": "Siamés",
+        "question": "A dark cat that carries c and a Siamese cat have kittens. What is the probability of a dark kitten?",
+        "question_es": "Un gato oscuro que lleva c y un gato siamés tienen gatitos. ¿Qué probabilidad hay de un gatito oscuro?",
+        "target": "full",
+        "explanation": "Two cells are Cc (dark) and two are cc (Siamese): 50% each.",
+        "explanation_es": "Dos casillas son Cc (oscuras) y dos son cc (siamesas): 50 % cada una."
+      }
+    ]
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Probability",
+    "productLabel_es": "Probabilidad",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Parents",
+        "label_es": "Progenitores",
+        "description": "Each gives one allele.",
+        "description_es": "Cada uno da un alelo.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Square",
+        "label_es": "Cuadro",
+        "description": "All combinations.",
+        "description_es": "Todas las combinaciones.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Trait",
+        "label_es": "Rasgo",
+        "description": "Read the result.",
+        "description_es": "Lee el resultado.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Fill the square first; then look at each cell: does it have at least one C?",
+      "content_es": "Rellena primero el cuadro; luego mira cada casilla: ¿tiene al menos una C?",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "C is dominant: CC and Cc are dark all over. Only cc has the Siamese pattern.",
+      "content_es": "C es dominante: CC y Cc son oscuros por todo el cuerpo. Solo cc tiene el patrón siamés.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Count the cells of the pattern asked about: each is worth 25%.",
+      "content_es": "Cuenta las casillas del patrón por el que preguntan: cada una vale un 25 %.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A coat that reads the temperature",
+    "title_es": "Un pelaje que lee la temperatura",
+    "summary": "You saw that a Siamese pattern needs two copies of the changed allele, and that two Siamese parents can only have Siamese kittens.",
+    "summary_es": "Has visto que el patrón siamés necesita dos copias del alelo cambiado, y que dos progenitores siameses solo pueden tener gatitos siameses.",
+    "realWorldImpact": "Cat breeders use these squares to plan litters, and the same idea of a temperature-sensitive enzyme appears in the fur of Siamese rabbits and Himalayan mice.",
+    "realWorldImpact_es": "Quienes crían gatos usan estos cuadros para planificar camadas, y la misma idea de una enzima sensible a la temperatura aparece en el pelaje de los conejos himalayos y de algunos ratones."
+  },
+  "science": {
+    "organism": "Felis catus",
+    "realWorldCase": "In 2005 researchers found that the Siamese and the Burmese patterns of the domestic cat come from different changes in the tyrosinase gene, and that both give an enzyme that is less active.",
+    "realWorldCase_es": "En 2005 unos investigadores hallaron que los patrones siamés y birmano del gato doméstico vienen de cambios distintos en el gen de la tirosinasa, y que los dos dan una enzima menos activa.",
+    "scientificContext": "A one-letter change swaps an amino acid of tyrosinase. The enzyme is stable and active only at lower temperatures, so pigment is made in the ears, paws, tail and face, and not in the warmer body.",
+    "scientificContext_es": "Un cambio de una letra sustituye un aminoácido de la tirosinasa. La enzima es estable y activa solo a temperaturas bajas, así que el pigmento se fabrica en las orejas, las patas, la cola y la cara, y no en el cuerpo, más cálido.",
+    "gameplaySimplifications": [
+      "Cat coats depend on many genes; here only the gene of the Siamese pattern is followed."
+    ],
+    "gameplaySimplifications_es": [
+      "El pelaje de los gatos depende de muchos genes; aquí solo se sigue el del patrón siamés."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Lyons, L. A.",
+          "Imes, D. L.",
+          "Rah, H. C.",
+          "Grahn, R. A."
+        ],
+        "year": 2005,
+        "title": "Tyrosinase mutations associated with Siamese and Burmese patterns in the domestic cat (Felis catus)",
+        "journal": "Animal Genetics",
+        "type": "paper",
+        "doi": "10.1111/j.1365-2052.2005.01253.x"
+      }
+    ]
+  }
+}

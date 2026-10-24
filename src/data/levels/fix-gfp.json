@@ -1,0 +1,370 @@
+{
+  "id": "fix-gfp",
+  "mode": "diagnose",
+  "title": "Colonies that do not glow",
+  "title_es": "Colonias que no brillan",
+  "subtitle": "The gene is fine, but is it on?",
+  "subtitle_es": "El gen está bien, pero ¿está encendido?",
+  "difficulty": "beginner",
+  "estimatedDuration": 5,
+  "objective": "The bacteria carry the gfp gene but do not glow. Find the piece that fails and how to fix it.",
+  "objective_es": "Las bacterias llevan el gen gfp pero no brillan. Descubre qué pieza falla y cómo se arregla.",
+  "description": "The pathway is built, but something fails. Read the clues, find the broken piece, and choose the right treatment.",
+  "description_es": "La ruta está montada, pero algo falla. Lee las pistas, encuentra la pieza rota y elige el tratamiento correcto.",
+  "organism": {
+    "id": "gfp-fix",
+    "commonName": "E. coli with gfp",
+    "commonName_es": "E. coli con gfp",
+    "scientificName": "Escherichia coli",
+    "taxonomy": [
+      "Bacteria",
+      "Pseudomonadota",
+      "Gammaproteobacteria",
+      "Enterobacterales",
+      "Enterobacteriaceae",
+      "Escherichia"
+    ],
+    "targetTissue": "single cell",
+    "targetOrganelle": "cytoplasm",
+    "description": "Bacteria that should glow green.",
+    "description_es": "Bacterias que deberían brillar en verde."
+  },
+  "exploration": [
+    {
+      "kind": "bacterium",
+      "label": "Problem",
+      "label_es": "Problema",
+      "title": "A dark plate",
+      "title_es": "Una placa oscura",
+      "description": "The plate has hundreds of colonies, but under blue light none glows green.",
+      "description_es": "La placa tiene cientos de colonias, pero bajo luz azul ninguna brilla en verde."
+    },
+    {
+      "kind": "dna",
+      "label": "The circuit",
+      "label_es": "El circuito",
+      "title": "Switched by sugar",
+      "title_es": "Controlado por un azúcar",
+      "description": "The gfp gene only switches on when a sugar, arabinose, is in the medium.",
+      "description_es": "El gen gfp solo se enciende cuando hay un azúcar, la arabinosa, en el medio."
+    }
+  ],
+  "biologicalContext": {
+    "nodes": [
+      {
+        "id": "met_arabinose",
+        "type": "metabolite",
+        "label": "Arabinose",
+        "label_es": "Arabinosa",
+        "description": "The switch: a sugar that switches on the gfp gene.",
+        "description_es": "El interruptor: un azúcar que enciende el gen gfp.",
+        "position": {
+          "x": 0.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "gene_gfp",
+        "type": "gene",
+        "label": "gfp gene",
+        "label_es": "Gen gfp",
+        "description": "The recipe of the green protein.",
+        "description_es": "La receta de la proteína verde.",
+        "position": {
+          "x": 3.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "protein_gfp",
+        "type": "protein",
+        "label": "New GFP",
+        "label_es": "GFP nueva",
+        "description": "The protein, folded but not glowing yet.",
+        "description_es": "La proteína, plegada pero sin brillar todavía.",
+        "position": {
+          "x": 6.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_mature",
+        "type": "reaction",
+        "label": "Maturation",
+        "label_es": "Maduración",
+        "description": "The chromophore forms using oxygen.",
+        "description_es": "El cromóforo se forma usando oxígeno.",
+        "position": {
+          "x": 9.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_o2",
+        "type": "metabolite",
+        "label": "Oxygen",
+        "label_es": "Oxígeno",
+        "description": "Needed for maturation.",
+        "description_es": "Necesario para la maduración.",
+        "position": {
+          "x": 9.0,
+          "y": 4.8,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "protein_bright",
+        "type": "protein",
+        "label": "Mature GFP",
+        "label_es": "GFP madura",
+        "description": "The glowing protein.",
+        "description_es": "La proteína que brilla.",
+        "position": {
+          "x": 12.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "phenotype_glow",
+        "type": "phenotype",
+        "label": "Green glow",
+        "label_es": "Brillo verde",
+        "description": "What we should see.",
+        "description_es": "Lo que deberíamos ver.",
+        "position": {
+          "x": 15.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      }
+    ],
+    "edges": [
+      {
+        "id": "ref_met_arabinose_regulates_gene_gfp",
+        "source": "met_arabinose",
+        "target": "gene_gfp",
+        "type": "regulates",
+        "isRequired": true
+      },
+      {
+        "id": "ref_gene_gfp_encodes_protein_gfp",
+        "source": "gene_gfp",
+        "target": "protein_gfp",
+        "type": "encodes",
+        "isRequired": true
+      },
+      {
+        "id": "ref_protein_gfp_catalyzes_rxn_mature",
+        "source": "protein_gfp",
+        "target": "rxn_mature",
+        "type": "catalyzes",
+        "isRequired": true
+      },
+      {
+        "id": "ref_rxn_mature_consumes_met_o2",
+        "source": "rxn_mature",
+        "target": "met_o2",
+        "type": "consumes",
+        "isRequired": true
+      },
+      {
+        "id": "ref_rxn_mature_produces_protein_bright",
+        "source": "rxn_mature",
+        "target": "protein_bright",
+        "type": "produces",
+        "isRequired": true
+      },
+      {
+        "id": "ref_protein_bright_influences_phenotype_glow",
+        "source": "protein_bright",
+        "target": "phenotype_glow",
+        "type": "influences",
+        "isRequired": true
+      }
+    ]
+  },
+  "puzzle": {
+    "availableNodes": [
+      "met_arabinose",
+      "gene_gfp",
+      "protein_gfp",
+      "rxn_mature",
+      "met_o2",
+      "protein_bright",
+      "phenotype_glow"
+    ],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "diagnose": {
+    "symptom": "The colonies do not glow under blue light.",
+    "symptom_es": "Las colonias no brillan bajo la luz azul.",
+    "clues": [
+      {
+        "text": "Sequencing shows that the gfp gene is intact.",
+        "text_es": "La secuenciación muestra que el gen gfp está intacto."
+      },
+      {
+        "text": "The plate is in open air, with plenty of oxygen.",
+        "text_es": "La placa está al aire libre, con mucho oxígeno."
+      },
+      {
+        "text": "The medium contains glucose, but no arabinose.",
+        "text_es": "El medio contiene glucosa, pero no arabinosa."
+      },
+      {
+        "text": "The bacteria grow well.",
+        "text_es": "Las bacterias crecen bien."
+      }
+    ],
+    "faultyIds": [
+      "met_arabinose"
+    ],
+    "notes": {
+      "met_arabinose": {
+        "text": "The medium has no arabinose: the switch is off. This is the broken piece.",
+        "text_es": "El medio no tiene arabinosa: el interruptor está apagado. Esta es la pieza rota."
+      },
+      "gene_gfp": {
+        "text": "The test shows the gene is intact: the recipe is fine, it is just not being read.",
+        "text_es": "El análisis muestra que el gen está intacto: la receta está bien, lo que pasa es que no se lee."
+      },
+      "protein_gfp": {
+        "text": "No protein is made because the gene is not read. It is a consequence.",
+        "text_es": "No se fabrica proteína porque el gen no se lee. Es una consecuencia."
+      },
+      "rxn_mature": {
+        "text": "Maturation works by itself once there is protein. Nothing is wrong here.",
+        "text_es": "La maduración funciona sola cuando hay proteína. Aquí no falla nada."
+      },
+      "met_o2": {
+        "text": "The plate is in open air: there is plenty of oxygen.",
+        "text_es": "La placa está al aire libre: hay oxígeno de sobra."
+      },
+      "protein_bright": {
+        "text": "There is none because none was made. It is a consequence.",
+        "text_es": "No hay porque no se ha fabricado. Es una consecuencia."
+      },
+      "phenotype_glow": {
+        "text": "It is the symptom, not the broken piece.",
+        "text_es": "Es el síntoma, no la pieza rota."
+      }
+    },
+    "fixes": [
+      {
+        "id": "f1",
+        "text": "Add arabinose to the medium.",
+        "text_es": "Añadir arabinosa al medio.",
+        "correct": true,
+        "reason": "Arabinose switches the gfp gene on. With the gene read, the protein is made and matures with the oxygen that is already there.",
+        "reason_es": "La arabinosa enciende el gen gfp. Con el gen leído, se fabrica la proteína y madura con el oxígeno que ya hay."
+      },
+      {
+        "id": "f2",
+        "text": "Add more oxygen.",
+        "text_es": "Añadir más oxígeno.",
+        "correct": false,
+        "reason": "There is already plenty of oxygen. The problem is that the protein is not even being made.",
+        "reason_es": "Ya hay oxígeno de sobra. El problema es que ni siquiera se está fabricando la proteína."
+      },
+      {
+        "id": "f3",
+        "text": "Replace the gfp gene with a new copy.",
+        "text_es": "Cambiar el gen gfp por una copia nueva.",
+        "correct": false,
+        "reason": "The sequence shows the gene is intact. A new copy would be switched off too.",
+        "reason_es": "La secuenciación muestra que el gen está intacto. Una copia nueva también estaría apagada."
+      },
+      {
+        "id": "f4",
+        "text": "Use a stronger blue lamp.",
+        "text_es": "Usar una lámpara azul más potente.",
+        "correct": false,
+        "reason": "The lamp only lets you see the glow. If there is no GFP, there is nothing to see.",
+        "reason_es": "La lámpara solo permite ver el brillo. Si no hay GFP, no hay nada que ver."
+      }
+    ]
+  },
+  "simulation": {
+    "productLabel": "Diagnosis",
+    "productLabel_es": "Diagnóstico",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Diagnosis",
+        "label_es": "Diagnóstico",
+        "description": "Found and treated.",
+        "description_es": "Encontrado y tratado.",
+        "order": 1
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Think about what has to happen before GFP exists: the gene must be read.",
+      "content_es": "Piensa en lo que tiene que pasar antes de que exista la GFP: el gen se tiene que leer.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "The clues say the gene is intact and there is plenty of oxygen. What is missing from the medium?",
+      "content_es": "Las pistas dicen que el gen está intacto y que hay oxígeno de sobra. ¿Qué falta en el medio?",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "The switch of the gene is arabinose, and the medium has none.",
+      "content_es": "El interruptor del gen es la arabinosa y el medio no tiene.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "The switch was off",
+    "title_es": "El interruptor estaba apagado",
+    "summary": "You found that the gene was fine: the molecule that switches it on was missing.",
+    "summary_es": "Has descubierto que el gen estaba bien: faltaba la molécula que lo enciende.",
+    "realWorldImpact": "Checking that inducers are present is one of the first steps when a gene circuit seems not to work.",
+    "realWorldImpact_es": "Comprobar que están presentes los inductores es uno de los primeros pasos cuando un circuito genético parece no funcionar."
+  },
+  "science": {
+    "organism": "Escherichia coli",
+    "realWorldCase": "The arabinose-inducible promoter, pBAD, is one of the most used switches in bacterial genetic engineering.",
+    "realWorldCase_es": "El promotor inducible por arabinosa, pBAD, es uno de los interruptores más usados en la ingeniería genética bacteriana.",
+    "scientificContext": "The AraC protein represses pBAD without arabinose and activates it when arabinose binds. Glucose also reduces expression.",
+    "scientificContext_es": "La proteína AraC reprime pBAD sin arabinosa y lo activa cuando se une la arabinosa. La glucosa también reduce la expresión.",
+    "gameplaySimplifications": [
+      "Real troubleshooting would also check the plasmid and the strain; here the clues point to one piece."
+    ],
+    "gameplaySimplifications_es": [
+      "En un caso real también se comprobarían el plásmido y la cepa; aquí las pistas apuntan a una sola pieza."
+    ],
+    "references": []
+  }
+}

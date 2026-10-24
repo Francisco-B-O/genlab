@@ -1,0 +1,310 @@
+{
+  "id": "insulin",
+  "title": "Insulin from bacteria",
+  "title_es": "Insulina en bacterias",
+  "subtitle": "The first medicine made by genetic engineering",
+  "subtitle_es": "El primer medicamento de la ingeniería genética",
+  "difficulty": "beginner",
+  "estimatedDuration": 5,
+  "objective": "Get E. coli bacteria to make human insulin, the hormone that people with type 1 diabetes need.",
+  "objective_es": "Consigue que la bacteria E. coli fabrique insulina humana, la hormona que necesitan las personas con diabetes tipo 1.",
+  "description": "Insert the human insulin gene into a bacterium and process its product into active insulin.",
+  "description_es": "Mete el gen de la insulina humana en una bacteria y transforma su producto en insulina activa.",
+  "organism": {
+    "id": "escherichia-coli-insulin",
+    "commonName": "E. coli",
+    "scientificName": "Escherichia coli K-12",
+    "taxonomy": ["Bacteria", "Pseudomonadota", "Gammaproteobacteria", "Enterobacterales", "Escherichia"],
+    "targetTissue": "single cell",
+    "targetOrganelle": "cytoplasm",
+    "description": "A harmless laboratory strain of a gut bacterium. It grows fast and is easy to modify.",
+    "description_es": "Una cepa de laboratorio inofensiva de una bacteria intestinal. Crece rápido y es fácil de modificar."
+  },
+  "exploration": [
+    {
+      "kind": "bacterium",
+      "label": "Organism",
+      "label_es": "Organismo",
+      "title": "Escherichia coli",
+      "title_es": "Escherichia coli",
+      "description": "A bacterium that doubles every 20 minutes. If it carries a human gene, billions of copies can make a human protein for us.",
+      "description_es": "Una bacteria que se duplica cada 20 minutos. Si lleva un gen humano, miles de millones de copias pueden fabricar una proteína humana por nosotros."
+    },
+    {
+      "kind": "dna",
+      "label": "Plasmid",
+      "label_es": "Plásmido",
+      "title": "A ring of DNA",
+      "title_es": "Un anillo de ADN",
+      "description": "Scientists paste the human insulin gene into a plasmid, a small circle of DNA, and put it inside the bacterium.",
+      "description_es": "Los científicos pegan el gen de la insulina humana en un plásmido, un pequeño círculo de ADN, y lo meten en la bacteria."
+    },
+    {
+      "kind": "flask",
+      "label": "Factory",
+      "label_es": "Fábrica",
+      "title": "Fermentation tanks",
+      "title_es": "Tanques de fermentación",
+      "description": "Huge tanks of bacteria produce the insulin precursor. Then it is purified and processed into the final medicine.",
+      "description_es": "Enormes tanques de bacterias producen el precursor de la insulina. Después se purifica y se transforma en el medicamento final."
+    }
+  ],
+  "biologicalContext": {
+    "nodes": [
+      {
+        "id": "gene_ins",
+        "type": "gene",
+        "label": "Human INS gene",
+        "label_es": "Gen INS humano",
+        "description": "A copy of the human recipe for proinsulin, placed in a plasmid inside the bacterium.",
+        "description_es": "Una copia de la receta humana de la proinsulina, colocada en un plásmido dentro de la bacteria.",
+        "scientificName": "INS (Homo sapiens), synthetic coding sequence",
+        "scientificName_es": "INS (Homo sapiens), secuencia codificante sintética",
+        "position": { "x": -6.5, "y": 1.5, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "protein_proinsulin",
+        "type": "protein",
+        "label": "Proinsulin",
+        "label_es": "Proinsulina",
+        "description": "The inactive precursor: insulin's two chains joined by an extra piece called the C-peptide.",
+        "description_es": "El precursor inactivo: las dos cadenas de la insulina unidas por una pieza extra llamada péptido C.",
+        "position": { "x": -3, "y": 1.5, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "organelle_inclusion",
+        "type": "organelle",
+        "label": "Inclusion bodies",
+        "label_es": "Cuerpos de inclusión",
+        "description": "Dense clumps where E. coli piles up the proinsulin it makes. They are not true organelles, but they make the protein easy to collect.",
+        "description_es": "Grumos densos donde E. coli acumula la proinsulina que fabrica. No son orgánulos de verdad, pero facilitan recoger la proteína.",
+        "position": { "x": -3, "y": 4.4, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_trypsin",
+        "type": "enzyme",
+        "label": "Trypsin + carboxypeptidase B",
+        "label_es": "Tripsina + carboxipeptidasa B",
+        "description": "Two cutting enzymes used in the factory, after harvesting the bacteria, to remove the C-peptide from proinsulin.",
+        "description_es": "Dos enzimas de corte que se usan en la fábrica, después de recoger las bacterias, para quitar el péptido C de la proinsulina.",
+        "scientificName": "Trypsin (EC 3.4.21.4) and carboxypeptidase B (EC 3.4.17.2)",
+        "scientificName_es": "Tripsina (EC 3.4.21.4) y carboxipeptidasa B (EC 3.4.17.2)",
+        "position": { "x": -3, "y": -2.3, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_processing",
+        "type": "reaction",
+        "label": "Removing the C-peptide",
+        "label_es": "Quitar el péptido C",
+        "description": "The enzymes cut proinsulin at two points, releasing active insulin and the C-peptide.",
+        "description_es": "Las enzimas cortan la proinsulina en dos puntos y liberan la insulina activa y el péptido C.",
+        "position": { "x": 0.6, "y": -0.3, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "protein_insulin",
+        "type": "protein",
+        "label": "Human insulin",
+        "label_es": "Insulina humana",
+        "description": "Two short chains (A and B) held together by disulfide bridges. Identical to the insulin made by the human pancreas.",
+        "description_es": "Dos cadenas cortas (A y B) unidas por puentes disulfuro. Idéntica a la insulina que fabrica el páncreas humano.",
+        "position": { "x": 4, "y": 1.5, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "phenotype_glucose",
+        "type": "phenotype",
+        "label": "Blood sugar under control",
+        "label_es": "Glucosa en sangre controlada",
+        "description": "Insulin lets cells take sugar from the blood. People with type 1 diabetes do not make it and must inject it.",
+        "description_es": "La insulina permite a las células coger azúcar de la sangre. Las personas con diabetes tipo 1 no la fabrican y deben inyectársela.",
+        "position": { "x": 7.2, "y": -0.3, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "gene_lacz",
+        "type": "gene",
+        "label": "lacZ gene",
+        "label_es": "Gen lacZ",
+        "description": "The bacterium's own gene for digesting lactose. Very useful to E. coli, but it plays no part in making insulin.",
+        "description_es": "El gen propio de la bacteria para digerir lactosa. Muy útil para E. coli, pero no participa en fabricar insulina.",
+        "isDistractor": true,
+        "position": { "x": -6.5, "y": -2.3, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "protein_glucagon",
+        "type": "protein",
+        "label": "Glucagon",
+        "label_es": "Glucagón",
+        "description": "A hormone with the opposite job to insulin: it raises blood sugar. It is not made in this process.",
+        "description_es": "Una hormona con la función contraria a la insulina: sube el azúcar en sangre. No se fabrica en este proceso.",
+        "isDistractor": true,
+        "position": { "x": 4, "y": -2.6, "z": 0 },
+        "metadata": {}
+      }
+    ],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": ["gene_ins", "protein_proinsulin", "organelle_inclusion", "enzyme_trypsin", "rxn_processing", "protein_insulin", "phenotype_glucose", "gene_lacz", "protein_glucagon"],
+    "distractorNodes": ["gene_lacz", "protein_glucagon"],
+    "requiredConnections": [
+      {
+        "id": "req_ins_encodes",
+        "sourceId": "gene_ins",
+        "targetId": "protein_proinsulin",
+        "edgeType": "encodes",
+        "description": "The bacterium reads the human gene and builds proinsulin, just like a pancreas cell would.",
+        "description_es": "La bacteria lee el gen humano y construye proinsulina, igual que haría una célula del páncreas."
+      },
+      {
+        "id": "req_trypsin_catalyzes",
+        "sourceId": "enzyme_trypsin",
+        "targetId": "rxn_processing",
+        "edgeType": "catalyzes",
+        "description": "Trypsin and carboxypeptidase B cut proinsulin at exactly the right places.",
+        "description_es": "La tripsina y la carboxipeptidasa B cortan la proinsulina justo en los puntos correctos."
+      },
+      {
+        "id": "req_processing_consumes",
+        "sourceId": "rxn_processing",
+        "targetId": "protein_proinsulin",
+        "edgeType": "consumes",
+        "description": "Proinsulin is the raw material of the cutting reaction.",
+        "description_es": "La proinsulina es la materia prima de la reacción de corte."
+      },
+      {
+        "id": "req_processing_produces",
+        "sourceId": "rxn_processing",
+        "targetId": "protein_insulin",
+        "edgeType": "produces",
+        "description": "Removing the C-peptide leaves the two insulin chains joined together: active insulin.",
+        "description_es": "Al quitar el péptido C quedan las dos cadenas de insulina unidas: insulina activa."
+      },
+      {
+        "id": "req_insulin_glucose",
+        "sourceId": "protein_insulin",
+        "targetId": "phenotype_glucose",
+        "edgeType": "influences",
+        "description": "Insulin lowers blood sugar. Since 1982, millions of people with diabetes have used insulin made this way.",
+        "description_es": "La insulina baja el azúcar en sangre. Desde 1982, millones de personas con diabetes usan insulina fabricada así."
+      }
+    ],
+    "optionalConnections": [
+      {
+        "id": "opt_inclusion",
+        "sourceId": "protein_proinsulin",
+        "targetId": "organelle_inclusion",
+        "edgeType": "localizes_to",
+        "description": "In E. coli, proinsulin accumulates in inclusion bodies, which makes it easier to collect.",
+        "description_es": "En E. coli la proinsulina se acumula en cuerpos de inclusión, lo que facilita recogerla.",
+        "bonusPoints": 50
+      }
+    ],
+    "invalidConnections": [
+      {
+        "sourceId": "gene_ins",
+        "targetId": "protein_insulin",
+        "reason": "The gene does not encode finished insulin. It encodes proinsulin, which still has to be cut.",
+        "reason_es": "El gen no codifica la insulina terminada. Codifica proinsulina, que todavía hay que cortar."
+      },
+      {
+        "sourceId": "protein_proinsulin",
+        "targetId": "phenotype_glucose",
+        "reason": "Proinsulin is almost inactive. The C-peptide has to be removed before it can control blood sugar.",
+        "reason_es": "La proinsulina es casi inactiva. Hay que quitarle el péptido C antes de que pueda controlar el azúcar en sangre."
+      }
+    ],
+    "winCondition": {
+      "type": "pathway_complete",
+      "targetNodeId": "phenotype_glucose",
+      "requiredConnectionIds": ["req_ins_encodes", "req_trypsin_catalyzes", "req_processing_consumes", "req_processing_produces", "req_insulin_glucose"],
+      "description": "Make active human insulin from the INS gene."
+    }
+  },
+  "simulation": {
+    "productLabel": "Insulin",
+    "productLabel_es": "Insulina",
+    "steps": [
+      { "id": "sim_plasmid", "label": "Plasmid inside", "label_es": "Plásmido dentro", "description": "The bacteria carry the plasmid with the human gene.", "description_es": "Las bacterias llevan el plásmido con el gen humano.", "order": 1 },
+      { "id": "sim_express", "label": "Making proinsulin", "label_es": "Fabricar proinsulina", "description": "Billions of bacteria read the gene and build proinsulin.", "description_es": "Miles de millones de bacterias leen el gen y construyen proinsulina.", "order": 2 },
+      { "id": "sim_harvest", "label": "Harvest and fold", "label_es": "Recoger y plegar", "description": "The protein is collected and folded into its correct shape.", "description_es": "Se recoge la proteína y se pliega en su forma correcta.", "order": 3 },
+      { "id": "sim_cut", "label": "Cutting the C-peptide", "label_es": "Cortar el péptido C", "description": "The enzymes release active insulin.", "description_es": "Las enzimas liberan la insulina activa.", "order": 4 },
+      { "id": "sim_medicine", "label": "Pure insulin", "label_es": "Insulina pura", "description": "The insulin is purified and turned into a medicine.", "description_es": "La insulina se purifica y se convierte en medicamento.", "order": 5 }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "The gene makes a protein that is not ready yet. A cutting reaction turns it into the final hormone.",
+      "content_es": "El gen fabrica una proteína que todavía no está lista. Una reacción de corte la convierte en la hormona final.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Pathway order",
+      "title_es": "Orden de la ruta",
+      "content": "INS gene → proinsulin → (cut by trypsin) → insulin → blood sugar.",
+      "content_es": "Gen INS → proinsulina → (cortada por la tripsina) → insulina → glucosa en sangre.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Guided solution",
+      "title_es": "Solución guiada",
+      "content": "Connect: INS gene–Proinsulin, Trypsin–Removing the C-peptide, Removing the C-peptide–Proinsulin, Removing the C-peptide–Human insulin, Human insulin–Blood sugar under control.",
+      "content_es": "Conecta: Gen INS–Proinsulina, Tripsina–Quitar el péptido C, Quitar el péptido C–Proinsulina, Quitar el péptido C–Insulina humana, Insulina humana–Glucosa en sangre controlada.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "Insulin is ready",
+    "title_es": "La insulina está lista",
+    "summary": "You turned a bacterium into a small insulin factory: the human gene makes proinsulin, and two enzymes cut it into active insulin.",
+    "summary_es": "Has convertido una bacteria en una pequeña fábrica de insulina: el gen humano fabrica proinsulina y dos enzimas la cortan para obtener insulina activa.",
+    "realWorldImpact": "Before 1982, insulin was extracted from pig and cow pancreases. Insulin made by microorganisms is identical to human insulin, can be produced in any amount, and is used by millions of people with diabetes.",
+    "realWorldImpact_es": "Antes de 1982 la insulina se extraía de páncreas de cerdo y de vaca. La insulina fabricada por microorganismos es idéntica a la humana, se puede producir en cualquier cantidad y la usan millones de personas con diabetes."
+  },
+  "science": {
+    "organism": "Escherichia coli K-12",
+    "realWorldCase": "In 1978 Genentech researchers made E. coli produce the chains of human insulin from chemically synthesized genes. In 1982 human insulin made in bacteria (Humulin) became the first approved medicine produced by genetic engineering.",
+    "realWorldCase_es": "En 1978 investigadores de Genentech consiguieron que E. coli produjera las cadenas de la insulina humana a partir de genes sintetizados químicamente. En 1982 la insulina humana fabricada en bacterias (Humulin) se convirtió en el primer medicamento aprobado producido por ingeniería genética.",
+    "scientificContext": "Today recombinant human insulin is made in E. coli or in the yeast Saccharomyces cerevisiae. In the E. coli process, proinsulin accumulates in inclusion bodies, is refolded so its disulfide bridges form, and is then cut with trypsin and carboxypeptidase B to release insulin and the C-peptide.",
+    "scientificContext_es": "Hoy la insulina humana recombinante se fabrica en E. coli o en la levadura Saccharomyces cerevisiae. En el proceso con E. coli, la proinsulina se acumula en cuerpos de inclusión, se vuelve a plegar para que se formen sus puentes disulfuro y después se corta con tripsina y carboxipeptidasa B para liberar la insulina y el péptido C.",
+    "gameplaySimplifications": [
+      "The first 1978 version made the A and B chains separately and joined them afterwards. The game uses the later proinsulin route.",
+      "Refolding the protein so its disulfide bridges form is an essential step that the game skips.",
+      "Trypsin and carboxypeptidase B are two different enzymes; the game shows them as one piece."
+    ],
+    "gameplaySimplifications_es": [
+      "La primera versión de 1978 fabricaba las cadenas A y B por separado y las unía después. El juego usa la ruta posterior de la proinsulina.",
+      "Volver a plegar la proteína para que se formen sus puentes disulfuro es un paso esencial que el juego se salta.",
+      "La tripsina y la carboxipeptidasa B son dos enzimas distintas; el juego las muestra como una sola pieza."
+    ],
+    "references": [
+      {
+        "authors": ["Goeddel DV", "Kleid DG", "Bolivar F", "Heyneker HL", "Yansura DG", "Crea R", "Hirose T", "Kraszewski A", "Itakura K", "Riggs AD"],
+        "year": 1979,
+        "title": "Expression in Escherichia coli of chemically synthesized genes for human insulin",
+        "journal": "Proceedings of the National Academy of Sciences USA",
+        "doi": "10.1073/pnas.76.1.106",
+        "type": "paper"
+      },
+      {
+        "authors": ["Johnson IS"],
+        "year": 1983,
+        "title": "Human insulin from recombinant DNA technology",
+        "journal": "Science",
+        "doi": "10.1126/science.6337396",
+        "type": "paper"
+      }
+    ]
+  }
+}

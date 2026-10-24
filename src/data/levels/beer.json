@@ -1,0 +1,468 @@
+{
+  "id": "beer",
+  "title": "From barley to beer",
+  "title_es": "De la cebada a la cerveza",
+  "subtitle": "Two chains of enzymes in a row",
+  "subtitle_es": "Dos cadenas de enzimas seguidas",
+  "difficulty": "intermediate",
+  "estimatedDuration": 8,
+  "objective": "Show how barley enzymes turn starch into sugar and how yeast turns that sugar into alcohol and bubbles.",
+  "objective_es": "Muestra cómo las enzimas de la cebada convierten el almidón en azúcar y cómo la levadura convierte ese azúcar en alcohol y burbujas.",
+  "description": "Beer needs two chains of enzymes, from two different organisms: the barley that makes sugar, and the yeast that ferments it.",
+  "description_es": "La cerveza necesita dos cadenas de enzimas, de dos organismos distintos: la cebada que fabrica el azúcar y la levadura que lo fermenta.",
+  "organism": {
+    "id": "beer-pathway",
+    "commonName": "Barley and yeast",
+    "commonName_es": "Cebada y levadura",
+    "scientificName": "Saccharomyces cerevisiae",
+    "taxonomy": [
+      "Fungi",
+      "Ascomycota",
+      "Saccharomycetes",
+      "Saccharomycetales",
+      "Saccharomycetaceae",
+      "Saccharomyces"
+    ],
+    "targetTissue": "whole organism",
+    "targetOrganelle": "cytoplasm",
+    "description": "A cereal and a fungus working one after the other.",
+    "description_es": "Un cereal y un hongo que trabajan uno detrás del otro."
+  },
+  "exploration": [
+    {
+      "kind": "wheat",
+      "label": "The grain",
+      "label_es": "El grano",
+      "title": "Starch to sugar",
+      "title_es": "De almidón a azúcar",
+      "description": "Barley stores starch. Its amylase enzymes cut it into maltose, a sugar made of two glucoses.",
+      "description_es": "La cebada guarda almidón. Sus enzimas, las amilasas, lo cortan en maltosa, un azúcar formado por dos glucosas."
+    },
+    {
+      "kind": "yeast",
+      "label": "The yeast",
+      "label_es": "La levadura",
+      "title": "Sugar to alcohol",
+      "title_es": "De azúcar a alcohol",
+      "description": "Yeast cannot eat starch, but it can ferment maltose into alcohol and carbon dioxide.",
+      "description_es": "La levadura no puede comer almidón, pero sí fermentar la maltosa en alcohol y dióxido de carbono."
+    },
+    {
+      "kind": "bottle",
+      "label": "The result",
+      "label_es": "El resultado",
+      "title": "Alcohol and bubbles",
+      "title_es": "Alcohol y burbujas",
+      "description": "The alcohol gives beer its strength and the gas gives it its fizz.",
+      "description_es": "El alcohol da a la cerveza su fuerza y el gas le da sus burbujas."
+    }
+  ],
+  "biologicalContext": {
+    "nodes": [
+      {
+        "id": "gene_amy",
+        "type": "gene",
+        "label": "Amylase gene",
+        "label_es": "Gen de la amilasa",
+        "description": "The recipe of the barley enzyme that cuts starch.",
+        "description_es": "La receta de la enzima de la cebada que corta el almidón.",
+        "position": {
+          "x": 0.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_amylase",
+        "type": "enzyme",
+        "label": "Amylase",
+        "label_es": "Amilasa",
+        "description": "Cuts starch into sugars.",
+        "description_es": "Corta el almidón en azúcares.",
+        "position": {
+          "x": 3.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_mash",
+        "type": "reaction",
+        "label": "Mashing",
+        "label_es": "Macerar",
+        "description": "Starch → maltose, in the hot mash.",
+        "description_es": "Almidón → maltosa, en la maceración caliente.",
+        "position": {
+          "x": 6.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_starch",
+        "type": "metabolite",
+        "label": "Starch",
+        "label_es": "Almidón",
+        "description": "The reserve of the barley grain.",
+        "description_es": "La reserva del grano de cebada.",
+        "position": {
+          "x": 6.0,
+          "y": 4.8,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_maltose",
+        "type": "metabolite",
+        "label": "Maltose",
+        "label_es": "Maltosa",
+        "description": "The sugar of the wort.",
+        "description_es": "El azúcar del mosto.",
+        "position": {
+          "x": 9.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "gene_adh",
+        "type": "gene",
+        "label": "Yeast gene",
+        "label_es": "Gen de levadura",
+        "description": "The recipe of the yeast enzymes of fermentation.",
+        "description_es": "La receta de las enzimas de fermentación de la levadura.",
+        "position": {
+          "x": 0.0,
+          "y": -2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_adh",
+        "type": "enzyme",
+        "label": "Yeast enzyme",
+        "label_es": "Enzima de levadura",
+        "description": "Runs the fermentation of sugar.",
+        "description_es": "Hace funcionar la fermentación del azúcar.",
+        "position": {
+          "x": 3.0,
+          "y": -2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_ferment",
+        "type": "reaction",
+        "label": "Fermenting",
+        "label_es": "Fermentar",
+        "description": "Sugar → alcohol + carbon dioxide.",
+        "description_es": "Azúcar → alcohol + dióxido de carbono.",
+        "position": {
+          "x": 12.0,
+          "y": 0.0,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_ethanol",
+        "type": "metabolite",
+        "label": "Alcohol",
+        "label_es": "Alcohol",
+        "description": "Ethanol, the alcohol of beer.",
+        "description_es": "Etanol, el alcohol de la cerveza.",
+        "position": {
+          "x": 15.0,
+          "y": 0.0,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_co2",
+        "type": "metabolite",
+        "label": "Carbon dioxide",
+        "label_es": "Dióxido de carbono",
+        "description": "The gas that makes the bubbles.",
+        "description_es": "El gas que forma las burbujas.",
+        "position": {
+          "x": 15.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "phenotype_beer",
+        "type": "phenotype",
+        "label": "Beer",
+        "label_es": "Cerveza",
+        "description": "A drink with alcohol and fizz.",
+        "description_es": "Una bebida con alcohol y burbujas.",
+        "position": {
+          "x": 18.0,
+          "y": 0.0,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_oxygen",
+        "type": "metabolite",
+        "label": "Oxygen",
+        "label_es": "Oxígeno",
+        "description": "Air. Fermentation happens without it.",
+        "description_es": "Aire. La fermentación ocurre sin él.",
+        "position": {
+          "x": 9.0,
+          "y": -2.4,
+          "z": 0
+        },
+        "metadata": {}
+      }
+    ],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [
+      "gene_amy",
+      "enzyme_amylase",
+      "rxn_mash",
+      "met_starch",
+      "met_maltose",
+      "gene_adh",
+      "enzyme_adh",
+      "rxn_ferment",
+      "met_ethanol",
+      "met_co2",
+      "phenotype_beer",
+      "met_oxygen"
+    ],
+    "distractorNodes": [
+      "met_oxygen"
+    ],
+    "requiredConnections": [
+      {
+        "id": "req_amy_enc",
+        "sourceId": "gene_amy",
+        "targetId": "enzyme_amylase",
+        "edgeType": "encodes",
+        "description": "The barley grain reads the gene and makes amylase.",
+        "description_es": "El grano de cebada lee el gen y fabrica amilasa."
+      },
+      {
+        "id": "req_amy_cat",
+        "sourceId": "enzyme_amylase",
+        "targetId": "rxn_mash",
+        "edgeType": "catalyzes",
+        "description": "Amylase runs the cutting of starch.",
+        "description_es": "La amilasa hace funcionar el corte del almidón."
+      },
+      {
+        "id": "req_starch",
+        "sourceId": "rxn_mash",
+        "targetId": "met_starch",
+        "edgeType": "consumes",
+        "description": "The reaction uses up starch.",
+        "description_es": "La reacción gasta almidón."
+      },
+      {
+        "id": "req_maltose",
+        "sourceId": "rxn_mash",
+        "targetId": "met_maltose",
+        "edgeType": "produces",
+        "description": "And makes maltose, a sugar yeast can eat.",
+        "description_es": "Y fabrica maltosa, un azúcar que la levadura puede comer."
+      },
+      {
+        "id": "req_adh_enc",
+        "sourceId": "gene_adh",
+        "targetId": "enzyme_adh",
+        "edgeType": "encodes",
+        "description": "The yeast reads its own gene and builds its enzyme.",
+        "description_es": "La levadura lee su propio gen y construye su enzima."
+      },
+      {
+        "id": "req_adh_cat",
+        "sourceId": "enzyme_adh",
+        "targetId": "rxn_ferment",
+        "edgeType": "catalyzes",
+        "description": "The yeast enzyme runs the fermentation.",
+        "description_es": "La enzima de la levadura hace funcionar la fermentación."
+      },
+      {
+        "id": "req_ferm_use",
+        "sourceId": "rxn_ferment",
+        "targetId": "met_maltose",
+        "edgeType": "consumes",
+        "description": "Fermentation uses up maltose.",
+        "description_es": "La fermentación gasta maltosa."
+      },
+      {
+        "id": "req_ferm_alc",
+        "sourceId": "rxn_ferment",
+        "targetId": "met_ethanol",
+        "edgeType": "produces",
+        "description": "And makes alcohol.",
+        "description_es": "Y fabrica alcohol."
+      },
+      {
+        "id": "req_beer",
+        "sourceId": "met_ethanol",
+        "targetId": "phenotype_beer",
+        "edgeType": "influences",
+        "description": "The alcohol is what turns wort into beer.",
+        "description_es": "El alcohol es lo que convierte el mosto en cerveza."
+      }
+    ],
+    "optionalConnections": [
+      {
+        "id": "opt_co2",
+        "sourceId": "rxn_ferment",
+        "targetId": "met_co2",
+        "edgeType": "produces",
+        "description": "Carbon dioxide appears too, and gives the fizz.",
+        "description_es": "También aparece dióxido de carbono, que da las burbujas.",
+        "bonusPoints": 50
+      }
+    ],
+    "invalidConnections": [
+      {
+        "sourceId": "met_starch",
+        "targetId": "rxn_ferment",
+        "reason": "Yeast cannot ferment starch directly. The enzymes of the grain must cut it into sugars first.",
+        "reason_es": "La levadura no puede fermentar el almidón directamente. Antes las enzimas del grano tienen que cortarlo en azúcares."
+      },
+      {
+        "sourceId": "met_oxygen",
+        "targetId": "rxn_ferment",
+        "reason": "Fermentation happens without air. Oxygen is only needed by the yeast at the very beginning, to build its membranes.",
+        "reason_es": "La fermentación ocurre sin aire. La levadura solo necesita oxígeno al principio, para construir sus membranas."
+      }
+    ],
+    "winCondition": {
+      "type": "pathway_complete",
+      "targetNodeId": "phenotype_beer",
+      "requiredConnectionIds": [
+        "req_amy_enc",
+        "req_amy_cat",
+        "req_starch",
+        "req_maltose",
+        "req_adh_enc",
+        "req_adh_cat",
+        "req_ferm_use",
+        "req_ferm_alc",
+        "req_beer"
+      ],
+      "description": "Turn starch into sugar and then sugar into alcohol.",
+      "description_es": "Convierte el almidón en azúcar y luego el azúcar en alcohol."
+    }
+  },
+  "simulation": {
+    "productLabel": "Beer",
+    "productLabel_es": "Cerveza",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Mash",
+        "label_es": "Maceración",
+        "description": "Starch becomes maltose.",
+        "description_es": "El almidón se convierte en maltosa.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Yeast",
+        "label_es": "Levadura",
+        "description": "It reads its genes.",
+        "description_es": "Lee sus genes.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Fermentation",
+        "label_es": "Fermentación",
+        "description": "Maltose becomes alcohol.",
+        "description_es": "La maltosa se convierte en alcohol.",
+        "order": 3
+      },
+      {
+        "id": "s4",
+        "label": "Beer",
+        "label_es": "Cerveza",
+        "description": "Alcohol and fizz.",
+        "description_es": "Alcohol y burbujas.",
+        "order": 4
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "There are two chains: one in the barley and one in the yeast. They meet at maltose.",
+      "content_es": "Hay dos cadenas: una en la cebada y otra en la levadura. Se encuentran en la maltosa.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Gene → enzyme → reaction, twice. The first reaction makes maltose; the second one uses it.",
+      "content_es": "Gen → enzima → reacción, dos veces. La primera reacción fabrica maltosa; la segunda la gasta.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Connect both gene–enzyme–reaction chains, then starch, maltose, alcohol and beer.",
+      "content_es": "Conecta las dos cadenas gen–enzima–reacción y luego almidón, maltosa, alcohol y cerveza.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "Barley and yeast, in relay",
+    "title_es": "Cebada y levadura, en relevo",
+    "summary": "You connected two chains of enzymes of two organisms: one makes sugar and the other turns it into alcohol.",
+    "summary_es": "Has conectado dos cadenas de enzimas de dos organismos: una fabrica el azúcar y la otra lo convierte en alcohol.",
+    "realWorldImpact": "Brewers choose barley and yeast strains, and control temperature, to get the flavour they want.",
+    "realWorldImpact_es": "Quienes elaboran cerveza eligen variedades de cebada y de levadura, y controlan la temperatura, para conseguir el sabor que quieren."
+  },
+  "science": {
+    "organism": "Saccharomyces cerevisiae",
+    "realWorldCase": "The yeast of lager beer, used in most beers of the world, is a hybrid of two species. Its DNA shows that one parent is a wild yeast from Patagonia.",
+    "realWorldCase_es": "La levadura de la cerveza lager, usada en la mayoría de las cervezas del mundo, es un híbrido de dos especies. Su ADN muestra que uno de los padres es una levadura silvestre de la Patagonia.",
+    "scientificContext": "Malt amylases degrade starch to maltose and dextrins. Yeast transports maltose into the cell and ferments it through glycolysis to ethanol and CO₂.",
+    "scientificContext_es": "Las amilasas de la malta degradan el almidón a maltosa y dextrinas. La levadura transporta la maltosa al interior de la célula y la fermenta por la glucólisis hasta etanol y CO₂.",
+    "gameplaySimplifications": [
+      "Glycolysis has ten steps; here it is one reaction. The barley enzymes are several, shown as one."
+    ],
+    "gameplaySimplifications_es": [
+      "La glucólisis tiene diez pasos; aquí es una sola reacción. Las enzimas de la cebada son varias, mostradas como una."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Libkind, D.",
+          "Hittinger, C. T.",
+          "Valério, E.",
+          "et al."
+        ],
+        "year": 2011,
+        "title": "Microbe domestication and the identification of the wild genetic stock of lager-brewing yeast",
+        "journal": "Proceedings of the National Academy of Sciences",
+        "type": "paper",
+        "doi": "10.1073/pnas.1105430108"
+      }
+    ]
+  }
+}

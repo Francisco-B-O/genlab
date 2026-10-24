@@ -1,0 +1,313 @@
+{
+  "id": "tune-pcr",
+  "mode": "tune",
+  "title": "Tune the PCR",
+  "title_es": "Ajusta la PCR",
+  "subtitle": "Copies without mistakes",
+  "subtitle_es": "Copias sin errores",
+  "difficulty": "intermediate",
+  "estimatedDuration": 7,
+  "objective": "Choose the settings of a PCR machine to get enough copies of a DNA piece without going over budget.",
+  "objective_es": "Elige los ajustes de una máquina de PCR para obtener suficientes copias de un trozo de ADN sin pasarte del presupuesto.",
+  "description": "PCR copies DNA by heating and cooling. The number of cycles, the temperature where the primers stick and the enzyme all matter.",
+  "description_es": "La PCR copia ADN calentando y enfriando. Importan el número de ciclos, la temperatura a la que se pegan los cebadores y la enzima.",
+  "organism": {
+    "id": "pcr-tune",
+    "commonName": "A PCR tube",
+    "commonName_es": "Un tubo de PCR",
+    "scientificName": "Polymerase chain reaction",
+    "taxonomy": [
+      "Method"
+    ],
+    "targetTissue": "tube",
+    "targetOrganelle": "tube",
+    "description": "A tube where DNA is copied.",
+    "description_es": "Un tubo donde se copia ADN."
+  },
+  "exploration": [
+    {
+      "kind": "dna",
+      "label": "Cycles",
+      "label_es": "Ciclos",
+      "title": "Every cycle doubles the DNA",
+      "title_es": "Cada ciclo duplica el ADN",
+      "description": "After 30 cycles one copy becomes more than a billion. But more cycles also bring more errors.",
+      "description_es": "Tras 30 ciclos una copia se convierte en más de mil millones. Pero más ciclos también traen más errores."
+    },
+    {
+      "kind": "flask",
+      "label": "Enzyme",
+      "label_es": "Enzima",
+      "title": "It has to survive the heat",
+      "title_es": "Tiene que sobrevivir al calor",
+      "description": "Each cycle heats the DNA to about 95 °C. An ordinary enzyme would be destroyed; a heat-resistant one survives.",
+      "description_es": "En cada ciclo el ADN se calienta a unos 95 °C. Una enzima corriente se destruiría; una resistente al calor sobrevive."
+    }
+  ],
+  "tune": {
+    "metricLabel": "Copies",
+    "metricLabel_es": "Copias",
+    "unit": "×1000",
+    "unit_es": "×1000",
+    "base": 10,
+    "target": 12,
+    "budget": 5,
+    "labels": {
+      "perCell": "Copies per cycle",
+      "perCell_es": "Copias por ciclo",
+      "growth": "Accuracy",
+      "growth_es": "Precisión"
+    },
+    "messages": {
+      "lowGrowth": "The copies are full of mistakes: the primers stick in wrong places, or the enzyme does not survive.",
+      "lowGrowth_es": "Las copias están llenas de errores: los cebadores se pegan en sitios equivocados o la enzima no sobrevive.",
+      "lowPerCell": "Too few copies: more cycles or more primers are needed.",
+      "lowPerCell_es": "Pocas copias: hacen falta más ciclos o más cebadores."
+    },
+    "knobs": [
+      {
+        "id": "cycles",
+        "label": "Number of cycles",
+        "label_es": "Número de ciclos",
+        "options": [
+          {
+            "id": "few",
+            "label": "15 cycles",
+            "label_es": "15 ciclos",
+            "description": "Quick, but few copies.",
+            "description_es": "Rápido, pero pocas copias.",
+            "cost": 0,
+            "perCell": 0.5,
+            "growth": 1
+          },
+          {
+            "id": "normal",
+            "label": "30 cycles",
+            "label_es": "30 ciclos",
+            "description": "The usual number.",
+            "description_es": "El número habitual.",
+            "cost": 1,
+            "perCell": 1.5,
+            "growth": 1
+          },
+          {
+            "id": "many",
+            "label": "45 cycles",
+            "label_es": "45 ciclos",
+            "description": "Many copies, but errors and junk pile up.",
+            "description_es": "Muchas copias, pero se acumulan errores y basura.",
+            "cost": 2,
+            "perCell": 1.9,
+            "growth": 0.6
+          }
+        ]
+      },
+      {
+        "id": "anneal",
+        "label": "Temperature where primers stick",
+        "label_es": "Temperatura a la que se pegan los cebadores",
+        "options": [
+          {
+            "id": "low",
+            "label": "Low, about 45 °C",
+            "label_es": "Baja, unos 45 °C",
+            "description": "Primers stick everywhere, including wrong places.",
+            "description_es": "Los cebadores se pegan en todas partes, también donde no deben.",
+            "cost": 0,
+            "perCell": 1,
+            "growth": 0.5
+          },
+          {
+            "id": "right",
+            "label": "Right, about 55 °C",
+            "label_es": "Adecuada, unos 55 °C",
+            "description": "Primers stick only where they should.",
+            "description_es": "Los cebadores se pegan solo donde deben.",
+            "cost": 0,
+            "perCell": 1,
+            "growth": 1
+          },
+          {
+            "id": "high",
+            "label": "High, about 72 °C",
+            "label_es": "Alta, unos 72 °C",
+            "description": "Primers hardly stick at all.",
+            "description_es": "Los cebadores casi no se pegan.",
+            "cost": 0,
+            "perCell": 1,
+            "growth": 0.3
+          }
+        ]
+      },
+      {
+        "id": "enzyme",
+        "label": "Polymerase",
+        "label_es": "Polimerasa",
+        "options": [
+          {
+            "id": "ordinary",
+            "label": "Ordinary",
+            "label_es": "Corriente",
+            "description": "Cheap, but the heat destroys it.",
+            "description_es": "Barata, pero el calor la destruye.",
+            "cost": 0,
+            "perCell": 1,
+            "growth": 0.05
+          },
+          {
+            "id": "heat",
+            "label": "Heat-resistant",
+            "label_es": "Resistente al calor",
+            "description": "Survives the 95 °C of each cycle.",
+            "description_es": "Sobrevive a los 95 °C de cada ciclo.",
+            "cost": 2,
+            "perCell": 1,
+            "growth": 1
+          },
+          {
+            "id": "precise",
+            "label": "Heat-resistant and precise",
+            "label_es": "Resistente al calor y precisa",
+            "description": "The best, and the most expensive.",
+            "description_es": "La mejor, y la más cara.",
+            "cost": 3,
+            "perCell": 1.1,
+            "growth": 1
+          }
+        ]
+      },
+      {
+        "id": "primers",
+        "label": "Primers",
+        "label_es": "Cebadores",
+        "options": [
+          {
+            "id": "little",
+            "label": "A little",
+            "label_es": "Pocos",
+            "description": "Cheap, but slower copying.",
+            "description_es": "Baratos, pero el copiado es más lento.",
+            "cost": 0,
+            "perCell": 0.7,
+            "growth": 1
+          },
+          {
+            "id": "normal",
+            "label": "Normal",
+            "label_es": "Normal",
+            "description": "The usual amount.",
+            "description_es": "La cantidad habitual.",
+            "cost": 1,
+            "perCell": 1,
+            "growth": 1
+          },
+          {
+            "id": "lots",
+            "label": "A lot",
+            "label_es": "Muchos",
+            "description": "Faster, but primers stick to each other.",
+            "description_es": "Más rápido, pero los cebadores se pegan entre sí.",
+            "cost": 2,
+            "perCell": 1.2,
+            "growth": 0.8
+          }
+        ]
+      }
+    ]
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Copies",
+    "productLabel_es": "Copias",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Heat",
+        "label_es": "Calentar",
+        "description": "The strands separate.",
+        "description_es": "Las hebras se separan.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Cool",
+        "label_es": "Enfriar",
+        "description": "The primers stick.",
+        "description_es": "Los cebadores se pegan.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Copy",
+        "label_es": "Copiar",
+        "description": "The enzyme builds new strands.",
+        "description_es": "La enzima construye hebras nuevas.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "The enzyme must survive the heat, and the primers must stick only where they should.",
+      "content_es": "La enzima tiene que sobrevivir al calor y los cebadores deben pegarse solo donde toca.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "An ordinary enzyme and a wrong temperature ruin the copies. Then balance the number of cycles against the budget.",
+      "content_es": "Una enzima corriente y una temperatura equivocada arruinan las copias. Después equilibra el número de ciclos con el presupuesto.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "A heat-resistant enzyme, 55 °C and 30 cycles is a safe base to build on.",
+      "content_es": "Una enzima resistente al calor, 55 °C y 30 ciclos es una base segura.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A good amplification",
+    "title_es": "Una buena amplificación",
+    "summary": "You tuned a PCR: the right enzyme and temperature, and enough cycles without wasting money or making errors.",
+    "summary_es": "Has ajustado una PCR: la enzima y la temperatura correctas, y suficientes ciclos sin gastar de más ni cometer errores.",
+    "realWorldImpact": "PCR is used everywhere: to identify species, to check food, to test samples and to prepare DNA for sequencing.",
+    "realWorldImpact_es": "La PCR se usa en todas partes: para identificar especies, comprobar alimentos, analizar muestras y preparar ADN para secuenciar."
+  },
+  "science": {
+    "organism": "Polymerase chain reaction",
+    "realWorldCase": "Kary Mullis devised PCR in 1983, and the use of a heat-resistant polymerase from a hot-spring bacterium made it practical. Mullis shared the 1993 Nobel Prize in Chemistry.",
+    "realWorldCase_es": "Kary Mullis ideó la PCR en 1983, y el uso de una polimerasa resistente al calor de una bacteria de aguas termales la hizo práctica. Mullis compartió el Premio Nobel de Química de 1993.",
+    "scientificContext": "The annealing temperature depends on the primers. Too low and they bind to similar sequences; too high and they do not bind.",
+    "scientificContext_es": "La temperatura de unión depende de los cebadores. Demasiado baja y se unen a secuencias parecidas; demasiado alta y no se unen.",
+    "gameplaySimplifications": [
+      "Real PCR also depends on the buffer, the amount of DNA and the length of the piece."
+    ],
+    "gameplaySimplifications_es": [
+      "La PCR real también depende del tampón, la cantidad de ADN y la longitud del trozo."
+    ],
+    "references": []
+  }
+}

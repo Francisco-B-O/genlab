@@ -1,0 +1,224 @@
+{
+  "id": "seq-beer",
+  "mode": "sequence",
+  "title": "How beer is made",
+  "title_es": "Cómo se hace la cerveza",
+  "subtitle": "From barley to a fizzy drink",
+  "subtitle_es": "De la cebada a una bebida con burbujas",
+  "difficulty": "beginner",
+  "estimatedDuration": 5,
+  "objective": "Put the steps of brewing in order, from the grain to the bottle.",
+  "objective_es": "Ordena los pasos para elaborar cerveza, del grano a la botella.",
+  "description": "Beer is made with the help of two kinds of biology: enzymes of the barley, and yeast. The order of the steps matters.",
+  "description_es": "La cerveza se hace con la ayuda de dos tipos de biología: las enzimas de la cebada y la levadura. El orden de los pasos importa.",
+  "organism": {
+    "id": "beer-brewing",
+    "commonName": "Barley and brewer's yeast",
+    "commonName_es": "Cebada y levadura cervecera",
+    "scientificName": "Saccharomyces cerevisiae",
+    "taxonomy": [
+      "Fungi",
+      "Ascomycota",
+      "Saccharomycetes",
+      "Saccharomycetales",
+      "Saccharomycetaceae",
+      "Saccharomyces"
+    ],
+    "targetTissue": "whole organism",
+    "targetOrganelle": "cytoplasm",
+    "description": "A cereal and a fungus that turn grain into beer.",
+    "description_es": "Un cereal y un hongo que convierten el grano en cerveza."
+  },
+  "exploration": [
+    {
+      "kind": "wheat",
+      "label": "Barley",
+      "label_es": "Cebada",
+      "title": "Starch locked in a grain",
+      "title_es": "Almidón encerrado en un grano",
+      "description": "Barley grains store starch. Their own enzymes can turn it into sugars, but only after the grain has started to germinate.",
+      "description_es": "Los granos de cebada guardan almidón. Sus propias enzimas pueden convertirlo en azúcares, pero solo cuando el grano ha empezado a germinar."
+    },
+    {
+      "kind": "yeast",
+      "label": "Yeast",
+      "label_es": "Levadura",
+      "title": "Sugar into alcohol",
+      "title_es": "Azúcar en alcohol",
+      "description": "Yeast eats sugars and makes alcohol and carbon dioxide, which gives beer its fizz.",
+      "description_es": "La levadura se come los azúcares y fabrica alcohol y dióxido de carbono, que da a la cerveza sus burbujas."
+    }
+  ],
+  "sequence": {
+    "steps": [
+      {
+        "id": "malt",
+        "label": "Let the barley germinate and then dry it: malt",
+        "label_es": "Dejar germinar la cebada y luego secarla: malta",
+        "description": "The grain makes its enzymes and they are kept for later.",
+        "description_es": "El grano fabrica sus enzimas y se conservan para después.",
+        "needs": "Nothing: it is where it starts.",
+        "needs_es": "Nada: es el punto de partida."
+      },
+      {
+        "id": "mash",
+        "label": "Mix the crushed malt with hot water",
+        "label_es": "Mezclar la malta molida con agua caliente",
+        "description": "The enzymes turn the starch into sugars.",
+        "description_es": "Las enzimas convierten el almidón en azúcares.",
+        "needs": "The malt has to exist, because it holds the enzymes.",
+        "needs_es": "La malta tiene que existir, porque contiene las enzimas."
+      },
+      {
+        "id": "filter",
+        "label": "Separate the sweet liquid, the wort, from the grain",
+        "label_es": "Separar el líquido dulce, el mosto, del grano",
+        "description": "Only the sugary liquid goes on.",
+        "description_es": "Solo pasa el líquido azucarado.",
+        "needs": "The sugars have to be made first.",
+        "needs_es": "Antes hay que fabricar los azúcares."
+      },
+      {
+        "id": "boil",
+        "label": "Boil the wort with hops",
+        "label_es": "Hervir el mosto con lúpulo",
+        "description": "Hops give flavour and bitterness, and the boil kills unwanted microbes.",
+        "description_es": "El lúpulo da sabor y amargor, y la ebullición mata los microbios no deseados.",
+        "needs": "There must be wort to boil.",
+        "needs_es": "Tiene que haber mosto que hervir."
+      },
+      {
+        "id": "yeast",
+        "label": "Cool the wort and add the yeast",
+        "label_es": "Enfriar el mosto y añadir la levadura",
+        "description": "Hot wort would kill the yeast, so it has to cool first.",
+        "description_es": "El mosto caliente mataría a la levadura, así que primero tiene que enfriarse.",
+        "needs": "The wort has to be boiled first.",
+        "needs_es": "El mosto tiene que haberse hervido antes."
+      },
+      {
+        "id": "ferment",
+        "label": "The yeast ferments the sugars into alcohol and gas",
+        "label_es": "La levadura fermenta los azúcares en alcohol y gas",
+        "description": "The wort becomes beer.",
+        "description_es": "El mosto se convierte en cerveza.",
+        "needs": "The yeast has to be in the cool wort.",
+        "needs_es": "La levadura tiene que estar en el mosto frío."
+      },
+      {
+        "id": "bottle",
+        "label": "Let it mature and put it in bottles",
+        "label_es": "Dejar que madure y embotellarla",
+        "description": "Fizz and flavour settle.",
+        "description_es": "Se asientan las burbujas y el sabor.",
+        "needs": "The beer must be fermented.",
+        "needs_es": "La cerveza tiene que estar fermentada."
+      }
+    ]
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Beer",
+    "productLabel_es": "Cerveza",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Start",
+        "label_es": "Inicio",
+        "description": "The process begins.",
+        "description_es": "Empieza el proceso.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Middle",
+        "label_es": "Desarrollo",
+        "description": "Each step prepares the next.",
+        "description_es": "Cada paso prepara el siguiente.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Result",
+        "label_es": "Resultado",
+        "description": "The process ends.",
+        "description_es": "El proceso termina.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Yeast can only start once the sugars exist and the wort is cool.",
+      "content_es": "La levadura solo puede empezar cuando existen los azúcares y el mosto está frío.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Malt, mash, filter, boil, cool and add yeast, ferment, bottle.",
+      "content_es": "Malta, macerar, filtrar, hervir, enfriar y añadir levadura, fermentar, embotellar.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Malt → mash → filter → boil → yeast → ferment → bottle.",
+      "content_es": "Malta → macerar → filtrar → hervir → levadura → fermentar → embotellar.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "Two kinds of biology at work",
+    "title_es": "Dos tipos de biología trabajando",
+    "summary": "You followed brewing and saw two stages: enzymes of the grain make the sugar, and yeast turns it into alcohol.",
+    "summary_es": "Has seguido la elaboración de cerveza y has visto dos etapas: las enzimas del grano fabrican el azúcar y la levadura lo convierte en alcohol.",
+    "realWorldImpact": "Brewing is one of the oldest biotechnologies, and modern breweries control each of these steps very precisely.",
+    "realWorldImpact_es": "La cerveza es una de las biotecnologías más antiguas, y las cervecerías modernas controlan con mucha precisión cada uno de estos pasos."
+  },
+  "science": {
+    "organism": "Saccharomyces cerevisiae",
+    "realWorldCase": "Louis Pasteur studied beer fermentation in the 1870s and published a book on it, \"Études sur la bière\", in 1876.",
+    "realWorldCase_es": "Louis Pasteur estudió la fermentación de la cerveza en la década de 1870 y publicó un libro sobre ella, «Études sur la bière», en 1876.",
+    "scientificContext": "During malting, germinating barley makes amylases and other enzymes. In the mash, they degrade starch into fermentable sugars such as maltose.",
+    "scientificContext_es": "En el malteado, la cebada que germina fabrica amilasas y otras enzimas. En la maceración degradan el almidón en azúcares fermentables como la maltosa.",
+    "gameplaySimplifications": [
+      "Real brewing has more stages, such as milling and conditioning."
+    ],
+    "gameplaySimplifications_es": [
+      "La elaboración real tiene más etapas, como la molienda y el acondicionado."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Pasteur, L."
+        ],
+        "year": 1876,
+        "title": "Études sur la bière",
+        "journal": "Gauthier-Villars, Paris",
+        "type": "book"
+      }
+    ]
+  }
+}

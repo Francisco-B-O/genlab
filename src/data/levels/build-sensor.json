@@ -1,0 +1,211 @@
+{
+  "id": "build-sensor",
+  "mode": "construct",
+  "title": "Bacteria that warn you",
+  "title_es": "Bacterias que avisan",
+  "subtitle": "A switch that listens for sugar",
+  "subtitle_es": "Un interruptor que escucha el azúcar",
+  "difficulty": "beginner",
+  "estimatedDuration": 5,
+  "objective": "Assemble a DNA circuit so that bacteria glow only when a sugar is present.",
+  "objective_es": "Monta un circuito de ADN para que las bacterias brillen solo cuando haya un azúcar.",
+  "description": "A biosensor is a living detector. Its promoter only switches on when it meets the substance we want to detect.",
+  "description_es": "Un biosensor es un detector vivo. Su promotor solo se enciende cuando encuentra la sustancia que queremos detectar.",
+  "organism": {
+    "id": "biosensor",
+    "commonName": "Sensor bacteria",
+    "commonName_es": "Bacterias sensoras",
+    "scientificName": "Escherichia coli",
+    "taxonomy": [
+      "Bacteria",
+      "Pseudomonadota",
+      "Gammaproteobacteria",
+      "Enterobacterales",
+      "Enterobacteriaceae",
+      "Escherichia"
+    ],
+    "targetTissue": "single cell",
+    "targetOrganelle": "cytoplasm",
+    "description": "A bacterium that glows when it senses something.",
+    "description_es": "Una bacteria que brilla cuando detecta algo."
+  },
+  "exploration": [
+    {
+      "kind": "bacterium",
+      "label": "Biosensor",
+      "label_es": "Biosensor",
+      "title": "A detector made of cells",
+      "title_es": "Un detector hecho de células",
+      "description": "Some bacteria can be built to light up when a substance is in the water, which helps to test samples cheaply.",
+      "description_es": "Se pueden construir bacterias que se iluminen cuando haya una sustancia en el agua, lo que ayuda a analizar muestras con poco coste."
+    },
+    {
+      "kind": "dna",
+      "label": "The circuit",
+      "label_es": "El circuito",
+      "title": "The promoter decides",
+      "title_es": "El promotor decide",
+      "description": "The promoter is a switch: if it is always on the bacteria glow all the time and the sensor is useless.",
+      "description_es": "El promotor es un interruptor: si está siempre encendido, las bacterias brillan siempre y el sensor no sirve."
+    }
+  ],
+  "construct": {
+    "solution": [
+      "p_sugar",
+      "rbs",
+      "gfp",
+      "term"
+    ],
+    "parts": [
+      {
+        "id": "p_sugar",
+        "kind": "promoter",
+        "label": "Sugar-responsive promoter",
+        "label_es": "Promotor que responde al azúcar",
+        "description": "Switches on only when the sugar is present.",
+        "description_es": "Se enciende solo cuando hay azúcar."
+      },
+      {
+        "id": "p_const",
+        "kind": "promoter",
+        "label": "Always-on promoter",
+        "label_es": "Promotor siempre encendido",
+        "description": "Switched on whatever the conditions.",
+        "description_es": "Encendido pase lo que pase.",
+        "wrongReason": "This promoter is always on, so the bacteria would glow all the time. A sensor must only glow when the sugar is there.",
+        "wrongReason_es": "Este promotor está siempre encendido, así que las bacterias brillarían todo el tiempo. Un sensor solo debe brillar cuando está el azúcar.",
+        "isDistractor": true
+      },
+      {
+        "id": "rbs",
+        "kind": "rbs",
+        "label": "Ribosome binding site (RBS)",
+        "label_es": "Sitio de unión del ribosoma (RBS)",
+        "description": "The landing strip where the ribosome starts reading.",
+        "description_es": "La pista de aterrizaje donde el ribosoma empieza a leer."
+      },
+      {
+        "id": "gfp",
+        "kind": "gene",
+        "label": "gfp gene",
+        "label_es": "Gen gfp",
+        "description": "Recipe for the green fluorescent protein.",
+        "description_es": "Receta de la proteína verde fluorescente."
+      },
+      {
+        "id": "lacz",
+        "kind": "gene",
+        "label": "lacZ gene",
+        "label_es": "Gen lacZ",
+        "description": "Recipe for an enzyme that digests lactose.",
+        "description_es": "Receta de una enzima que digiere lactosa.",
+        "wrongReason": "lacZ makes an enzyme that digests lactose. It does not make anything glow: for that you need gfp.",
+        "wrongReason_es": "lacZ fabrica una enzima que digiere lactosa. No hace brillar nada: para eso hace falta gfp.",
+        "isDistractor": true
+      },
+      {
+        "id": "term",
+        "kind": "terminator",
+        "label": "Terminator",
+        "label_es": "Terminador",
+        "description": "Marks where the reading stops.",
+        "description_es": "Marca dónde termina la lectura."
+      }
+    ]
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Light",
+    "productLabel_es": "Luz",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Promoter",
+        "label_es": "Promotor",
+        "description": "The cell starts reading.",
+        "description_es": "La célula empieza a leer.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Gene",
+        "label_es": "Gen",
+        "description": "The protein is made.",
+        "description_es": "Se fabrica la proteína.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Stop",
+        "label_es": "Parada",
+        "description": "The reading ends.",
+        "description_es": "La lectura termina.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "A circuit starts with a promoter and ends with a terminator. In between go the landing strip and the gene.",
+      "content_es": "Un circuito empieza con un promotor y acaba con un terminador. En medio van la pista de aterrizaje y el gen.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "A sensor must only glow when the sugar is there, so its promoter must be the one that responds to the sugar.",
+      "content_es": "Un sensor solo debe brillar cuando está el azúcar, así que su promotor tiene que ser el que responde al azúcar.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Promoter that responds to sugar → RBS → gfp gene → terminator.",
+      "content_es": "Promotor que responde al azúcar → RBS → gen gfp → terminador.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A living detector",
+    "title_es": "Un detector vivo",
+    "summary": "You built a circuit that lights up only in the presence of the sugar, a simple living sensor.",
+    "summary_es": "Has construido un circuito que se ilumina solo en presencia del azúcar, un sensor vivo sencillo.",
+    "realWorldImpact": "Biosensors are being developed to detect pollutants in water, spoiled food and many other things.",
+    "realWorldImpact_es": "Se desarrollan biosensores para detectar contaminantes en el agua, alimentos en mal estado y muchas otras cosas."
+  },
+  "science": {
+    "organism": "Escherichia coli",
+    "realWorldCase": "Bacteria that sense chemicals and report with a light have been used as biosensors since the 1990s.",
+    "realWorldCase_es": "Las bacterias que detectan sustancias químicas y avisan con luz se usan como biosensores desde los años noventa.",
+    "scientificContext": "Inducible promoters are controlled by repressor or activator proteins that bind a specific molecule, switching expression on or off.",
+    "scientificContext_es": "Los promotores inducibles están controlados por proteínas represoras o activadoras que se unen a una molécula concreta y encienden o apagan la expresión.",
+    "gameplaySimplifications": [
+      "Real biosensors need extra parts to make the signal stronger and clearer."
+    ],
+    "gameplaySimplifications_es": [
+      "Los biosensores reales necesitan piezas extra para que la señal sea más fuerte y clara."
+    ],
+    "references": []
+  }
+}

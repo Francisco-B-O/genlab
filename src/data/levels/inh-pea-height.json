@@ -1,0 +1,224 @@
+{
+  "id": "inh-pea-height",
+  "mode": "inherit",
+  "title": "Tall peas and dwarf peas",
+  "title_es": "Guisantes altos y guisantes enanos",
+  "subtitle": "Mendel's count: 787 to 277",
+  "subtitle_es": "El recuento de Mendel: 787 a 277",
+  "difficulty": "beginner",
+  "estimatedDuration": 5,
+  "objective": "Fill in the Punnett squares for the height of pea plants, one of the seven traits followed by Mendel.",
+  "objective_es": "Rellena los cuadros de Punnett de la altura de las plantas de guisante, uno de los siete rasgos que siguió Mendel.",
+  "description": "Mendel crossed tall pea plants with dwarf ones. All the offspring were tall, but dwarf plants came back in the next generation.",
+  "description_es": "Mendel cruzó guisantes altos con enanos. Todos los descendientes eran altos, pero los enanos volvían en la generación siguiente.",
+  "organism": {
+    "id": "pisum-height",
+    "commonName": "Garden pea",
+    "commonName_es": "Guisante",
+    "scientificName": "Pisum sativum",
+    "taxonomy": [
+      "Plantae",
+      "Tracheophyta",
+      "Magnoliopsida",
+      "Fabales",
+      "Fabaceae",
+      "Pisum"
+    ],
+    "targetTissue": "stem",
+    "targetOrganelle": "cytoplasm",
+    "description": "The plant of Mendel's experiments.",
+    "description_es": "La planta de los experimentos de Mendel."
+  },
+  "exploration": [
+    {
+      "kind": "plant",
+      "label": "Height",
+      "label_es": "Altura",
+      "title": "Tall or dwarf",
+      "title_es": "Alto o enano",
+      "description": "Tall pea plants grow up to two metres; dwarf ones stay below half a metre.",
+      "description_es": "Los guisantes altos llegan a los dos metros; los enanos se quedan por debajo del medio metro."
+    },
+    {
+      "kind": "dna",
+      "label": "The gene",
+      "label_es": "El gen",
+      "title": "A hormone gene",
+      "title_es": "Un gen de una hormona",
+      "description": "The gene that Mendel followed makes an enzyme that produces a growth hormone. The dwarf allele makes an enzyme that works poorly.",
+      "description_es": "El gen que siguió Mendel fabrica una enzima que produce una hormona de crecimiento. El alelo enano fabrica una enzima que funciona mal."
+    }
+  ],
+  "inherit": {
+    "trait": "Height",
+    "trait_es": "Altura",
+    "alleles": [
+      "T",
+      "t"
+    ],
+    "phenotypes": {
+      "TT": "tall",
+      "Tt": "tall",
+      "tt": "dwarf"
+    },
+    "phenotypeLabels": {
+      "tall": "Tall plant",
+      "tall_es": "Planta alta",
+      "dwarf": "Dwarf plant",
+      "dwarf_es": "Planta enana"
+    },
+    "scenarios": [
+      {
+        "id": "s1",
+        "parent1": "TT",
+        "parent2": "tt",
+        "parent1Label": "Tall (pure)",
+        "parent1Label_es": "Alta (pura)",
+        "parent2Label": "Dwarf",
+        "parent2Label_es": "Enana",
+        "question": "A tall plant (TT) is crossed with a dwarf one (tt). What is the probability that a plant is tall?",
+        "question_es": "Se cruza una planta alta (TT) con una enana (tt). ¿Qué probabilidad hay de que una planta sea alta?",
+        "target": "tall",
+        "explanation": "All four cells are Tt and T hides t: every plant is tall (100%), as Mendel saw.",
+        "explanation_es": "Las cuatro casillas son Tt y T oculta a t: todas las plantas son altas (100 %), como vio Mendel."
+      },
+      {
+        "id": "s2",
+        "parent1": "Tt",
+        "parent2": "Tt",
+        "parent1Label": "Tall, carries t",
+        "parent1Label_es": "Alta, lleva t",
+        "parent2Label": "Tall, carries t",
+        "parent2Label_es": "Alta, lleva t",
+        "question": "Two tall plants that both carry t are crossed. What is the probability of a dwarf plant?",
+        "question_es": "Se cruzan dos plantas altas que llevan t las dos. ¿Qué probabilidad hay de una planta enana?",
+        "target": "dwarf",
+        "explanation": "Only the tt cell is dwarf: 25%. Mendel counted 787 tall and 277 dwarf plants, close to 3 to 1.",
+        "explanation_es": "Solo la casilla tt es enana: 25 %. Mendel contó 787 plantas altas y 277 enanas, casi 3 a 1."
+      },
+      {
+        "id": "s3",
+        "parent1": "Tt",
+        "parent2": "tt",
+        "parent1Label": "Tall, carries t",
+        "parent1Label_es": "Alta, lleva t",
+        "parent2Label": "Dwarf",
+        "parent2Label_es": "Enana",
+        "question": "A tall plant that carries t is crossed with a dwarf one. What is the probability of a tall plant?",
+        "question_es": "Se cruza una planta alta que lleva t con una enana. ¿Qué probabilidad hay de una planta alta?",
+        "target": "tall",
+        "explanation": "Two cells are Tt (tall) and two are tt (dwarf): 50% each.",
+        "explanation_es": "Dos casillas son Tt (altas) y dos son tt (enanas): 50 % cada una."
+      }
+    ]
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Probability",
+    "productLabel_es": "Probabilidad",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Parents",
+        "label_es": "Progenitores",
+        "description": "Each gives one allele.",
+        "description_es": "Cada uno da un alelo.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Square",
+        "label_es": "Cuadro",
+        "description": "All combinations.",
+        "description_es": "Todas las combinaciones.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Trait",
+        "label_es": "Rasgo",
+        "description": "Read the result.",
+        "description_es": "Lee el resultado.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Fill the square first; then look at each cell: does it have at least one T?",
+      "content_es": "Rellena primero el cuadro; luego mira cada casilla: ¿tiene al menos una T?",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "T is dominant: TT and Tt are tall. Only tt is dwarf.",
+      "content_es": "T es dominante: TT y Tt son altas. Solo tt es enana.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Count the cells with the height asked about: each is worth 25%.",
+      "content_es": "Cuenta las casillas de la altura por la que preguntan: cada una vale un 25 %.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "The 3 to 1 ratio",
+    "title_es": "La proporción de 3 a 1",
+    "summary": "You saw the famous 3 to 1 ratio, the numbers that led Mendel to the idea of dominant and recessive alleles.",
+    "summary_es": "Has visto la famosa proporción de 3 a 1, los números que llevaron a Mendel a la idea de alelos dominantes y recesivos.",
+    "realWorldImpact": "The same logic, applied to plant height in other crops, led to short, sturdy wheat and rice varieties in the 20th century.",
+    "realWorldImpact_es": "La misma lógica, aplicada a la altura de la planta en otros cultivos, llevó a variedades de trigo y arroz bajas y robustas en el siglo XX."
+  },
+  "science": {
+    "organism": "Pisum sativum",
+    "realWorldCase": "In 1997 two teams showed that the gene Mendel called Le encodes an enzyme that makes the hormone gibberellin, so his dwarf peas have a change in a real, known gene.",
+    "realWorldCase_es": "En 1997 dos equipos mostraron que el gen que Mendel llamó Le codifica una enzima que fabrica la hormona giberelina, así que sus guisantes enanos tienen un cambio en un gen real y conocido.",
+    "scientificContext": "The dwarf allele changes a single amino acid of gibberellin 3β-hydroxylase and lowers its activity. Less active gibberellin means shorter stems.",
+    "scientificContext_es": "El alelo enano cambia un solo aminoácido de la giberelina 3β-hidroxilasa y reduce su actividad. Menos giberelina activa significa tallos más cortos.",
+    "gameplaySimplifications": [
+      "Only one gene is followed; plant height depends on several genes in real crops."
+    ],
+    "gameplaySimplifications_es": [
+      "Solo se sigue un gen; en los cultivos reales la altura de la planta depende de varios genes."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Lester, D. R.",
+          "Ross, J. J.",
+          "Davies, P. J.",
+          "Reid, J. B."
+        ],
+        "year": 1997,
+        "title": "Mendel's stem length gene (Le) encodes a gibberellin 3β-hydroxylase",
+        "journal": "The Plant Cell",
+        "type": "paper",
+        "doi": "10.1105/tpc.9.8.1435"
+      }
+    ]
+  }
+}

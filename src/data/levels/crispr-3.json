@@ -1,0 +1,191 @@
+{
+  "id": "crispr-3",
+  "mode": "crispr",
+  "title": "Cutting only once",
+  "title_es": "Cortar una sola vez",
+  "subtitle": "The danger of look-alikes",
+  "subtitle_es": "El peligro de los parecidos",
+  "difficulty": "intermediate",
+  "estimatedDuration": 7,
+  "objective": "Cas9 also cuts at sites that differ by one letter. Choose a guide that cuts inside the gene and nowhere else.",
+  "objective_es": "Cas9 también corta en sitios que difieren en una letra. Elige una guía que corte dentro del gen y en ningún otro sitio.",
+  "description": "CRISPR-Cas9 is a pair of molecular scissors steered by a short RNA, the guide. The guide pairs with DNA that has the same letters, and Cas9 cuts there, as long as a PAM follows.",
+  "description_es": "CRISPR-Cas9 son unas tijeras moleculares dirigidas por un ARN corto, la guía. La guía se une al ADN que tiene sus mismas letras y Cas9 corta ahí, siempre que justo después haya un PAM.",
+  "organism": {
+    "id": "crispr-target",
+    "commonName": "Gene to edit",
+    "commonName_es": "Gen a editar",
+    "scientificName": "Cas9 target",
+    "scientificName_es": "Diana de Cas9",
+    "taxonomy": [
+      "Method"
+    ],
+    "targetTissue": "nucleus",
+    "targetOrganelle": "nucleus",
+    "description": "A stretch of DNA with a gene that we want to change.",
+    "description_es": "Un trozo de ADN con un gen que queremos cambiar."
+  },
+  "exploration": [
+    {
+      "kind": "dna",
+      "label": "Look-alikes",
+      "label_es": "Parecidos",
+      "title": "Almost the same letters",
+      "title_es": "Casi las mismas letras",
+      "description": "Genomes contain places that look almost like the target. Cas9 can cut there too if only one or two letters differ.",
+      "description_es": "Los genomas tienen lugares casi idénticos al sitio buscado. Cas9 también puede cortar ahí si solo se diferencian en una o dos letras."
+    },
+    {
+      "kind": "dna",
+      "label": "Off-target",
+      "label_es": "Fuera de objetivo",
+      "title": "Unwanted cuts",
+      "title_es": "Cortes no deseados",
+      "description": "A cut in the wrong place can change another gene. Scientists design guides whose sequence is unique in the genome.",
+      "description_es": "Un corte en el sitio equivocado puede cambiar otro gen. Los científicos diseñan guías cuya secuencia es única en el genoma."
+    }
+  ],
+  "crispr": {
+    "genome": "AATTCACCACCAGGGCTTTGAGGACCCGGGCGATCGCGAGGGTTATCGGTCTTAGAACGATAGCGATGGTGA",
+    "target": {
+      "label": "mushroom browning gene",
+      "label_es": "gen del pardeamiento de la seta",
+      "start": 18,
+      "end": 54
+    },
+    "guides": [
+      {
+        "id": "a",
+        "sequence": "GATCGCGA"
+      },
+      {
+        "id": "b",
+        "sequence": "TGAGGACC"
+      },
+      {
+        "id": "c",
+        "sequence": "TCACCACC"
+      },
+      {
+        "id": "d",
+        "sequence": "TCGGTCTT"
+      }
+    ],
+    "mismatches": 1,
+    "story": "A mushroom that turns brown in the fridge. Edit its browning gene without touching the rest.",
+    "story_es": "Una seta que se pone marrón en la nevera. Edita su gen del pardeamiento sin tocar el resto."
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Cut",
+    "productLabel_es": "Corte",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Guide",
+        "label_es": "Guía",
+        "description": "The guide leads Cas9 to a place in the DNA.",
+        "description_es": "La guía lleva a Cas9 a un sitio del ADN.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Cut",
+        "label_es": "Corte",
+        "description": "Cas9 cuts both strands next to the PAM.",
+        "description_es": "Cas9 corta las dos hebras junto al PAM.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Repair",
+        "label_es": "Reparación",
+        "description": "The cell repairs the cut, and the gene is changed.",
+        "description_es": "La célula repara el corte y el gen queda cambiado.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "In this level a site with one different letter still counts. Tap each guide to see all the places where it sticks.",
+      "content_es": "En este nivel un sitio con una letra distinta también cuenta. Toca cada guía para ver todos los sitios donde se pega.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "A guide that cuts in the gene but also somewhere else is a bad choice. Look for the one with a single cut.",
+      "content_es": "Una guía que corta en el gen y también en otro sitio es mala. Busca la que solo corta una vez.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Choose guide B.",
+      "content_es": "Elige la guía B.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "One cut, in the right place",
+    "title_es": "Un corte, en el sitio justo",
+    "summary": "You avoided a guide with a look-alike site and chose one that cuts only inside the gene.",
+    "summary_es": "Has evitado una guía con un sitio parecido y has elegido la que corta solo dentro del gen.",
+    "realWorldImpact": "Checking for off-target sites is a standard step before any gene-editing experiment.",
+    "realWorldImpact_es": "Comprobar los sitios fuera de objetivo es un paso habitual antes de cualquier experimento de edición genética."
+  },
+  "science": {
+    "organism": "Cas9 target",
+    "realWorldCase": "In 2016 a researcher edited a gene of the white button mushroom so that it browns more slowly. The change was a few letters of DNA, and no DNA from another species was added.",
+    "realWorldCase_es": "En 2016 un investigador editó un gen del champiñón blanco para que se ponga marrón más despacio. El cambio fueron unas pocas letras de ADN y no se añadió ADN de otra especie.",
+    "scientificContext": "Cas9 is guided by an RNA of about 20 letters. It cuts only where the DNA matches the guide and sits next to a short PAM sequence (NGG). Matches with a few differences can still be cut, which causes off-target changes.",
+    "scientificContext_es": "Cas9 está guiada por un ARN de unas 20 letras. Solo corta donde el ADN coincide con la guía y está junto a una secuencia corta llamada PAM (NGG). Las coincidencias con algunas diferencias también pueden cortarse, lo que causa cambios fuera de objetivo.",
+    "gameplaySimplifications": [
+      "Guides here have 8 letters so they fit on the screen; real ones have about 20.",
+      "Real Cas9 also cuts depending on the strand and on how close the differences are to the PAM."
+    ],
+    "gameplaySimplifications_es": [
+      "Las guías de aquí tienen 8 letras para que quepan en pantalla; las reales tienen unas 20.",
+      "La Cas9 real también corta según la hebra y según lo cerca del PAM que estén las diferencias."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Jinek, M.",
+          "Chylinski, K.",
+          "Fonfara, I.",
+          "Hauer, M.",
+          "Doudna, J. A.",
+          "Charpentier, E."
+        ],
+        "year": 2012,
+        "title": "A programmable dual-RNA–guided DNA endonuclease in adaptive bacterial immunity",
+        "journal": "Science",
+        "doi": "10.1126/science.1225829",
+        "type": "paper"
+      }
+    ]
+  }
+}

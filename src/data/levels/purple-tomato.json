@@ -1,0 +1,390 @@
+{
+  "id": "purple-tomato",
+  "title": "Purple tomato",
+  "title_es": "Tomate morado",
+  "subtitle": "Two snapdragon genes that switch on a whole pathway",
+  "subtitle_es": "Dos genes de boca de dragón que encienden una ruta entera",
+  "difficulty": "intermediate",
+  "estimatedDuration": 10,
+  "objective": "Make tomatoes produce anthocyanins, the purple pigments of blueberries, by adding two control genes from the snapdragon flower.",
+  "objective_es": "Haz que el tomate fabrique antocianos, los pigmentos morados de los arándanos, añadiendo dos genes de control de la flor boca de dragón.",
+  "description": "This time the new genes are not enzymes: they are switches that turn on genes the tomato already has.",
+  "description_es": "Esta vez los genes nuevos no son enzimas: son interruptores que encienden genes que el tomate ya tiene.",
+  "organism": {
+    "id": "solanum-lycopersicum-purple",
+    "commonName": "Purple tomato",
+    "commonName_es": "Tomate morado",
+    "scientificName": "Solanum lycopersicum (Del/Ros1)",
+    "taxonomy": ["Plantae", "Tracheophyta", "Magnoliopsida", "Solanales", "Solanaceae", "Solanum"],
+    "targetTissue": "fruit",
+    "targetOrganelle": "vacuole",
+    "description": "A tomato carrying two regulatory genes from snapdragon, active only in the ripening fruit.",
+    "description_es": "Un tomate con dos genes reguladores de la boca de dragón, activos solo en el fruto que madura."
+  },
+  "exploration": [
+    {
+      "kind": "tomato",
+      "label": "Fruit",
+      "label_es": "Fruto",
+      "title": "A red tomato",
+      "title_es": "Un tomate rojo",
+      "description": "Tomatoes are red because of lycopene. They have the genes to make purple anthocyanins too, but in the fruit those genes stay switched off.",
+      "description_es": "El tomate es rojo por el licopeno. También tiene los genes para fabricar antocianos morados, pero en el fruto esos genes están apagados."
+    },
+    {
+      "kind": "plant",
+      "label": "Source",
+      "label_es": "Origen",
+      "title": "The snapdragon flower",
+      "title_es": "La flor boca de dragón",
+      "description": "Antirrhinum majus colours its petals with two control proteins, Delila and Rosea1, that switch on the anthocyanin genes.",
+      "description_es": "Antirrhinum majus colorea sus pétalos con dos proteínas de control, Delila y Rosea1, que encienden los genes de los antocianos."
+    },
+    {
+      "kind": "cell",
+      "label": "Cell",
+      "label_es": "Célula",
+      "title": "Inside a fruit cell",
+      "title_es": "Dentro de una célula del fruto",
+      "description": "The pigments are made in the cytoplasm and stored in the vacuole, the large water-filled sac of plant cells.",
+      "description_es": "Los pigmentos se fabrican en el citoplasma y se guardan en la vacuola, el gran saco de agua de las células vegetales."
+    }
+  ],
+  "biologicalContext": {
+    "nodes": [
+      {
+        "id": "gene_del",
+        "type": "gene",
+        "label": "Delila gene",
+        "label_es": "Gen Delila",
+        "description": "A snapdragon gene for a control protein (bHLH type). It is placed behind a promoter that is only active in the ripening fruit.",
+        "description_es": "Un gen de boca de dragón de una proteína de control (tipo bHLH). Se coloca detrás de un promotor que solo funciona en el fruto que madura.",
+        "scientificName": "Del (Antirrhinum majus)",
+        "position": { "x": -8, "y": 3, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "gene_ros1",
+        "type": "gene",
+        "label": "Rosea1 gene",
+        "label_es": "Gen Rosea1",
+        "description": "A snapdragon gene for the partner control protein (MYB type).",
+        "description_es": "Un gen de boca de dragón de la proteína de control compañera (tipo MYB).",
+        "scientificName": "Ros1 (Antirrhinum majus)",
+        "position": { "x": -8, "y": -0.4, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "protein_switch",
+        "type": "protein",
+        "label": "Delila + Rosea1 switch",
+        "label_es": "Interruptor Delila + Rosea1",
+        "description": "The two proteins work as a pair: together they sit on DNA and switch on the anthocyanin genes.",
+        "description_es": "Las dos proteínas trabajan en pareja: juntas se colocan sobre el ADN y encienden los genes de los antocianos.",
+        "position": { "x": -5, "y": 1.3, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "gene_chs",
+        "type": "gene",
+        "label": "CHS gene",
+        "label_es": "Gen CHS",
+        "description": "A tomato gene for chalcone synthase, the first enzyme of the flavonoid pathway. Silent in the fruit until switched on.",
+        "description_es": "Un gen del tomate de la chalcona sintasa, la primera enzima de la ruta de los flavonoides. Callado en el fruto hasta que lo encienden.",
+        "scientificName": "CHS (Solanum lycopersicum)",
+        "position": { "x": -2, "y": 3, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "gene_ans",
+        "type": "gene",
+        "label": "ANS gene",
+        "label_es": "Gen ANS",
+        "description": "A tomato gene for anthocyanidin synthase, the enzyme that makes the coloured part of the pigment.",
+        "description_es": "Un gen del tomate de la antocianidina sintasa, la enzima que fabrica la parte coloreada del pigmento.",
+        "scientificName": "ANS / LDOX (Solanum lycopersicum)",
+        "position": { "x": -2, "y": -1.6, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_chs",
+        "type": "enzyme",
+        "label": "Chalcone synthase",
+        "label_es": "Chalcona sintasa",
+        "description": "Starts the flavonoid pathway by joining building blocks into a chalcone.",
+        "description_es": "Arranca la ruta de los flavonoides uniendo piezas en una chalcona.",
+        "scientificName": "Chalcone synthase (EC 2.3.1.74)",
+        "scientificName_es": "Chalcona sintasa (EC 2.3.1.74)",
+        "position": { "x": 1.2, "y": 3, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_ans",
+        "type": "enzyme",
+        "label": "Anthocyanidin synthase",
+        "label_es": "Antocianidina sintasa",
+        "description": "Turns colourless precursors into coloured anthocyanidins.",
+        "description_es": "Convierte precursores incoloros en antocianidinas coloreadas.",
+        "scientificName": "Anthocyanidin synthase (EC 1.14.20.4)",
+        "scientificName_es": "Antocianidina sintasa (EC 1.14.20.4)",
+        "position": { "x": 1.2, "y": -1.6, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_early",
+        "type": "reaction",
+        "label": "Early flavonoid steps",
+        "label_es": "Primeros pasos de los flavonoides",
+        "description": "A series of reactions, started by chalcone synthase, that build the colourless flavonoid skeleton.",
+        "description_es": "Una serie de reacciones, que arranca la chalcona sintasa, que construyen el esqueleto incoloro de los flavonoides.",
+        "position": { "x": 4.4, "y": 3, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_colour",
+        "type": "reaction",
+        "label": "Adding the colour",
+        "label_es": "Poner el color",
+        "description": "Anthocyanidin synthase oxidizes the precursors and the pigment becomes coloured.",
+        "description_es": "La antocianidina sintasa oxida los precursores y el pigmento adquiere color.",
+        "position": { "x": 4.4, "y": -1.6, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "met_coumaroyl",
+        "type": "metabolite",
+        "label": "p-Coumaroyl-CoA",
+        "label_es": "p-Cumaroil-CoA",
+        "description": "A building block every plant makes from the amino acid phenylalanine.",
+        "description_es": "Una pieza que todas las plantas fabrican a partir del aminoácido fenilalanina.",
+        "position": { "x": 7.6, "y": 4.6, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "met_precursors",
+        "type": "metabolite",
+        "label": "Colourless precursors",
+        "label_es": "Precursores incoloros",
+        "description": "Leucoanthocyanidins: the pigment skeleton, still without colour.",
+        "description_es": "Leucoantocianidinas: el esqueleto del pigmento, todavía sin color.",
+        "scientificName": "Leucoanthocyanidins",
+        "position": { "x": 7.6, "y": 1.2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "met_anthocyanins",
+        "type": "metabolite",
+        "label": "Anthocyanins",
+        "label_es": "Antocianos",
+        "description": "Purple pigments, the same family as in blueberries and red cabbage. They are antioxidants.",
+        "description_es": "Pigmentos morados, de la misma familia que los de los arándanos y la col lombarda. Son antioxidantes.",
+        "position": { "x": 7.6, "y": -2.6, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "organelle_vacuole",
+        "type": "organelle",
+        "label": "Vacuole",
+        "label_es": "Vacuola",
+        "description": "The large sac inside plant cells where anthocyanins are stored.",
+        "description_es": "El gran saco de las células vegetales donde se guardan los antocianos.",
+        "position": { "x": 10.6, "y": 0.6, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "phenotype_purple",
+        "type": "phenotype",
+        "label": "Purple tomato",
+        "label_es": "Tomate morado",
+        "description": "Skin and flesh turn deep purple.",
+        "description_es": "La piel y la pulpa se vuelven de color morado intenso.",
+        "position": { "x": 10.6, "y": -2.6, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "met_lycopene",
+        "type": "metabolite",
+        "label": "Lycopene",
+        "label_es": "Licopeno",
+        "description": "The red pigment normal tomatoes already have. It comes from a different pathway, the carotenoids, as in Golden Rice.",
+        "description_es": "El pigmento rojo que ya tienen los tomates normales. Viene de otra ruta, la de los carotenoides, como en el Arroz Dorado.",
+        "isDistractor": true,
+        "position": { "x": 1.2, "y": -4.6, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "protein_rin",
+        "type": "protein",
+        "label": "RIN (ripening regulator)",
+        "label_es": "RIN (regulador de maduración)",
+        "description": "A tomato control protein that drives ripening: softening, sweetness and red colour. It does not switch on the anthocyanin genes.",
+        "description_es": "Una proteína de control del tomate que dirige la maduración: ablandamiento, dulzor y color rojo. No enciende los genes de los antocianos.",
+        "isDistractor": true,
+        "position": { "x": -5, "y": -3.4, "z": 0 },
+        "metadata": {}
+      }
+    ],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": ["gene_del", "gene_ros1", "protein_switch", "gene_chs", "gene_ans", "enzyme_chs", "enzyme_ans", "rxn_early", "rxn_colour", "met_coumaroyl", "met_precursors", "met_anthocyanins", "organelle_vacuole", "phenotype_purple", "met_lycopene", "protein_rin"],
+    "distractorNodes": ["met_lycopene", "protein_rin"],
+    "requiredConnections": [
+      { "id": "req_del", "sourceId": "gene_del", "targetId": "protein_switch", "edgeType": "encodes",
+        "description": "The Delila gene makes one half of the switch.",
+        "description_es": "El gen Delila fabrica una mitad del interruptor." },
+      { "id": "req_ros1", "sourceId": "gene_ros1", "targetId": "protein_switch", "edgeType": "encodes",
+        "description": "The Rosea1 gene makes the other half. Only together do they work.",
+        "description_es": "El gen Rosea1 fabrica la otra mitad. Solo funcionan juntas." },
+      { "id": "req_on_chs", "sourceId": "protein_switch", "targetId": "gene_chs", "edgeType": "regulates",
+        "description": "New idea: a protein can control a gene. The switch turns on CHS, which was silent in the fruit.",
+        "description_es": "Idea nueva: una proteína puede controlar un gen. El interruptor enciende CHS, que estaba callado en el fruto." },
+      { "id": "req_on_ans", "sourceId": "protein_switch", "targetId": "gene_ans", "edgeType": "regulates",
+        "description": "The same switch turns on ANS too. Two added genes control a whole pathway.",
+        "description_es": "El mismo interruptor enciende también ANS. Dos genes añadidos controlan una ruta entera." },
+      { "id": "req_chs", "sourceId": "gene_chs", "targetId": "enzyme_chs", "edgeType": "encodes",
+        "description": "Once switched on, CHS makes its enzyme.",
+        "description_es": "Una vez encendido, CHS fabrica su enzima." },
+      { "id": "req_ans", "sourceId": "gene_ans", "targetId": "enzyme_ans", "edgeType": "encodes",
+        "description": "ANS makes the enzyme that adds the colour.",
+        "description_es": "ANS fabrica la enzima que pone el color." },
+      { "id": "req_early_cat", "sourceId": "enzyme_chs", "targetId": "rxn_early", "edgeType": "catalyzes",
+        "description": "Chalcone synthase opens the way into the flavonoid pathway.",
+        "description_es": "La chalcona sintasa abre la puerta a la ruta de los flavonoides." },
+      { "id": "req_early_in", "sourceId": "rxn_early", "targetId": "met_coumaroyl", "edgeType": "consumes",
+        "description": "The starting material is p-coumaroyl-CoA, which the tomato already has.",
+        "description_es": "La materia prima es el p-cumaroil-CoA, que el tomate ya tiene." },
+      { "id": "req_early_out", "sourceId": "rxn_early", "targetId": "met_precursors", "edgeType": "produces",
+        "description": "The early steps build the colourless skeleton of the pigment.",
+        "description_es": "Los primeros pasos construyen el esqueleto incoloro del pigmento." },
+      { "id": "req_colour_cat", "sourceId": "enzyme_ans", "targetId": "rxn_colour", "edgeType": "catalyzes",
+        "description": "Anthocyanidin synthase runs the step that creates the colour.",
+        "description_es": "La antocianidina sintasa hace funcionar el paso que crea el color." },
+      { "id": "req_colour_in", "sourceId": "rxn_colour", "targetId": "met_precursors", "edgeType": "consumes",
+        "description": "It works on the colourless precursors.",
+        "description_es": "Trabaja sobre los precursores incoloros." },
+      { "id": "req_colour_out", "sourceId": "rxn_colour", "targetId": "met_anthocyanins", "edgeType": "produces",
+        "description": "Out come the anthocyanins: purple pigment.",
+        "description_es": "Salen los antocianos: pigmento morado." },
+      { "id": "req_purple", "sourceId": "met_anthocyanins", "targetId": "phenotype_purple", "edgeType": "influences",
+        "description": "The fruit fills with anthocyanins, as much as blueberries have, and turns purple.",
+        "description_es": "El fruto se llena de antocianos, tantos como los arándanos, y se vuelve morado." }
+    ],
+    "optionalConnections": [
+      {
+        "id": "opt_vacuole",
+        "sourceId": "met_anthocyanins",
+        "targetId": "organelle_vacuole",
+        "edgeType": "localizes_to",
+        "description": "Anthocyanins are pumped into the vacuole, where they are stored.",
+        "description_es": "Los antocianos se bombean a la vacuola, donde se almacenan.",
+        "bonusPoints": 50
+      }
+    ],
+    "invalidConnections": [
+      {
+        "sourceId": "gene_del",
+        "targetId": "enzyme_chs",
+        "reason": "Delila is not the recipe for an enzyme. It makes a control protein that switches on the tomato's own genes.",
+        "reason_es": "Delila no es la receta de una enzima. Fabrica una proteína de control que enciende los genes propios del tomate."
+      },
+      {
+        "sourceId": "protein_switch",
+        "targetId": "enzyme_chs",
+        "reason": "The switch acts on DNA, not on enzymes. Connect it to the genes it turns on.",
+        "reason_es": "El interruptor actúa sobre el ADN, no sobre las enzimas. Conéctalo con los genes que enciende."
+      },
+      {
+        "sourceId": "met_lycopene",
+        "targetId": "phenotype_purple",
+        "reason": "Lycopene is red and comes from the carotenoid pathway. Purple comes from anthocyanins.",
+        "reason_es": "El licopeno es rojo y viene de la ruta de los carotenoides. El morado viene de los antocianos."
+      },
+      {
+        "sourceId": "protein_rin",
+        "targetId": "gene_chs",
+        "reason": "RIN controls ripening, not anthocyanins. That is why normal ripe tomatoes are red, not purple.",
+        "reason_es": "RIN controla la maduración, no los antocianos. Por eso los tomates maduros normales son rojos, no morados."
+      }
+    ],
+    "winCondition": {
+      "type": "pathway_complete",
+      "targetNodeId": "phenotype_purple",
+      "requiredConnectionIds": ["req_del", "req_ros1", "req_on_chs", "req_on_ans", "req_chs", "req_ans", "req_early_cat", "req_early_in", "req_early_out", "req_colour_cat", "req_colour_in", "req_colour_out", "req_purple"],
+      "description": "Switch on the anthocyanin pathway in the fruit."
+    }
+  },
+  "simulation": {
+    "productLabel": "Anthocyanins",
+    "productLabel_es": "Antocianos",
+    "steps": [
+      { "id": "sim_ripen", "label": "Fruit ripens", "label_es": "El fruto madura", "description": "The ripening promoter turns on Delila and Rosea1.", "description_es": "El promotor de maduración enciende Delila y Rosea1.", "order": 1 },
+      { "id": "sim_switch", "label": "Switch assembles", "label_es": "Se forma el interruptor", "description": "The two proteins pair up and land on the pathway genes.", "description_es": "Las dos proteínas se emparejan y se colocan sobre los genes de la ruta.", "order": 2 },
+      { "id": "sim_genes", "label": "Genes switched on", "label_es": "Genes encendidos", "description": "CHS, ANS and the other pathway genes start working.", "description_es": "CHS, ANS y los demás genes de la ruta empiezan a funcionar.", "order": 3 },
+      { "id": "sim_flavonoids", "label": "Flavonoids", "label_es": "Flavonoides", "description": "The colourless skeleton builds up.", "description_es": "Se acumula el esqueleto incoloro.", "order": 4 },
+      { "id": "sim_colour", "label": "Colour", "label_es": "Color", "description": "ANS turns the precursors into pigment.", "description_es": "ANS convierte los precursores en pigmento.", "order": 5 },
+      { "id": "sim_purple", "label": "Purple fruit", "label_es": "Fruto morado", "description": "The vacuoles fill with anthocyanins.", "description_es": "Las vacuolas se llenan de antocianos.", "order": 6 }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "The new genes do not make enzymes: they make a switch. The switch turns on two tomato genes, and those make the enzymes.",
+      "content_es": "Los genes nuevos no fabrican enzimas: fabrican un interruptor. El interruptor enciende dos genes del tomate, y esos sí fabrican las enzimas.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Pathway order",
+      "title_es": "Orden de la ruta",
+      "content": "Delila + Rosea1 → switch → CHS and ANS genes → their enzymes. CHS: p-coumaroyl-CoA → colourless precursors. ANS: precursors → anthocyanins → purple.",
+      "content_es": "Delila + Rosea1 → interruptor → genes CHS y ANS → sus enzimas. CHS: p-cumaroil-CoA → precursores incoloros. ANS: precursores → antocianos → morado.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Guided solution",
+      "title_es": "Solución guiada",
+      "content": "Delila gene and Rosea1 gene–Switch; Switch–CHS gene and Switch–ANS gene; CHS gene–Chalcone synthase; ANS gene–Anthocyanidin synthase; Chalcone synthase–Early flavonoid steps; Early steps–p-Coumaroyl-CoA and Early steps–Colourless precursors; Anthocyanidin synthase–Adding the colour; Adding the colour–Colourless precursors and Adding the colour–Anthocyanins; Anthocyanins–Purple tomato.",
+      "content_es": "Gen Delila y gen Rosea1–Interruptor; Interruptor–Gen CHS e Interruptor–Gen ANS; Gen CHS–Chalcona sintasa; Gen ANS–Antocianidina sintasa; Chalcona sintasa–Primeros pasos; Primeros pasos–p-Cumaroil-CoA y Primeros pasos–Precursores incoloros; Antocianidina sintasa–Poner el color; Poner el color–Precursores incoloros y Poner el color–Antocianos; Antocianos–Tomate morado.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A purple tomato",
+    "title_es": "Un tomate morado",
+    "summary": "You did not add a single enzyme. You added a switch, and it woke up genes the tomato already had. Controlling genes is as powerful as adding new ones.",
+    "summary_es": "No has añadido ni una sola enzima. Has añadido un interruptor, y ha despertado genes que el tomate ya tenía. Controlar genes es tan potente como añadir genes nuevos.",
+    "realWorldImpact": "The purple tomato has as many anthocyanins as blueberries. In mice prone to cancer, a diet with these tomatoes extended lifespan, and the fruit also lasts longer after ripening. It went on sale in the United States in 2024.",
+    "realWorldImpact_es": "El tomate morado tiene tantos antocianos como los arándanos. En ratones propensos al cáncer, una dieta con estos tomates alargó su vida, y además el fruto dura más tiempo tras madurar. Salió a la venta en Estados Unidos en 2024."
+  },
+  "science": {
+    "organism": "Solanum lycopersicum expressing Antirrhinum majus Del and Ros1",
+    "realWorldCase": "In 2008 Cathie Martin's group at the John Innes Centre (UK) published the purple tomato. In 2022 the US Department of Agriculture cleared it, and it reached US shops in 2024.",
+    "realWorldCase_es": "En 2008 el grupo de Cathie Martin en el John Innes Centre (Reino Unido) publicó el tomate morado. En 2022 el Departamento de Agricultura de EE. UU. dio su visto bueno y llegó a las tiendas estadounidenses en 2024.",
+    "scientificContext": "Delila (bHLH) and Rosea1 (MYB) are transcription factors that, with a WD40 protein, form a complex that activates anthocyanin biosynthesis genes. Expressed from the fruit-specific E8 promoter, they turn on CHS, CHI, F3H, F3'5'H, DFR, ANS and glycosyltransferases in the tomato fruit, which accumulates anthocyanins in its vacuoles.",
+    "scientificContext_es": "Delila (bHLH) y Rosea1 (MYB) son factores de transcripción que, junto a una proteína WD40, forman un complejo que activa los genes de síntesis de antocianos. Expresados con el promotor E8, específico del fruto, encienden CHS, CHI, F3H, F3'5'H, DFR, ANS y glicosiltransferasas en el tomate, que acumula antocianos en sus vacuolas.",
+    "gameplaySimplifications": [
+      "The switch turns on many genes; the game shows only CHS and ANS.",
+      "Several reactions between the chalcone and the coloured pigment are merged into two steps.",
+      "Anthocyanins also need sugars attached (glycosylation) to be stable; the game skips it."
+    ],
+    "gameplaySimplifications_es": [
+      "El interruptor enciende muchos genes; el juego solo muestra CHS y ANS.",
+      "Varias reacciones entre la chalcona y el pigmento coloreado se juntan en dos pasos.",
+      "Los antocianos también necesitan que se les unan azúcares (glicosilación) para ser estables; el juego se lo salta."
+    ],
+    "references": [
+      {
+        "authors": ["Butelli E", "Titta L", "Giorgio M", "Mock HP", "Matros A", "Peterek S", "Schijlen EGWM", "Hall RD", "Bovy AG", "Luo J", "Martin C"],
+        "year": 2008,
+        "title": "Enrichment of tomato fruit with health-promoting anthocyanins by expression of select transcription factors",
+        "journal": "Nature Biotechnology",
+        "doi": "10.1038/nbt.1506",
+        "type": "paper"
+      }
+    ]
+  }
+}

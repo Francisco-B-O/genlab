@@ -1,0 +1,20 @@
+{
+  "id": "oryza-sativa",
+  "commonName": "Rice",
+  "scientificName": "Oryza sativa",
+  "taxonomy": ["Plantae", "Tracheophyta", "Liliopsida", "Poales", "Poaceae", "Oryza"],
+  "description": "Oryza sativa is the most widely cultivated rice species, a staple crop for more than half the world's population. Rice endosperm stores starch and proteins but lacks the carotenoid biosynthesis pathway, making it a target for nutritional engineering.",
+  "genomeInfo": {
+    "size_Mb": 389,
+    "chromosomes": 12,
+    "geneCount": 32000,
+    "ploidy": "diploid"
+  },
+  "relevantTissues": ["endosperm", "aleurone", "leaf", "root"],
+  "metabolicHighlights": {
+    "starchBiosynthesis": true,
+    "chlorophyllPresent": false,
+    "carotenoidPathway": false,
+    "vitaminA": false
+  }
+}

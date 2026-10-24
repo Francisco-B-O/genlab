@@ -1,0 +1,173 @@
+{
+  "id": "asm-2",
+  "mode": "assemble",
+  "title": "A longer gene",
+  "title_es": "Un gen más largo",
+  "subtitle": "Five pieces to chain",
+  "subtitle_es": "Cinco trozos que encadenar",
+  "difficulty": "beginner",
+  "estimatedDuration": 5,
+  "objective": "Chain five fragments, one after another, until the whole gene appears.",
+  "objective_es": "Encadena cinco fragmentos, uno tras otro, hasta que aparezca el gen completo.",
+  "description": "Machines read DNA in short pieces, never all at once. Neighbouring pieces share a few letters, and that overlap shows how to put them back together.",
+  "description_es": "Las máquinas leen el ADN en trozos cortos, nunca de una vez. Los trozos vecinos comparten unas letras, y ese solape indica cómo volver a unirlos.",
+  "organism": {
+    "id": "dna-pieces",
+    "commonName": "DNA read in pieces",
+    "commonName_es": "ADN leído en trozos",
+    "scientificName": "Genome assembly",
+    "scientificName_es": "Ensamblaje de genomas",
+    "taxonomy": [
+      "Method"
+    ],
+    "targetTissue": "nucleus",
+    "targetOrganelle": "nucleus",
+    "description": "A sequence rebuilt from many short, overlapping pieces.",
+    "description_es": "Una secuencia reconstruida a partir de muchos trozos cortos que se solapan."
+  },
+  "exploration": [
+    {
+      "kind": "dna",
+      "label": "Reads",
+      "label_es": "Lecturas",
+      "title": "Only short pieces",
+      "title_es": "Solo trozos cortos",
+      "description": "A sequencing machine reads only a few hundred letters at a time, so long DNA is first broken into many short pieces.",
+      "description_es": "Una máquina de secuenciar lee solo unos cientos de letras cada vez, así que el ADN largo se rompe antes en muchos trozos cortos."
+    },
+    {
+      "kind": "dna",
+      "label": "Overlaps",
+      "label_es": "Solapes",
+      "title": "Neighbours share letters",
+      "title_es": "Los vecinos comparten letras",
+      "description": "The pieces are cut at random, so they overlap. Where the end of one matches the start of another, they must be neighbours.",
+      "description_es": "Los trozos se cortan al azar, así que se solapan. Donde el final de uno coincide con el principio de otro, son vecinos."
+    }
+  ],
+  "assemble": {
+    "sequence": "ATGTACTCACTTATGTCGGACATTATTGGTGGGGCTATTG",
+    "fragments": [
+      "ATGTACTCACTTAT",
+      "TTATGTCGGA",
+      "CGGACATTATTGG",
+      "TTGGTGGGG",
+      "GGGGCTATTG"
+    ],
+    "minOverlap": 4,
+    "story": "Five reads of the same gene. Each one overlaps the next.",
+    "story_es": "Cinco lecturas del mismo gen. Cada una se solapa con la siguiente."
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Sequence",
+    "productLabel_es": "Secuencia",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Reads",
+        "label_es": "Lecturas",
+        "description": "The DNA is broken into short pieces.",
+        "description_es": "El ADN se rompe en trozos cortos.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Overlaps",
+        "label_es": "Solapes",
+        "description": "The software finds the letters shared by neighbours.",
+        "description_es": "El programa encuentra las letras que comparten los vecinos.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Sequence",
+        "label_es": "Secuencia",
+        "description": "The pieces are chained into the whole sequence.",
+        "description_es": "Los trozos se encadenan en la secuencia completa.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Look for the letters that repeat at the end of one fragment and at the start of another.",
+      "content_es": "Busca las letras que se repiten al final de un fragmento y al principio de otro.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Start with the fragment that begins with ATG, then look for the one that starts with the last letters of the previous one.",
+      "content_es": "Empieza por el fragmento que comienza con ATG y busca el que arranca con las últimas letras del anterior.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "The order is: ATGTACTCACTTAT → TTATGTCGGA → CGGACATTATTGG → TTGGTGGGG → GGGGCTATTG.",
+      "content_es": "El orden es: ATGTACTCACTTAT → TTATGTCGGA → CGGACATTATTGG → TTGGTGGGG → GGGGCTATTG.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "Puzzle solved",
+    "title_es": "Rompecabezas resuelto",
+    "summary": "You rebuilt a sequence from overlapping pieces. Sequencing machines do exactly this with millions of pieces.",
+    "summary_es": "Has reconstruido una secuencia a partir de trozos que se solapan. Las máquinas de secuenciar hacen exactamente esto con millones de trozos.",
+    "realWorldImpact": "Every genome ever read, from bacteria to people, was put together this way, with computers doing the matching.",
+    "realWorldImpact_es": "Todos los genomas leídos, de bacterias a personas, se montaron así, con ordenadores haciendo las comparaciones."
+  },
+  "science": {
+    "organism": "Genome assembly",
+    "realWorldCase": "In 1977 Frederick Sanger's team read the first complete DNA genome, the virus φX174, about 5,400 letters long. Today genomes are read by breaking the DNA into short random pieces and letting computers put them back in order.",
+    "realWorldCase_es": "En 1977 el equipo de Frederick Sanger leyó el primer genoma de ADN completo, el del virus φX174, de unas 5 400 letras. Hoy los genomas se leen rompiendo el ADN en trozos cortos al azar y dejando que los ordenadores los pongan en orden.",
+    "scientificContext": "A sequencer produces millions of short reads. Software finds the overlaps between them and chains them into longer stretches until the whole genome is rebuilt.",
+    "scientificContext_es": "Un secuenciador produce millones de lecturas cortas. Un programa encuentra los solapes entre ellas y las encadena en tramos más largos hasta reconstruir el genoma entero.",
+    "gameplaySimplifications": [
+      "The fragments here have 8 to 14 letters; real reads have hundreds.",
+      "Real assembly also has to deal with reading errors and with both strands of the DNA."
+    ],
+    "gameplaySimplifications_es": [
+      "Los fragmentos de aquí tienen de 8 a 14 letras; las lecturas reales tienen cientos.",
+      "El ensamblaje real también tiene que lidiar con errores de lectura y con las dos hebras del ADN."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Sanger, F.",
+          "Air, G. M.",
+          "Barrell, B. G.",
+          "Brown, N. L.",
+          "Coulson, A. R."
+        ],
+        "year": 1977,
+        "title": "Nucleotide sequence of bacteriophage φX174 DNA",
+        "journal": "Nature",
+        "doi": "10.1038/265687a0",
+        "type": "paper"
+      }
+    ]
+  }
+}

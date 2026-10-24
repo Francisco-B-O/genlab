@@ -1,0 +1,224 @@
+{
+  "id": "inh-dogs",
+  "mode": "inherit",
+  "title": "Short coat or long coat",
+  "title_es": "Pelo corto o pelo largo",
+  "subtitle": "Dogs and a recessive allele",
+  "subtitle_es": "Perros y un alelo recesivo",
+  "difficulty": "beginner",
+  "estimatedDuration": 5,
+  "objective": "Fill in the Punnett squares for the coat length of dogs: short is dominant and long needs two long alleles.",
+  "objective_es": "Rellena los cuadros de Punnett de la longitud del pelo de los perros: el corto es dominante y el largo necesita dos alelos largos.",
+  "description": "In many dog breeds, long hair comes from a recessive allele of one gene.",
+  "description_es": "En muchas razas de perro el pelo largo viene de un alelo recesivo de un gen.",
+  "organism": {
+    "id": "canis-familiaris",
+    "commonName": "Dog",
+    "commonName_es": "Perro",
+    "scientificName": "Canis familiaris",
+    "taxonomy": [
+      "Animalia",
+      "Chordata",
+      "Mammalia",
+      "Carnivora",
+      "Canidae",
+      "Canis"
+    ],
+    "targetTissue": "skin",
+    "targetOrganelle": "cytoplasm",
+    "description": "A domestic animal with hundreds of breeds.",
+    "description_es": "Un animal doméstico con cientos de razas."
+  },
+  "exploration": [
+    {
+      "kind": "dna",
+      "label": "Breeds",
+      "label_es": "Razas",
+      "title": "Hundreds of breeds",
+      "title_es": "Cientos de razas",
+      "description": "Dog breeds were made by choosing which animals have puppies. Many traits follow simple rules of inheritance.",
+      "description_es": "Las razas de perro se crearon eligiendo qué animales tienen cachorros. Muchos rasgos siguen reglas sencillas de herencia."
+    },
+    {
+      "kind": "dna",
+      "label": "Coat",
+      "label_es": "Pelo",
+      "title": "One gene, two lengths",
+      "title_es": "Un gen, dos longitudes",
+      "description": "A gene that helps stop hair growth has a version that works less: with two of those versions, the hair grows long.",
+      "description_es": "Un gen que ayuda a frenar el crecimiento del pelo tiene una versión que funciona menos: con dos de esas versiones el pelo crece largo."
+    }
+  ],
+  "inherit": {
+    "trait": "Coat length",
+    "trait_es": "Longitud del pelo",
+    "alleles": [
+      "L",
+      "l"
+    ],
+    "phenotypes": {
+      "LL": "short",
+      "Ll": "short",
+      "ll": "long"
+    },
+    "phenotypeLabels": {
+      "short": "Short coat",
+      "short_es": "Pelo corto",
+      "long": "Long coat",
+      "long_es": "Pelo largo"
+    },
+    "scenarios": [
+      {
+        "id": "s1",
+        "parent1": "Ll",
+        "parent2": "Ll",
+        "parent1Label": "Short coat, carries l",
+        "parent1Label_es": "Pelo corto, lleva l",
+        "parent2Label": "Short coat, carries l",
+        "parent2Label_es": "Pelo corto, lleva l",
+        "question": "Two short-haired dogs that both carry l have puppies. What is the probability of a long-haired puppy?",
+        "question_es": "Dos perros de pelo corto que llevan l los dos tienen cachorros. ¿Qué probabilidad hay de un cachorro de pelo largo?",
+        "target": "long",
+        "explanation": "Only the ll cell is long: 25%. Two short-haired parents can have a long-haired puppy.",
+        "explanation_es": "Solo la casilla ll es de pelo largo: 25 %. Dos padres de pelo corto pueden tener un cachorro de pelo largo."
+      },
+      {
+        "id": "s2",
+        "parent1": "Ll",
+        "parent2": "ll",
+        "parent1Label": "Short coat, carries l",
+        "parent1Label_es": "Pelo corto, lleva l",
+        "parent2Label": "Long coat",
+        "parent2Label_es": "Pelo largo",
+        "question": "A short-haired dog that carries l and a long-haired dog have puppies. What is the probability of a long-haired puppy?",
+        "question_es": "Un perro de pelo corto que lleva l y uno de pelo largo tienen cachorros. ¿Qué probabilidad hay de un cachorro de pelo largo?",
+        "target": "long",
+        "explanation": "Two cells are ll (long) and two are Ll (short): 50% each.",
+        "explanation_es": "Dos casillas son ll (largo) y dos son Ll (corto): 50 % cada una."
+      },
+      {
+        "id": "s3",
+        "parent1": "ll",
+        "parent2": "ll",
+        "parent1Label": "Long coat",
+        "parent1Label_es": "Pelo largo",
+        "parent2Label": "Long coat",
+        "parent2Label_es": "Pelo largo",
+        "question": "Two long-haired dogs have puppies. What is the probability of a long-haired puppy?",
+        "question_es": "Dos perros de pelo largo tienen cachorros. ¿Qué probabilidad hay de un cachorro de pelo largo?",
+        "target": "long",
+        "explanation": "Both can only pass on l, so all four cells are ll: 100%.",
+        "explanation_es": "Los dos solo pueden dar l, así que las cuatro casillas son ll: 100 %."
+      }
+    ]
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Probability",
+    "productLabel_es": "Probabilidad",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Parents",
+        "label_es": "Progenitores",
+        "description": "Each gives one allele.",
+        "description_es": "Cada uno da un alelo.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Square",
+        "label_es": "Cuadro",
+        "description": "All combinations.",
+        "description_es": "Todas las combinaciones.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Trait",
+        "label_es": "Rasgo",
+        "description": "Read the result.",
+        "description_es": "Lee el resultado.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Fill the square first; then read the coat of each cell.",
+      "content_es": "Rellena primero el cuadro; luego lee el pelo de cada casilla.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "L is dominant: LL and Ll are short. Only ll is long.",
+      "content_es": "L es dominante: LL y Ll son de pelo corto. Solo ll es de pelo largo.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Count the cells with the coat asked about: each is worth 25%.",
+      "content_es": "Cuenta las casillas del pelo por el que preguntan: cada una vale un 25 %.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "Surprises in the litter",
+    "title_es": "Sorpresas en la camada",
+    "summary": "You saw why two parents with the same coat can have a puppy with a different one: they both hid an allele.",
+    "summary_es": "Has visto por qué dos padres con el mismo pelo pueden tener un cachorro con otro: los dos escondían un alelo.",
+    "realWorldImpact": "Breeders and vets use this reasoning to predict traits in a litter.",
+    "realWorldImpact_es": "Criadores y veterinarios usan este razonamiento para predecir rasgos en una camada."
+  },
+  "science": {
+    "organism": "Canis familiaris",
+    "realWorldCase": "The main gene for coat length in dogs is FGF5. Long hair is linked to a change in this gene that works less well.",
+    "realWorldCase_es": "El principal gen de la longitud del pelo en perros es FGF5. El pelo largo se asocia a un cambio en este gen que funciona peor.",
+    "scientificContext": "The FGF5 protein signals hair follicles to stop growing. A less active version lets hair grow longer.",
+    "scientificContext_es": "La proteína FGF5 indica a los folículos del pelo que dejen de crecer. Una versión menos activa deja que el pelo crezca más.",
+    "gameplaySimplifications": [
+      "Some breeds have more than one gene affecting coat; this level follows only one."
+    ],
+    "gameplaySimplifications_es": [
+      "Algunas razas tienen más de un gen que afecta al pelo; este nivel sigue solo uno."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Cadieu, E.",
+          "Neff, M. W.",
+          "Quignon, P.",
+          "et al."
+        ],
+        "year": 2009,
+        "title": "Coat variation in the domestic dog is governed by variants in three genes",
+        "journal": "Science",
+        "doi": "10.1126/science.1177808",
+        "type": "paper"
+      }
+    ]
+  }
+}

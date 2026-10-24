@@ -1,0 +1,328 @@
+{
+  "id": "tune-compost",
+  "mode": "tune",
+  "title": "A heap that gets hot",
+  "title_es": "Un montón que se calienta",
+  "subtitle": "Food scraps, water, size and air",
+  "subtitle_es": "Restos de comida, agua, tamaño y aire",
+  "difficulty": "intermediate",
+  "estimatedDuration": 6,
+  "objective": "Choose the settings of a compost heap to reach the temperature that kills weed seeds, without going over budget.",
+  "objective_es": "Elige los ajustes de un montón de compost para llegar a la temperatura que mata las semillas de malas hierbas, sin pasarte del presupuesto.",
+  "description": "A compost heap is a city of microbes. When they eat well and breathe well they give off heat, and the heap warms up. You decide what to put in, how wet to keep it, how big to make it and how often to turn it.",
+  "description_es": "Un montón de compost es una ciudad de microbios. Cuando comen bien y respiran bien desprenden calor, y el montón se calienta. Tú decides qué echar, cuánta humedad darle, qué tamaño le das y cada cuánto lo remueves.",
+  "organism": {
+    "id": "compost-heap",
+    "commonName": "Microbes of the compost",
+    "commonName_es": "Microbios del compost",
+    "scientificName": "Compost microbes",
+    "taxonomy": [
+      "Bacteria",
+      "Fungi"
+    ],
+    "targetTissue": "compost heap",
+    "targetOrganelle": "cytoplasm",
+    "description": "Bacteria and fungi that break down plant waste.",
+    "description_es": "Bacterias y hongos que descomponen restos vegetales."
+  },
+  "exploration": [
+    {
+      "kind": "plant",
+      "label": "The recipe",
+      "label_es": "La receta",
+      "title": "Wet scraps and dry leaves",
+      "title_es": "Restos húmedos y hojas secas",
+      "description": "Food scraps are rich in nitrogen and wet; dry leaves are rich in carbon. Microbes grow best on a mix of both.",
+      "description_es": "Los restos de comida son ricos en nitrógeno y húmedos; las hojas secas son ricas en carbono. Los microbios crecen mejor con una mezcla de las dos cosas."
+    },
+    {
+      "kind": "bacterium",
+      "label": "The heat",
+      "label_es": "El calor",
+      "title": "Microbes are little stoves",
+      "title_es": "Los microbios son estufas pequeñas",
+      "description": "As microbes break down the waste, they give off heat. In a good heap the middle reaches 55 °C or more, which kills many weed seeds and germs.",
+      "description_es": "Al descomponer los restos, los microbios desprenden calor. En un buen montón el centro llega a 55 °C o más, lo que mata muchas semillas de malas hierbas y gérmenes."
+    }
+  ],
+  "tune": {
+    "metricLabel": "Temperature",
+    "metricLabel_es": "Temperatura",
+    "unit": "°C",
+    "unit_es": "°C",
+    "base": 20,
+    "target": 55,
+    "budget": 5,
+    "labels": {
+      "perCell": "Heat per microbe",
+      "perCell_es": "Calor por microbio",
+      "growth": "Microbe health",
+      "growth_es": "Salud de los microbios"
+    },
+    "messages": {
+      "lowGrowth": "The microbes are struggling: the heap is too wet, too dry, or short of air.",
+      "lowGrowth_es": "Los microbios sufren: el montón está demasiado húmedo, demasiado seco o le falta aire.",
+      "lowPerCell": "The heap does not warm up enough: it needs a better mix or a bigger size to keep its heat.",
+      "lowPerCell_es": "El montón no se calienta lo bastante: necesita una mezcla mejor o más tamaño para guardar su calor."
+    },
+    "knobs": [
+      {
+        "id": "mix",
+        "label": "What goes in",
+        "label_es": "Qué se echa",
+        "options": [
+          {
+            "id": "scraps",
+            "label": "Only food scraps",
+            "label_es": "Solo restos de comida",
+            "description": "Rich in food, but wet and packed: it goes smelly.",
+            "description_es": "Ricos en comida, pero húmedos y apelmazados: huele mal.",
+            "cost": 0,
+            "perCell": 1.2,
+            "growth": 0.6
+          },
+          {
+            "id": "mixed",
+            "label": "Scraps and dry leaves",
+            "label_es": "Restos y hojas secas",
+            "description": "A balanced mix of nitrogen and carbon.",
+            "description_es": "Una mezcla equilibrada de nitrógeno y carbono.",
+            "cost": 1,
+            "perCell": 1.6,
+            "growth": 1
+          },
+          {
+            "id": "leaves",
+            "label": "Only dry leaves",
+            "label_es": "Solo hojas secas",
+            "description": "Plenty of carbon, little nitrogen: very slow.",
+            "description_es": "Mucho carbono y poco nitrógeno: muy lento.",
+            "cost": 0,
+            "perCell": 0.9,
+            "growth": 0.9
+          }
+        ]
+      },
+      {
+        "id": "water",
+        "label": "Water",
+        "label_es": "Agua",
+        "options": [
+          {
+            "id": "dry",
+            "label": "Dry",
+            "label_es": "Seco",
+            "description": "Microbes need water: they go to sleep.",
+            "description_es": "Los microbios necesitan agua: se duermen.",
+            "cost": 0,
+            "perCell": 1,
+            "growth": 0.55
+          },
+          {
+            "id": "sponge",
+            "label": "Like a wrung-out sponge",
+            "label_es": "Como una esponja escurrida",
+            "description": "Damp, with air in the gaps.",
+            "description_es": "Húmedo, con aire en los huecos.",
+            "cost": 1,
+            "perCell": 1.25,
+            "growth": 1
+          },
+          {
+            "id": "soaked",
+            "label": "Soaked",
+            "label_es": "Empapado",
+            "description": "The water fills the gaps and the air cannot get in.",
+            "description_es": "El agua llena los huecos y no entra el aire.",
+            "cost": 0,
+            "perCell": 1,
+            "growth": 0.55
+          }
+        ]
+      },
+      {
+        "id": "size",
+        "label": "Size of the heap",
+        "label_es": "Tamaño del montón",
+        "options": [
+          {
+            "id": "small",
+            "label": "A small heap",
+            "label_es": "Un montón pequeño",
+            "description": "It loses its heat to the air.",
+            "description_es": "Pierde su calor en el aire.",
+            "cost": 0,
+            "perCell": 0.8,
+            "growth": 1
+          },
+          {
+            "id": "bin",
+            "label": "A bin of about 1 m³",
+            "label_es": "Un compostador de 1 m³ aprox.",
+            "description": "Big enough to keep a good part of its heat.",
+            "description_es": "Lo bastante grande para guardar buena parte de su calor.",
+            "cost": 1,
+            "perCell": 1.3,
+            "growth": 1
+          },
+          {
+            "id": "huge",
+            "label": "A huge heap",
+            "label_es": "Un montón enorme",
+            "description": "Keeps its heat very well, but needs a lot of work.",
+            "description_es": "Guarda muy bien el calor, pero da mucho trabajo.",
+            "cost": 2,
+            "perCell": 1.7,
+            "growth": 1
+          }
+        ]
+      },
+      {
+        "id": "air",
+        "label": "Turning",
+        "label_es": "Remover",
+        "options": [
+          {
+            "id": "never",
+            "label": "Never turned",
+            "label_es": "Sin remover",
+            "description": "The air in the middle runs out.",
+            "description_es": "Se acaba el aire del centro.",
+            "cost": 0,
+            "perCell": 1,
+            "growth": 0.6
+          },
+          {
+            "id": "weekly",
+            "label": "Turned every week",
+            "label_es": "Removido cada semana",
+            "description": "Fresh air gets in without cooling the heap too much.",
+            "description_es": "Entra aire fresco sin enfriar demasiado el montón.",
+            "cost": 1,
+            "perCell": 1.1,
+            "growth": 1
+          },
+          {
+            "id": "daily",
+            "label": "Turned every day",
+            "label_es": "Removido cada día",
+            "description": "Lots of air, but the heap cools down each time.",
+            "description_es": "Mucho aire, pero el montón se enfría cada vez.",
+            "cost": 2,
+            "perCell": 1.15,
+            "growth": 0.85
+          }
+        ]
+      }
+    ]
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Temperature",
+    "productLabel_es": "Temperatura",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Mix",
+        "label_es": "Mezcla",
+        "description": "Food for the microbes.",
+        "description_es": "Comida para los microbios.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Heat up",
+        "label_es": "Calentarse",
+        "description": "The microbes give off heat.",
+        "description_es": "Los microbios desprenden calor.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Compost",
+        "label_es": "Compost",
+        "description": "The waste becomes soil.",
+        "description_es": "Los restos se convierten en tierra.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Think about what the microbes need: food in the right mix, water without flooding, air, and a heap big enough to keep its heat.",
+      "content_es": "Piensa en lo que necesitan los microbios: comida en la mezcla justa, agua sin encharcar, aire y un montón lo bastante grande para guardar su calor.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Scraps alone, dry heaps, soaked heaps and heaps that are never turned all stress the microbes. Keep the budget in mind: size costs effort.",
+      "content_es": "Los restos solos, los montones secos, los empapados y los que nunca se remueven estresan a los microbios. Ten presente el presupuesto: el tamaño cuesta esfuerzo.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "A mix of scraps and leaves, damp like a sponge, in a bin of about one cubic metre, turned every week, reaches the target.",
+      "content_es": "Una mezcla de restos y hojas, húmeda como una esponja, en un compostador de un metro cúbico, removida cada semana, llega al objetivo.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A heap in balance",
+    "title_es": "Un montón en equilibrio",
+    "summary": "You balanced four settings: food, water, size and air, each with a good side and a drawback.",
+    "summary_es": "Has equilibrado cuatro ajustes: comida, agua, tamaño y aire, cada uno con su lado bueno y su inconveniente.",
+    "realWorldImpact": "Cities and farms compost food waste on a large scale, which keeps it out of landfills, where it would make methane, and gives back soil for gardens and fields.",
+    "realWorldImpact_es": "Ciudades y granjas compostan restos de comida a gran escala, lo que evita que acaben en vertederos, donde producirían metano, y devuelve tierra para huertos y campos."
+  },
+  "science": {
+    "organism": "Compost microbes",
+    "realWorldCase": "Studies of composting have shown how the settings of a heap, such as the balance of carbon and nitrogen, the moisture and the aeration, change how stable and mature the final compost is.",
+    "realWorldCase_es": "Los estudios sobre el compostaje han mostrado cómo los ajustes de un montón, como el equilibrio entre carbono y nitrógeno, la humedad y la aireación, cambian lo estable y maduro que resulta el compost final.",
+    "scientificContext": "Composting goes through phases: first warm microbes, then heat-loving ones that take the heap above 50 °C, and finally a cooling phase in which fungi and other microbes finish the job.",
+    "scientificContext_es": "El compostaje pasa por fases: primero microbios que viven a temperatura templada, luego otros amantes del calor que llevan el montón por encima de 50 °C, y por último una fase de enfriamiento en la que hongos y otros microbios terminan el trabajo.",
+    "gameplaySimplifications": [
+      "The numbers are illustrative. A real heap depends on the weather and the exact materials."
+    ],
+    "gameplaySimplifications_es": [
+      "Los números son ilustrativos. Un montón real depende del clima y de los materiales exactos."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Guo, R.",
+          "Li, G.",
+          "Jiang, T.",
+          "et al."
+        ],
+        "year": 2012,
+        "title": "Effect of aeration rate, C/N ratio and moisture content on the stability and maturity of compost",
+        "journal": "Bioresource Technology",
+        "type": "paper",
+        "doi": "10.1016/j.biortech.2012.02.099"
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "lycopene-cyclase",
+  "name": "Lycopene beta-cyclase",
+  "gene": "lyc",
+  "ecNumber": "5.5.1.19",
+  "scientificName": "OsLCYB (Oryza sativa lycopene beta-cyclase)",
+  "function": "Cyclizes both ends of the linear lycopene molecule to form two beta-ionone rings, producing beta-carotene. Endogenous rice gene upregulated when lycopene substrate becomes available.",
+  "reaction": {
+    "substrates": ["lycopene"],
+    "products": ["beta-carotene"],
+    "cofactors": []
+  },
+  "subcellularLocation": "plastid",
+  "molecularWeight_kDa": 51
+}

@@ -1,0 +1,174 @@
+{
+  "id": "mut-crispr-edit",
+  "mode": "mutation",
+  "title": "What a CRISPR cut leaves behind",
+  "title_es": "Lo que deja un corte de CRISPR",
+  "subtitle": "One extra letter, and the gene is off",
+  "subtitle_es": "Una letra de más y el gen se apaga",
+  "difficulty": "intermediate",
+  "estimatedDuration": 6,
+  "objective": "Find the extra letter in the changed gene and say what it does to the protein.",
+  "objective_es": "Encuentra la letra que sobra en el gen cambiado y di qué le hace a la proteína.",
+  "description": "A letter added or lost does not change one amino acid: it moves the place where the letters are cut into groups of three, so everything after it is read differently. Compare the two sequences from the start.",
+  "description_es": "Una letra añadida o perdida no cambia un solo aminoácido: mueve el sitio donde las letras se cortan en grupos de tres, así que todo lo que viene después se lee de otra manera. Compara las dos secuencias desde el principio.",
+  "organism": {
+    "id": "crispr-indel",
+    "commonName": "A gene edited with CRISPR",
+    "commonName_es": "Un gen editado con CRISPR",
+    "scientificName": "Genome editing",
+    "taxonomy": [
+      "Method"
+    ],
+    "targetTissue": "nucleus",
+    "targetOrganelle": "nucleus",
+    "description": "A stretch of a plant gene after a Cas9 cut and its repair.",
+    "description_es": "Un trozo de un gen de planta después de un corte de Cas9 y de su reparación."
+  },
+  "exploration": [
+    {
+      "kind": "dna",
+      "label": "The cut",
+      "label_es": "El corte",
+      "title": "Cas9 cuts, the cell repairs",
+      "title_es": "Cas9 corta, la célula repara",
+      "description": "The cell repairs the cut quickly and not always perfectly. Most often it adds or removes a few letters at the cut.",
+      "description_es": "La célula repara el corte deprisa y no siempre de forma perfecta. Lo más habitual es que añada o quite unas pocas letras en el corte."
+    },
+    {
+      "kind": "plant",
+      "label": "The effect",
+      "label_es": "El efecto",
+      "title": "A gene that no longer works",
+      "title_es": "Un gen que ya no funciona",
+      "description": "If the number of letters added or lost is not a multiple of three, the reading shifts and the protein is lost. This is how researchers switch genes off.",
+      "description_es": "Si el número de letras añadidas o perdidas no es múltiplo de tres, la lectura se desplaza y se pierde la proteína. Así es como los investigadores apagan genes."
+    }
+  ],
+  "mutation": {
+    "geneLabel": "Gene of a plant after a CRISPR cut (illustrative)",
+    "geneLabel_es": "Gen de una planta tras un corte de CRISPR (ilustrativo)",
+    "reference": "ATGAAGCAGGACTGGGAATTC",
+    "mutant": "ATGAAGCAGTGACTGGGAATTC",
+    "story": "A real way of switching a gene off, with an invented sequence. After Cas9 cuts the DNA, the cell glues the ends back together and often adds or loses a single letter. That shifts the reading of everything that follows. Look at the edited plant.",
+    "story_es": "Una forma real de apagar un gen, con una secuencia inventada. Después de que Cas9 corte el ADN, la célula vuelve a pegar los extremos y a menudo añade o pierde una sola letra. Eso desplaza la lectura de todo lo que viene después. Mira la planta editada.",
+    "explanations": {
+      "silent": "Not here: the reading itself moves.",
+      "silent_es": "Aquí no: la propia lectura se desplaza.",
+      "missense": "Not here: more than one amino acid is affected.",
+      "missense_es": "Aquí no: se ve afectado más de un aminoácido.",
+      "nonsense": "Not quite: the stop comes because the reading moved, and what moved is the whole message.",
+      "nonsense_es": "No exactamente: la parada llega porque la lectura se movió, y lo que se movió es todo el mensaje.",
+      "frameshift": "An extra T after the third codon moved the reading frame. GAC became TGA, a stop, and the rest of the message is read in the wrong groups. That is how a single-letter repair after a CRISPR cut can switch a gene off.",
+      "frameshift_es": "Una T de más después del tercer codón movió la pauta de lectura. GAC pasó a TGA, una parada, y el resto del mensaje se lee en grupos equivocados. Así es como una reparación de una sola letra tras un corte de CRISPR puede apagar un gen."
+    }
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Effect",
+    "productLabel_es": "Efecto",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Compare",
+        "label_es": "Comparar",
+        "description": "Find the changed letter.",
+        "description_es": "Encuentra la letra cambiada.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Translate",
+        "label_es": "Traducir",
+        "description": "Read the codons.",
+        "description_es": "Lee los codones.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Effect",
+        "label_es": "Efecto",
+        "description": "Decide what it does.",
+        "description_es": "Decide qué hace.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Read both rows from the start and stop where they stop agreeing.",
+      "content_es": "Lee las dos filas desde el principio y detente donde dejan de coincidir.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "The changed gene is one letter longer than the original. The extra letter is in the fourth group of the changed gene.",
+      "content_es": "El gen cambiado es una letra más largo que el original. La letra de más está en el cuarto grupo del gen cambiado.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Tap the T of the fourth group. The effect is a frameshift.",
+      "content_es": "Toca la T del cuarto grupo. El efecto es un cambio de pauta de lectura.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A shifted message",
+    "title_es": "Un mensaje desplazado",
+    "summary": "You found an extra letter and saw how it shifts the groups of three after it, until a stop codon cuts the protein short.",
+    "summary_es": "Has encontrado una letra de más y has visto cómo desplaza los grupos de tres que vienen detrás, hasta que un codón de fin corta la proteína.",
+    "realWorldImpact": "Switching genes off this way is the basis of many gene-edited crops and animals, and also of the research that learns what each gene does.",
+    "realWorldImpact_es": "Apagar genes de esta manera es la base de muchos cultivos y animales editados, y también de la investigación que averigua qué hace cada gen."
+  },
+  "science": {
+    "organism": "Genome editing",
+    "realWorldCase": "In 2018 a study of thousands of CRISPR cuts in human cells showed that the repair is not random: for each place that is cut, a particular kind of repair, very often a one-letter insertion, is the most frequent.",
+    "realWorldCase_es": "En 2018 un estudio de miles de cortes de CRISPR en células humanas mostró que la reparación no es aleatoria: para cada sitio cortado, un tipo concreto de reparación, muy a menudo una inserción de una letra, es el más frecuente.",
+    "scientificContext": "A frameshift changes every codon after the change. Most often the new reading soon meets a stop codon, so the protein is short and useless.",
+    "scientificContext_es": "Un cambio de pauta modifica todos los codones que vienen después. Lo más habitual es que la nueva lectura se encuentre pronto con un codón de fin, así que la proteína es corta e inútil.",
+    "gameplaySimplifications": [
+      "The real change is the one described, but the sequence is an invented short example, and the real change can be of more than one letter."
+    ],
+    "gameplaySimplifications_es": [
+      "El cambio real es el que se describe, pero la secuencia es un ejemplo corto inventado, y el cambio real puede ser de más de una letra."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Shen, M. W.",
+          "Arbab, M.",
+          "Hsu, J. Y.",
+          "et al."
+        ],
+        "year": 2018,
+        "title": "Predictable and precise template-free CRISPR editing of pathogenic variants",
+        "journal": "Nature",
+        "type": "paper",
+        "doi": "10.1038/s41586-018-0686-x"
+      }
+    ]
+  }
+}

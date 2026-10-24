@@ -1,0 +1,965 @@
+{
+  "id": "golden-rice",
+  "title": "Golden Rice",
+  "subtitle": "Provitamin A in the rice grain",
+  "difficulty": "intermediate",
+  "estimatedDuration": 15,
+  "objective": "Reconstruct the carotenoid biosynthesis pathway in rice endosperm to produce beta-carotene (provitamin A).",
+  "description": "Rice endosperm lacks the carotenoid pathway. By introducing genes from daffodil (psy) and bacteria (crtI), scientists engineered rice to produce beta-carotene in the grain. Your task is to connect the correct genes, enzymes, reactions, and metabolites to complete this pathway.",
+  "organism": {
+    "id": "oryza-sativa-golden",
+    "commonName": "Golden Rice",
+    "scientificName": "Oryza sativa (engineered)",
+    "scientificName_es": "Oryza sativa (modificado)",
+    "taxonomy": [
+      "Plantae",
+      "Tracheophyta",
+      "Liliopsida",
+      "Poales",
+      "Poaceae",
+      "Oryza"
+    ],
+    "targetTissue": "endosperm",
+    "targetOrganelle": "plastid",
+    "description": "Golden Rice is a transgenic variety of Oryza sativa engineered to express the carotenoid biosynthesis pathway in the endosperm, which normally lacks this pathway. The grain accumulates beta-carotene, giving it a characteristic golden color.",
+    "commonName_es": "Arroz Dorado",
+    "description_es": "Variedad transgénica de Oryza sativa que produce betacaroteno en el endospermo, que normalmente no tiene esta ruta. El grano lo acumula y por eso tiene color dorado."
+  },
+  "biologicalContext": {
+    "pathwayDescription": "The carotenoid biosynthesis pathway in the rice endosperm plastid converts geranylgeranyl pyrophosphate (GGPP) through a series of enzymatic steps to produce beta-carotene. This requires three key enzymatic activities: phytoene synthase (PSY), phytoene desaturase (crtI, from Erwinia uredovora), and lycopene beta-cyclase (LYC).",
+    "nodes": [
+      {
+        "id": "gene_psy",
+        "type": "gene",
+        "label": "psy Gene (Phytoene Synthase)",
+        "label_es": "Gen PSY (fitoeno sintasa)",
+        "description": "Phytoene synthase gene from Narcissus pseudonarcissus (daffodil). Encodes the enzyme that catalyzes the first committed step in carotenoid biosynthesis: condensation of two GGPP molecules to form phytoene.",
+        "description_es": "Gen de la daffodil (Narcissus pseudonarcissus) que codifica la enzima fitoeno sintasa, primer paso de la ruta de carotenoides.",
+        "scientificName": "NpPSY (Narcissus pseudonarcissus phytoene synthase)",
+        "scientificName_es": "NpPSY (fitoeno sintasa de Narcissus pseudonarcissus)",
+        "isDistractor": false,
+        "position": {
+          "x": -8,
+          "y": 2.6,
+          "z": 0
+        },
+        "metadata": {
+          "origin": "Narcissus pseudonarcissus",
+          "introduced_by": "Ye et al. 2000",
+          "promoter": "endosperm-specific",
+          "accession": "X78814"
+        }
+      },
+      {
+        "id": "gene_crti",
+        "type": "gene",
+        "label": "crtI Gene (Carotene Desaturase)",
+        "label_es": "Gen CrtI (caroteno desaturasa)",
+        "description": "Carotene desaturase gene from Erwinia uredovora (now Pantoea ananatis). A bacterial gene that performs four desaturation steps in a single enzyme, converting phytoene to lycopene.",
+        "description_es": "Gen bacteriano de Pantoea ananatis que codifica la fitoeno desaturasa, realizando 4 pasos de desaturación en un solo enzima.",
+        "scientificName": "EuCrtI (Erwinia uredovora carotene desaturase)",
+        "scientificName_es": "EuCrtI (caroteno desaturasa de Erwinia uredovora)",
+        "isDistractor": false,
+        "position": {
+          "x": -8,
+          "y": 0,
+          "z": 0
+        },
+        "metadata": {
+          "origin": "Erwinia uredovora (Pantoea ananatis)",
+          "introduced_by": "Ye et al. 2000",
+          "accession": "X68058",
+          "function": "4-step desaturation: phytoene to lycopene"
+        }
+      },
+      {
+        "id": "gene_lyc",
+        "type": "gene",
+        "label": "lyc Gene (Lycopene Cyclase)",
+        "label_es": "Gen LYC (licopeno ciclasa)",
+        "description": "Lycopene beta-cyclase gene (endogenous rice gene). Encodes the enzyme that cyclizes lycopene to form alpha- and beta-carotene.",
+        "description_es": "Gen endógeno del arroz que codifica la licopeno β-ciclasa, convirtiendo licopeno en beta-caroteno.",
+        "scientificName": "OsLCYB (Oryza sativa lycopene beta-cyclase)",
+        "scientificName_es": "OsLCYB (licopeno β-ciclasa de Oryza sativa)",
+        "isDistractor": false,
+        "position": {
+          "x": -8,
+          "y": -2.6,
+          "z": 0
+        },
+        "metadata": {
+          "origin": "Oryza sativa",
+          "note": "Endogenous gene upregulated when lycopene substrate becomes available",
+          "accession": "AB194679"
+        }
+      },
+      {
+        "id": "enzyme_psy",
+        "type": "enzyme",
+        "label": "Phytoene Synthase (PSY)",
+        "label_es": "Fitoeno sintasa (PSY)",
+        "description": "The enzyme encoded by the psy gene. Catalyzes the condensation of two GGPP molecules to produce phytoene. This is the rate-limiting step in carotenoid biosynthesis.",
+        "description_es": "Enzima que cataliza la condensación de dos moléculas de GGPP para formar fitoeno, el primer carotenoide de la ruta.",
+        "scientificName": "Phytoene synthase (EC 2.5.1.32)",
+        "scientificName_es": "Fitoeno sintasa (EC 2.5.1.32)",
+        "isDistractor": false,
+        "position": {
+          "x": -4.5,
+          "y": 2.6,
+          "z": 0
+        },
+        "metadata": {
+          "ec_number": "2.5.1.32",
+          "cofactors": [
+            "Mg2+",
+            "pyrophosphate"
+          ],
+          "subcellular_location": "plastid"
+        }
+      },
+      {
+        "id": "enzyme_crti",
+        "type": "enzyme",
+        "label": "Carotene Desaturase (CrtI)",
+        "label_es": "Fitoeno desaturasa (CrtI)",
+        "description": "The bacterial enzyme encoded by crtI. A flavoprotein that performs four consecutive desaturation reactions on phytoene, producing lycopene in a single multifunctional enzyme.",
+        "description_es": "Enzima bacteriana que realiza cuatro reacciones de desaturación, convirtiendo fitoeno en licopeno.",
+        "scientificName": "Phytoene desaturase, bacterial (EC 1.3.99.28)",
+        "scientificName_es": "Fitoeno desaturasa bacteriana (EC 1.3.99.28)",
+        "isDistractor": false,
+        "position": {
+          "x": -4.5,
+          "y": 0,
+          "z": 0
+        },
+        "metadata": {
+          "ec_number": "1.3.99.28",
+          "cofactors": [
+            "FAD",
+            "NAD+"
+          ],
+          "subcellular_location": "plastid",
+          "steps": 4
+        }
+      },
+      {
+        "id": "enzyme_lyc",
+        "type": "enzyme",
+        "label": "Lycopene Beta-Cyclase (LYC)",
+        "label_es": "Licopeno β-ciclasa (LYC)",
+        "description": "The enzyme encoded by the lyc gene. Catalyzes the cyclization of both ends of the lycopene molecule, converting linear lycopene into cyclic beta-carotene.",
+        "description_es": "Enzima que cicla los extremos del licopeno para formar β-caroteno, el precursor de la vitamina A.",
+        "scientificName": "Lycopene beta-cyclase (EC 5.5.1.19)",
+        "scientificName_es": "Licopeno β-ciclasa (EC 5.5.1.19)",
+        "isDistractor": false,
+        "position": {
+          "x": -4.5,
+          "y": -2.6,
+          "z": 0
+        },
+        "metadata": {
+          "ec_number": "5.5.1.19",
+          "subcellular_location": "plastid",
+          "product": "beta-carotene"
+        }
+      },
+      {
+        "id": "met_ggpp",
+        "type": "metabolite",
+        "label": "GGPP (Geranylgeranyl Pyrophosphate)",
+        "label_es": "GGPP (geranilgeranil pirofosfato)",
+        "description": "Geranylgeranyl pyrophosphate (GGPP) — the universal C20 isoprenoid precursor present in the plastid. Starting substrate for carotenoid biosynthesis.",
+        "description_es": "Precursor de 20 carbonos del que parten todos los carotenoides en la célula vegetal.",
+        "scientificName": "Geranylgeranyl pyrophosphate (C20H33O7P2-)",
+        "isDistractor": false,
+        "position": {
+          "x": 2.6,
+          "y": 4,
+          "z": 0
+        },
+        "metadata": {
+          "molecular_formula": "C20H36O7P2",
+          "pathway": "MEP/plastidic isoprenoid pathway",
+          "carbon_count": 20
+        }
+      },
+      {
+        "id": "met_phytoene",
+        "type": "metabolite",
+        "label": "Phytoene",
+        "label_es": "Fitoeno",
+        "description": "15-cis-Phytoene — the first dedicated carotenoid. A colorless C40 carotene formed by condensation of two GGPP molecules.",
+        "description_es": "Primer carotenoide de la ruta, incoloro, precursor de todos los carotenoides coloreados.",
+        "scientificName": "15-cis-Phytoene (C40H64)",
+        "isDistractor": false,
+        "position": {
+          "x": 2.6,
+          "y": 1.3,
+          "z": 0
+        },
+        "metadata": {
+          "molecular_formula": "C40H64",
+          "carbon_count": 40,
+          "double_bonds": 3,
+          "color": "colorless"
+        }
+      },
+      {
+        "id": "met_lycopene",
+        "type": "metabolite",
+        "label": "Lycopene",
+        "label_es": "Licopeno",
+        "description": "All-trans-lycopene — a red C40 carotenoid with 11 conjugated double bonds. Immediate precursor to beta-carotene.",
+        "description_es": "Carotenoide rojo con 11 dobles enlaces conjugados. Precursor directo del β-caroteno.",
+        "scientificName": "All-trans-lycopene (C40H56)",
+        "isDistractor": false,
+        "position": {
+          "x": 2.6,
+          "y": -1.3,
+          "z": 0
+        },
+        "metadata": {
+          "molecular_formula": "C40H56",
+          "carbon_count": 40,
+          "double_bonds": 11,
+          "color": "red"
+        }
+      },
+      {
+        "id": "met_beta_carotene",
+        "type": "metabolite",
+        "label": "Beta-Carotene (Provitamin A)",
+        "label_es": "β-Caroteno (Provitamina A)",
+        "description": "Beta-carotene — the orange C40 carotenoid with two beta-ionone rings. Provitamin A: cleaved to yield retinal (vitamin A).",
+        "description_es": "Carotenoide naranja que el cuerpo humano convierte en vitamina A. El objetivo del Arroz Dorado.",
+        "scientificName": "Beta-carotene (C40H56), provitamin A",
+        "isDistractor": false,
+        "position": {
+          "x": 2.6,
+          "y": -4,
+          "z": 0
+        },
+        "metadata": {
+          "molecular_formula": "C40H56",
+          "carbon_count": 40,
+          "double_bonds": 11,
+          "color": "orange",
+          "vitamin_a_equivalent": 2,
+          "significance": "Provitamin A — cleaved to retinal by human BCO1 enzyme"
+        }
+      },
+      {
+        "id": "rxn_phytoene_synthesis",
+        "type": "reaction",
+        "label": "Phytoene Synthesis",
+        "label_es": "Síntesis de fitoeno",
+        "description": "Condensation of 2 × GGPP → phytoene + 2 × pyrophosphate. The first committed step in carotenoid biosynthesis.",
+        "description_es": "Reacción de condensación: 2× GGPP → Fitoeno, catalizada por PSY.",
+        "isDistractor": false,
+        "position": {
+          "x": -1,
+          "y": 2.6,
+          "z": 0
+        },
+        "metadata": {
+          "reaction_type": "condensation",
+          "stoichiometry": "2 GGPP → phytoene + 2 PPi",
+          "energy": "exergonic"
+        }
+      },
+      {
+        "id": "rxn_desaturation",
+        "type": "reaction",
+        "label": "Phytoene Desaturation",
+        "label_es": "Desaturación del fitoeno",
+        "description": "Four sequential desaturation steps converting phytoene to lycopene, all catalyzed by the bacterial CrtI enzyme.",
+        "description_es": "Serie de 4 desaturaciones: Fitoeno → Licopeno, catalizada por CrtI.",
+        "isDistractor": false,
+        "position": {
+          "x": -1,
+          "y": 0,
+          "z": 0
+        },
+        "metadata": {
+          "reaction_type": "desaturation",
+          "steps": 4,
+          "cofactor": "FAD",
+          "stoichiometry": "phytoene + 4 NAD+ → lycopene + 4 NADH"
+        }
+      },
+      {
+        "id": "rxn_cyclization",
+        "type": "reaction",
+        "label": "Lycopene Cyclization",
+        "label_es": "Ciclación del licopeno",
+        "description": "Cyclization of both ends of lycopene to form beta-carotene. Each cyclization converts a linear end-group into a beta-ionone ring.",
+        "description_es": "Ciclación de extremos: Licopeno → β-Caroteno, catalizada por LYC.",
+        "isDistractor": false,
+        "position": {
+          "x": -1,
+          "y": -2.6,
+          "z": 0
+        },
+        "metadata": {
+          "reaction_type": "cyclization",
+          "stoichiometry": "lycopene → beta-carotene",
+          "energy": "slightly endergonic"
+        }
+      },
+      {
+        "id": "phenotype_golden_grain",
+        "type": "phenotype",
+        "label": "Golden Grain",
+        "label_es": "Grano dorado",
+        "description": "The visible phenotype of Golden Rice: endosperm accumulates beta-carotene, giving the grain a golden-orange color.",
+        "description_es": "Fenotipo objetivo: endospermo de arroz con coloración amarilla-naranja por acumulación de β-caroteno.",
+        "isDistractor": false,
+        "position": {
+          "x": 6.5,
+          "y": -4,
+          "z": 0
+        },
+        "metadata": {
+          "beta_carotene_content_ugperg": 35,
+          "color": "golden-orange",
+          "nutritional_significance": "Addresses vitamin A deficiency in rice-dependent populations"
+        }
+      },
+      {
+        "id": "organelle_plastid",
+        "type": "organelle",
+        "label": "Endosperm Plastid",
+        "label_es": "Amiloplasto",
+        "description": "The amyloplast (plastid) of the rice endosperm. Normally devoid of carotenoid biosynthetic enzymes, it contains the precursor GGPP from the MEP pathway.",
+        "description_es": "Orgánulo del endospermo donde se acumula almidón y donde opera la ruta de carotenoides en el Arroz Dorado.",
+        "isDistractor": false,
+        "position": {
+          "x": -1,
+          "y": 5.2,
+          "z": 0
+        },
+        "metadata": {
+          "plastid_type": "amyloplast",
+          "tissue": "endosperm",
+          "mep_pathway_active": true
+        }
+      },
+      {
+        "id": "gene_chlorophyll_synthase",
+        "type": "gene",
+        "label": "CHLG (Chlorophyll Synthase)",
+        "label_es": "Clorofila sintasa",
+        "description": "Chlorophyll synthase gene. Encodes an enzyme in the chlorophyll biosynthesis pathway, not the carotenoid pathway.",
+        "description_es": "Enzima del cloroplasto que sintetiza clorofila. No participa en la ruta de carotenoides del endospermo.",
+        "isDistractor": true,
+        "position": {
+          "x": -8,
+          "y": 5.2,
+          "z": 0
+        },
+        "metadata": {
+          "pathway": "chlorophyll biosynthesis",
+          "tissue_expression": "green tissues (leaf, stem)",
+          "distractor_reason": "Chlorophyll synthesis is irrelevant to carotenoid pathway in endosperm"
+        }
+      },
+      {
+        "id": "gene_waxy",
+        "type": "gene",
+        "label": "Waxy (GBSS)",
+        "label_es": "Almidón sintasa (Waxy)",
+        "description": "Waxy gene (Granule-Bound Starch Synthase). Encodes the enzyme responsible for amylose synthesis. Not related to carotenoid biosynthesis.",
+        "description_es": "Enzima que produce almidón en los amiloplastos. Es la función principal del endospermo, no parte de la ruta de carotenoides.",
+        "isDistractor": true,
+        "position": {
+          "x": -8,
+          "y": -5.2,
+          "z": 0
+        },
+        "metadata": {
+          "pathway": "starch biosynthesis",
+          "product": "amylose",
+          "distractor_reason": "Starch synthesis is unrelated to carotenoid pathway"
+        }
+      },
+      {
+        "id": "met_glutelin",
+        "type": "metabolite",
+        "label": "Glutelin",
+        "label_es": "Proteína de reserva (glutelina)",
+        "description": "Glutelin — the major storage protein of rice endosperm. Not related to carotenoid biosynthesis.",
+        "description_es": "Proteína de almacenamiento típica del endospermo del arroz (glutelinas). No está relacionada con la síntesis de carotenoides.",
+        "isDistractor": true,
+        "position": {
+          "x": 6.5,
+          "y": 1.3,
+          "z": 0
+        },
+        "metadata": {
+          "protein_class": "storage protein",
+          "subcellular_location": "protein storage vacuole",
+          "distractor_reason": "Storage proteins are unrelated to carotenoid pathway"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "ref_psy_encodes_enzyme_psy",
+        "source": "gene_psy",
+        "target": "enzyme_psy",
+        "type": "encodes",
+        "label": "encodes",
+        "isRequired": true
+      },
+      {
+        "id": "ref_crti_encodes_enzyme_crti",
+        "source": "gene_crti",
+        "target": "enzyme_crti",
+        "type": "encodes",
+        "label": "encodes",
+        "isRequired": true
+      },
+      {
+        "id": "ref_lyc_encodes_enzyme_lyc",
+        "source": "gene_lyc",
+        "target": "enzyme_lyc",
+        "type": "encodes",
+        "label": "encodes",
+        "isRequired": true
+      },
+      {
+        "id": "ref_enzyme_psy_catalyzes_rxn_phytoene",
+        "source": "enzyme_psy",
+        "target": "rxn_phytoene_synthesis",
+        "type": "catalyzes",
+        "label": "catalyzes",
+        "isRequired": true
+      },
+      {
+        "id": "ref_enzyme_crti_catalyzes_rxn_desat",
+        "source": "enzyme_crti",
+        "target": "rxn_desaturation",
+        "type": "catalyzes",
+        "label": "catalyzes",
+        "isRequired": true
+      },
+      {
+        "id": "ref_enzyme_lyc_catalyzes_rxn_cyclize",
+        "source": "enzyme_lyc",
+        "target": "rxn_cyclization",
+        "type": "catalyzes",
+        "label": "catalyzes",
+        "isRequired": true
+      },
+      {
+        "id": "ref_rxn_phytoene_consumes_ggpp",
+        "source": "rxn_phytoene_synthesis",
+        "target": "met_ggpp",
+        "type": "consumes",
+        "label": "consumes",
+        "isRequired": true
+      },
+      {
+        "id": "ref_rxn_phytoene_produces_phytoene",
+        "source": "rxn_phytoene_synthesis",
+        "target": "met_phytoene",
+        "type": "produces",
+        "label": "produces",
+        "isRequired": true
+      },
+      {
+        "id": "ref_rxn_desat_consumes_phytoene",
+        "source": "rxn_desaturation",
+        "target": "met_phytoene",
+        "type": "consumes",
+        "label": "consumes",
+        "isRequired": true
+      },
+      {
+        "id": "ref_rxn_desat_produces_lycopene",
+        "source": "rxn_desaturation",
+        "target": "met_lycopene",
+        "type": "produces",
+        "label": "produces",
+        "isRequired": true
+      },
+      {
+        "id": "ref_rxn_cyclize_consumes_lycopene",
+        "source": "rxn_cyclization",
+        "target": "met_lycopene",
+        "type": "consumes",
+        "label": "consumes",
+        "isRequired": true
+      },
+      {
+        "id": "ref_rxn_cyclize_produces_beta_carotene",
+        "source": "rxn_cyclization",
+        "target": "met_beta_carotene",
+        "type": "produces",
+        "label": "produces",
+        "isRequired": true
+      },
+      {
+        "id": "ref_beta_carotene_influences_phenotype",
+        "source": "met_beta_carotene",
+        "target": "phenotype_golden_grain",
+        "type": "influences",
+        "label": "influences",
+        "isRequired": true
+      }
+    ]
+  },
+  "puzzle": {
+    "availableNodes": [
+      "gene_psy",
+      "gene_crti",
+      "gene_lyc",
+      "enzyme_psy",
+      "enzyme_crti",
+      "enzyme_lyc",
+      "met_ggpp",
+      "met_phytoene",
+      "met_lycopene",
+      "met_beta_carotene",
+      "rxn_phytoene_synthesis",
+      "rxn_desaturation",
+      "rxn_cyclization",
+      "phenotype_golden_grain",
+      "organelle_plastid",
+      "gene_chlorophyll_synthase",
+      "gene_waxy",
+      "met_glutelin"
+    ],
+    "distractorNodes": [
+      "gene_chlorophyll_synthase",
+      "gene_waxy",
+      "met_glutelin"
+    ],
+    "requiredConnections": [
+      {
+        "id": "req_psy_encodes",
+        "sourceId": "gene_psy",
+        "targetId": "enzyme_psy",
+        "edgeType": "encodes",
+        "description": "The psy gene encodes phytoene synthase enzyme",
+        "description_es": "El gen psy, del narciso, fabrica la enzima fitoeno sintasa."
+      },
+      {
+        "id": "req_crti_encodes",
+        "sourceId": "gene_crti",
+        "targetId": "enzyme_crti",
+        "edgeType": "encodes",
+        "description": "The crtI gene encodes carotene desaturase enzyme",
+        "description_es": "El gen bacteriano crtI fabrica la caroteno desaturasa."
+      },
+      {
+        "id": "req_lyc_encodes",
+        "sourceId": "gene_lyc",
+        "targetId": "enzyme_lyc",
+        "edgeType": "encodes",
+        "description": "The lyc gene encodes lycopene beta-cyclase enzyme",
+        "description_es": "El gen lyc del propio arroz fabrica la licopeno β-ciclasa."
+      },
+      {
+        "id": "req_psy_catalyzes",
+        "sourceId": "enzyme_psy",
+        "targetId": "rxn_phytoene_synthesis",
+        "edgeType": "catalyzes",
+        "description": "Phytoene synthase catalyzes the phytoene synthesis reaction",
+        "description_es": "La fitoeno sintasa hace funcionar la síntesis de fitoeno: el paso que el arroz tenía bloqueado."
+      },
+      {
+        "id": "req_crti_catalyzes",
+        "sourceId": "enzyme_crti",
+        "targetId": "rxn_desaturation",
+        "edgeType": "catalyzes",
+        "description": "CrtI catalyzes the 4-step desaturation reaction",
+        "description_es": "CrtI hace funcionar la desaturación en 4 pasos; en las plantas harían falta dos enzimas."
+      },
+      {
+        "id": "req_lyc_catalyzes",
+        "sourceId": "enzyme_lyc",
+        "targetId": "rxn_cyclization",
+        "edgeType": "catalyzes",
+        "description": "Lycopene beta-cyclase catalyzes the cyclization reaction",
+        "description_es": "La licopeno β-ciclasa cierra los extremos del licopeno en anillos."
+      },
+      {
+        "id": "req_phytoene_rxn_consumes_ggpp",
+        "sourceId": "rxn_phytoene_synthesis",
+        "targetId": "met_ggpp",
+        "edgeType": "consumes",
+        "description": "Phytoene synthesis reaction consumes GGPP",
+        "description_es": "La síntesis de fitoeno usa dos moléculas de GGPP."
+      },
+      {
+        "id": "req_phytoene_rxn_produces_phytoene",
+        "sourceId": "rxn_phytoene_synthesis",
+        "targetId": "met_phytoene",
+        "edgeType": "produces",
+        "description": "Phytoene synthesis reaction produces phytoene",
+        "description_es": "El resultado es el fitoeno, el primer carotenoide, todavía incoloro."
+      },
+      {
+        "id": "req_desat_rxn_consumes_phytoene",
+        "sourceId": "rxn_desaturation",
+        "targetId": "met_phytoene",
+        "edgeType": "consumes",
+        "description": "Desaturation reaction consumes phytoene",
+        "description_es": "La desaturación parte del fitoeno."
+      },
+      {
+        "id": "req_desat_rxn_produces_lycopene",
+        "sourceId": "rxn_desaturation",
+        "targetId": "met_lycopene",
+        "edgeType": "produces",
+        "description": "Desaturation reaction produces lycopene",
+        "description_es": "Cuatro desaturaciones después aparece el licopeno, de color rojo."
+      },
+      {
+        "id": "req_cyclize_consumes_lycopene",
+        "sourceId": "rxn_cyclization",
+        "targetId": "met_lycopene",
+        "edgeType": "consumes",
+        "description": "Cyclization reaction consumes lycopene",
+        "description_es": "La ciclación usa el licopeno."
+      },
+      {
+        "id": "req_cyclize_produces_beta_carotene",
+        "sourceId": "rxn_cyclization",
+        "targetId": "met_beta_carotene",
+        "edgeType": "produces",
+        "description": "Cyclization reaction produces beta-carotene",
+        "description_es": "Al cerrar los anillos se obtiene betacaroteno, la provitamina A."
+      },
+      {
+        "id": "req_beta_carotene_phenotype",
+        "sourceId": "met_beta_carotene",
+        "targetId": "phenotype_golden_grain",
+        "edgeType": "influences",
+        "description": "Beta-carotene accumulation produces the golden grain phenotype",
+        "description_es": "El betacaroteno acumulado da al grano su color dorado."
+      }
+    ],
+    "optionalConnections": [
+      {
+        "id": "opt_psy_localizes",
+        "sourceId": "enzyme_psy",
+        "targetId": "organelle_plastid",
+        "edgeType": "localizes_to",
+        "description": "Phytoene synthase is targeted to the plastid",
+        "bonusPoints": 50,
+        "description_es": "La fitoeno sintasa se dirige al plasto."
+      },
+      {
+        "id": "opt_crti_localizes",
+        "sourceId": "enzyme_crti",
+        "targetId": "organelle_plastid",
+        "edgeType": "localizes_to",
+        "description": "Carotene desaturase localizes to the plastid",
+        "bonusPoints": 50,
+        "description_es": "La caroteno desaturasa trabaja dentro del plasto."
+      },
+      {
+        "id": "opt_ggpp_localizes",
+        "sourceId": "met_ggpp",
+        "targetId": "organelle_plastid",
+        "edgeType": "localizes_to",
+        "description": "GGPP is produced in the plastid via the MEP pathway",
+        "bonusPoints": 50,
+        "description_es": "El GGPP se produce en el plasto por la ruta MEP."
+      }
+    ],
+    "invalidConnections": [
+      {
+        "sourceId": "gene_psy",
+        "targetId": "met_phytoene",
+        "reason": "Genes encode enzymes, not metabolites. The psy gene encodes the PSY enzyme, which then catalyzes the reaction producing phytoene.",
+        "reason_es": "Los genes fabrican enzimas, no moléculas. El gen psy fabrica la enzima PSY, que hace funcionar la reacción que produce fitoeno."
+      },
+      {
+        "sourceId": "met_ggpp",
+        "targetId": "met_phytoene",
+        "reason": "Metabolites don't directly transform into other metabolites. A reaction node catalyzed by PSY enzyme mediates this conversion.",
+        "reason_es": "Una molécula no se transforma en otra sola. Entre el GGPP y el fitoeno hace falta una reacción, que hace funcionar la enzima PSY."
+      },
+      {
+        "sourceId": "gene_chlorophyll_synthase",
+        "targetId": "rxn_phytoene_synthesis",
+        "reason": "Chlorophyll synthase operates in the chlorophyll pathway, not the carotenoid pathway.",
+        "reason_es": "La clorofila sintasa pertenece a la ruta de la clorofila, no a la de los carotenoides."
+      }
+    ],
+    "winCondition": {
+      "type": "metabolite_produced",
+      "targetNodeId": "met_beta_carotene",
+      "requiredConnectionIds": [
+        "req_psy_encodes",
+        "req_crti_encodes",
+        "req_lyc_encodes",
+        "req_psy_catalyzes",
+        "req_crti_catalyzes",
+        "req_lyc_catalyzes",
+        "req_phytoene_rxn_consumes_ggpp",
+        "req_phytoene_rxn_produces_phytoene",
+        "req_desat_rxn_consumes_phytoene",
+        "req_desat_rxn_produces_lycopene",
+        "req_cyclize_consumes_lycopene",
+        "req_cyclize_produces_beta_carotene",
+        "req_beta_carotene_phenotype"
+      ],
+      "description": "Complete the carotenoid pathway from GGPP to beta-carotene in the endosperm plastid."
+    }
+  },
+  "simulation": {
+    "steps": [
+      {
+        "id": "sim_gene_expression",
+        "label": "Gene Transcription",
+        "description": "The psy and crtI transgenes are transcribed under endosperm-specific promoters. mRNA accumulates in the endosperm cells.",
+        "order": 1,
+        "label_es": "Transcripción de los genes",
+        "description_es": "Los transgenes psy y crtI se leen en el endospermo."
+      },
+      {
+        "id": "sim_enzyme_translation",
+        "label": "Enzyme Production",
+        "description": "Ribosomes translate the mRNA into PSY and CrtI proteins. Transit peptides direct them to the plastid.",
+        "order": 2,
+        "label_es": "Fabricar las enzimas",
+        "description_es": "Los ribosomas fabrican PSY y CrtI, que viajan al plasto."
+      },
+      {
+        "id": "sim_ggpp_available",
+        "label": "GGPP Pool Active",
+        "description": "The MEP pathway in the plastid provides GGPP substrate. GGPP levels are sufficient to initiate carotenoid synthesis.",
+        "order": 3,
+        "label_es": "GGPP disponible",
+        "description_es": "La ruta MEP del plasto aporta GGPP."
+      },
+      {
+        "id": "sim_phytoene_synthesis",
+        "label": "Phytoene Synthesis",
+        "description": "PSY condenses two GGPP molecules into phytoene. The colorless phytoene begins accumulating in the plastid.",
+        "order": 4,
+        "label_es": "Síntesis de fitoeno",
+        "description_es": "PSY une dos GGPP en fitoeno, que empieza a acumularse."
+      },
+      {
+        "id": "sim_desaturation",
+        "label": "Desaturation Cascade",
+        "description": "CrtI performs four desaturation steps, converting phytoene through phytofluene, zeta-carotene, and neurosporene to the red lycopene.",
+        "order": 5,
+        "label_es": "Desaturación",
+        "description_es": "CrtI convierte el fitoeno en licopeno rojo en cuatro pasos."
+      },
+      {
+        "id": "sim_cyclization",
+        "label": "Lycopene Cyclization",
+        "description": "Endogenous lycopene beta-cyclase (LYC) cyclizes lycopene into beta-carotene. The orange pigment begins to accumulate.",
+        "order": 6,
+        "label_es": "Ciclación",
+        "description_es": "La LYC del arroz convierte el licopeno en betacaroteno naranja."
+      },
+      {
+        "id": "sim_golden_phenotype",
+        "label": "Golden Grain Phenotype",
+        "description": "Beta-carotene accumulates in the endosperm, producing the characteristic golden-orange color. The grain contains provitamin A.",
+        "order": 7,
+        "label_es": "Grano dorado",
+        "description_es": "El betacaroteno se acumula y el grano se vuelve dorado."
+      }
+    ],
+    "productLabel": "Beta-carotene",
+    "productLabel_es": "Betacaroteno"
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "content": "The carotenoid pathway has three stages: gene expression, enzymatic reactions, and metabolite transformation. Start by connecting each gene to its corresponding enzyme. Remember: genes encode proteins (enzymes), enzymes catalyze reactions, and reactions consume and produce metabolites.",
+      "revealedNodes": [],
+      "revealedConnections": [],
+      "pointCost": 50,
+      "title_es": "Idea general",
+      "content_es": "La ruta tiene tres tramos: genes que fabrican enzimas, enzimas que hacen funcionar reacciones, y reacciones que transforman moléculas. Empieza conectando cada gen con su enzima."
+    },
+    {
+      "level": 2,
+      "title": "Pathway order",
+      "content": "The pathway flows in this order: GGPP → Phytoene → Lycopene → Beta-Carotene. Three enzymes are needed: PSY (makes phytoene from GGPP), CrtI (makes lycopene from phytoene in 4 steps), and LYC (makes beta-carotene from lycopene). Each enzyme is encoded by its respective gene: psy → PSY, crtI → CrtI, lyc → LYC.",
+      "revealedNodes": [
+        "met_ggpp",
+        "met_phytoene",
+        "met_lycopene",
+        "met_beta_carotene"
+      ],
+      "revealedConnections": [],
+      "pointCost": 100,
+      "title_es": "Orden de la ruta",
+      "content_es": "El orden es GGPP → fitoeno → licopeno → betacaroteno. Hacen falta tres enzimas: PSY (de GGPP a fitoeno), CrtI (de fitoeno a licopeno) y LYC (de licopeno a betacaroteno). Cada una la fabrica su gen: psy → PSY, crtI → CrtI, lyc → LYC."
+    },
+    {
+      "level": 3,
+      "title": "Guided solution",
+      "content": "Genes: psy–PSY, crtI–CrtI, lyc–LYC. Enzymes: PSY–Phytoene synthesis, CrtI–Phytoene desaturation, LYC–Lycopene cyclization. Reactions: phytoene synthesis uses GGPP and produces phytoene; desaturation uses phytoene and produces lycopene; cyclization uses lycopene and produces beta-carotene. Finally, Beta-carotene–Golden grain.",
+      "revealedNodes": [],
+      "revealedConnections": [
+        "req_psy_encodes",
+        "req_crti_encodes",
+        "req_lyc_encodes"
+      ],
+      "pointCost": 150,
+      "title_es": "Solución guiada",
+      "content_es": "Genes: psy–PSY, crtI–CrtI, lyc–LYC. Enzimas: PSY–Síntesis de fitoeno, CrtI–Desaturación del fitoeno, LYC–Ciclación del licopeno. Reacciones: la síntesis de fitoeno usa GGPP y produce fitoeno; la desaturación usa fitoeno y produce licopeno; la ciclación usa licopeno y produce betacaroteno. Por último, Betacaroteno–Grano dorado."
+    }
+  ],
+  "completion": {
+    "title": "Golden grain",
+    "summary": "You have successfully reconstructed the carotenoid biosynthesis pathway in rice endosperm. By connecting the three key transgenes (psy from daffodil, crtI from bacteria) to their enzymatic machinery, and tracing the metabolic flow from GGPP to beta-carotene, you've modeled the genetic engineering breakthrough of Golden Rice.",
+    "realWorldImpact": "Vitamin A deficiency affects over 190 million children under 5 worldwide, causing preventable blindness and increased mortality. Golden Rice, which accumulated up to 35 μg beta-carotene per gram in GR2E varieties, could provide a significant portion of daily vitamin A needs for populations that rely on rice as a staple food.",
+    "title_es": "Grano dorado",
+    "summary_es": "Has reconstruido la ruta de los carotenoides en el endospermo del arroz: tres genes (psy del narciso, crtI de una bacteria y lyc del propio arroz) y el recorrido del GGPP hasta el betacaroteno. Es el mismo diseño del Arroz Dorado real.",
+    "realWorldImpact_es": "La carencia de vitamina A afecta a millones de niños en el mundo y causa ceguera evitable y más mortalidad. El Arroz Dorado GR2E acumula hasta unos 35 µg de betacaroteno por gramo y podría cubrir buena parte de la vitamina A diaria en poblaciones que viven del arroz."
+  },
+  "science": {
+    "organism": "Oryza sativa (Golden Rice engineered varieties GR1 and GR2E)",
+    "realWorldCase": "Golden Rice is a real transgenic crop developed to address vitamin A deficiency (VAD) in populations dependent on rice. The first version (GR1) was published in 2000 by Ye et al. in Science. An improved version (GR2E, using only the Narcissus psy gene) was developed and has received food safety approvals in Australia, New Zealand, Canada, and the United States.",
+    "scientificContext": "In wild-type rice endosperm, the carotenoid pathway is blocked at the GGPP → phytoene step because the endosperm does not express phytoene synthase. The MEP pathway is active (producing GGPP for gibberellin biosynthesis), providing the necessary precursor. The crtI gene from Erwinia uredovora (Pantoea ananatis) was chosen because a single bacterial enzyme performs four desaturation steps that require two plant enzymes (PDS and ZDS), simplifying the engineering.",
+    "gameplaySimplifications": [
+      "In reality, the lycopene beta-cyclase used in GR1 was from Narcissus pseudonarcissus; GR2E uses only the endogenous rice OsLCYB. This puzzle uses the endogenous rice lyc gene for simplicity.",
+      "The simulation's numerical values (e.g., gene expression percentages) are illustrative gameplay abstractions, not quantitative kinetic models.",
+      "The pathway is shown as linear; in reality, there are regulatory feedback loops and competing branch pathways (e.g., xanthophyll synthesis from beta-carotene).",
+      "Protein transit peptide targeting and plastid import machinery are not modeled in detail.",
+      "The MEP pathway producing GGPP is treated as a fixed substrate pool, not modeled as a separate pathway."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Ye X",
+          "Al-Babili S",
+          "Klöti A",
+          "Zhang J",
+          "Lucca P",
+          "Beyer P",
+          "Potrykus I"
+        ],
+        "year": 2000,
+        "title": "Engineering the provitamin A (beta-carotene) biosynthetic pathway into (carotenoid-free) rice endosperm",
+        "journal": "Science",
+        "doi": "10.1126/science.287.5451.303",
+        "type": "paper"
+      },
+      {
+        "authors": [
+          "Paine JA",
+          "Shipton CA",
+          "Chaggar S",
+          "Howells RM",
+          "Kennedy MJ",
+          "Vernon G",
+          "Wright SY",
+          "Hinchliffe E",
+          "Adams JL",
+          "Silverstone AL",
+          "Drake R"
+        ],
+        "year": 2005,
+        "title": "Improving the nutritional value of Golden Rice through increased pro-vitamin A content",
+        "journal": "Nature Biotechnology",
+        "doi": "10.1038/nbt1082",
+        "type": "paper"
+      },
+      {
+        "authors": [
+          "Al-Babili S",
+          "Beyer P"
+        ],
+        "year": 2005,
+        "title": "Golden Rice — five years on the road — five years to go?",
+        "journal": "Trends in Plant Science",
+        "doi": "10.1016/j.tplants.2005.10.006",
+        "type": "review"
+      },
+      {
+        "authors": [
+          "Beyer P"
+        ],
+        "year": 2010,
+        "title": "Golden Rice and 'Golden' crops for human nutrition",
+        "journal": "New Biotechnology",
+        "doi": "10.1016/j.nbt.2010.05.010",
+        "type": "review"
+      },
+      {
+        "authors": [
+          "IRRI — International Rice Research Institute"
+        ],
+        "year": 2023,
+        "title": "Golden Rice Project — GR2E regulatory approvals",
+        "url": "https://www.irri.org/golden-rice",
+        "type": "database"
+      }
+    ],
+    "realWorldCase_es": "El Arroz Dorado es un cultivo transgénico real creado para combatir la carencia de vitamina A. La primera versión (GR1) se publicó en 2000 en Science (Ye et al.). Una versión mejorada (GR2E) ha recibido aprobaciones de seguridad alimentaria en Australia, Nueva Zelanda, Canadá y Estados Unidos.",
+    "scientificContext_es": "En el endospermo del arroz normal la ruta está bloqueada en el paso de GGPP a fitoeno, porque no se expresa la fitoeno sintasa. La ruta MEP sí está activa y aporta el GGPP. Se eligió el gen crtI de Pantoea ananatis porque una sola enzima bacteriana hace las cuatro desaturaciones que en las plantas requieren dos enzimas (PDS y ZDS).",
+    "gameplaySimplifications_es": [
+      "En GR1 la licopeno ciclasa venía del narciso; GR2E usa solo la del propio arroz. El juego usa el gen lyc del arroz para simplificar.",
+      "Los valores de la simulación son abstracciones de juego, no un modelo cuantitativo.",
+      "La ruta se muestra lineal; en realidad hay regulación y ramas que compiten (por ejemplo, la síntesis de xantofilas a partir del betacaroteno).",
+      "No se modela con detalle cómo las enzimas llegan al plasto.",
+      "La ruta MEP que produce el GGPP se trata como una reserva fija."
+    ]
+  },
+  "title_es": "Arroz Dorado",
+  "subtitle_es": "Provitamina A en el grano de arroz",
+  "objective_es": "Reconstruye la ruta de los carotenoides en el endospermo del arroz para que produzca betacaroteno (provitamina A).",
+  "description_es": "El endospermo del arroz no tiene la ruta de los carotenoides. Con genes del narciso (psy) y de una bacteria (crtI) se consiguió que el grano produjera betacaroteno. Conecta los genes, enzimas, reacciones y moléculas correctos para completar la ruta.",
+  "exploration": [
+    {
+      "kind": "plant",
+      "label": "Organism",
+      "label_es": "Organismo",
+      "title": "Oryza sativa — the rice plant",
+      "title_es": "Oryza sativa — la planta del arroz",
+      "description": "A cereal cultivated for over 9,000 years, staple food for half of humanity.",
+      "description_es": "Un cereal cultivado desde hace más de 9.000 años, alimento básico de la mitad de la humanidad."
+    },
+    {
+      "kind": "grain",
+      "label": "Grain",
+      "label_es": "Grano",
+      "title": "The endosperm",
+      "title_es": "El endospermo",
+      "description": "The starchy inside of the grain is rich in energy but has no provitamin A.",
+      "description_es": "El interior almidonado del grano es rico en energía, pero no tiene provitamina A."
+    },
+    {
+      "kind": "cell",
+      "label": "Cell",
+      "label_es": "Célula",
+      "title": "An endosperm cell",
+      "title_es": "Una célula del endospermo",
+      "description": "Inside each cell, plastids called amyloplasts store starch. That is where we will add a new pathway.",
+      "description_es": "Dentro de cada célula, unos plastos llamados amiloplastos guardan almidón. Ahí es donde añadiremos una ruta nueva."
+    },
+    {
+      "kind": "plastid",
+      "label": "Organelle",
+      "label_es": "Orgánulo",
+      "title": "The amyloplast",
+      "title_es": "El amiloplasto",
+      "description": "It already contains GGPP, the raw material for carotenoids, but lacks the enzymes to use it.",
+      "description_es": "Ya contiene GGPP, la materia prima de los carotenoides, pero le faltan las enzimas para usarla."
+    },
+    {
+      "kind": "pathway",
+      "label": "Pathway",
+      "label_es": "Ruta",
+      "title": "The carotenoid pathway",
+      "title_es": "La ruta de los carotenoides",
+      "description": "Connect genes, enzymes, reactions and molecules to turn GGPP into beta-carotene.",
+      "description_es": "Conecta genes, enzimas, reacciones y moléculas para convertir el GGPP en betacaroteno."
+    }
+  ]
+}

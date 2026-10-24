@@ -1,0 +1,366 @@
+{
+  "id": "fix-biogas",
+  "mode": "diagnose",
+  "title": "The digester that gives no gas",
+  "title_es": "El digestor que no da gas",
+  "subtitle": "Sour smell, no methane",
+  "subtitle_es": "Olor ácido, sin metano",
+  "difficulty": "intermediate",
+  "estimatedDuration": 6,
+  "objective": "A biogas tank is full of waste but produces almost no gas. Find the piece that fails and the fix.",
+  "objective_es": "Un tanque de biogás está lleno de residuos pero casi no produce gas. Descubre qué pieza falla y cómo se arregla.",
+  "description": "The pathway is built, but something fails. Read the clues, find the broken piece, and choose the right treatment.",
+  "description_es": "La ruta está montada, pero algo falla. Lee las pistas, encuentra la pieza rota y elige el tratamiento correcto.",
+  "organism": {
+    "id": "biogas-fix",
+    "commonName": "Digester microbes",
+    "commonName_es": "Microbios del digestor",
+    "scientificName": "Anaerobic microbial community",
+    "taxonomy": [
+      "Bacteria",
+      "Archaea"
+    ],
+    "targetTissue": "single cell",
+    "targetOrganelle": "cytoplasm",
+    "description": "Microbes that should make methane.",
+    "description_es": "Microbios que deberían fabricar metano."
+  },
+  "exploration": [
+    {
+      "kind": "flask",
+      "label": "Problem",
+      "label_es": "Problema",
+      "title": "A silent tank",
+      "title_es": "Un tanque silencioso",
+      "description": "The tank was loaded a month ago. Now it smells sour and the gas meter hardly moves.",
+      "description_es": "El tanque se cargó hace un mes. Ahora huele a ácido y el medidor de gas casi no se mueve."
+    },
+    {
+      "kind": "bacterium",
+      "label": "The chain",
+      "label_es": "La cadena",
+      "title": "Three groups of microbes",
+      "title_es": "Tres grupos de microbios",
+      "description": "The first groups work, but the last one, which makes methane, is very sensitive.",
+      "description_es": "Los primeros grupos trabajan, pero el último, el que fabrica metano, es muy sensible."
+    }
+  ],
+  "biologicalContext": {
+    "nodes": [
+      {
+        "id": "met_waste",
+        "type": "metabolite",
+        "label": "Waste",
+        "label_es": "Residuos",
+        "description": "Plant and food waste.",
+        "description_es": "Residuos de plantas y comida.",
+        "position": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_acids",
+        "type": "reaction",
+        "label": "Making acids",
+        "label_es": "Hacer ácidos",
+        "description": "The first groups of microbes break down the waste and make acids.",
+        "description_es": "Los primeros grupos de microbios descomponen los residuos y hacen ácidos.",
+        "position": {
+          "x": 3.0,
+          "y": 0.0,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_acetate",
+        "type": "metabolite",
+        "label": "Acetic acid",
+        "label_es": "Ácido acético",
+        "description": "The food of the methane microbes.",
+        "description_es": "La comida de los microbios del metano.",
+        "position": {
+          "x": 6.0,
+          "y": 0.0,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_mcr",
+        "type": "enzyme",
+        "label": "Methane enzyme",
+        "label_es": "Enzima del metano",
+        "description": "The methane-making enzyme of the methane microbes.",
+        "description_es": "La enzima que fabrica metano de los microbios del metano.",
+        "position": {
+          "x": 9.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_methano",
+        "type": "reaction",
+        "label": "Making methane",
+        "label_es": "Fabricar metano",
+        "description": "Acetic acid becomes methane.",
+        "description_es": "El ácido acético se convierte en metano.",
+        "position": {
+          "x": 9.0,
+          "y": 0.0,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_methane",
+        "type": "metabolite",
+        "label": "Methane",
+        "label_es": "Metano",
+        "description": "The fuel gas.",
+        "description_es": "El gas combustible.",
+        "position": {
+          "x": 12.0,
+          "y": 0.0,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "phenotype_gas",
+        "type": "phenotype",
+        "label": "Biogas to burn",
+        "label_es": "Biogás para quemar",
+        "description": "What we should get.",
+        "description_es": "Lo que deberíamos obtener.",
+        "position": {
+          "x": 15.0,
+          "y": 0.0,
+          "z": 0
+        },
+        "metadata": {}
+      }
+    ],
+    "edges": [
+      {
+        "id": "ref_rxn_acids_consumes_met_waste",
+        "source": "rxn_acids",
+        "target": "met_waste",
+        "type": "consumes",
+        "isRequired": true
+      },
+      {
+        "id": "ref_rxn_acids_produces_met_acetate",
+        "source": "rxn_acids",
+        "target": "met_acetate",
+        "type": "produces",
+        "isRequired": true
+      },
+      {
+        "id": "ref_enzyme_mcr_catalyzes_rxn_methano",
+        "source": "enzyme_mcr",
+        "target": "rxn_methano",
+        "type": "catalyzes",
+        "isRequired": true
+      },
+      {
+        "id": "ref_rxn_methano_consumes_met_acetate",
+        "source": "rxn_methano",
+        "target": "met_acetate",
+        "type": "consumes",
+        "isRequired": true
+      },
+      {
+        "id": "ref_rxn_methano_produces_met_methane",
+        "source": "rxn_methano",
+        "target": "met_methane",
+        "type": "produces",
+        "isRequired": true
+      },
+      {
+        "id": "ref_met_methane_influences_phenotype_gas",
+        "source": "met_methane",
+        "target": "phenotype_gas",
+        "type": "influences",
+        "isRequired": true
+      }
+    ]
+  },
+  "puzzle": {
+    "availableNodes": [
+      "met_waste",
+      "rxn_acids",
+      "met_acetate",
+      "enzyme_mcr",
+      "rxn_methano",
+      "met_methane",
+      "phenotype_gas"
+    ],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "diagnose": {
+    "symptom": "The tank smells sour and produces almost no methane.",
+    "symptom_es": "El tanque huele a ácido y casi no produce metano.",
+    "clues": [
+      {
+        "text": "The waste has been broken down into sugars and acids, which have piled up.",
+        "text_es": "Los residuos se han descompuesto en azúcares y ácidos, que se han acumulado."
+      },
+      {
+        "text": "The temperature is 35 °C, as it should be.",
+        "text_es": "La temperatura es de 35 °C, como debe ser."
+      },
+      {
+        "text": "The seal of the lid is cracked and air gets in.",
+        "text_es": "El sello de la tapa está agrietado y entra aire."
+      },
+      {
+        "text": "Almost no methane is produced.",
+        "text_es": "Casi no se produce metano."
+      }
+    ],
+    "faultyIds": [
+      "enzyme_mcr"
+    ],
+    "notes": {
+      "met_waste": {
+        "text": "Plenty of waste is there. Food is not the problem.",
+        "text_es": "Hay residuos de sobra. La comida no es el problema."
+      },
+      "rxn_acids": {
+        "text": "The first groups work well: acids and sugars have piled up.",
+        "text_es": "Los primeros grupos funcionan bien: se han acumulado ácidos y azúcares."
+      },
+      "met_acetate": {
+        "text": "It piles up because nobody is using it: a consequence, not the cause.",
+        "text_es": "Se acumula porque nadie lo usa: una consecuencia, no la causa."
+      },
+      "enzyme_mcr": {
+        "text": "Methane microbes cannot live with oxygen. The air from the cracked seal has stopped them. This is the broken piece.",
+        "text_es": "Los microbios del metano no pueden vivir con oxígeno. El aire del sello agrietado los ha detenido. Esta es la pieza rota."
+      },
+      "rxn_methano": {
+        "text": "The reaction cannot run without its enzyme: a consequence.",
+        "text_es": "La reacción no puede funcionar sin su enzima: una consecuencia."
+      },
+      "met_methane": {
+        "text": "It is missing, but as a consequence of the stopped microbes.",
+        "text_es": "Falta, pero como consecuencia de los microbios detenidos."
+      },
+      "phenotype_gas": {
+        "text": "It is the symptom, not the broken piece.",
+        "text_es": "Es el síntoma, no la pieza rota."
+      }
+    },
+    "fixes": [
+      {
+        "id": "f1",
+        "text": "Seal the lid properly and restart the tank without air.",
+        "text_es": "Sellar bien la tapa y reiniciar el tanque sin aire.",
+        "correct": true,
+        "reason": "Without oxygen the methane microbes can recover or be replaced, and then they use the piled-up acid to make methane.",
+        "reason_es": "Sin oxígeno los microbios del metano pueden recuperarse o repoblarse, y entonces usarán el ácido acumulado para fabricar metano."
+      },
+      {
+        "id": "f2",
+        "text": "Add more waste to the tank.",
+        "text_es": "Añadir más residuos al tanque.",
+        "correct": false,
+        "reason": "There is plenty of waste already. More would make even more acid and make things worse.",
+        "reason_es": "Ya hay residuos de sobra. Más residuos fabricarían aún más ácido y empeorarían las cosas."
+      },
+      {
+        "id": "f3",
+        "text": "Heat the tank to 70 °C.",
+        "text_es": "Calentar el tanque a 70 °C.",
+        "correct": false,
+        "reason": "The temperature is right. Heating to 70 °C would kill most of the microbes.",
+        "reason_es": "La temperatura es la correcta. Calentar a 70 °C mataría a la mayoría de los microbios."
+      },
+      {
+        "id": "f4",
+        "text": "Add sugar to the tank.",
+        "text_es": "Añadir azúcar al tanque.",
+        "correct": false,
+        "reason": "There are already sugars and acids piled up. The last group is the one that cannot work.",
+        "reason_es": "Ya hay azúcares y ácidos acumulados. El último grupo es el que no puede trabajar."
+      }
+    ]
+  },
+  "simulation": {
+    "productLabel": "Diagnosis",
+    "productLabel_es": "Diagnóstico",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Diagnosis",
+        "label_es": "Diagnóstico",
+        "description": "Found and treated.",
+        "description_es": "Encontrado y tratado.",
+        "order": 1
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "The first steps work, since acids pile up. Something stops only the last group.",
+      "content_es": "Los primeros pasos funcionan, porque se acumulan ácidos. Algo detiene solo al último grupo.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "One clue is about the lid. What does air do to methane microbes?",
+      "content_es": "Una pista habla de la tapa. ¿Qué le hace el aire a los microbios del metano?",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "The methane-making enzyme stopped working because of the oxygen.",
+      "content_es": "La enzima que fabrica metano ha dejado de funcionar por el oxígeno.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "Sealed against air",
+    "title_es": "Cerrado al aire",
+    "summary": "You found that the problem was a leak: the last group of microbes cannot live with air.",
+    "summary_es": "Has descubierto que el problema era una fuga: el último grupo de microbios no puede vivir con aire.",
+    "realWorldImpact": "Checking seals is among the first things operators do when a digester stops making gas.",
+    "realWorldImpact_es": "Comprobar los sellos es de lo primero que hacen los operarios cuando un digestor deja de producir gas."
+  },
+  "science": {
+    "organism": "Anaerobic microbial community",
+    "realWorldCase": "Methanogens are among the most oxygen-sensitive organisms known.",
+    "realWorldCase_es": "Los metanógenos están entre los organismos más sensibles al oxígeno que se conocen.",
+    "scientificContext": "Methanogenesis is carried out by archaea that are strict anaerobes. Oxygen damages their enzymes, and acids accumulate when they stop.",
+    "scientificContext_es": "La metanogénesis la hacen arqueas anaerobias estrictas. El oxígeno daña sus enzimas y los ácidos se acumulan cuando se detienen.",
+    "gameplaySimplifications": [
+      "A real digester would also check the acidity (pH) of the tank."
+    ],
+    "gameplaySimplifications_es": [
+      "Un digestor real también comprobaría la acidez (pH) del tanque."
+    ],
+    "references": []
+  }
+}

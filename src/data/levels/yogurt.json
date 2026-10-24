@@ -1,0 +1,492 @@
+{
+  "id": "yogurt",
+  "title": "The microbes inside yogurt",
+  "title_es": "Los microbios del yogur",
+  "subtitle": "From lactose to lactic acid",
+  "subtitle_es": "De la lactosa al ácido láctico",
+  "difficulty": "intermediate",
+  "estimatedDuration": 9,
+  "objective": "Show how yogurt bacteria cut lactose, turn its sugar into lactic acid and thicken the milk.",
+  "objective_es": "Muestra cómo las bacterias del yogur cortan la lactosa, convierten su azúcar en ácido láctico y espesan la leche.",
+  "description": "Two enzyme steps, one after another: first the milk sugar is cut, then its glucose is turned into lactic acid.",
+  "description_es": "Dos pasos enzimáticos, uno tras otro: primero se corta el azúcar de la leche y luego su glucosa se convierte en ácido láctico.",
+  "organism": {
+    "id": "yogurt-pathway",
+    "commonName": "Yogurt bacteria",
+    "commonName_es": "Bacterias del yogur",
+    "scientificName": "Lactobacillus delbrueckii subsp. bulgaricus",
+    "taxonomy": [
+      "Bacteria",
+      "Bacillota",
+      "Bacilli",
+      "Lactobacillales",
+      "Lactobacillaceae",
+      "Lactobacillus"
+    ],
+    "targetTissue": "single cell",
+    "targetOrganelle": "cytoplasm",
+    "description": "A bacterium that lives on milk sugar.",
+    "description_es": "Una bacteria que vive del azúcar de la leche."
+  },
+  "exploration": [
+    {
+      "kind": "milk",
+      "label": "Milk",
+      "label_es": "Leche",
+      "title": "Sugar and protein",
+      "title_es": "Azúcar y proteína",
+      "description": "Milk holds lactose, a sugar, and proteins called caseins. Yogurt bacteria only eat the sugar.",
+      "description_es": "La leche contiene lactosa, un azúcar, y proteínas llamadas caseínas. Las bacterias del yogur solo comen el azúcar."
+    },
+    {
+      "kind": "bacterium",
+      "label": "The bacterium",
+      "label_es": "La bacteria",
+      "title": "Two enzymes at work",
+      "title_es": "Dos enzimas trabajando",
+      "description": "One enzyme cuts lactose into two simple sugars. Another turns glucose into lactic acid and energy.",
+      "description_es": "Una enzima corta la lactosa en dos azúcares sencillos. Otra convierte la glucosa en ácido láctico y energía."
+    },
+    {
+      "kind": "cheese",
+      "label": "Result",
+      "label_es": "Resultado",
+      "title": "Acid thickens milk",
+      "title_es": "El ácido espesa la leche",
+      "description": "The acid makes the casein proteins clump into a soft gel and gives yogurt its tang.",
+      "description_es": "El ácido hace que las caseínas se agrupen en un gel suave y da al yogur su sabor ácido."
+    }
+  ],
+  "biologicalContext": {
+    "nodes": [
+      {
+        "id": "gene_lacz",
+        "type": "gene",
+        "label": "Lactase gene",
+        "label_es": "Gen de la lactasa",
+        "description": "The recipe of the enzyme that cuts lactose (β-galactosidase).",
+        "description_es": "La receta de la enzima que corta la lactosa (β-galactosidasa).",
+        "position": {
+          "x": 0.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_lactase",
+        "type": "enzyme",
+        "label": "Lactase",
+        "label_es": "Lactasa",
+        "description": "β-galactosidase: it cuts lactose into glucose and galactose.",
+        "description_es": "β-galactosidasa: corta la lactosa en glucosa y galactosa.",
+        "position": {
+          "x": 3.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_split",
+        "type": "reaction",
+        "label": "Cutting lactose",
+        "label_es": "Cortar la lactosa",
+        "description": "Lactose → glucose + galactose.",
+        "description_es": "Lactosa → glucosa + galactosa.",
+        "position": {
+          "x": 6.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_lactose",
+        "type": "metabolite",
+        "label": "Lactose",
+        "label_es": "Lactosa",
+        "description": "The sugar of milk.",
+        "description_es": "El azúcar de la leche.",
+        "position": {
+          "x": 6.0,
+          "y": 4.8,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_galactose",
+        "type": "metabolite",
+        "label": "Galactose",
+        "label_es": "Galactosa",
+        "description": "The second sugar from the cut.",
+        "description_es": "El segundo azúcar del corte.",
+        "position": {
+          "x": 9.0,
+          "y": 4.8,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_glucose",
+        "type": "metabolite",
+        "label": "Glucose",
+        "label_es": "Glucosa",
+        "description": "The fuel of the bacterium.",
+        "description_es": "El combustible de la bacteria.",
+        "position": {
+          "x": 9.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "gene_ldh",
+        "type": "gene",
+        "label": "LDH gene",
+        "label_es": "Gen LDH",
+        "description": "The recipe of lactate dehydrogenase, the enzyme that makes lactic acid.",
+        "description_es": "La receta de la lactato deshidrogenasa, la enzima que fabrica ácido láctico.",
+        "position": {
+          "x": 0.0,
+          "y": -2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_ldh",
+        "type": "enzyme",
+        "label": "LDH enzyme",
+        "label_es": "Enzima LDH",
+        "description": "Lactate dehydrogenase: it turns the last product of sugar breakdown into lactic acid.",
+        "description_es": "Lactato deshidrogenasa: convierte el último producto de la degradación del azúcar en ácido láctico.",
+        "position": {
+          "x": 3.0,
+          "y": -2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_ferment",
+        "type": "reaction",
+        "label": "Making acid",
+        "label_es": "Hacer ácido",
+        "description": "Fermentation: glucose → lactic acid, releasing a little energy.",
+        "description_es": "Fermentación: glucosa → ácido láctico, liberando un poco de energía.",
+        "position": {
+          "x": 12.0,
+          "y": 0.0,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_lactic",
+        "type": "metabolite",
+        "label": "Lactic acid",
+        "label_es": "Ácido láctico",
+        "description": "The acid that makes yogurt tangy.",
+        "description_es": "El ácido que da a yogur su sabor ácido.",
+        "position": {
+          "x": 15.0,
+          "y": 0.0,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "phenotype_yogurt",
+        "type": "phenotype",
+        "label": "Thick, tangy yogurt",
+        "label_es": "Yogur espeso y ácido",
+        "description": "The milk sets into a soft gel.",
+        "description_es": "La leche cuaja en un gel suave.",
+        "position": {
+          "x": 18.0,
+          "y": 0.0,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_ethanol",
+        "type": "metabolite",
+        "label": "Ethanol",
+        "label_es": "Etanol",
+        "description": "The alcohol of yeast fermentation. Yogurt bacteria do not make it.",
+        "description_es": "El alcohol de la fermentación de la levadura. Las bacterias del yogur no lo fabrican.",
+        "position": {
+          "x": 15.0,
+          "y": -2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "gene_pdc",
+        "type": "gene",
+        "label": "Yeast gene",
+        "label_es": "Gen de levadura",
+        "description": "A gene of yeast, not of yogurt bacteria.",
+        "description_es": "Un gen de levadura, no de las bacterias del yogur.",
+        "position": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0
+        },
+        "metadata": {}
+      }
+    ],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [
+      "gene_lacz",
+      "enzyme_lactase",
+      "rxn_split",
+      "met_lactose",
+      "met_galactose",
+      "met_glucose",
+      "gene_ldh",
+      "enzyme_ldh",
+      "rxn_ferment",
+      "met_lactic",
+      "phenotype_yogurt",
+      "met_ethanol",
+      "gene_pdc"
+    ],
+    "distractorNodes": [
+      "met_ethanol",
+      "gene_pdc"
+    ],
+    "requiredConnections": [
+      {
+        "id": "req_lac_enc",
+        "sourceId": "gene_lacz",
+        "targetId": "enzyme_lactase",
+        "edgeType": "encodes",
+        "description": "The bacterium reads the gene and builds the enzyme.",
+        "description_es": "La bacteria lee el gen y construye la enzima."
+      },
+      {
+        "id": "req_lac_cat",
+        "sourceId": "enzyme_lactase",
+        "targetId": "rxn_split",
+        "edgeType": "catalyzes",
+        "description": "The enzyme runs the cutting of lactose.",
+        "description_es": "La enzima hace funcionar el corte de la lactosa."
+      },
+      {
+        "id": "req_lac_use",
+        "sourceId": "rxn_split",
+        "targetId": "met_lactose",
+        "edgeType": "consumes",
+        "description": "The reaction uses up lactose.",
+        "description_es": "La reacción gasta lactosa."
+      },
+      {
+        "id": "req_lac_glu",
+        "sourceId": "rxn_split",
+        "targetId": "met_glucose",
+        "edgeType": "produces",
+        "description": "One of the pieces is glucose.",
+        "description_es": "Uno de los trozos es glucosa."
+      },
+      {
+        "id": "req_ldh_enc",
+        "sourceId": "gene_ldh",
+        "targetId": "enzyme_ldh",
+        "edgeType": "encodes",
+        "description": "A second gene gives the enzyme that makes the acid.",
+        "description_es": "Un segundo gen da la enzima que fabrica el ácido."
+      },
+      {
+        "id": "req_ldh_cat",
+        "sourceId": "enzyme_ldh",
+        "targetId": "rxn_ferment",
+        "edgeType": "catalyzes",
+        "description": "This enzyme runs the fermentation.",
+        "description_es": "Esta enzima hace funcionar la fermentación."
+      },
+      {
+        "id": "req_ferm_use",
+        "sourceId": "rxn_ferment",
+        "targetId": "met_glucose",
+        "edgeType": "consumes",
+        "description": "Fermentation burns glucose for energy.",
+        "description_es": "La fermentación quema glucosa para obtener energía."
+      },
+      {
+        "id": "req_ferm_acid",
+        "sourceId": "rxn_ferment",
+        "targetId": "met_lactic",
+        "edgeType": "produces",
+        "description": "The waste of this process is lactic acid.",
+        "description_es": "El residuo de este proceso es ácido láctico."
+      },
+      {
+        "id": "req_acid_set",
+        "sourceId": "met_lactic",
+        "targetId": "phenotype_yogurt",
+        "edgeType": "influences",
+        "description": "The acid makes the milk proteins clump, and the milk sets.",
+        "description_es": "El ácido hace que las proteínas de la leche se agrupen y la leche cuaja."
+      }
+    ],
+    "optionalConnections": [
+      {
+        "id": "opt_gal",
+        "sourceId": "rxn_split",
+        "targetId": "met_galactose",
+        "edgeType": "produces",
+        "description": "The other piece of lactose is galactose.",
+        "description_es": "El otro trozo de la lactosa es galactosa.",
+        "bonusPoints": 50
+      }
+    ],
+    "invalidConnections": [
+      {
+        "sourceId": "met_lactose",
+        "targetId": "phenotype_yogurt",
+        "reason": "Lactose alone does not thicken the milk. It has to be turned into acid first.",
+        "reason_es": "La lactosa por sí sola no espesa la leche. Primero tiene que convertirse en ácido."
+      },
+      {
+        "sourceId": "met_ethanol",
+        "targetId": "phenotype_yogurt",
+        "reason": "Yogurt bacteria do not make alcohol. The tang comes from lactic acid.",
+        "reason_es": "Las bacterias del yogur no fabrican alcohol. El sabor ácido viene del ácido láctico."
+      },
+      {
+        "sourceId": "gene_pdc",
+        "targetId": "rxn_ferment",
+        "reason": "That gene belongs to yeast. Yogurt bacteria use their own enzyme to make lactic acid.",
+        "reason_es": "Ese gen es de la levadura. Las bacterias del yogur usan su propia enzima para fabricar ácido láctico."
+      }
+    ],
+    "winCondition": {
+      "type": "pathway_complete",
+      "targetNodeId": "phenotype_yogurt",
+      "requiredConnectionIds": [
+        "req_lac_enc",
+        "req_lac_cat",
+        "req_lac_use",
+        "req_lac_glu",
+        "req_ldh_enc",
+        "req_ldh_cat",
+        "req_ferm_use",
+        "req_ferm_acid",
+        "req_acid_set"
+      ],
+      "description": "Turn lactose into lactic acid so that the milk sets.",
+      "description_es": "Convierte la lactosa en ácido láctico para que la leche cuaje."
+    }
+  },
+  "simulation": {
+    "productLabel": "Yogurt",
+    "productLabel_es": "Yogur",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Lactose cut",
+        "label_es": "Lactosa cortada",
+        "description": "Glucose is released.",
+        "description_es": "Se libera glucosa.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Fermentation",
+        "label_es": "Fermentación",
+        "description": "Glucose becomes lactic acid.",
+        "description_es": "La glucosa se convierte en ácido láctico.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Acid builds up",
+        "label_es": "Se acumula ácido",
+        "description": "The pH falls.",
+        "description_es": "El pH baja.",
+        "order": 3
+      },
+      {
+        "id": "s4",
+        "label": "Milk sets",
+        "label_es": "La leche cuaja",
+        "description": "Proteins clump into a gel.",
+        "description_es": "Las proteínas se agrupan en un gel.",
+        "order": 4
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "There are two chains: one cuts lactose, the other turns glucose into acid. They meet at glucose.",
+      "content_es": "Hay dos cadenas: una corta la lactosa y la otra convierte la glucosa en ácido. Se encuentran en la glucosa.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Gene → enzyme → reaction, twice. The first reaction produces glucose; the second one uses it.",
+      "content_es": "Gen → enzima → reacción, dos veces. La primera reacción produce glucosa; la segunda la usa.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Connect both gene–enzyme–reaction chains, the lactose and glucose around them, then lactic acid–yogurt.",
+      "content_es": "Conecta las dos cadenas gen–enzima–reacción, la lactosa y la glucosa que las rodean, y después ácido láctico–yogur.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "Tiny cooks",
+    "title_es": "Cocineros diminutos",
+    "summary": "You connected two chains of enzymes: one cuts the milk sugar, the other makes the acid that sets the milk.",
+    "summary_es": "Has conectado dos cadenas de enzimas: una corta el azúcar de la leche y la otra fabrica el ácido que la cuaja.",
+    "realWorldImpact": "The same bacteria, and the same two steps, are behind yogurt, kefir and many fermented milks around the world.",
+    "realWorldImpact_es": "Las mismas bacterias, y los mismos dos pasos, están detrás del yogur, el kéfir y muchas leches fermentadas del mundo."
+  },
+  "science": {
+    "organism": "Lactobacillus delbrueckii subsp. bulgaricus",
+    "realWorldCase": "The genome of Lactobacillus bulgaricus was read in 2006. It showed that the bacterium has lost many genes it does not need in milk, a sign of how well adapted it is to its home.",
+    "realWorldCase_es": "El genoma de Lactobacillus bulgaricus se leyó en 2006. Mostró que la bacteria ha perdido muchos genes que no necesita en la leche, señal de lo bien adaptada que está a su hogar.",
+    "scientificContext": "Lactic acid bacteria split lactose with β-galactosidase, ferment glucose through glycolysis and lactate dehydrogenase, and lower the pH to about 4.5. At that pH, casein micelles lose charge and aggregate.",
+    "scientificContext_es": "Las bacterias lácticas parten la lactosa con β-galactosidasa, fermentan la glucosa mediante la glucólisis y la lactato deshidrogenasa y bajan el pH a unos 4,5. A ese pH, las micelas de caseína pierden carga y se agregan.",
+    "gameplaySimplifications": [
+      "Glycolysis has ten steps; here it is shown as one reaction.",
+      "Some yogurt bacteria use galactose too; that is left out."
+    ],
+    "gameplaySimplifications_es": [
+      "La glucólisis tiene diez pasos; aquí se muestra como una sola reacción.",
+      "Algunas bacterias del yogur también usan la galactosa; eso se omite."
+    ],
+    "references": [
+      {
+        "authors": [
+          "van de Guchte, M.",
+          "Penaud, S.",
+          "Grimaldi, C.",
+          "et al."
+        ],
+        "year": 2006,
+        "title": "The complete genome sequence of Lactobacillus bulgaricus reveals extensive and ongoing reductive evolution",
+        "journal": "Proceedings of the National Academy of Sciences",
+        "doi": "10.1073/pnas.0603024103",
+        "type": "paper"
+      }
+    ]
+  }
+}

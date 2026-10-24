@@ -1,0 +1,228 @@
+{
+  "id": "seq-legume",
+  "mode": "sequence",
+  "title": "Plants that make their own fertiliser",
+  "title_es": "Plantas que fabrican su propio abono",
+  "subtitle": "A conversation between a root and a bacterium",
+  "subtitle_es": "Una conversación entre una raíz y una bacteria",
+  "difficulty": "intermediate",
+  "estimatedDuration": 6,
+  "objective": "Put in order the steps by which a legume and a soil bacterium build a nodule together.",
+  "objective_es": "Ordena los pasos con los que una leguminosa y una bacteria del suelo construyen juntas un nódulo.",
+  "description": "Beans, peas and soy live with bacteria that take nitrogen from the air and give it to the plant. They talk to each other with chemical signals.",
+  "description_es": "Las judías, los guisantes y la soja viven con bacterias que toman nitrógeno del aire y se lo dan a la planta. Se hablan con señales químicas.",
+  "organism": {
+    "id": "legume-rhizobia",
+    "commonName": "A legume and rhizobia",
+    "commonName_es": "Una leguminosa y rizobios",
+    "scientificName": "Rhizobium leguminosarum",
+    "taxonomy": [
+      "Bacteria",
+      "Pseudomonadota",
+      "Alphaproteobacteria",
+      "Hyphomicrobiales",
+      "Rhizobiaceae",
+      "Rhizobium"
+    ],
+    "targetTissue": "root",
+    "targetOrganelle": "cytoplasm",
+    "description": "Bacteria that live inside the roots of some plants.",
+    "description_es": "Bacterias que viven dentro de las raíces de algunas plantas."
+  },
+  "exploration": [
+    {
+      "kind": "plant",
+      "label": "The roots",
+      "label_es": "Las raíces",
+      "title": "A swollen nodule",
+      "title_es": "Un nódulo hinchado",
+      "description": "The roots of legumes carry small round nodules. Inside live billions of bacteria.",
+      "description_es": "Las raíces de las leguminosas llevan nódulos pequeños y redondos. Dentro viven miles de millones de bacterias."
+    },
+    {
+      "kind": "bacterium",
+      "label": "The deal",
+      "label_es": "El trato",
+      "title": "Sugar for nitrogen",
+      "title_es": "Azúcar por nitrógeno",
+      "description": "Air is mostly nitrogen, but plants cannot use it. The bacteria can, and the plant pays them in sugars.",
+      "description_es": "El aire es sobre todo nitrógeno, pero las plantas no pueden usarlo. Las bacterias sí, y la planta les paga con azúcares."
+    }
+  ],
+  "sequence": {
+    "steps": [
+      {
+        "id": "signal",
+        "label": "The roots release chemical signals into the soil",
+        "label_es": "Las raíces liberan señales químicas en el suelo",
+        "description": "The plant announces that it is looking for partners.",
+        "description_es": "La planta anuncia que busca socios.",
+        "needs": "Nothing: it is where it starts.",
+        "needs_es": "Nada: es el punto de partida."
+      },
+      {
+        "id": "respond",
+        "label": "The bacteria sense them and release their own signals",
+        "label_es": "Las bacterias las detectan y liberan sus propias señales",
+        "description": "The bacteria answer with signals that the root can read.",
+        "description_es": "Las bacterias contestan con señales que la raíz sabe leer.",
+        "needs": "The plant has to send its signal first.",
+        "needs_es": "La planta tiene que enviar antes su señal."
+      },
+      {
+        "id": "curl",
+        "label": "The root hair curls around the bacteria",
+        "label_es": "El pelo de la raíz se curva alrededor de las bacterias",
+        "description": "A small pocket traps the bacteria.",
+        "description_es": "Un pequeño bolsillo atrapa a las bacterias.",
+        "needs": "The root has to have read the bacterial signal.",
+        "needs_es": "La raíz tiene que haber leído la señal de las bacterias."
+      },
+      {
+        "id": "thread",
+        "label": "A tube carries the bacteria into the root",
+        "label_es": "Un tubo lleva a las bacterias al interior de la raíz",
+        "description": "The plant builds a tube, the infection thread, for them.",
+        "description_es": "La planta construye un tubo, el hilo de infección, para ellas.",
+        "needs": "The bacteria have to be trapped first.",
+        "needs_es": "Las bacterias tienen que estar atrapadas antes."
+      },
+      {
+        "id": "nodule",
+        "label": "Root cells divide and form a nodule",
+        "label_es": "Las células de la raíz se dividen y forman un nódulo",
+        "description": "A new organ grows to house the bacteria.",
+        "description_es": "Crece un órgano nuevo que alberga a las bacterias.",
+        "needs": "The bacteria have to reach the root cells.",
+        "needs_es": "Las bacterias tienen que llegar a las células de la raíz."
+      },
+      {
+        "id": "fix",
+        "label": "Inside, the bacteria turn nitrogen gas into ammonia",
+        "label_es": "Dentro, las bacterias convierten el nitrógeno gaseoso en amoníaco",
+        "description": "This is nitrogen fixation, done by an enzyme called nitrogenase.",
+        "description_es": "Es la fijación de nitrógeno, que hace una enzima llamada nitrogenasa.",
+        "needs": "The nodule has to be formed.",
+        "needs_es": "El nódulo tiene que estar formado."
+      },
+      {
+        "id": "trade",
+        "label": "The plant gets nitrogen and the bacteria get sugars",
+        "label_es": "La planta recibe nitrógeno y las bacterias reciben azúcares",
+        "description": "Both gain from the exchange.",
+        "description_es": "Las dos ganan con el intercambio.",
+        "needs": "The ammonia must already be produced.",
+        "needs_es": "El amoníaco ya tiene que estar producido."
+      }
+    ]
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Symbiosis",
+    "productLabel_es": "Simbiosis",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Start",
+        "label_es": "Inicio",
+        "description": "The process begins.",
+        "description_es": "Empieza el proceso.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Middle",
+        "label_es": "Desarrollo",
+        "description": "Each step prepares the next.",
+        "description_es": "Cada paso prepara el siguiente.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Result",
+        "label_es": "Resultado",
+        "description": "The process ends.",
+        "description_es": "El proceso termina.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "They start by exchanging signals; only then does the root change shape.",
+      "content_es": "Empiezan intercambiando señales; solo después cambia de forma la raíz.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Signal, answer, curl, tube, nodule, fix nitrogen, exchange.",
+      "content_es": "Señal, respuesta, curvarse, tubo, nódulo, fijar nitrógeno, intercambio.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Signal → answer → curl → thread → nodule → fix → trade.",
+      "content_es": "Señal → respuesta → curvarse → hilo → nódulo → fijar → intercambio.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A partnership underground",
+    "title_es": "Una alianza bajo tierra",
+    "summary": "You followed a symbiosis in which two organisms recognise each other, build a home together and trade what each one needs.",
+    "summary_es": "Has seguido una simbiosis en la que dos organismos se reconocen, construyen juntos un hogar e intercambian lo que cada uno necesita.",
+    "realWorldImpact": "Legumes can grow with little nitrogen fertiliser, which saves energy and avoids pollution. Farmers have rotated beans with cereals for centuries.",
+    "realWorldImpact_es": "Las leguminosas pueden crecer con poco abono nitrogenado, lo que ahorra energía y evita contaminación. Los agricultores alternan judías con cereales desde hace siglos."
+  },
+  "science": {
+    "organism": "Rhizobium leguminosarum",
+    "realWorldCase": "Many research teams try to give cereals, such as wheat or rice, the ability to form these partnerships, which would reduce the need for fertiliser.",
+    "realWorldCase_es": "Muchos equipos de investigación intentan dar a cereales como el trigo o el arroz la capacidad de formar estas alianzas, lo que reduciría la necesidad de abono.",
+    "scientificContext": "Flavonoids released by the root activate the bacterial nod genes, which make Nod factors. The plant reads them and starts nodule development.",
+    "scientificContext_es": "Los flavonoides que libera la raíz activan los genes nod de la bacteria, que fabrican los factores Nod. La planta los lee y empieza a desarrollar el nódulo.",
+    "gameplaySimplifications": [
+      "Real nodulation has many more steps and several plant genes; here it is told in seven."
+    ],
+    "gameplaySimplifications_es": [
+      "La nodulación real tiene muchos más pasos y varios genes de la planta; aquí se cuenta en siete."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Oldroyd, G. E. D.",
+          "Murray, J. D.",
+          "Poole, P. S.",
+          "Downie, J. A."
+        ],
+        "year": 2011,
+        "title": "The rules of engagement in the legume-rhizobial symbiosis",
+        "journal": "Annual Review of Genetics",
+        "type": "paper",
+        "doi": "10.1146/annurev-genet-110410-132549"
+      }
+    ]
+  }
+}

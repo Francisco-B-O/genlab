@@ -1,0 +1,369 @@
+{
+  "id": "plastic",
+  "title": "Plastic-eating bacteria",
+  "title_es": "Bacterias come-plástico",
+  "subtitle": "Two enzymes that take a PET bottle apart",
+  "subtitle_es": "Dos enzimas que desmontan una botella de PET",
+  "difficulty": "intermediate",
+  "estimatedDuration": 9,
+  "objective": "Break PET plastic down into its two building blocks with the enzymes of Ideonella sakaiensis, so they can be made into new plastic.",
+  "objective_es": "Descompón el plástico PET en sus dos piezas básicas con las enzimas de Ideonella sakaiensis, para poder fabricar plástico nuevo con ellas.",
+  "description": "A bacterium found at a recycling plant learned to eat plastic. Use its two enzymes.",
+  "description_es": "Una bacteria encontrada en una planta de reciclaje aprendió a comer plástico. Usa sus dos enzimas.",
+  "organism": {
+    "id": "ideonella-sakaiensis",
+    "commonName": "Plastic-eating bacterium",
+    "commonName_es": "Bacteria come-plástico",
+    "scientificName": "Ideonella sakaiensis 201-F6",
+    "taxonomy": ["Bacteria", "Pseudomonadota", "Betaproteobacteria", "Burkholderiales", "Ideonella"],
+    "targetTissue": "single cell",
+    "targetOrganelle": "cell surface",
+    "description": "A bacterium discovered in 2016 near a bottle recycling plant in Sakai, Japan. It can live on PET as its main food.",
+    "description_es": "Una bacteria descubierta en 2016 cerca de una planta de reciclaje de botellas en Sakai (Japón). Puede vivir con el PET como alimento principal."
+  },
+  "exploration": [
+    {
+      "kind": "bottle",
+      "label": "Problem",
+      "label_es": "Problema",
+      "title": "A PET bottle",
+      "title_es": "Una botella de PET",
+      "description": "Most drink bottles are made of PET. In nature it can last for centuries, and normal recycling degrades its quality each time.",
+      "description_es": "Casi todas las botellas de bebida son de PET. En la naturaleza puede durar siglos, y el reciclaje normal empeora su calidad cada vez."
+    },
+    {
+      "kind": "bacterium",
+      "label": "Discovery",
+      "label_es": "Descubrimiento",
+      "title": "Ideonella sakaiensis",
+      "title_es": "Ideonella sakaiensis",
+      "description": "In sludge at a recycling plant, scientists found a bacterium that sticks to PET and slowly digests it.",
+      "description_es": "En el lodo de una planta de reciclaje, unos científicos encontraron una bacteria que se pega al PET y lo digiere poco a poco."
+    },
+    {
+      "kind": "pathway",
+      "label": "Chemistry",
+      "label_es": "Química",
+      "title": "Two cuts",
+      "title_es": "Dos cortes",
+      "description": "PET is a long chain of two pieces repeated over and over. Two enzymes, one after the other, cut it back into those pieces.",
+      "description_es": "El PET es una larga cadena de dos piezas que se repiten una y otra vez. Dos enzimas, una detrás de otra, la cortan de nuevo en esas piezas."
+    }
+  ],
+  "biologicalContext": {
+    "nodes": [
+      {
+        "id": "gene_petase",
+        "type": "gene",
+        "label": "PETase gene",
+        "label_es": "Gen de la PETasa",
+        "description": "The recipe for the first enzyme, the one that attacks the plastic surface.",
+        "description_es": "La receta de la primera enzima, la que ataca la superficie del plástico.",
+        "scientificName": "ISF6_4831 (I. sakaiensis)",
+        "position": { "x": -8, "y": 2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "gene_mhetase",
+        "type": "gene",
+        "label": "MHETase gene",
+        "label_es": "Gen de la MHETasa",
+        "description": "The recipe for the second enzyme, which finishes the job.",
+        "description_es": "La receta de la segunda enzima, que termina el trabajo.",
+        "scientificName": "ISF6_0224 (I. sakaiensis)",
+        "position": { "x": -8, "y": -2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_petase",
+        "type": "enzyme",
+        "label": "PETase",
+        "label_es": "PETasa",
+        "description": "Released outside the cell, it cuts the long PET chains into smaller pieces called MHET.",
+        "description_es": "Se suelta fuera de la célula y corta las largas cadenas de PET en trozos más pequeños llamados MHET.",
+        "scientificName": "PET hydrolase (EC 3.1.1.101)",
+        "scientificName_es": "PET hidrolasa (EC 3.1.1.101)",
+        "position": { "x": -4.5, "y": 2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_mhetase",
+        "type": "enzyme",
+        "label": "MHETase",
+        "label_es": "MHETasa",
+        "description": "Cuts each MHET piece in two: one terephthalic acid and one ethylene glycol.",
+        "description_es": "Corta cada trozo de MHET en dos: un ácido tereftálico y un etilenglicol.",
+        "scientificName": "MHET hydrolase (EC 3.1.1.102)",
+        "scientificName_es": "MHET hidrolasa (EC 3.1.1.102)",
+        "position": { "x": -4.5, "y": -2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_cut_pet",
+        "type": "reaction",
+        "label": "Cutting PET",
+        "label_es": "Cortar el PET",
+        "description": "Water breaks the bonds of the chain (hydrolysis), freeing MHET.",
+        "description_es": "El agua rompe los enlaces de la cadena (hidrólisis) y libera MHET.",
+        "position": { "x": -1, "y": 2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_cut_mhet",
+        "type": "reaction",
+        "label": "Cutting MHET",
+        "label_es": "Cortar el MHET",
+        "description": "A second hydrolysis splits MHET into PET's two original building blocks.",
+        "description_es": "Una segunda hidrólisis parte el MHET en las dos piezas originales del PET.",
+        "position": { "x": -1, "y": -2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "met_pet",
+        "type": "metabolite",
+        "label": "PET plastic",
+        "label_es": "Plástico PET",
+        "description": "Polyethylene terephthalate: the plastic of drink bottles and many textiles.",
+        "description_es": "Polietileno tereftalato: el plástico de las botellas de bebida y de muchos tejidos.",
+        "scientificName": "Polyethylene terephthalate",
+        "position": { "x": 2.6, "y": 4.2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "met_mhet",
+        "type": "metabolite",
+        "label": "MHET",
+        "label_es": "MHET",
+        "description": "A small piece of PET: one terephthalic acid still joined to one ethylene glycol.",
+        "description_es": "Un trozo pequeño de PET: un ácido tereftálico todavía unido a un etilenglicol.",
+        "scientificName": "Mono(2-hydroxyethyl) terephthalate",
+        "position": { "x": 2.6, "y": 0.2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "met_tpa",
+        "type": "metabolite",
+        "label": "Terephthalic acid",
+        "label_es": "Ácido tereftálico",
+        "description": "One of PET's two building blocks.",
+        "description_es": "Una de las dos piezas básicas del PET.",
+        "scientificName": "TPA",
+        "position": { "x": 2.6, "y": -3.6, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "met_eg",
+        "type": "metabolite",
+        "label": "Ethylene glycol",
+        "label_es": "Etilenglicol",
+        "description": "PET's other building block.",
+        "description_es": "La otra pieza básica del PET.",
+        "scientificName": "EG",
+        "position": { "x": 6, "y": -3.6, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "met_water",
+        "type": "metabolite",
+        "label": "Water",
+        "label_es": "Agua",
+        "description": "Both cuts are hydrolyses: each one uses a molecule of water.",
+        "description_es": "Los dos cortes son hidrólisis: cada uno gasta una molécula de agua.",
+        "position": { "x": -1, "y": 5.2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "phenotype_recycled",
+        "type": "phenotype",
+        "label": "Plastic recycled",
+        "label_es": "Plástico reciclado",
+        "description": "Purified, the two building blocks can be made into brand-new PET, as good as the original.",
+        "description_es": "Una vez purificadas, las dos piezas sirven para fabricar PET nuevo, tan bueno como el original.",
+        "position": { "x": 9, "y": -1.6, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "met_polyethylene",
+        "type": "metabolite",
+        "label": "Polyethylene (bags)",
+        "label_es": "Polietileno (bolsas)",
+        "description": "The plastic of bags and films. Its chain has no bonds that water can break, so PETase cannot cut it.",
+        "description_es": "El plástico de las bolsas y los films. Su cadena no tiene enlaces que el agua pueda romper, así que la PETasa no puede cortarla.",
+        "isDistractor": true,
+        "position": { "x": 6, "y": 3, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_amylase",
+        "type": "enzyme",
+        "label": "Amylase",
+        "label_es": "Amilasa",
+        "description": "The enzyme in your saliva that cuts starch. It cannot touch plastic.",
+        "description_es": "La enzima de tu saliva que corta el almidón. No puede con el plástico.",
+        "isDistractor": true,
+        "position": { "x": -4.5, "y": -5.2, "z": 0 },
+        "metadata": {}
+      }
+    ],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": ["gene_petase", "gene_mhetase", "enzyme_petase", "enzyme_mhetase", "rxn_cut_pet", "rxn_cut_mhet", "met_pet", "met_mhet", "met_tpa", "met_eg", "met_water", "phenotype_recycled", "met_polyethylene", "enzyme_amylase"],
+    "distractorNodes": ["met_polyethylene", "enzyme_amylase"],
+    "requiredConnections": [
+      { "id": "req_petase", "sourceId": "gene_petase", "targetId": "enzyme_petase", "edgeType": "encodes",
+        "description": "The bacterium makes PETase and releases it onto the plastic.",
+        "description_es": "La bacteria fabrica la PETasa y la suelta sobre el plástico." },
+      { "id": "req_mhetase", "sourceId": "gene_mhetase", "targetId": "enzyme_mhetase", "edgeType": "encodes",
+        "description": "It also makes MHETase, which stays anchored to the cell surface.",
+        "description_es": "También fabrica la MHETasa, que se queda anclada a la superficie de la célula." },
+      { "id": "req_pet_cat", "sourceId": "enzyme_petase", "targetId": "rxn_cut_pet", "edgeType": "catalyzes",
+        "description": "PETase runs the first cut on the surface of the plastic.",
+        "description_es": "La PETasa hace funcionar el primer corte sobre la superficie del plástico." },
+      { "id": "req_pet_in", "sourceId": "rxn_cut_pet", "targetId": "met_pet", "edgeType": "consumes",
+        "description": "The plastic itself is the raw material.",
+        "description_es": "El propio plástico es la materia prima." },
+      { "id": "req_pet_out", "sourceId": "rxn_cut_pet", "targetId": "met_mhet", "edgeType": "produces",
+        "description": "The first cut releases MHET, small enough to reach the bacterium.",
+        "description_es": "El primer corte libera MHET, lo bastante pequeño para llegar a la bacteria." },
+      { "id": "req_mhet_cat", "sourceId": "enzyme_mhetase", "targetId": "rxn_cut_mhet", "edgeType": "catalyzes",
+        "description": "MHETase runs the second cut. Two enzymes, one after the other: a tiny assembly line.",
+        "description_es": "La MHETasa hace funcionar el segundo corte. Dos enzimas, una detrás de otra: una pequeña cadena de montaje." },
+      { "id": "req_mhet_in", "sourceId": "rxn_cut_mhet", "targetId": "met_mhet", "edgeType": "consumes",
+        "description": "The product of the first reaction is the ingredient of the second.",
+        "description_es": "El producto de la primera reacción es el ingrediente de la segunda." },
+      { "id": "req_tpa", "sourceId": "rxn_cut_mhet", "targetId": "met_tpa", "edgeType": "produces",
+        "description": "Out comes terephthalic acid…",
+        "description_es": "Sale ácido tereftálico…" },
+      { "id": "req_eg", "sourceId": "rxn_cut_mhet", "targetId": "met_eg", "edgeType": "produces",
+        "description": "…and ethylene glycol. A reaction can produce more than one thing.",
+        "description_es": "…y etilenglicol. Una reacción puede producir más de una cosa." },
+      { "id": "req_tpa_out", "sourceId": "met_tpa", "targetId": "phenotype_recycled", "edgeType": "influences",
+        "description": "Purified terephthalic acid is ready to make new PET.",
+        "description_es": "El ácido tereftálico purificado está listo para fabricar PET nuevo." },
+      { "id": "req_eg_out", "sourceId": "met_eg", "targetId": "phenotype_recycled", "edgeType": "influences",
+        "description": "With both building blocks back, the plastic can be rebuilt as new, again and again.",
+        "description_es": "Con las dos piezas recuperadas, el plástico se puede volver a fabricar como nuevo, una y otra vez." }
+    ],
+    "optionalConnections": [
+      { "id": "opt_water_pet", "sourceId": "rxn_cut_pet", "targetId": "met_water", "edgeType": "consumes",
+        "description": "Cutting PET uses water: that is what hydrolysis means.",
+        "description_es": "Cortar el PET gasta agua: eso es lo que significa hidrólisis.", "bonusPoints": 50 },
+      { "id": "opt_water_mhet", "sourceId": "rxn_cut_mhet", "targetId": "met_water", "edgeType": "consumes",
+        "description": "The second cut is a hydrolysis too.",
+        "description_es": "El segundo corte también es una hidrólisis.", "bonusPoints": 50 }
+    ],
+    "invalidConnections": [
+      {
+        "sourceId": "met_polyethylene",
+        "targetId": "rxn_cut_pet",
+        "reason": "Polyethylene is a chain of carbon and hydrogen only, with no bonds that water can break. PETase cannot cut it.",
+        "reason_es": "El polietileno es una cadena solo de carbono e hidrógeno, sin enlaces que el agua pueda romper. La PETasa no puede cortarlo."
+      },
+      {
+        "sourceId": "enzyme_amylase",
+        "targetId": "rxn_cut_pet",
+        "reason": "Amylase only fits starch. Each enzyme recognises its own material, like a key and its lock.",
+        "reason_es": "La amilasa solo encaja con el almidón. Cada enzima reconoce su propio material, como una llave y su cerradura."
+      },
+      {
+        "sourceId": "enzyme_petase",
+        "targetId": "rxn_cut_mhet",
+        "reason": "PETase does the first cut. The second one, on MHET, belongs to MHETase.",
+        "reason_es": "La PETasa hace el primer corte. El segundo, sobre el MHET, le toca a la MHETasa."
+      },
+      {
+        "sourceId": "met_pet",
+        "targetId": "phenotype_recycled",
+        "reason": "Whole PET cannot be rebuilt as new. It first has to be cut back into its building blocks.",
+        "reason_es": "El PET entero no se puede volver a fabricar como nuevo. Primero hay que cortarlo en sus piezas básicas."
+      }
+    ],
+    "winCondition": {
+      "type": "pathway_complete",
+      "targetNodeId": "phenotype_recycled",
+      "requiredConnectionIds": ["req_petase", "req_mhetase", "req_pet_cat", "req_pet_in", "req_pet_out", "req_mhet_cat", "req_mhet_in", "req_tpa", "req_eg", "req_tpa_out", "req_eg_out"],
+      "description": "Take PET back to terephthalic acid and ethylene glycol."
+    }
+  },
+  "simulation": {
+    "productLabel": "Building blocks recovered",
+    "productLabel_es": "Piezas recuperadas",
+    "steps": [
+      { "id": "sim_attach", "label": "Bacteria attach", "label_es": "Las bacterias se pegan", "description": "Bacteria settle on the plastic surface.", "description_es": "Las bacterias se instalan sobre la superficie del plástico.", "order": 1 },
+      { "id": "sim_petase", "label": "PETase at work", "label_es": "La PETasa trabaja", "description": "PETase nibbles the chains and releases MHET.", "description_es": "La PETasa mordisquea las cadenas y libera MHET.", "order": 2 },
+      { "id": "sim_mhetase", "label": "MHETase at work", "label_es": "La MHETasa trabaja", "description": "MHETase splits MHET into the two building blocks.", "description_es": "La MHETasa parte el MHET en las dos piezas básicas.", "order": 3 },
+      { "id": "sim_collect", "label": "Collecting", "label_es": "Recoger", "description": "Terephthalic acid and ethylene glycol are purified.", "description_es": "Se purifican el ácido tereftálico y el etilenglicol.", "order": 4 },
+      { "id": "sim_new", "label": "New plastic", "label_es": "Plástico nuevo", "description": "The building blocks are joined into brand-new PET.", "description_es": "Las piezas se unen en PET completamente nuevo.", "order": 5 }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Two enzymes, two cuts. The first breaks the plastic into small pieces; the second splits those pieces into the two building blocks.",
+      "content_es": "Dos enzimas, dos cortes. El primero rompe el plástico en trozos pequeños; el segundo parte esos trozos en las dos piezas básicas.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Pathway order",
+      "title_es": "Orden de la ruta",
+      "content": "PETase: PET → MHET. MHETase: MHET → terephthalic acid + ethylene glycol. Both building blocks → recycled plastic.",
+      "content_es": "PETasa: PET → MHET. MHETasa: MHET → ácido tereftálico + etilenglicol. Las dos piezas → plástico reciclado.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Guided solution",
+      "title_es": "Solución guiada",
+      "content": "Each gene to its enzyme. PETase–Cutting PET; Cutting PET–PET plastic and Cutting PET–MHET. MHETase–Cutting MHET; Cutting MHET–MHET, Cutting MHET–Terephthalic acid and Cutting MHET–Ethylene glycol. Terephthalic acid and Ethylene glycol–Plastic recycled.",
+      "content_es": "Cada gen con su enzima. PETasa–Cortar el PET; Cortar el PET–Plástico PET y Cortar el PET–MHET. MHETasa–Cortar el MHET; Cortar el MHET–MHET, Cortar el MHET–Ácido tereftálico y Cortar el MHET–Etilenglicol. Ácido tereftálico y Etilenglicol–Plástico reciclado.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "Plastic taken apart",
+    "title_es": "Plástico desmontado",
+    "summary": "You chained two enzymes: the product of the first is the ingredient of the second. Together they take PET back to the two molecules it was made from.",
+    "summary_es": "Has encadenado dos enzimas: el producto de la primera es el ingrediente de la segunda. Juntas devuelven el PET a las dos moléculas de las que se fabricó.",
+    "realWorldImpact": "Enzymatic recycling can turn even coloured or dirty PET back into material as good as new. Scientists have engineered faster versions of these enzymes, and the first industrial plants based on PET-cutting enzymes are being built.",
+    "realWorldImpact_es": "El reciclaje con enzimas puede convertir incluso PET de color o sucio en material tan bueno como el nuevo. Se han diseñado versiones más rápidas de estas enzimas, y se están construyendo las primeras plantas industriales basadas en enzimas que cortan PET."
+  },
+  "science": {
+    "organism": "Ideonella sakaiensis 201-F6",
+    "realWorldCase": "In 2016 Shosuke Yoshida and colleagues described Ideonella sakaiensis, isolated near a PET bottle recycling plant in Japan, and its two enzymes, PETase and MHETase. Since then, engineered variants such as FAST-PETase and related enzymes have greatly increased the speed of PET breakdown.",
+    "realWorldCase_es": "En 2016 Shosuke Yoshida y sus colegas describieron Ideonella sakaiensis, aislada cerca de una planta de reciclaje de botellas de PET en Japón, y sus dos enzimas, la PETasa y la MHETasa. Desde entonces, variantes diseñadas como la FAST-PETasa y otras enzimas parecidas han aumentado mucho la velocidad de descomposición del PET.",
+    "scientificContext": "PETase is a secreted hydrolase that cleaves the ester bonds of PET, mainly releasing MHET. MHETase, a lipoprotein on the outer membrane, hydrolyses MHET into terephthalic acid and ethylene glycol, which the bacterium takes up and uses as carbon and energy sources.",
+    "scientificContext_es": "La PETasa es una hidrolasa secretada que rompe los enlaces éster del PET y libera sobre todo MHET. La MHETasa, una lipoproteína de la membrana externa, hidroliza el MHET en ácido tereftálico y etilenglicol, que la bacteria absorbe y usa como fuente de carbono y energía.",
+    "gameplaySimplifications": [
+      "PETase also releases small amounts of other products (BHET and terephthalic acid directly).",
+      "The wild enzymes are slow, especially on crystalline PET; industrial processes use improved enzymes and pre-treated plastic.",
+      "The bacterium eats the building blocks; the game sends them to recycling instead."
+    ],
+    "gameplaySimplifications_es": [
+      "La PETasa también libera pequeñas cantidades de otros productos (BHET y ácido tereftálico directamente).",
+      "Las enzimas naturales son lentas, sobre todo con PET cristalino; los procesos industriales usan enzimas mejoradas y plástico tratado previamente.",
+      "La bacteria se come las piezas básicas; el juego las manda a reciclar."
+    ],
+    "references": [
+      {
+        "authors": ["Yoshida S", "Hiraga K", "Takehana T", "Taniguchi I", "Yamaji H", "Maeda Y", "Toyohara K", "Miyamoto K", "Kimura Y", "Oda K"],
+        "year": 2016,
+        "title": "A bacterium that degrades and assimilates poly(ethylene terephthalate)",
+        "journal": "Science",
+        "doi": "10.1126/science.aad6359",
+        "type": "paper"
+      },
+      {
+        "authors": ["Lu H", "Diaz DJ", "Czarnecki NJ", "Zhu C", "Kim W", "Shroff R"],
+        "year": 2022,
+        "title": "Machine learning-aided engineering of hydrolases for PET depolymerization",
+        "journal": "Nature",
+        "doi": "10.1038/s41586-022-04599-z",
+        "type": "paper"
+      }
+    ]
+  }
+}

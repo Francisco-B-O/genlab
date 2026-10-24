@@ -1,0 +1,235 @@
+{
+  "id": "inh-flies",
+  "mode": "inherit",
+  "title": "White-eyed flies",
+  "title_es": "Moscas de ojos blancos",
+  "subtitle": "The fly that showed that genes sit on chromosomes",
+  "subtitle_es": "La mosca que demostró que los genes están en los cromosomas",
+  "difficulty": "intermediate",
+  "estimatedDuration": 7,
+  "objective": "Fill in the Punnett squares for the eye colour of fruit flies, a gene on the X chromosome: females have two X (like Ww), males have X and Y (like WY).",
+  "objective_es": "Rellena los cuadros de Punnett del color de ojos de las moscas de la fruta, un gen del cromosoma X: las hembras tienen dos X (como Ww), los machos X e Y (como WY).",
+  "description": "In 1910 a researcher found a single male fly with white eyes among thousands of red-eyed ones. The way the trait passed to the next generations showed that the gene sat on the X chromosome.",
+  "description_es": "En 1910 un investigador encontró un único macho de ojos blancos entre miles de moscas de ojos rojos. La forma en que el rasgo pasaba a las generaciones siguientes mostró que el gen estaba en el cromosoma X.",
+  "organism": {
+    "id": "fly-white",
+    "commonName": "Fruit fly",
+    "commonName_es": "Mosca de la fruta",
+    "scientificName": "Drosophila melanogaster",
+    "taxonomy": [
+      "Animalia",
+      "Arthropoda",
+      "Insecta",
+      "Diptera",
+      "Drosophilidae",
+      "Drosophila"
+    ],
+    "targetTissue": "eye",
+    "targetOrganelle": "cytoplasm",
+    "description": "A small fly that was the model of early genetics.",
+    "description_es": "Una mosca pequeña que fue el modelo de la genética temprana."
+  },
+  "exploration": [
+    {
+      "kind": "flask",
+      "label": "The fly",
+      "label_es": "La mosca",
+      "title": "Fast, small and cheap",
+      "title_es": "Rápida, pequeña y barata",
+      "description": "A fruit fly lives for a few weeks and a female lays hundreds of eggs, so many generations can be followed in a few months.",
+      "description_es": "Una mosca de la fruta vive unas semanas y una hembra pone cientos de huevos, así que se pueden seguir muchas generaciones en unos meses."
+    },
+    {
+      "kind": "dna",
+      "label": "The surprise",
+      "label_es": "La sorpresa",
+      "title": "White eyes only in males",
+      "title_es": "Ojos blancos solo en machos",
+      "description": "In the second generation almost all the white-eyed flies were males. A trait that depends on the sex of the fly had to be on the sex chromosome.",
+      "description_es": "En la segunda generación casi todas las moscas de ojos blancos eran machos. Un rasgo que depende del sexo de la mosca tenía que estar en el cromosoma sexual."
+    }
+  ],
+  "inherit": {
+    "trait": "Eye colour",
+    "trait_es": "Color de los ojos",
+    "alleles": [
+      "W",
+      "w",
+      "Y"
+    ],
+    "genotypes": [
+      "WW",
+      "Ww",
+      "ww",
+      "WY",
+      "wY"
+    ],
+    "phenotypes": {
+      "WW": "red_f",
+      "Ww": "red_f",
+      "ww": "white_f",
+      "WY": "red_m",
+      "wY": "white_m"
+    },
+    "phenotypeLabels": {
+      "red_f": "Red-eyed female",
+      "red_f_es": "Hembra de ojos rojos",
+      "white_f": "White-eyed female",
+      "white_f_es": "Hembra de ojos blancos",
+      "red_m": "Red-eyed male",
+      "red_m_es": "Macho de ojos rojos",
+      "white_m": "White-eyed male",
+      "white_m_es": "Macho de ojos blancos"
+    },
+    "scenarios": [
+      {
+        "id": "s1",
+        "parent1": "WW",
+        "parent2": "wY",
+        "parent1Label": "Red-eyed female",
+        "parent1Label_es": "Hembra de ojos rojos",
+        "parent2Label": "White-eyed male",
+        "parent2Label_es": "Macho de ojos blancos",
+        "question": "A red-eyed female (WW) and a white-eyed male (wY) have offspring. What is the probability that an offspring is a red-eyed female?",
+        "question_es": "Una hembra de ojos rojos (WW) y un macho de ojos blancos (wY) tienen descendientes. ¿Qué probabilidad hay de que un descendiente sea una hembra de ojos rojos?",
+        "target": "red_f",
+        "explanation": "The cells are Ww, WY, Ww and WY. Daughters (Ww) are red-eyed and sons (WY) are red-eyed: 50% are red-eyed females.",
+        "explanation_es": "Las casillas son Ww, WY, Ww y WY. Las hijas (Ww) tienen ojos rojos y los hijos (WY) también: 50 % son hembras de ojos rojos."
+      },
+      {
+        "id": "s2",
+        "parent1": "Ww",
+        "parent2": "WY",
+        "parent1Label": "Red-eyed female, carries w",
+        "parent1Label_es": "Hembra de ojos rojos, lleva w",
+        "parent2Label": "Red-eyed male",
+        "parent2Label_es": "Macho de ojos rojos",
+        "question": "A red-eyed female that carries w (Ww) and a red-eyed male (WY) have offspring. What is the probability that an offspring is a white-eyed male?",
+        "question_es": "Una hembra de ojos rojos que lleva w (Ww) y un macho de ojos rojos (WY) tienen descendientes. ¿Qué probabilidad hay de que un descendiente sea un macho de ojos blancos?",
+        "target": "white_m",
+        "explanation": "The cells are WW, WY, Ww and wY. Only wY is a white-eyed male: 25%. This is the case that surprised the researcher.",
+        "explanation_es": "Las casillas son WW, WY, Ww y wY. Solo wY es un macho de ojos blancos: 25 %. Es el caso que sorprendió al investigador."
+      },
+      {
+        "id": "s3",
+        "parent1": "Ww",
+        "parent2": "wY",
+        "parent1Label": "Red-eyed female, carries w",
+        "parent1Label_es": "Hembra de ojos rojos, lleva w",
+        "parent2Label": "White-eyed male",
+        "parent2Label_es": "Macho de ojos blancos",
+        "question": "A red-eyed female that carries w (Ww) and a white-eyed male (wY) have offspring. What is the probability that an offspring is a white-eyed female?",
+        "question_es": "Una hembra de ojos rojos que lleva w (Ww) y un macho de ojos blancos (wY) tienen descendientes. ¿Qué probabilidad hay de que un descendiente sea una hembra de ojos blancos?",
+        "target": "white_f",
+        "explanation": "The cells are Ww, WY, ww and wY. Only ww is a white-eyed female: 25%.",
+        "explanation_es": "Las casillas son Ww, WY, ww y wY. Solo ww es una hembra de ojos blancos: 25 %."
+      }
+    ]
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Probability",
+    "productLabel_es": "Probabilidad",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Parents",
+        "label_es": "Progenitores",
+        "description": "Each gives one allele.",
+        "description_es": "Cada uno da un alelo.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Square",
+        "label_es": "Cuadro",
+        "description": "All combinations.",
+        "description_es": "Todas las combinaciones.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Trait",
+        "label_es": "Rasgo",
+        "description": "Read the result.",
+        "description_es": "Lee el resultado.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Mothers give an X, fathers give an X to daughters and a Y to sons. A cell with Y is a male.",
+      "content_es": "Las madres dan un X; los padres dan un X a las hijas y una Y a los hijos. Una casilla con Y es un macho.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "W is dominant: WW and Ww are red-eyed females. A male has only one allele: WY is red-eyed and wY is white-eyed.",
+      "content_es": "W es dominante: WW y Ww son hembras de ojos rojos. Un macho solo tiene un alelo: WY tiene ojos rojos y wY ojos blancos.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Count the cells of the kind asked about: each is worth 25%.",
+      "content_es": "Cuenta las casillas del tipo por el que preguntan: cada una vale un 25 %.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A gene with an address",
+    "title_es": "Un gen con dirección",
+    "summary": "You saw that a trait that is more common in one sex points to a gene on a sex chromosome.",
+    "summary_es": "Has visto que un rasgo más común en un sexo apunta a un gen en un cromosoma sexual.",
+    "realWorldImpact": "The fly became the model animal of genetics, and its work led to maps of genes on chromosomes and to several Nobel Prizes.",
+    "realWorldImpact_es": "La mosca se convirtió en el animal modelo de la genética, y su trabajo llevó a mapas de genes en los cromosomas y a varios premios Nobel."
+  },
+  "science": {
+    "organism": "Drosophila melanogaster",
+    "realWorldCase": "Thomas Hunt Morgan reported the white-eyed male in 1910. Together with the pattern of inheritance, it gave the first clear proof that a particular gene lies on a particular chromosome, and earned him the 1933 Nobel Prize in Physiology or Medicine.",
+    "realWorldCase_es": "Thomas Hunt Morgan describió el macho de ojos blancos en 1910. Junto con el patrón de herencia, fue la primera prueba clara de que un gen concreto está en un cromosoma concreto, y le valió el Premio Nobel de Fisiología o Medicina de 1933.",
+    "scientificContext": "The white allele is a loss of function in a gene whose protein loads pigment into the eye cells. Females need two copies to be white-eyed; males, with a single X, need only one.",
+    "scientificContext_es": "El alelo blanco es una pérdida de función de un gen cuya proteína carga pigmento en las células del ojo. Las hembras necesitan dos copias para tener ojos blancos; los machos, con un solo X, necesitan una.",
+    "gameplaySimplifications": [
+      "A gene on the X chromosome is followed. The father gives his X to his daughters and his Y to his sons; the mother gives one of her two X chromosomes to each child."
+    ],
+    "gameplaySimplifications_es": [
+      "Se sigue un gen del cromosoma X. El padre da su X a sus hijas y su Y a sus hijos; la madre da uno de sus dos cromosomas X a cada hijo."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Morgan, T. H."
+        ],
+        "year": 1910,
+        "title": "Sex limited inheritance in Drosophila",
+        "journal": "Science",
+        "type": "paper",
+        "doi": "10.1126/science.32.812.120"
+      }
+    ]
+  }
+}

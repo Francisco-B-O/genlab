@@ -1,0 +1,289 @@
+{
+  "id": "tune-sourdough",
+  "mode": "tune",
+  "title": "Tune the sourdough",
+  "title_es": "Ajusta la masa madre",
+  "subtitle": "A living starter",
+  "subtitle_es": "Un cultivo vivo",
+  "difficulty": "beginner",
+  "estimatedDuration": 5,
+  "objective": "Choose the flour, the warmth and the feeding of a sourdough starter so that it is lively without going over budget.",
+  "objective_es": "Elige la harina, el calor y la alimentación de una masa madre para que esté activa sin pasarte del presupuesto.",
+  "description": "A sourdough starter is a community of wild yeasts and bacteria that live on flour and water. It needs the right food and the right warmth.",
+  "description_es": "Una masa madre es una comunidad de levaduras y bacterias silvestres que viven de harina y agua. Necesita la comida y el calor adecuados.",
+  "organism": {
+    "id": "sourdough-tune",
+    "commonName": "A sourdough starter",
+    "commonName_es": "Una masa madre",
+    "scientificName": "Yeast and lactic acid bacteria",
+    "taxonomy": [
+      "Fungi",
+      "Bacteria"
+    ],
+    "targetTissue": "single cell",
+    "targetOrganelle": "cytoplasm",
+    "description": "Wild yeasts and lactic bacteria living together in dough.",
+    "description_es": "Levaduras silvestres y bacterias lácticas que viven juntas en la masa."
+  },
+  "exploration": [
+    {
+      "kind": "bread",
+      "label": "Sourdough",
+      "label_es": "Masa madre",
+      "title": "Bread before packet yeast",
+      "title_es": "Pan antes de la levadura de sobre",
+      "description": "For thousands of years, bread was raised with a piece of dough kept from the last batch, full of wild microbes.",
+      "description_es": "Durante miles de años, el pan se hizo subir con un trozo de masa guardado de la tanda anterior, lleno de microbios silvestres."
+    },
+    {
+      "kind": "yeast",
+      "label": "The microbes",
+      "label_es": "Los microbios",
+      "title": "Yeast makes gas, bacteria make acid",
+      "title_es": "La levadura hace gas, las bacterias hacen ácido",
+      "description": "The yeasts make the gas that raises the dough, and the lactic bacteria make the acid that gives it its tang.",
+      "description_es": "Las levaduras fabrican el gas que hace subir la masa, y las bacterias lácticas fabrican el ácido que le da su sabor."
+    }
+  ],
+  "tune": {
+    "metricLabel": "Starter activity",
+    "metricLabel_es": "Actividad del cultivo",
+    "unit": "%",
+    "unit_es": "%",
+    "base": 50,
+    "target": 60,
+    "budget": 3,
+    "labels": {
+      "perCell": "Gas and acid made",
+      "perCell_es": "Gas y ácido fabricados",
+      "growth": "Health of the microbes",
+      "growth_es": "Salud de los microbios"
+    },
+    "messages": {
+      "lowGrowth": "The microbes are suffering: too cold, too hot or underfed.",
+      "lowGrowth_es": "Los microbios sufren: demasiado frío, demasiado calor o poca comida.",
+      "lowPerCell": "The starter is sluggish: it needs richer flour or more feeding.",
+      "lowPerCell_es": "El cultivo está flojo: necesita una harina más rica o más alimentación."
+    },
+    "knobs": [
+      {
+        "id": "flour",
+        "label": "Flour",
+        "label_es": "Harina",
+        "options": [
+          {
+            "id": "white",
+            "label": "White flour",
+            "label_es": "Harina blanca",
+            "description": "Cheap, with little for the microbes.",
+            "description_es": "Barata, con poco para los microbios.",
+            "cost": 0,
+            "perCell": 0.8,
+            "growth": 1
+          },
+          {
+            "id": "mixed",
+            "label": "Mixed flour",
+            "label_es": "Harina mixta",
+            "description": "A bit of whole grain.",
+            "description_es": "Un poco de integral.",
+            "cost": 1,
+            "perCell": 1.2,
+            "growth": 1
+          },
+          {
+            "id": "whole",
+            "label": "Whole-grain flour",
+            "label_es": "Harina integral",
+            "description": "Rich in food and minerals for the microbes.",
+            "description_es": "Rica en comida y minerales para los microbios.",
+            "cost": 1,
+            "perCell": 1.5,
+            "growth": 1
+          }
+        ]
+      },
+      {
+        "id": "temp",
+        "label": "Temperature",
+        "label_es": "Temperatura",
+        "options": [
+          {
+            "id": "cool",
+            "label": "Cool, 15 °C",
+            "label_es": "Fresca, 15 °C",
+            "description": "Free, but slow.",
+            "description_es": "Gratis, pero lenta.",
+            "cost": 0,
+            "perCell": 1,
+            "growth": 0.6
+          },
+          {
+            "id": "warm",
+            "label": "Warm, 26 °C",
+            "label_es": "Templada, 26 °C",
+            "description": "A comfortable temperature.",
+            "description_es": "Una temperatura cómoda.",
+            "cost": 1,
+            "perCell": 1,
+            "growth": 1
+          },
+          {
+            "id": "hot",
+            "label": "Hot, 45 °C",
+            "label_es": "Caliente, 45 °C",
+            "description": "Too hot for most of the microbes.",
+            "description_es": "Demasiado calor para casi todos los microbios.",
+            "cost": 1,
+            "perCell": 1,
+            "growth": 0.35
+          }
+        ]
+      },
+      {
+        "id": "feed",
+        "label": "Feeding",
+        "label_es": "Alimentación",
+        "options": [
+          {
+            "id": "rare",
+            "label": "Once a week",
+            "label_es": "Una vez por semana",
+            "description": "Cheap, but the microbes go hungry.",
+            "description_es": "Barata, pero los microbios pasan hambre.",
+            "cost": 0,
+            "perCell": 0.7,
+            "growth": 0.7
+          },
+          {
+            "id": "daily",
+            "label": "Every day",
+            "label_es": "Cada día",
+            "description": "Fresh flour and water every day.",
+            "description_es": "Harina y agua frescas cada día.",
+            "cost": 1,
+            "perCell": 1.2,
+            "growth": 1
+          },
+          {
+            "id": "hourly",
+            "label": "Every few hours",
+            "label_es": "Cada pocas horas",
+            "description": "Very lively, but very demanding.",
+            "description_es": "Muy activa, pero muy exigente.",
+            "cost": 3,
+            "perCell": 1.4,
+            "growth": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Starter activity",
+    "productLabel_es": "Actividad del cultivo",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Feed",
+        "label_es": "Alimentar",
+        "description": "Flour and water.",
+        "description_es": "Harina y agua.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Grow",
+        "label_es": "Crecer",
+        "description": "The microbes multiply.",
+        "description_es": "Los microbios se multiplican.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Rise",
+        "label_es": "Subir",
+        "description": "The starter bubbles.",
+        "description_es": "El cultivo burbujea.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Wild microbes like warmth, regular food and rich flour, but not heat.",
+      "content_es": "A los microbios silvestres les gustan el calor, la comida regular y la harina rica, pero no el calor fuerte.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "A cool place or a hot one hurts the microbes, and a starter that is not fed starves.",
+      "content_es": "Un sitio fresco o uno muy caliente perjudica a los microbios, y una masa madre que no se alimenta pasa hambre.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Whole-grain flour, warm and fed every day reaches the target.",
+      "content_es": "Harina integral, templada y alimentada cada día llega al objetivo.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A starter that bubbles",
+    "title_es": "Una masa madre que burbujea",
+    "summary": "You balanced flour, warmth and feeding to keep a living starter active.",
+    "summary_es": "Has equilibrado harina, calor y alimentación para mantener activa una masa madre viva.",
+    "realWorldImpact": "Bakers look after their starters for years, and some are older than their owners.",
+    "realWorldImpact_es": "Los panaderos cuidan sus masas madre durante años, y algunas son más antiguas que sus dueños."
+  },
+  "science": {
+    "organism": "Yeast and lactic acid bacteria",
+    "realWorldCase": "Studies of sourdoughs from many countries found that each one holds its own community of yeasts and lactic acid bacteria.",
+    "realWorldCase_es": "Los estudios de masas madre de muchos países encontraron que cada una tiene su propia comunidad de levaduras y bacterias lácticas.",
+    "scientificContext": "Yeasts and heterofermentative lactic bacteria coexist in sourdough: the yeasts make CO2 and ethanol, the bacteria lactic and acetic acids. Temperature and feeding shape the balance.",
+    "scientificContext_es": "En la masa madre conviven levaduras y bacterias lácticas heterofermentativas: las levaduras fabrican CO2 y etanol, las bacterias ácidos láctico y acético. La temperatura y la alimentación modelan el equilibrio.",
+    "gameplaySimplifications": [
+      "A real starter holds dozens of species; here it is shown as one living culture."
+    ],
+    "gameplaySimplifications_es": [
+      "Una masa madre real contiene decenas de especies; aquí se muestra como un solo cultivo vivo."
+    ],
+    "references": [
+      {
+        "authors": [
+          "De Vuyst, L.",
+          "Neysens, P."
+        ],
+        "year": 2005,
+        "title": "The sourdough microflora: biodiversity and metabolic interactions",
+        "journal": "Trends in Food Science & Technology",
+        "type": "paper",
+        "doi": "10.1016/j.tifs.2004.02.012"
+      }
+    ]
+  }
+}

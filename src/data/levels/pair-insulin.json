@@ -1,0 +1,148 @@
+{
+  "id": "pair-insulin",
+  "mode": "pairing",
+  "title": "The first words of insulin",
+  "title_es": "Las primeras palabras de la insulina",
+  "subtitle": "Thirteen codons and a stop",
+  "subtitle_es": "Trece codones y una parada",
+  "difficulty": "advanced",
+  "estimatedDuration": 8,
+  "objective": "Read this messenger RNA three letters at a time and find the amino acid of each codon. It ends with a stop.",
+  "objective_es": "Lee este ARN mensajero de tres en tres letras y busca el aminoácido de cada codón. Acaba con una parada.",
+  "description": "Strands pair with strict rules. Work out each partner letter by letter, as the cell does.",
+  "description_es": "Las hebras se emparejan con reglas estrictas. Averigua cada pareja letra a letra, como hace la célula.",
+  "organism": {
+    "id": "pair-pair-insulin",
+    "commonName": "A strand of nucleic acid",
+    "commonName_es": "Una hebra de ácido nucleico",
+    "scientificName": "Nucleic acids",
+    "taxonomy": [
+      "Molecule"
+    ],
+    "targetTissue": "nucleus",
+    "targetOrganelle": "nucleus",
+    "description": "DNA and RNA strands.",
+    "description_es": "Hebras de ADN y ARN."
+  },
+  "exploration": [
+    {
+      "kind": "bacterium",
+      "label": "Insulin in bacteria",
+      "label_es": "Insulina en bacterias",
+      "title": "A human gene, a bacterial reader",
+      "title_es": "Un gen humano, un lector bacteriano",
+      "description": "Bacteria read the genetic code like us, so they can make human insulin once they receive its gene. The first amino acids of the chain B are Phe, Val, Asn, Gln, His, Leu, Cys, Gly, Ser, His, Leu and Val.",
+      "description_es": "Las bacterias leen el código genético como nosotros, así que pueden fabricar insulina humana cuando reciben su gen. Los primeros aminoácidos de la cadena B son Phe, Val, Asn, Gln, His, Leu, Cys, Gly, Ser, His, Leu y Val."
+    },
+    {
+      "kind": "dna",
+      "label": "Start and stop",
+      "label_es": "Inicio y parada",
+      "title": "Every message has both",
+      "title_es": "Todo mensaje tiene las dos",
+      "description": "AUG tells the ribosome where to start and a stop codon tells it where to finish. In the bacterium, a Met is added at the start.",
+      "description_es": "AUG dice al ribosoma dónde empezar y un codón de parada dónde terminar. En la bacteria se añade una Met al comienzo."
+    }
+  ],
+  "pairing": {
+    "kind": "protein",
+    "template": "AUGUUUGUUAAUCAACAUCUUUGUGGUUCUCAUCUUGUUUAA",
+    "story": "Read the message that a bacterium would use to make the start of human insulin, and find the amino acid of each codon.",
+    "story_es": "Lee el mensaje que usaría una bacteria para fabricar el comienzo de la insulina humana, y busca el aminoácido de cada codón."
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Strand",
+    "productLabel_es": "Hebra",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Template",
+        "label_es": "Molde",
+        "description": "The strand that exists.",
+        "description_es": "La hebra que ya existe.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Pairs",
+        "label_es": "Parejas",
+        "description": "Each base finds its partner.",
+        "description_es": "Cada base encuentra a su pareja.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Strand",
+        "label_es": "Hebra",
+        "description": "The new strand is complete.",
+        "description_es": "La hebra nueva está completa.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Split the message into groups of three and look each one up in the table. Keep the order.",
+      "content_es": "Divide el mensaje en grupos de tres y busca cada uno en la tabla. Mantén el orden.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "The first codon is AUG (Met) and the last one is a stop. Between them there are eleven amino acids.",
+      "content_es": "El primer codón es AUG (Met) y el último es de parada. Entre ellos hay once aminoácidos.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "The answers are: Met, Phe, Val, Asn, Gln, His, Leu, Cys, Gly, Ser, His, Leu, Val, Stop.",
+      "content_es": "Las respuestas son: Met, Phe, Val, Asn, Gln, His, Leu, Cys, Gly, Ser, His, Leu, Val, Fin.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "The start of a medicine",
+    "title_es": "El comienzo de un medicamento",
+    "summary": "You read a longer message, from the start signal to the stop, and found the amino acids that begin chain B of human insulin.",
+    "summary_es": "Has leído un mensaje más largo, de la señal de inicio a la parada, y has encontrado los aminoácidos con los que empieza la cadena B de la insulina humana.",
+    "realWorldImpact": "Human insulin made by bacteria has replaced the insulin that used to be taken from animals, and millions of people with diabetes use it every day.",
+    "realWorldImpact_es": "La insulina humana fabricada por bacterias ha sustituido a la que antes se sacaba de animales, y millones de personas con diabetes la usan cada día."
+  },
+  "science": {
+    "organism": "Nucleic acids",
+    "realWorldCase": "Insulin made in bacteria was the first medicine from genetic engineering to reach patients, in the early 1980s.",
+    "realWorldCase_es": "La insulina fabricada en bacterias fue el primer medicamento de ingeniería genética que llegó a los pacientes, a principios de los años ochenta.",
+    "scientificContext": "Chain B of insulin has 30 amino acids and starts with Phe-Val-Asn-Gln-His-Leu-Cys-Gly-Ser-His-Leu-Val. Each of them can be written with several codons; the message here is one possible choice.",
+    "scientificContext_es": "La cadena B de la insulina tiene 30 aminoácidos y empieza con Phe-Val-Asn-Gln-His-Leu-Cys-Gly-Ser-His-Leu-Val. Cada uno puede escribirse con varios codones; el mensaje de aquí es una posible elección.",
+    "gameplaySimplifications": [
+      "Only the first twelve amino acids are used, with a Met at the start and a stop at the end."
+    ],
+    "gameplaySimplifications_es": [
+      "Solo se usan los doce primeros aminoácidos, con una Met al principio y una parada al final."
+    ],
+    "references": []
+  }
+}

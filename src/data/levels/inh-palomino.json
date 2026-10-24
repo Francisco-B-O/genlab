@@ -1,0 +1,225 @@
+{
+  "id": "inh-palomino",
+  "mode": "inherit",
+  "title": "Palomino horses",
+  "title_es": "Caballos palominos",
+  "subtitle": "Two copies, three colours",
+  "subtitle_es": "Dos copias, tres colores",
+  "difficulty": "intermediate",
+  "estimatedDuration": 6,
+  "objective": "Fill in the Punnett squares for horse colour: one cream allele dilutes the coat and two dilute it much more.",
+  "objective_es": "Rellena los cuadros de Punnett del color de los caballos: un alelo crema diluye el pelaje y dos lo diluyen mucho más.",
+  "description": "A palomino horse has a golden coat and a pale mane. Breeders know that two palominos do not always have palomino foals, and the squares tell why.",
+  "description_es": "Un caballo palomino tiene el pelaje dorado y las crines claras. Quien cría caballos sabe que dos palominos no siempre tienen potros palominos, y los cuadros explican por qué.",
+  "organism": {
+    "id": "horse-palomino",
+    "commonName": "Horse",
+    "commonName_es": "Caballo",
+    "scientificName": "Equus caballus",
+    "taxonomy": [
+      "Animalia",
+      "Chordata",
+      "Mammalia",
+      "Perissodactyla",
+      "Equidae",
+      "Equus"
+    ],
+    "targetTissue": "skin",
+    "targetOrganelle": "cytoplasm",
+    "description": "A domestic animal with many coat colours.",
+    "description_es": "Un animal doméstico con muchos colores de pelaje."
+  },
+  "exploration": [
+    {
+      "kind": "cell",
+      "label": "Three colours",
+      "label_es": "Tres colores",
+      "title": "Chestnut, palomino, cremello",
+      "title_es": "Alazán, palomino y cremello",
+      "description": "A chestnut horse is reddish brown. One copy of the cream allele turns it into a golden palomino, and two copies turn it into a very pale cremello.",
+      "description_es": "Un caballo alazán es marrón rojizo. Una copia del alelo crema lo convierte en un palomino dorado, y dos copias lo convierten en un cremello muy claro."
+    },
+    {
+      "kind": "dna",
+      "label": "Incomplete dominance",
+      "label_es": "Dominancia incompleta",
+      "title": "The middle colour is a mix",
+      "title_es": "El color del medio es una mezcla",
+      "description": "Neither allele hides the other: the animal with one copy of each shows an in-between colour, as in the pink snapdragons.",
+      "description_es": "Ningún alelo oculta al otro: el animal con una copia de cada uno muestra un color intermedio, como los dragones de color rosa."
+    }
+  ],
+  "inherit": {
+    "trait": "Coat colour",
+    "trait_es": "Color del pelaje",
+    "alleles": [
+      "N",
+      "R"
+    ],
+    "phenotypes": {
+      "NN": "chestnut",
+      "NR": "palomino",
+      "RR": "cremello"
+    },
+    "phenotypeLabels": {
+      "chestnut": "Chestnut",
+      "chestnut_es": "Alazán",
+      "palomino": "Palomino",
+      "palomino_es": "Palomino",
+      "cremello": "Cremello",
+      "cremello_es": "Cremello"
+    },
+    "scenarios": [
+      {
+        "id": "s1",
+        "parent1": "NR",
+        "parent2": "NR",
+        "parent1Label": "Palomino",
+        "parent1Label_es": "Palomino",
+        "parent2Label": "Palomino",
+        "parent2Label_es": "Palomino",
+        "question": "Two palomino horses (NR) have a foal. What is the probability that the foal is palomino like them?",
+        "question_es": "Dos caballos palominos (NR) tienen un potro. ¿Qué probabilidad hay de que el potro sea palomino como ellos?",
+        "target": "palomino",
+        "explanation": "Two cells are NR: 50%. The others are NN (chestnut) and RR (cremello), 25% each.",
+        "explanation_es": "Dos casillas son NR: 50 %. Las otras son NN (alazán) y RR (cremello), 25 % cada una."
+      },
+      {
+        "id": "s2",
+        "parent1": "NN",
+        "parent2": "RR",
+        "parent1Label": "Chestnut",
+        "parent1Label_es": "Alazán",
+        "parent2Label": "Cremello",
+        "parent2Label_es": "Cremello",
+        "question": "A chestnut horse (NN) and a cremello (RR) have a foal. What is the probability that the foal is palomino?",
+        "question_es": "Un caballo alazán (NN) y un cremello (RR) tienen un potro. ¿Qué probabilidad hay de que el potro sea palomino?",
+        "target": "palomino",
+        "explanation": "All four cells are NR: every foal is palomino (100%). This is the usual way to breed palominos.",
+        "explanation_es": "Las cuatro casillas son NR: todos los potros son palominos (100 %). Es la forma habitual de criar palominos."
+      },
+      {
+        "id": "s3",
+        "parent1": "NR",
+        "parent2": "NN",
+        "parent1Label": "Palomino",
+        "parent1Label_es": "Palomino",
+        "parent2Label": "Chestnut",
+        "parent2Label_es": "Alazán",
+        "question": "A palomino (NR) and a chestnut horse (NN) have a foal. What is the probability that the foal is chestnut?",
+        "question_es": "Un palomino (NR) y un caballo alazán (NN) tienen un potro. ¿Qué probabilidad hay de que el potro sea alazán?",
+        "target": "chestnut",
+        "explanation": "Two cells are NN (chestnut) and two are NR (palomino): 50% each.",
+        "explanation_es": "Dos casillas son NN (alazán) y dos son NR (palomino): 50 % cada una."
+      }
+    ]
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Probability",
+    "productLabel_es": "Probabilidad",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Parents",
+        "label_es": "Progenitores",
+        "description": "Each gives one allele.",
+        "description_es": "Cada uno da un alelo.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Square",
+        "label_es": "Cuadro",
+        "description": "All combinations.",
+        "description_es": "Todas las combinaciones.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Trait",
+        "label_es": "Rasgo",
+        "description": "Read the result.",
+        "description_es": "Lee el resultado.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Fill the square first; then read each cell. Here every genotype has its own colour.",
+      "content_es": "Rellena primero el cuadro; luego lee cada casilla. Aquí cada genotipo tiene su propio color.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "NN is chestnut, NR is palomino and RR is cremello.",
+      "content_es": "NN es alazán, NR es palomino y RR es cremello.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Count the cells of the colour asked about: each is worth 25%.",
+      "content_es": "Cuenta las casillas del color por el que preguntan: cada una vale un 25 %.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A colour in the middle",
+    "title_es": "Un color en el medio",
+    "summary": "You saw that when neither allele is dominant, the middle genotype has its own colour and two palominos can have foals of three colours.",
+    "summary_es": "Has visto que cuando ningún alelo es dominante el genotipo intermedio tiene su propio color y que dos palominos pueden tener potros de tres colores.",
+    "realWorldImpact": "Horse breeders choose the parents with these squares, because crossing a chestnut with a cremello gives palomino foals every time.",
+    "realWorldImpact_es": "Quien cría caballos elige los padres con estos cuadros, porque cruzar un alazán con un cremello da potros palominos siempre."
+  },
+  "science": {
+    "organism": "Equus caballus",
+    "realWorldCase": "In 2003 a team showed that the cream coat colour of horses comes from a change in a gene called MATP, which also takes part in pigment cells of other animals.",
+    "realWorldCase_es": "En 2003 un equipo mostró que el color crema del pelaje de los caballos viene de un cambio en un gen llamado MATP, que también interviene en las células del pigmento de otros animales.",
+    "scientificContext": "A single change in the MATP gene makes a transporter of pigment cells work less. One copy dilutes the red colour into gold; two copies dilute it almost completely.",
+    "scientificContext_es": "Un único cambio en el gen MATP hace que un transportador de las células del pigmento trabaje menos. Una copia diluye el rojo hasta el dorado; dos copias lo diluyen casi por completo.",
+    "gameplaySimplifications": [
+      "Horse colours depend on many genes; here only the cream gene is followed, on a chestnut background."
+    ],
+    "gameplaySimplifications_es": [
+      "Los colores de los caballos dependen de muchos genes; aquí solo se sigue el gen crema, sobre un fondo alazán."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Mariat, D.",
+          "Taourit, S.",
+          "Guérin, G."
+        ],
+        "year": 2003,
+        "title": "A mutation in the MATP gene causes the cream coat colour in the horse",
+        "journal": "Genetics Selection Evolution",
+        "type": "paper",
+        "doi": "10.1186/1297-9686-35-1-119"
+      }
+    ]
+  }
+}

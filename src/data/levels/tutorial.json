@@ -1,0 +1,285 @@
+{
+  "id": "tutorial",
+  "isTutorial": true,
+  "title": "Lactose-free milk",
+  "title_es": "Leche sin lactosa",
+  "subtitle": "Learn how genes, enzymes and molecules fit together",
+  "subtitle_es": "Aprende cómo encajan genes, enzimas y moléculas",
+  "difficulty": "beginner",
+  "estimatedDuration": 3,
+  "objective": "Use the lactase enzyme to cut the lactose in milk, so that people with lactose intolerance can drink it.",
+  "objective_es": "Usa la enzima lactasa para cortar la lactosa de la leche, y que la puedan beber las personas con intolerancia.",
+  "description": "A guided first level. One gene, one enzyme, one reaction.",
+  "description_es": "Un primer nivel guiado. Un gen, una enzima, una reacción.",
+  "organism": {
+    "id": "kluyveromyces-lactis",
+    "commonName": "Dairy yeast",
+    "commonName_es": "Levadura láctea",
+    "scientificName": "Kluyveromyces lactis",
+    "taxonomy": ["Fungi", "Ascomycota", "Saccharomycetes", "Kluyveromyces"],
+    "targetTissue": "single cell",
+    "targetOrganelle": "cytoplasm",
+    "description": "A yeast that naturally lives on lactose. Industry uses it to produce the lactase enzyme.",
+    "description_es": "Una levadura que vive de la lactosa de forma natural. La industria la usa para producir la enzima lactasa."
+  },
+  "exploration": [
+    {
+      "kind": "milk",
+      "label": "Product",
+      "label_es": "Producto",
+      "title": "A glass of milk",
+      "title_es": "Un vaso de leche",
+      "description": "Milk contains a sugar called lactose. Many adults cannot digest it and feel unwell after drinking milk.",
+      "description_es": "La leche contiene un azúcar llamado lactosa. Muchos adultos no la digieren bien y les sienta mal la leche."
+    },
+    {
+      "kind": "yeast",
+      "label": "Organism",
+      "label_es": "Organismo",
+      "title": "A yeast that eats lactose",
+      "title_es": "Una levadura que come lactosa",
+      "description": "The yeast Kluyveromyces lactis makes an enzyme called lactase that cuts lactose in two. Factories grow it to obtain that enzyme.",
+      "description_es": "La levadura Kluyveromyces lactis fabrica una enzima, la lactasa, que corta la lactosa en dos. Las fábricas la cultivan para obtener esa enzima."
+    },
+    {
+      "kind": "pathway",
+      "label": "Pathway",
+      "label_es": "Ruta",
+      "title": "Your first pathway",
+      "title_es": "Tu primera ruta",
+      "description": "Just one gene, one enzyme and one reaction. The guide will tell you exactly what to tap.",
+      "description_es": "Solo un gen, una enzima y una reacción. La guía te dirá exactamente qué tocar."
+    }
+  ],
+  "guide": [
+    {
+      "text": "Welcome to the lab! The whole game follows one rule: genes make enzymes, enzymes run reactions, and reactions turn one molecule into another. Let's use it to make lactose-free milk.",
+      "text_es": "¡Bienvenido al laboratorio! Todo el juego sigue una regla: los genes fabrican enzimas, las enzimas hacen funcionar reacciones, y las reacciones convierten una molécula en otra. Vamos a usarla para hacer leche sin lactosa."
+    },
+    {
+      "text": "Genes are recipes written in DNA. Tap the LAC4 gene, then tap Lactase. You can also tap any piece to read what it is in the side panel.",
+      "text_es": "Los genes son recetas escritas en el ADN. Toca el gen LAC4 y después toca Lactasa. También puedes tocar cualquier pieza para leer qué es en el panel lateral.",
+      "connectionId": "req_gene_enzyme"
+    },
+    {
+      "text": "The gene made the enzyme. An enzyme is a tiny machine that makes a reaction happen. Connect Lactase with the reaction “Cutting lactose”.",
+      "text_es": "El gen fabricó la enzima. Una enzima es una máquina diminuta que hace que ocurra una reacción. Conecta Lactasa con la reacción «Cortar la lactosa».",
+      "connectionId": "req_enzyme_reaction"
+    },
+    {
+      "text": "Every reaction uses something and produces something. Connect the reaction with Lactose, the ingredient it uses. The order you tap them in does not matter.",
+      "text_es": "Toda reacción usa algo y produce algo. Conecta la reacción con Lactosa, el ingrediente que usa. Da igual en qué orden las toques.",
+      "connectionId": "req_reaction_lactose"
+    },
+    {
+      "text": "Now connect the reaction with what it produces: glucose and galactose, two smaller sugars.",
+      "text_es": "Ahora conecta la reacción con lo que produce: glucosa y galactosa, dos azúcares más pequeños.",
+      "connectionId": "req_reaction_sugars"
+    },
+    {
+      "text": "See the Starch piece? Some pieces are traps: they are real, but they do not belong to this pathway. If you connect one, the game explains why it does not fit.",
+      "text_es": "¿Ves la pieza Almidón? Algunas piezas son trampas: existen de verdad, pero no forman parte de esta ruta. Si conectas una, el juego te explica por qué no encaja.",
+      "highlight": ["met_starch"]
+    },
+    {
+      "text": "Last step! Once the lactose has been cut, the milk is lactose-free. Connect the sugars with the result.",
+      "text_es": "¡Último paso! Cuando la lactosa está cortada, la leche ya no tiene lactosa. Conecta los azúcares con el resultado.",
+      "connectionId": "req_sugars_result"
+    }
+  ],
+  "biologicalContext": {
+    "nodes": [
+      {
+        "id": "gene_lac4",
+        "type": "gene",
+        "label": "LAC4 gene",
+        "label_es": "Gen LAC4",
+        "description": "The recipe for lactase. In the yeast Kluyveromyces lactis this gene is called LAC4.",
+        "description_es": "La receta para fabricar lactasa. En la levadura Kluyveromyces lactis este gen se llama LAC4.",
+        "scientificName": "LAC4 (K. lactis β-galactosidase gene)",
+        "scientificName_es": "LAC4 (gen de β-galactosidasa de K. lactis)",
+        "position": { "x": -6, "y": 1.2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_lactase",
+        "type": "enzyme",
+        "label": "Lactase",
+        "label_es": "Lactasa",
+        "description": "An enzyme that cuts lactose in two. Dairy factories add it to milk to make it lactose-free.",
+        "description_es": "Una enzima que corta la lactosa en dos. Las fábricas de lácteos la añaden a la leche para quitarle la lactosa.",
+        "scientificName": "β-galactosidase (EC 3.2.1.23)",
+        "position": { "x": -2.6, "y": 1.2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_cut_lactose",
+        "type": "reaction",
+        "label": "Cutting lactose",
+        "label_es": "Cortar la lactosa",
+        "description": "Lactose + water → glucose + galactose. Lactase does the cutting.",
+        "description_es": "Lactosa + agua → glucosa + galactosa. La lactasa hace el corte.",
+        "position": { "x": 0.8, "y": 1.2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "met_lactose",
+        "type": "metabolite",
+        "label": "Lactose",
+        "label_es": "Lactosa",
+        "description": "The sugar in milk. It is made of two smaller sugars joined together.",
+        "description_es": "El azúcar de la leche. Está formado por dos azúcares más pequeños unidos.",
+        "scientificName": "Lactose (C12H22O11)",
+        "position": { "x": -1, "y": -2.2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "met_sugars",
+        "type": "metabolite",
+        "label": "Glucose + galactose",
+        "label_es": "Glucosa + galactosa",
+        "description": "The two halves of lactose. They are easy to digest and taste a little sweeter.",
+        "description_es": "Las dos mitades de la lactosa. Se digieren fácilmente y saben un poco más dulces.",
+        "position": { "x": 4.2, "y": 1.2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "phenotype_lf_milk",
+        "type": "phenotype",
+        "label": "Lactose-free milk",
+        "label_es": "Leche sin lactosa",
+        "description": "Milk without lactose. People with lactose intolerance can drink it.",
+        "description_es": "Leche sin lactosa. La pueden beber las personas con intolerancia.",
+        "position": { "x": 7, "y": -0.6, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "met_starch",
+        "type": "metabolite",
+        "label": "Starch",
+        "label_es": "Almidón",
+        "description": "The sugar stored in potatoes and cereals. Milk has none, and lactase cannot cut it.",
+        "description_es": "El azúcar que guardan las patatas y los cereales. La leche no tiene, y la lactasa no puede cortarlo.",
+        "isDistractor": true,
+        "position": { "x": 3, "y": -2.4, "z": 0 },
+        "metadata": {}
+      }
+    ],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": ["gene_lac4", "enzyme_lactase", "rxn_cut_lactose", "met_lactose", "met_sugars", "phenotype_lf_milk", "met_starch"],
+    "distractorNodes": ["met_starch"],
+    "requiredConnections": [
+      {
+        "id": "req_gene_enzyme",
+        "sourceId": "gene_lac4",
+        "targetId": "enzyme_lactase",
+        "edgeType": "encodes",
+        "description": "The LAC4 gene holds the instructions the cell uses to build lactase.",
+        "description_es": "El gen LAC4 contiene las instrucciones que usa la célula para construir la lactasa."
+      },
+      {
+        "id": "req_enzyme_reaction",
+        "sourceId": "enzyme_lactase",
+        "targetId": "rxn_cut_lactose",
+        "edgeType": "catalyzes",
+        "description": "Without lactase this reaction would barely happen. The enzyme makes it fast.",
+        "description_es": "Sin lactasa esta reacción casi no ocurriría. La enzima hace que sea rápida."
+      },
+      {
+        "id": "req_reaction_lactose",
+        "sourceId": "rxn_cut_lactose",
+        "targetId": "met_lactose",
+        "edgeType": "consumes",
+        "description": "Lactose is the ingredient: the reaction uses it up.",
+        "description_es": "La lactosa es el ingrediente: la reacción la gasta."
+      },
+      {
+        "id": "req_reaction_sugars",
+        "sourceId": "rxn_cut_lactose",
+        "targetId": "met_sugars",
+        "edgeType": "produces",
+        "description": "Cutting lactose gives two smaller sugars: glucose and galactose.",
+        "description_es": "Al cortar la lactosa salen dos azúcares más pequeños: glucosa y galactosa."
+      },
+      {
+        "id": "req_sugars_result",
+        "sourceId": "met_sugars",
+        "targetId": "phenotype_lf_milk",
+        "edgeType": "influences",
+        "description": "With all the lactose split, the milk is lactose-free. You completed your first pathway!",
+        "description_es": "Con toda la lactosa partida, la leche queda sin lactosa. ¡Has completado tu primera ruta!"
+      }
+    ],
+    "optionalConnections": [],
+    "invalidConnections": [
+      {
+        "sourceId": "gene_lac4",
+        "targetId": "rxn_cut_lactose",
+        "reason": "A gene is only a recipe: it cannot cut anything. First connect it to the enzyme it makes.",
+        "reason_es": "Un gen solo es una receta: no puede cortar nada. Primero conéctalo con la enzima que fabrica."
+      },
+      {
+        "sourceId": "met_lactose",
+        "targetId": "met_sugars",
+        "reason": "Lactose does not split on its own. The reaction, driven by lactase, goes in between.",
+        "reason_es": "La lactosa no se parte sola. Entre las dos va la reacción, que hace funcionar la lactasa."
+      }
+    ],
+    "winCondition": {
+      "type": "pathway_complete",
+      "targetNodeId": "phenotype_lf_milk",
+      "requiredConnectionIds": ["req_gene_enzyme", "req_enzyme_reaction", "req_reaction_lactose", "req_reaction_sugars", "req_sugars_result"],
+      "description": "Connect gene → enzyme → reaction → sugars → lactose-free milk."
+    }
+  },
+  "simulation": {
+    "productLabel": "Lactose removed",
+    "productLabel_es": "Lactosa eliminada",
+    "steps": [
+      { "id": "sim_read", "label": "Reading the gene", "label_es": "Leer el gen", "description": "The yeast reads the LAC4 recipe.", "description_es": "La levadura lee la receta LAC4.", "order": 1 },
+      { "id": "sim_build", "label": "Building lactase", "label_es": "Fabricar lactasa", "description": "Ribosomes assemble the lactase enzyme.", "description_es": "Los ribosomas montan la enzima lactasa.", "order": 2 },
+      { "id": "sim_cut", "label": "Cutting lactose", "label_es": "Cortar la lactosa", "description": "Lactase added to milk cuts each lactose into glucose and galactose.", "description_es": "La lactasa añadida a la leche corta cada lactosa en glucosa y galactosa.", "order": 3 },
+      { "id": "sim_milk", "label": "Lactose-free milk", "label_es": "Leche sin lactosa", "description": "Almost no lactose is left in the milk.", "description_es": "En la leche ya casi no queda lactosa.", "order": 4 }
+    ]
+  },
+  "hints": [
+    { "level": 1, "title": "Big picture", "title_es": "Idea general", "content": "Gene → enzyme → reaction → molecule → result.", "content_es": "Gen → enzima → reacción → molécula → resultado.", "pointCost": 50 },
+    { "level": 2, "title": "Order", "title_es": "Orden", "content": "LAC4 makes lactase; lactase cuts lactose.", "content_es": "LAC4 fabrica lactasa; la lactasa corta la lactosa.", "pointCost": 100 },
+    { "level": 3, "title": "Solution", "title_es": "Solución", "content": "Follow the guide on the board.", "content_es": "Sigue la guía del tablero.", "pointCost": 150 }
+  ],
+  "completion": {
+    "title": "Your first pathway!",
+    "title_es": "¡Tu primera ruta!",
+    "summary": "You connected a gene to the enzyme it makes, the enzyme to its reaction, and the reaction to what it uses and produces. Every level in Genlab works exactly like this, just with longer chains.",
+    "summary_es": "Has conectado un gen con la enzima que fabrica, la enzima con su reacción, y la reacción con lo que usa y lo que produce. Todos los niveles de Genlab funcionan exactamente así, solo que con cadenas más largas.",
+    "realWorldImpact": "Around two thirds of adults digest lactose poorly. Lactose-free milk, made by adding lactase produced by microorganisms, lets them drink milk without discomfort.",
+    "realWorldImpact_es": "Alrededor de dos tercios de los adultos digieren mal la lactosa. La leche sin lactosa, hecha añadiendo lactasa producida por microorganismos, les permite tomar leche sin molestias."
+  },
+  "science": {
+    "organism": "Kluyveromyces lactis",
+    "realWorldCase": "Commercial lactase (β-galactosidase) is produced mainly from the yeast Kluyveromyces lactis and from Aspergillus fungi. Dairies add it to milk to split lactose into glucose and galactose.",
+    "realWorldCase_es": "La lactasa comercial (β-galactosidasa) se produce sobre todo a partir de la levadura Kluyveromyces lactis y de hongos Aspergillus. Las centrales lecheras la añaden a la leche para partir la lactosa en glucosa y galactosa.",
+    "scientificContext": "β-galactosidase hydrolyses the β-1,4 glycosidic bond of lactose. In K. lactis it is encoded by the LAC4 gene and is induced when lactose is present. The enzyme is purified from the yeast and added to milk, so the milk itself contains no modified organisms.",
+    "scientificContext_es": "La β-galactosidasa rompe el enlace β-1,4 de la lactosa. En K. lactis la codifica el gen LAC4 y se activa cuando hay lactosa. La enzima se purifica de la levadura y se añade a la leche, así que la leche no contiene ningún organismo modificado.",
+    "gameplaySimplifications": [
+      "Lactase is made by the yeast and purified before it reaches the milk; the game draws it as a single chain.",
+      "Glucose and galactose are shown as one piece to keep the tutorial short."
+    ],
+    "gameplaySimplifications_es": [
+      "La lactasa la fabrica la levadura y se purifica antes de llegar a la leche; el juego lo dibuja como una sola cadena.",
+      "La glucosa y la galactosa aparecen como una sola pieza para que el tutorial sea corto."
+    ],
+    "references": [
+      {
+        "authors": ["Dekker PJT", "Koenders D", "Bruins MJ"],
+        "year": 2019,
+        "title": "Lactose-free dairy products: market developments, production, nutrition and health benefits",
+        "journal": "Nutrients",
+        "doi": "10.3390/nu11030551",
+        "type": "review"
+      }
+    ]
+  }
+}

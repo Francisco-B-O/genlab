@@ -1,0 +1,229 @@
+{
+  "id": "build-pigment",
+  "mode": "construct",
+  "title": "Red bacteria",
+  "title_es": "Bacterias rojas",
+  "subtitle": "Two genes, one pigment",
+  "subtitle_es": "Dos genes, un pigmento",
+  "difficulty": "intermediate",
+  "estimatedDuration": 7,
+  "objective": "Assemble a two-gene circuit: each gene needs its own landing strip for the ribosome.",
+  "objective_es": "Monta un circuito de dos genes: cada gen necesita su propia pista de aterrizaje para el ribosoma.",
+  "description": "Making a pigment often needs more than one enzyme, so more than one gene. In bacteria, each gene of the circuit has its own ribosome site.",
+  "description_es": "Fabricar un pigmento suele necesitar más de una enzima, así que más de un gen. En bacterias, cada gen del circuito tiene su propio sitio para el ribosoma.",
+  "organism": {
+    "id": "pigment-bacteria",
+    "commonName": "Pigment bacteria",
+    "commonName_es": "Bacterias de pigmento",
+    "scientificName": "Escherichia coli",
+    "taxonomy": [
+      "Bacteria",
+      "Pseudomonadota",
+      "Gammaproteobacteria",
+      "Enterobacterales",
+      "Enterobacteriaceae",
+      "Escherichia"
+    ],
+    "targetTissue": "single cell",
+    "targetOrganelle": "cytoplasm",
+    "description": "A bacterium that makes a red pigment.",
+    "description_es": "Una bacteria que fabrica un pigmento rojo."
+  },
+  "exploration": [
+    {
+      "kind": "tomato",
+      "label": "Pigment",
+      "label_es": "Pigmento",
+      "title": "A chain of enzymes",
+      "title_es": "Una cadena de enzimas",
+      "description": "The red of tomatoes, lycopene, is made by a short chain of enzymes. Bacteria with the same genes also turn red.",
+      "description_es": "El rojo de los tomates, el licopeno, lo fabrica una cadena corta de enzimas. Las bacterias con los mismos genes también se vuelven rojas."
+    },
+    {
+      "kind": "dna",
+      "label": "Two genes",
+      "label_es": "Dos genes",
+      "title": "One after the other",
+      "title_es": "Uno tras otro",
+      "description": "Genes placed one after the other under the same promoter are read together, but each needs its own landing strip.",
+      "description_es": "Los genes colocados uno tras otro bajo el mismo promotor se leen juntos, pero cada uno necesita su pista de aterrizaje."
+    }
+  ],
+  "construct": {
+    "solution": [
+      "p_ind",
+      "rbs1",
+      "crt1",
+      "rbs2",
+      "crt2",
+      "term"
+    ],
+    "parts": [
+      {
+        "id": "p_ind",
+        "kind": "promoter",
+        "label": "Inducible promoter",
+        "label_es": "Promotor inducible",
+        "description": "Switches on when the chemical is added.",
+        "description_es": "Se enciende cuando se añade el compuesto."
+      },
+      {
+        "id": "p_off",
+        "kind": "promoter",
+        "label": "Switched-off promoter",
+        "label_es": "Promotor apagado",
+        "description": "A promoter that is never switched on here.",
+        "description_es": "Un promotor que aquí nunca se enciende.",
+        "wrongReason": "This promoter is never switched on in this culture, so no pigment would be made.",
+        "wrongReason_es": "Este promotor nunca se enciende en este cultivo, así que no se fabricaría pigmento.",
+        "isDistractor": true
+      },
+      {
+        "id": "rbs1",
+        "kind": "rbs",
+        "label": "RBS 1",
+        "label_es": "RBS 1",
+        "description": "Landing strip for the first gene.",
+        "description_es": "Pista de aterrizaje para el primer gen."
+      },
+      {
+        "id": "crt1",
+        "kind": "gene",
+        "label": "First pigment gene",
+        "label_es": "Primer gen del pigmento",
+        "description": "Recipe for the first enzyme of the chain.",
+        "description_es": "Receta de la primera enzima de la cadena."
+      },
+      {
+        "id": "rbs2",
+        "kind": "rbs",
+        "label": "RBS 2",
+        "label_es": "RBS 2",
+        "description": "Landing strip for the second gene.",
+        "description_es": "Pista de aterrizaje para el segundo gen."
+      },
+      {
+        "id": "crt2",
+        "kind": "gene",
+        "label": "Second pigment gene",
+        "label_es": "Segundo gen del pigmento",
+        "description": "Recipe for the second enzyme of the chain.",
+        "description_es": "Receta de la segunda enzima de la cadena."
+      },
+      {
+        "id": "gfp",
+        "kind": "gene",
+        "label": "gfp gene",
+        "label_es": "Gen gfp",
+        "description": "Recipe for a green fluorescent protein.",
+        "description_es": "Receta de una proteína verde fluorescente.",
+        "wrongReason": "gfp makes a protein that glows green. It is not part of the red pigment chain.",
+        "wrongReason_es": "gfp fabrica una proteína que brilla en verde. No forma parte de la cadena del pigmento rojo.",
+        "isDistractor": true
+      },
+      {
+        "id": "term",
+        "kind": "terminator",
+        "label": "Terminator",
+        "label_es": "Terminador",
+        "description": "Marks where the reading stops.",
+        "description_es": "Marca dónde termina la lectura."
+      }
+    ]
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Pigment",
+    "productLabel_es": "Pigmento",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Promoter",
+        "label_es": "Promotor",
+        "description": "The cell starts reading.",
+        "description_es": "La célula empieza a leer.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Two enzymes",
+        "label_es": "Dos enzimas",
+        "description": "Both are made.",
+        "description_es": "Se fabrican las dos.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Pigment",
+        "label_es": "Pigmento",
+        "description": "The cells turn red.",
+        "description_es": "Las células se vuelven rojas.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Both pigment genes go between the promoter and the terminator, and each gene needs its own landing strip before it.",
+      "content_es": "Los dos genes del pigmento van entre el promotor y el terminador, y cada gen necesita su propia pista de aterrizaje antes.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Use the promoter that can be switched on and leave out gfp, which makes something else.",
+      "content_es": "Usa el promotor que se puede encender y deja fuera gfp, que fabrica otra cosa.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Promoter → RBS 1 → first gene → RBS 2 → second gene → terminator.",
+      "content_es": "Promotor → RBS 1 → primer gen → RBS 2 → segundo gen → terminador.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A two-step pigment",
+    "title_es": "Un pigmento en dos pasos",
+    "summary": "You assembled two genes in a row, each with its own landing strip, to make a pigment in two steps.",
+    "summary_es": "Has montado dos genes seguidos, cada uno con su pista de aterrizaje, para fabricar un pigmento en dos pasos.",
+    "realWorldImpact": "Microbes are being engineered to make natural dyes and pigments for food and textiles.",
+    "realWorldImpact_es": "Se modifican microbios para fabricar colorantes y pigmentos naturales para alimentos y textiles."
+  },
+  "science": {
+    "organism": "Escherichia coli",
+    "realWorldCase": "Researchers have made E. coli produce lycopene and related pigments by adding genes from other organisms.",
+    "realWorldCase_es": "Los investigadores han hecho que E. coli produzca licopeno y pigmentos parecidos añadiéndole genes de otros organismos.",
+    "scientificContext": "Genes arranged one after another under a single promoter and read together are called an operon, a common arrangement in bacteria.",
+    "scientificContext_es": "Los genes dispuestos uno tras otro bajo un solo promotor y leídos juntos forman un operón, una disposición frecuente en bacterias.",
+    "gameplaySimplifications": [
+      "Real pathways for pigments can have many more steps and genes."
+    ],
+    "gameplaySimplifications_es": [
+      "Las rutas reales de los pigmentos pueden tener muchos más pasos y genes."
+    ],
+    "references": []
+  }
+}

@@ -1,0 +1,205 @@
+{
+  "id": "seq-bread",
+  "mode": "sequence",
+  "title": "How bread is made",
+  "title_es": "Cómo se hace el pan",
+  "subtitle": "Each step prepares the next",
+  "subtitle_es": "Cada paso prepara el siguiente",
+  "difficulty": "beginner",
+  "estimatedDuration": 4,
+  "objective": "Put the steps of bread making in order, from the flour to the loaf.",
+  "objective_es": "Ordena los pasos para hacer pan, de la harina a la hogaza.",
+  "description": "Bread is a collaboration with yeast: the order of the steps matters because the yeast needs time to work before the oven stops it.",
+  "description_es": "El pan es una colaboración con la levadura: el orden importa porque la levadura necesita tiempo para trabajar antes de que el horno la pare.",
+  "organism": {
+    "id": "yeast-bread",
+    "commonName": "Baker's yeast",
+    "commonName_es": "Levadura de panadero",
+    "scientificName": "Saccharomyces cerevisiae",
+    "taxonomy": [
+      "Fungi",
+      "Ascomycota",
+      "Saccharomycetes",
+      "Saccharomycetales",
+      "Saccharomycetaceae",
+      "Saccharomyces"
+    ],
+    "targetTissue": "whole organism",
+    "targetOrganelle": "cytoplasm",
+    "description": "A microscopic fungus that makes dough rise.",
+    "description_es": "Un hongo microscópico que hace subir la masa."
+  },
+  "exploration": [
+    {
+      "kind": "bread",
+      "label": "Dough",
+      "label_es": "Masa",
+      "title": "A living recipe",
+      "title_es": "Una receta viva",
+      "description": "Flour, water and yeast are enough. The yeast eats the sugars of the flour and releases gas that makes the dough rise.",
+      "description_es": "Bastan harina, agua y levadura. La levadura se alimenta de los azúcares de la harina y libera gas que hace subir la masa."
+    },
+    {
+      "kind": "yeast",
+      "label": "Yeast",
+      "label_es": "Levadura",
+      "title": "Gas and time",
+      "title_es": "Gas y tiempo",
+      "description": "Yeast needs warmth and time. Too hot and it dies; too short and the dough stays flat.",
+      "description_es": "La levadura necesita calor y tiempo. Con demasiado calor muere; con poco tiempo la masa se queda plana."
+    }
+  ],
+  "sequence": {
+    "steps": [
+      {
+        "id": "mix",
+        "label": "Mix flour, water, salt and yeast",
+        "label_es": "Mezclar harina, agua, sal y levadura",
+        "description": "Everything the dough needs is in one bowl.",
+        "description_es": "Todo lo que necesita la masa está en un cuenco.",
+        "needs": "Nothing: it is where it starts.",
+        "needs_es": "Nada: es el punto de partida."
+      },
+      {
+        "id": "knead",
+        "label": "Knead the dough",
+        "label_es": "Amasar",
+        "description": "Kneading builds a stretchy net of gluten that will trap the gas.",
+        "description_es": "Amasar forma una red elástica de gluten que atrapará el gas.",
+        "needs": "The ingredients must already be mixed.",
+        "needs_es": "Los ingredientes ya tienen que estar mezclados."
+      },
+      {
+        "id": "rest",
+        "label": "Let the dough rest in a warm place",
+        "label_es": "Dejar reposar la masa en un sitio templado",
+        "description": "The yeast eats sugar and makes carbon dioxide.",
+        "description_es": "La levadura se come el azúcar y fabrica dióxido de carbono.",
+        "needs": "The gluten net has to be built first, or the gas would escape.",
+        "needs_es": "Primero tiene que estar formada la red de gluten, o el gas se escaparía."
+      },
+      {
+        "id": "rise",
+        "label": "The dough doubles in size",
+        "label_es": "La masa duplica su tamaño",
+        "description": "Thousands of little bubbles are trapped in the gluten net.",
+        "description_es": "Miles de burbujitas quedan atrapadas en la red de gluten.",
+        "needs": "The yeast must have had time to make gas.",
+        "needs_es": "La levadura tiene que haber tenido tiempo de fabricar gas."
+      },
+      {
+        "id": "bake",
+        "label": "Bake in a hot oven",
+        "label_es": "Hornear a temperatura alta",
+        "description": "The bubbles expand, the crust browns and the yeast dies.",
+        "description_es": "Las burbujas se expanden, la corteza se dora y la levadura muere.",
+        "needs": "The dough has to be risen: baking a flat dough gives a flat loaf.",
+        "needs_es": "La masa tiene que haber subido: hornear una masa plana da un pan plano."
+      },
+      {
+        "id": "cool",
+        "label": "Let the loaf cool",
+        "label_es": "Dejar enfriar la hogaza",
+        "description": "The crumb sets and is ready to slice.",
+        "description_es": "La miga se asienta y está lista para cortar.",
+        "needs": "The bread must already be out of the oven.",
+        "needs_es": "El pan ya tiene que haber salido del horno."
+      }
+    ]
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Loaf",
+    "productLabel_es": "Hogaza",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Dough",
+        "label_es": "Masa",
+        "description": "Mixed and kneaded.",
+        "description_es": "Mezclada y amasada.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Rise",
+        "label_es": "Subida",
+        "description": "The yeast makes gas.",
+        "description_es": "La levadura fabrica gas.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Bake",
+        "label_es": "Horneado",
+        "description": "The loaf sets.",
+        "description_es": "La hogaza se asienta.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Think about what the yeast needs before the oven stops it.",
+      "content_es": "Piensa en lo que necesita la levadura antes de que el horno la pare.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "First prepare the dough, then give it time, and only then bake it.",
+      "content_es": "Primero se prepara la masa, luego se le da tiempo y solo entonces se hornea.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Mix → knead → rest → rises → bake → cool.",
+      "content_es": "Mezclar → amasar → reposar → sube → hornear → enfriar.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "Fresh bread",
+    "title_es": "Pan recién hecho",
+    "summary": "You put the steps in the order that gives the yeast time to work before the oven. The same logic is behind every fermentation.",
+    "summary_es": "Has ordenado los pasos para que la levadura tenga tiempo de trabajar antes del horno. La misma lógica está detrás de toda fermentación.",
+    "realWorldImpact": "People baked bread for thousands of years without knowing about yeast. Today bakeries grow yeast on purpose and control every step.",
+    "realWorldImpact_es": "Durante miles de años se hizo pan sin saber qué era la levadura. Hoy las panaderías cultivan levadura a propósito y controlan cada paso."
+  },
+  "science": {
+    "organism": "Saccharomyces cerevisiae",
+    "realWorldCase": "The role of yeast in fermentation was shown by Louis Pasteur in the 1850s and 1860s: it is a living organism, not a chemical process.",
+    "realWorldCase_es": "El papel de la levadura en la fermentación lo demostró Louis Pasteur en las décadas de 1850 y 1860: es un ser vivo, no un proceso químico.",
+    "scientificContext": "Yeast ferments sugars to ethanol and CO2. Gluten, formed by two wheat proteins, traps the gas. Baking kills the yeast and evaporates most of the ethanol.",
+    "scientificContext_es": "La levadura fermenta los azúcares en etanol y CO2. El gluten, formado por dos proteínas del trigo, atrapa el gas. El horneado mata la levadura y evapora casi todo el etanol.",
+    "gameplaySimplifications": [
+      "Real recipes may rest the dough twice, or use a long cold rest."
+    ],
+    "gameplaySimplifications_es": [
+      "Las recetas reales pueden dejar reposar la masa dos veces o con un reposo largo en frío."
+    ],
+    "references": []
+  }
+}

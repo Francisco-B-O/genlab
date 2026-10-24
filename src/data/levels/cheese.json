@@ -1,0 +1,353 @@
+{
+  "id": "cheese",
+  "title": "Cheese without calves",
+  "title_es": "Queso sin terneros",
+  "subtitle": "Chymosin, the first GM ingredient approved for food",
+  "subtitle_es": "La quimosina, el primer ingrediente transgénico aprobado",
+  "difficulty": "beginner",
+  "estimatedDuration": 5,
+  "objective": "Use a fungus to make chymosin, the enzyme that curdles milk, so cheese no longer depends on calf stomachs.",
+  "objective_es": "Usa un hongo para fabricar quimosina, la enzima que cuaja la leche, para que el queso ya no dependa de estómagos de ternero.",
+  "description": "A calf gene inside a fungus makes the enzyme that turns milk into curd.",
+  "description_es": "Un gen de ternero dentro de un hongo fabrica la enzima que convierte la leche en cuajada.",
+  "organism": {
+    "id": "aspergillus-niger-chymosin",
+    "commonName": "Black mould",
+    "commonName_es": "Moho negro",
+    "scientificName": "Aspergillus niger var. awamori",
+    "taxonomy": ["Fungi", "Ascomycota", "Eurotiomycetes", "Eurotiales", "Aspergillus"],
+    "targetTissue": "single cell",
+    "targetOrganelle": "secreted",
+    "description": "An industrial fungus that releases large amounts of protein into its culture broth.",
+    "description_es": "Un hongo industrial que suelta grandes cantidades de proteína al caldo de cultivo."
+  },
+  "exploration": [
+    {
+      "kind": "cheese",
+      "label": "Product",
+      "label_es": "Producto",
+      "title": "How cheese starts",
+      "title_es": "Cómo empieza un queso",
+      "description": "To make cheese, milk has to curdle into a soft solid. For centuries this was done with rennet, scraped from the stomach of young calves.",
+      "description_es": "Para hacer queso, la leche tiene que cuajar en un sólido blando. Durante siglos se hizo con cuajo, sacado del estómago de terneros jóvenes."
+    },
+    {
+      "kind": "flask",
+      "label": "Factory",
+      "label_es": "Fábrica",
+      "title": "Rennet from a tank",
+      "title_es": "Cuajo de un tanque",
+      "description": "The key ingredient of rennet is one enzyme: chymosin. Since 1990, microorganisms carrying the calf gene make it in fermentation tanks.",
+      "description_es": "El ingrediente clave del cuajo es una sola enzima: la quimosina. Desde 1990, microorganismos con el gen del ternero la fabrican en tanques de fermentación."
+    },
+    {
+      "kind": "milk",
+      "label": "Milk",
+      "label_es": "Leche",
+      "title": "Inside the milk",
+      "title_es": "Dentro de la leche",
+      "description": "Milk proteins float in tiny balls called casein micelles. A hairy coat of κ-casein keeps them apart, until chymosin cuts it.",
+      "description_es": "Las proteínas de la leche flotan en bolitas llamadas micelas de caseína. Una capa peluda de κ-caseína las mantiene separadas, hasta que la quimosina la corta."
+    }
+  ],
+  "biologicalContext": {
+    "nodes": [
+      {
+        "id": "gene_cym",
+        "type": "gene",
+        "label": "Calf chymosin gene",
+        "label_es": "Gen de quimosina de ternero",
+        "description": "The recipe for chymosin, copied from a calf and placed in the fungus.",
+        "description_es": "La receta de la quimosina, copiada de un ternero y colocada en el hongo.",
+        "scientificName": "CYM (Bos taurus)",
+        "position": { "x": -6.5, "y": 1.5, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_chymosin",
+        "type": "enzyme",
+        "label": "Chymosin",
+        "label_es": "Quimosina",
+        "description": "A very precise protein-cutting enzyme. It cuts κ-casein at a single point and leaves the other milk proteins alone.",
+        "description_es": "Una enzima cortadora de proteínas muy precisa. Corta la κ-caseína en un único punto y deja en paz las demás proteínas de la leche.",
+        "scientificName": "Chymosin (EC 3.4.23.4)",
+        "position": { "x": -3, "y": 1.5, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_cut_casein",
+        "type": "reaction",
+        "label": "Cutting κ-casein",
+        "label_es": "Cortar la κ-caseína",
+        "description": "Chymosin snips the hairy end off κ-casein. The micelles lose their protective coat.",
+        "description_es": "La quimosina corta el extremo peludo de la κ-caseína. Las micelas pierden su capa protectora.",
+        "position": { "x": 0.5, "y": -0.3, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "protein_kcasein",
+        "type": "protein",
+        "label": "κ-casein",
+        "label_es": "κ-caseína",
+        "description": "The milk protein that coats the casein micelles and keeps them from sticking together.",
+        "description_es": "La proteína de la leche que recubre las micelas de caseína e impide que se peguen entre sí.",
+        "position": { "x": -3, "y": -2.4, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "protein_para",
+        "type": "protein",
+        "label": "Bare micelles",
+        "label_es": "Micelas desnudas",
+        "description": "Casein micelles that have lost their coat (para-κ-casein). Now they can stick to each other.",
+        "description_es": "Micelas de caseína que han perdido su capa (para-κ-caseína). Ahora pueden pegarse unas a otras.",
+        "scientificName": "para-κ-casein",
+        "position": { "x": 4, "y": 1.5, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "met_gmp",
+        "type": "metabolite",
+        "label": "Glycomacropeptide",
+        "label_es": "Glicomacropéptido",
+        "description": "The hairy piece cut off κ-casein. It floats away into the whey.",
+        "description_es": "El trozo peludo cortado de la κ-caseína. Se va flotando al suero.",
+        "position": { "x": 4, "y": -2.6, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "met_calcium",
+        "type": "metabolite",
+        "label": "Calcium",
+        "label_es": "Calcio",
+        "description": "Calcium in milk acts as a bridge between the bare micelles and helps the curd firm up.",
+        "description_es": "El calcio de la leche hace de puente entre las micelas desnudas y ayuda a que la cuajada se endurezca.",
+        "position": { "x": 7, "y": 3.6, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "phenotype_curd",
+        "type": "phenotype",
+        "label": "Milk curdles",
+        "label_es": "La leche cuaja",
+        "description": "The micelles clump into a soft gel: the curd. The liquid left over is whey.",
+        "description_es": "Las micelas se agrupan en un gel blando: la cuajada. El líquido que sobra es el suero.",
+        "position": { "x": 7, "y": -0.3, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "phenotype_cheese",
+        "type": "phenotype",
+        "label": "Cheese",
+        "label_es": "Queso",
+        "description": "The curd is cut, drained, salted and aged. Every cheese starts this way.",
+        "description_es": "La cuajada se corta, se escurre, se sala y se cura. Todo queso empieza así.",
+        "position": { "x": 9.8, "y": 1.5, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_lactase",
+        "type": "enzyme",
+        "label": "Lactase",
+        "label_es": "Lactasa",
+        "description": "Your old friend from the tutorial. It cuts the milk sugar lactose, not proteins, so it cannot curdle milk.",
+        "description_es": "Tu vieja amiga del tutorial. Corta el azúcar de la leche, la lactosa, no las proteínas, así que no puede cuajar la leche.",
+        "isDistractor": true,
+        "position": { "x": 0.5, "y": 3.4, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "met_salt",
+        "type": "metabolite",
+        "label": "Salt",
+        "label_es": "Sal",
+        "description": "Added after the curd forms, for flavour and to help preserve the cheese. It does not curdle milk.",
+        "description_es": "Se añade después de formarse la cuajada, para dar sabor y conservar el queso. No cuaja la leche.",
+        "isDistractor": true,
+        "position": { "x": -6.5, "y": -2.4, "z": 0 },
+        "metadata": {}
+      }
+    ],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": ["gene_cym", "enzyme_chymosin", "rxn_cut_casein", "protein_kcasein", "protein_para", "met_gmp", "met_calcium", "phenotype_curd", "phenotype_cheese", "enzyme_lactase", "met_salt"],
+    "distractorNodes": ["enzyme_lactase", "met_salt"],
+    "requiredConnections": [
+      {
+        "id": "req_cym",
+        "sourceId": "gene_cym",
+        "targetId": "enzyme_chymosin",
+        "edgeType": "encodes",
+        "description": "The fungus reads the calf gene and releases chymosin into the broth, ready to be purified.",
+        "description_es": "El hongo lee el gen del ternero y suelta la quimosina al caldo, lista para purificarla."
+      },
+      {
+        "id": "req_cut",
+        "sourceId": "enzyme_chymosin",
+        "targetId": "rxn_cut_casein",
+        "edgeType": "catalyzes",
+        "description": "Chymosin is so precise that a tiny amount curdles a whole vat of milk.",
+        "description_es": "La quimosina es tan precisa que una cantidad diminuta cuaja una cuba entera de leche."
+      },
+      {
+        "id": "req_kcasein",
+        "sourceId": "rxn_cut_casein",
+        "targetId": "protein_kcasein",
+        "edgeType": "consumes",
+        "description": "The reaction works on κ-casein, the protective coat of the micelles.",
+        "description_es": "La reacción actúa sobre la κ-caseína, la capa protectora de las micelas."
+      },
+      {
+        "id": "req_para",
+        "sourceId": "rxn_cut_casein",
+        "targetId": "protein_para",
+        "edgeType": "produces",
+        "description": "Without their coat, the micelles are bare and sticky.",
+        "description_es": "Sin su capa, las micelas quedan desnudas y pegajosas."
+      },
+      {
+        "id": "req_curd",
+        "sourceId": "protein_para",
+        "targetId": "phenotype_curd",
+        "edgeType": "influences",
+        "description": "The bare micelles clump together into a gel: the milk has curdled.",
+        "description_es": "Las micelas desnudas se juntan en un gel: la leche ha cuajado."
+      },
+      {
+        "id": "req_cheese",
+        "sourceId": "phenotype_curd",
+        "targetId": "phenotype_cheese",
+        "edgeType": "influences",
+        "description": "From the curd, cheesemakers do the rest: cutting, draining, salting and ageing.",
+        "description_es": "A partir de la cuajada, los queseros hacen el resto: cortar, escurrir, salar y curar."
+      }
+    ],
+    "optionalConnections": [
+      {
+        "id": "opt_gmp",
+        "sourceId": "rxn_cut_casein",
+        "targetId": "met_gmp",
+        "edgeType": "produces",
+        "description": "The cut also releases the glycomacropeptide, which ends up in the whey.",
+        "description_es": "El corte también libera el glicomacropéptido, que acaba en el suero.",
+        "bonusPoints": 50
+      },
+      {
+        "id": "opt_calcium",
+        "sourceId": "met_calcium",
+        "targetId": "phenotype_curd",
+        "edgeType": "influences",
+        "description": "Calcium bridges link the bare micelles and make the curd firmer.",
+        "description_es": "Los puentes de calcio unen las micelas desnudas y hacen la cuajada más firme.",
+        "bonusPoints": 50
+      }
+    ],
+    "invalidConnections": [
+      {
+        "sourceId": "enzyme_lactase",
+        "targetId": "rxn_cut_casein",
+        "reason": "Lactase cuts lactose, a sugar. Curdling needs an enzyme that cuts a protein: κ-casein.",
+        "reason_es": "La lactasa corta la lactosa, que es un azúcar. Para cuajar hace falta una enzima que corte una proteína: la κ-caseína."
+      },
+      {
+        "sourceId": "protein_kcasein",
+        "targetId": "phenotype_curd",
+        "reason": "Intact κ-casein does the opposite: it keeps the micelles apart. It has to be cut first.",
+        "reason_es": "La κ-caseína intacta hace lo contrario: mantiene separadas las micelas. Primero hay que cortarla."
+      },
+      {
+        "sourceId": "met_salt",
+        "targetId": "phenotype_curd",
+        "reason": "Salt is added after the curd has formed. It flavours and preserves the cheese, but does not curdle milk.",
+        "reason_es": "La sal se añade cuando la cuajada ya se ha formado. Da sabor y conserva el queso, pero no cuaja la leche."
+      }
+    ],
+    "winCondition": {
+      "type": "pathway_complete",
+      "targetNodeId": "phenotype_cheese",
+      "requiredConnectionIds": ["req_cym", "req_cut", "req_kcasein", "req_para", "req_curd", "req_cheese"],
+      "description": "Make chymosin and use it to curdle milk."
+    }
+  },
+  "simulation": {
+    "productLabel": "Curd",
+    "productLabel_es": "Cuajada",
+    "steps": [
+      { "id": "sim_ferment", "label": "Fermentation", "label_es": "Fermentación", "description": "The fungus grows in tanks and releases chymosin.", "description_es": "El hongo crece en tanques y suelta quimosina.", "order": 1 },
+      { "id": "sim_purify", "label": "Purification", "label_es": "Purificación", "description": "Chymosin is separated from the fungus; no fungus goes into the cheese.", "description_es": "La quimosina se separa del hongo; al queso no llega ningún hongo.", "order": 2 },
+      { "id": "sim_cut", "label": "Cutting κ-casein", "label_es": "Cortar la κ-caseína", "description": "Added to warm milk, chymosin strips the coat off the micelles.", "description_es": "Añadida a la leche templada, la quimosina quita la capa a las micelas.", "order": 3 },
+      { "id": "sim_curd", "label": "Curd", "label_es": "Cuajada", "description": "In about half an hour the milk sets into a gel.", "description_es": "En una media hora la leche se convierte en un gel.", "order": 4 },
+      { "id": "sim_cheese", "label": "Cheese", "label_es": "Queso", "description": "The curd is cut, drained, salted and aged.", "description_es": "La cuajada se corta, se escurre, se sala y se cura.", "order": 5 }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Milk curdles when its protein balls lose their protective coat. Find the enzyme that removes it.",
+      "content_es": "La leche cuaja cuando sus bolitas de proteína pierden la capa protectora. Busca la enzima que la quita.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Pathway order",
+      "title_es": "Orden de la ruta",
+      "content": "Chymosin gene → chymosin → (cuts κ-casein) → bare micelles → curd → cheese.",
+      "content_es": "Gen de quimosina → quimosina → (corta la κ-caseína) → micelas desnudas → cuajada → queso.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Guided solution",
+      "title_es": "Solución guiada",
+      "content": "Connect: Calf chymosin gene–Chymosin, Chymosin–Cutting κ-casein, Cutting κ-casein–κ-casein, Cutting κ-casein–Bare micelles, Bare micelles–Milk curdles, Milk curdles–Cheese.",
+      "content_es": "Conecta: Gen de quimosina de ternero–Quimosina, Quimosina–Cortar la κ-caseína, Cortar la κ-caseína–κ-caseína, Cortar la κ-caseína–Micelas desnudas, Micelas desnudas–La leche cuaja, La leche cuaja–Queso.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "The milk has curdled",
+    "title_es": "La leche ha cuajado",
+    "summary": "You made a fungus produce a calf enzyme and used it to strip the coat off the casein micelles. Without that coat they clump into curd, the first step of every cheese.",
+    "summary_es": "Has hecho que un hongo fabrique una enzima de ternero y la has usado para quitar la capa a las micelas de caseína. Sin esa capa se agrupan en cuajada, el primer paso de cualquier queso.",
+    "realWorldImpact": "Fermentation-produced chymosin is now used for most of the cheese made in countries like the United States and the United Kingdom. It is pure, consistent, does not depend on slaughtering calves, and is accepted in many vegetarian cheeses.",
+    "realWorldImpact_es": "La quimosina fabricada por fermentación se usa hoy en la mayoría del queso que se produce en países como Estados Unidos o Reino Unido. Es pura, constante, no depende del sacrificio de terneros y se acepta en muchos quesos vegetarianos."
+  },
+  "science": {
+    "organism": "Aspergillus niger var. awamori (also Kluyveromyces lactis and Escherichia coli)",
+    "realWorldCase": "In 1990 the US Food and Drug Administration approved chymosin produced by genetically modified E. coli, the first product of genetic engineering allowed in food. Versions made in the fungus Aspergillus niger and the yeast Kluyveromyces lactis followed.",
+    "realWorldCase_es": "En 1990 la agencia estadounidense FDA aprobó la quimosina producida por E. coli modificada, el primer producto de la ingeniería genética permitido en alimentos. Después llegaron versiones fabricadas en el hongo Aspergillus niger y en la levadura Kluyveromyces lactis.",
+    "scientificContext": "Chymosin is an aspartic protease from the fourth stomach of young calves. It cleaves κ-casein at the Phe105–Met106 bond. The released glycomacropeptide goes into the whey, and the para-κ-casein left on the micelles lets them aggregate with the help of calcium, forming the curd.",
+    "scientificContext_es": "La quimosina es una proteasa aspártica del cuarto estómago de los terneros jóvenes. Corta la κ-caseína en el enlace Phe105–Met106. El glicomacropéptido liberado pasa al suero, y la para-κ-caseína que queda en las micelas permite que se agreguen con ayuda del calcio, formando la cuajada.",
+    "gameplaySimplifications": [
+      "Chymosin is actually made as an inactive precursor, prochymosin, which activates itself in acid conditions.",
+      "Curd formation is a physical process; the game draws it as a chain of outcomes.",
+      "Cheese also needs starter bacteria, which the game leaves out."
+    ],
+    "gameplaySimplifications_es": [
+      "La quimosina se fabrica en realidad como un precursor inactivo, la proquimosina, que se activa sola en condiciones ácidas.",
+      "La formación de la cuajada es un proceso físico; el juego lo dibuja como una cadena de resultados.",
+      "El queso también necesita bacterias lácticas, que el juego omite."
+    ],
+    "references": [
+      {
+        "authors": ["Flamm EL"],
+        "year": 1991,
+        "title": "How FDA approved chymosin: a case history",
+        "journal": "Bio/Technology",
+        "doi": "10.1038/nbt0491-349",
+        "type": "paper"
+      },
+      {
+        "authors": ["Kumar A", "Grover S", "Sharma J", "Batish VK"],
+        "year": 2010,
+        "title": "Chymosin and other milk coagulants: sources and biotechnological interventions",
+        "journal": "Critical Reviews in Biotechnology",
+        "doi": "10.3109/07388551.2010.483459",
+        "type": "review"
+      }
+    ]
+  }
+}

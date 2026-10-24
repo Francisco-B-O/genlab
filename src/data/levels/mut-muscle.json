@@ -1,0 +1,177 @@
+{
+  "id": "mut-muscle",
+  "mode": "mutation",
+  "title": "Cattle with double muscle",
+  "title_es": "Vacas de doble músculo",
+  "subtitle": "A swap in the brake of muscle growth",
+  "subtitle_es": "Un cambio en el freno del crecimiento muscular",
+  "difficulty": "intermediate",
+  "estimatedDuration": 5,
+  "objective": "Find the letter that changed in the gene and say what the change does to the protein.",
+  "objective_es": "Encuentra la letra que ha cambiado en el gen y di qué efecto tiene en la proteína.",
+  "description": "A change of one letter in DNA can change an amino acid, cut a protein short, or do nothing at all. Compare the two sequences codon by codon.",
+  "description_es": "Un cambio de una letra en el ADN puede cambiar un aminoácido, cortar una proteína o no hacer nada. Compara las dos secuencias codón a codón.",
+  "organism": {
+    "id": "cattle-mstn",
+    "commonName": "Myostatin",
+    "commonName_es": "Miostatina",
+    "scientificName": "Bos taurus",
+    "taxonomy": [
+      "Animalia",
+      "Chordata",
+      "Mammalia",
+      "Artiodactyla",
+      "Bovidae",
+      "Bos"
+    ],
+    "targetTissue": "muscle",
+    "targetOrganelle": "cytoplasm",
+    "description": "A protein that limits the growth of muscles.",
+    "description_es": "Una proteína que limita el crecimiento de los músculos."
+  },
+  "exploration": [
+    {
+      "kind": "cell",
+      "label": "The brake",
+      "label_es": "El freno",
+      "title": "Myostatin",
+      "title_es": "La miostatina",
+      "description": "Every mammal makes myostatin. It keeps muscles from growing too much. Without it, the muscles of a calf grow far more, a trait called double muscling.",
+      "description_es": "Todos los mamíferos fabrican miostatina. Evita que los músculos crezcan demasiado. Sin ella, los músculos de un ternero crecen mucho más, un rasgo llamado doble músculo."
+    },
+    {
+      "kind": "dna",
+      "label": "Different breeds",
+      "label_es": "Razas distintas",
+      "title": "Different changes, the same effect",
+      "title_es": "Cambios distintos, el mismo efecto",
+      "description": "Belgian Blue cattle have a short deletion in the same gene, and Piedmontese cattle have a swap of one amino acid. Both stop the brake from working.",
+      "description_es": "El ganado azul belga tiene una deleción corta en el mismo gen, y el piamontés tiene un cambio de un aminoácido. Los dos impiden que el freno funcione."
+    }
+  ],
+  "mutation": {
+    "geneLabel": "Myostatin gene of cattle (illustrative)",
+    "geneLabel_es": "Gen de la miostatina del ganado (ilustrativo)",
+    "reference": "ATGCAGTGTGACGAGCTG",
+    "mutant": "ATGCAGTATGACGAGCTG",
+    "story": "A real change with an invented sequence. Myostatin is a protein that tells muscles to stop growing. In Piedmontese cattle a swap of cysteine for tyrosine disables it, and the animals have much more muscle.",
+    "story_es": "Un cambio real con una secuencia inventada. La miostatina es una proteína que dice a los músculos que dejen de crecer. En el ganado piamontés un cambio de cisteína por tirosina la desactiva, y los animales tienen mucho más músculo.",
+    "explanations": {
+      "silent": "Not here: the amino acid changes.",
+      "silent_es": "Aquí no: el aminoácido cambia.",
+      "missense": "TGT (Cys) became TAT (Tyr): one amino acid was swapped for another. This real change, called C313Y, stops myostatin from working, and the muscles keep growing.",
+      "missense_es": "TGT (Cys) pasó a TAT (Tyr): un aminoácido se cambió por otro. Este cambio real, llamado C313Y, impide que la miostatina funcione, y los músculos siguen creciendo.",
+      "nonsense": "Not here: no stop signal appears.",
+      "nonsense_es": "Aquí no: no aparece ninguna señal de fin."
+    }
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Effect",
+    "productLabel_es": "Efecto",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Compare",
+        "label_es": "Comparar",
+        "description": "Find the changed letter.",
+        "description_es": "Encuentra la letra cambiada.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Translate",
+        "label_es": "Traducir",
+        "description": "Read the codons.",
+        "description_es": "Lee los codones.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Effect",
+        "label_es": "Efecto",
+        "description": "Decide what it does.",
+        "description_es": "Decide qué hace.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Compare the two rows letter by letter. Only one is different.",
+      "content_es": "Compara las dos filas letra a letra. Solo una es distinta.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Look at the codon that contains the changed letter, before and after.",
+      "content_es": "Mira el codón que contiene la letra cambiada, antes y después.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "The change is in the third codon: TGT became TAT, so Cys became Tyr (missense).",
+      "content_es": "El cambio está en el tercer codón: TGT pasó a TAT, así que Cys pasó a Tyr (de sentido erróneo).",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A brake that fails",
+    "title_es": "Un freno que falla",
+    "summary": "You found a one-letter change that swaps an amino acid and disables the brake of muscle growth.",
+    "summary_es": "Has encontrado un cambio de una letra que sustituye un aminoácido y desactiva el freno del crecimiento muscular.",
+    "realWorldImpact": "Double-muscled cattle give lean meat, but calving is harder, so breeders weigh the benefit and the cost of the allele.",
+    "realWorldImpact_es": "El ganado de doble músculo da carne magra, pero los partos son más difíciles, así que quien cría sopesa el beneficio y el coste del alelo."
+  },
+  "science": {
+    "organism": "Bos taurus",
+    "realWorldCase": "In 1997 a team reported that Belgian Blue and Piedmontese cattle carry different changes in the myostatin gene, which explains their double-muscled look.",
+    "realWorldCase_es": "En 1997 un equipo describió que el ganado azul belga y el piamontés llevan cambios distintos en el gen de la miostatina, lo que explica su aspecto de doble músculo.",
+    "scientificContext": "A missense mutation swaps one amino acid for another. The cysteine of this change takes part in the bond that holds the protein together, so the protein falls apart.",
+    "scientificContext_es": "Una mutación de sentido erróneo cambia un aminoácido por otro. La cisteína de este cambio participa en el enlace que mantiene unida la proteína, así que la proteína se deshace.",
+    "gameplaySimplifications": [
+      "The real change is the one described, but the sequence around it is an invented short example."
+    ],
+    "gameplaySimplifications_es": [
+      "El cambio real es el que se describe, pero la secuencia que lo rodea es un ejemplo corto inventado."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Kambadur, R.",
+          "Sharma, M.",
+          "Smith, T. P.",
+          "Bass, J. J."
+        ],
+        "year": 1997,
+        "title": "Mutations in myostatin (GDF8) in double-muscled Belgian Blue and Piedmontese cattle",
+        "journal": "Genome Research",
+        "type": "paper",
+        "doi": "10.1101/gr.7.9.910"
+      }
+    ]
+  }
+}

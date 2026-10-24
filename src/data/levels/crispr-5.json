@@ -1,0 +1,206 @@
+{
+  "id": "crispr-5",
+  "mode": "crispr",
+  "title": "Rice that resists blight",
+  "title_es": "Arroz que resiste el tizón",
+  "subtitle": "Editing the door the bacteria use",
+  "subtitle_es": "Editar la puerta que usa la bacteria",
+  "difficulty": "advanced",
+  "estimatedDuration": 9,
+  "objective": "Choose the guide that edits the binding site in the promoter of a rice gene, and only there.",
+  "objective_es": "Elige la guía que edita el sitio de unión del promotor de un gen del arroz, y solo ese.",
+  "description": "The bacterium that causes bacterial blight in rice switches on a plant gene by binding to a short stretch of its promoter. Editing that stretch closes the door.",
+  "description_es": "La bacteria que causa el tizón bacteriano del arroz enciende un gen de la planta uniéndose a un tramo corto de su promotor. Editar ese tramo cierra la puerta.",
+  "organism": {
+    "id": "rice-sweet",
+    "commonName": "Rice",
+    "commonName_es": "Arroz",
+    "scientificName": "Oryza sativa",
+    "taxonomy": [
+      "Plantae",
+      "Tracheophyta",
+      "Liliopsida",
+      "Poales",
+      "Poaceae",
+      "Oryza"
+    ],
+    "targetTissue": "leaf",
+    "targetOrganelle": "nucleus",
+    "description": "A cereal attacked by a bacterial disease.",
+    "description_es": "Un cereal atacado por una enfermedad bacteriana."
+  },
+  "exploration": [
+    {
+      "kind": "grain",
+      "label": "The disease",
+      "label_es": "La enfermedad",
+      "title": "Bacterial blight",
+      "title_es": "El tizón bacteriano",
+      "description": "Bacterial blight is a disease of rice caused by Xanthomonas bacteria. It can destroy a large part of a harvest.",
+      "description_es": "El tizón bacteriano es una enfermedad del arroz causada por bacterias del género Xanthomonas. Puede destruir una parte grande de una cosecha."
+    },
+    {
+      "kind": "dna",
+      "label": "The trick of the bacterium",
+      "label_es": "El truco de la bacteria",
+      "title": "It makes the plant open a door",
+      "title_es": "Hace que la planta abra una puerta",
+      "description": "The bacterium injects a protein that binds to the promoter of a plant gene for a sugar transporter, SWEET. The plant then releases sugar to feed the bacteria.",
+      "description_es": "La bacteria inyecta una proteína que se une al promotor de un gen de la planta para un transportador de azúcar, SWEET. La planta libera entonces azúcar para alimentar a la bacteria."
+    },
+    {
+      "kind": "dna",
+      "label": "The edit",
+      "label_es": "La edición",
+      "title": "Change the binding site",
+      "title_es": "Cambiar el sitio de unión",
+      "description": "If the binding site of the promoter is edited, the bacterial protein can no longer bind, but the plant gene still works for the plant.",
+      "description_es": "Si se edita el sitio de unión del promotor, la proteína de la bacteria ya no puede unirse, pero el gen de la planta sigue funcionando para la planta."
+    }
+  ],
+  "crispr": {
+    "genome": "AACAGACACTGCCGGTCTACTCTCATAGCACCTCAAACCACACTGCAGGAGAATTACGTCCTGGGGTAGATTGAGACACAATTATGGAACAATTGTTTTC",
+    "target": {
+      "label": "binding site of the SWEET promoter",
+      "label_es": "sitio de unión del promotor de SWEET",
+      "start": 24,
+      "end": 66
+    },
+    "guides": [
+      {
+        "id": "a",
+        "sequence": "CACACTGC"
+      },
+      {
+        "id": "b",
+        "sequence": "TTACGTCC"
+      },
+      {
+        "id": "c",
+        "sequence": "CACAATTA"
+      },
+      {
+        "id": "d",
+        "sequence": "ATAGCACC"
+      },
+      {
+        "id": "e",
+        "sequence": "TTTCGGGT"
+      }
+    ],
+    "mismatches": 1,
+    "story": "A stretch of the promoter of a SWEET gene of rice. Edit the binding site of the bacterial protein, and nothing else.",
+    "story_es": "Un tramo del promotor de un gen SWEET del arroz. Edita el sitio de unión de la proteína de la bacteria, y nada más."
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Cut",
+    "productLabel_es": "Corte",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Guide",
+        "label_es": "Guía",
+        "description": "The guide leads Cas9 to the binding site.",
+        "description_es": "La guía lleva a Cas9 al sitio de unión.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Cut",
+        "label_es": "Corte",
+        "description": "Cas9 cuts the promoter.",
+        "description_es": "Cas9 corta el promotor.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Repair",
+        "label_es": "Reparación",
+        "description": "The binding site changes.",
+        "description_es": "El sitio de unión cambia.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Tap each guide and count where it sticks. Only one cuts exactly once, inside the blue area.",
+      "content_es": "Toca cada guía y cuenta dónde se pega. Solo una corta exactamente una vez, dentro de la zona azul.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Two guides stick inside the blue area but one has no PAM and another cuts also at a look-alike site elsewhere.",
+      "content_es": "Dos guías se pegan dentro de la zona azul pero una no tiene PAM y otra corta también en un sitio parecido de otro lugar.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Choose guide B.",
+      "content_es": "Elige la guía B.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A door closed",
+    "title_es": "Una puerta cerrada",
+    "summary": "You chose a guide that edits only the binding site, so the bacterium can no longer open the door.",
+    "summary_es": "Has elegido una guía que edita solo el sitio de unión, así que la bacteria ya no puede abrir la puerta.",
+    "realWorldImpact": "Editing the parts of a plant that a disease needs can give resistance without adding genes from other species.",
+    "realWorldImpact_es": "Editar las partes de una planta que necesita una enfermedad puede dar resistencia sin añadir genes de otras especies."
+  },
+  "science": {
+    "organism": "Oryza sativa",
+    "realWorldCase": "In 2019 a team edited the promoters of three SWEET genes in rice with CRISPR, and obtained plants with broad resistance to bacterial blight in the laboratory and in field tests.",
+    "realWorldCase_es": "En 2019 un equipo editó con CRISPR los promotores de tres genes SWEET del arroz y obtuvo plantas con una resistencia amplia al tizón bacteriano en el laboratorio y en ensayos de campo.",
+    "scientificContext": "Xanthomonas oryzae injects TAL effectors that bind effector-binding elements in the promoters of SWEET genes, inducing them. Mutating those elements prevents the induction and the disease.",
+    "scientificContext_es": "Xanthomonas oryzae inyecta efectores TAL que se unen a elementos de unión en los promotores de los genes SWEET y los activan. Mutar esos elementos impide la activación y la enfermedad.",
+    "gameplaySimplifications": [
+      "Guides here have 8 letters so they fit on the screen; real ones have about 20.",
+      "The sequence is invented; the real promoters have several binding sites."
+    ],
+    "gameplaySimplifications_es": [
+      "Las guías de aquí tienen 8 letras para que quepan en pantalla; las reales tienen unas 20.",
+      "La secuencia es inventada; los promotores reales tienen varios sitios de unión."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Oliva, R.",
+          "Ji, C.",
+          "Atienza-Grande, G.",
+          "et al."
+        ],
+        "year": 2019,
+        "title": "Broad-spectrum resistance to bacterial blight in rice using genome editing",
+        "journal": "Nature Biotechnology",
+        "type": "paper",
+        "doi": "10.1038/s41587-019-0267-z"
+      }
+    ]
+  }
+}

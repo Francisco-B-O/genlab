@@ -1,0 +1,231 @@
+{
+  "id": "cut-heme",
+  "mode": "cut",
+  "title": "The gene of a red protein",
+  "title_es": "El gen de una proteína roja",
+  "subtitle": "Five enzymes and a band that lies",
+  "subtitle_es": "Cinco enzimas y una banda que miente",
+  "difficulty": "advanced",
+  "estimatedDuration": 8,
+  "objective": "Cut the leghemoglobin gene out of its DNA. One enzyme gives a band of the right size that is not the gene.",
+  "objective_es": "Saca el gen de la leghemoglobina de su ADN. Una enzima da una banda del tamaño correcto que no es el gen.",
+  "description": "Restriction enzymes are molecular scissors that cut at their own sequences. You need a cut right at each end of the gene and none inside it.",
+  "description_es": "Las enzimas de restricción son tijeras moleculares que cortan en sus propias secuencias. Necesitas un corte justo en cada extremo del gen y ninguno dentro.",
+  "organism": {
+    "id": "heme-dna",
+    "commonName": "DNA with the leghemoglobin gene",
+    "commonName_es": "ADN con el gen de la leghemoglobina",
+    "scientificName": "Glycine max",
+    "taxonomy": [
+      "Plantae",
+      "Tracheophyta",
+      "Magnoliopsida",
+      "Fabales",
+      "Fabaceae",
+      "Glycine"
+    ],
+    "targetTissue": "nucleus",
+    "targetOrganelle": "nucleus",
+    "description": "A stretch of soybean DNA with the gene of a red protein.",
+    "description_es": "Un trozo de ADN de soja con el gen de una proteína roja."
+  },
+  "exploration": [
+    {
+      "kind": "dna",
+      "label": "The map",
+      "label_es": "El mapa",
+      "title": "Several enzymes, many sites",
+      "title_es": "Varias enzimas, muchos sitios",
+      "description": "Real maps are crowded. A site close to the end of the gene is not the same as a site at the end, and a cut inside the gene breaks it.",
+      "description_es": "Los mapas reales están llenos. Un sitio cerca del final del gen no es lo mismo que un sitio en el final, y un corte dentro del gen lo rompe."
+    },
+    {
+      "kind": "burger",
+      "label": "The goal",
+      "label_es": "El objetivo",
+      "title": "A meaty colour without meat",
+      "title_es": "Un color de carne sin carne",
+      "description": "The isolated gene goes into a yeast that makes the red protein in large tanks.",
+      "description_es": "El gen aislado se introduce en una levadura que fabrica la proteína roja en grandes tanques."
+    }
+  ],
+  "cut": {
+    "length": 16,
+    "gene": {
+      "label": "Leghemoglobin gene",
+      "label_es": "Gen de la leghemoglobina",
+      "start": 5,
+      "end": 11
+    },
+    "enzymes": [
+      {
+        "id": "eco",
+        "label": "EcoRI",
+        "label_es": "EcoRI",
+        "description": "Recognises GAATTC.",
+        "description_es": "Reconoce GAATTC.",
+        "sites": [
+          5,
+          13.5
+        ]
+      },
+      {
+        "id": "bam",
+        "label": "BamHI",
+        "label_es": "BamHI",
+        "description": "Recognises GGATCC.",
+        "description_es": "Reconoce GGATCC.",
+        "sites": [
+          2.5,
+          11
+        ]
+      },
+      {
+        "id": "hind",
+        "label": "HindIII",
+        "label_es": "HindIII",
+        "description": "Recognises AAGCTT.",
+        "description_es": "Reconoce AAGCTT.",
+        "sites": [
+          8
+        ]
+      },
+      {
+        "id": "xho",
+        "label": "XhoI",
+        "label_es": "XhoI",
+        "description": "Recognises CTCGAG.",
+        "description_es": "Reconoce CTCGAG.",
+        "sites": [
+          2,
+          5,
+          11.5
+        ]
+      },
+      {
+        "id": "not",
+        "label": "NotI",
+        "label_es": "NotI",
+        "description": "Recognises GCGGCCGC.",
+        "description_es": "Reconoce GCGGCCGC.",
+        "sites": [
+          1,
+          7
+        ]
+      }
+    ],
+    "story": "Soybean roots make leghemoglobin, a red protein that carries oxygen. It gives plant-based burgers their meaty colour and taste once a microbe makes it. First the gene has to be cut out.",
+    "story_es": "Las raíces de la soja fabrican leghemoglobina, una proteína roja que lleva oxígeno. Cuando la fabrica un microbio, da a las hamburguesas vegetales su color y su sabor de carne. Primero hay que sacar el gen."
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Gene",
+    "productLabel_es": "Gen",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Cut",
+        "label_es": "Cortar",
+        "description": "The enzymes cut the DNA at their sites.",
+        "description_es": "Las enzimas cortan el ADN en sus sitios.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Run the gel",
+        "label_es": "Correr el gel",
+        "description": "The pieces separate by size.",
+        "description_es": "Los trozos se separan por tamaño.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Gene free",
+        "label_es": "Gen libre",
+        "description": "The gene is a piece of its own.",
+        "description_es": "El gen es un trozo por sí solo.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Same rule as always: one cut at each end of the gene and none inside. The gel can fool you.",
+      "content_es": "La misma regla de siempre: un corte en cada extremo del gen y ninguno dentro. El gel puede engañarte.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "One enzyme gives a band the same size as the gene, but its cuts are not at the ends of the gene. Another cuts inside, and another cuts close to the end but not exactly on it.",
+      "content_es": "Una enzima da una banda del mismo tamaño que el gen, pero sus cortes no están en los extremos del gen. Otra corta dentro, y otra corta cerca del final pero no justo en él.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "EcoRI cuts at the start and BamHI at the end. Together they free the gene.",
+      "content_es": "EcoRI corta al principio y BamHI al final. Juntas liberan el gen.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "The right pair of scissors",
+    "title_es": "La pareja de tijeras adecuada",
+    "summary": "You chose the pair of enzymes that frees the gene and avoided the band that only looked right.",
+    "summary_es": "Has elegido la pareja de enzimas que libera el gen y has evitado la banda que solo lo parecía.",
+    "realWorldImpact": "Plant-based burgers use a protein made by yeast in tanks, so they can have the colour and flavour of meat without using animals.",
+    "realWorldImpact_es": "Las hamburguesas vegetales usan una proteína fabricada por levaduras en tanques, así que pueden tener el color y el sabor de la carne sin usar animales."
+  },
+  "science": {
+    "organism": "Glycine max",
+    "realWorldCase": "Leghemoglobin is found in the root nodules of legumes, where it keeps oxygen away from the bacteria that fix nitrogen. A yeast called Pichia pastoris has been used to make the soy version for food.",
+    "realWorldCase_es": "La leghemoglobina se encuentra en los nódulos de las raíces de las leguminosas, donde mantiene el oxígeno lejos de las bacterias que fijan nitrógeno. Se ha usado una levadura llamada Pichia pastoris para fabricar la versión de soja destinada a alimentación.",
+    "scientificContext": "Leghemoglobin binds a heme group, the same kind of molecule that makes blood red. The protein carries the heme, and the heme gives the red colour and part of the meaty taste when cooked.",
+    "scientificContext_es": "La leghemoglobina une un grupo hemo, la misma clase de molécula que da color rojo a la sangre. La proteína lleva el hemo, y el hemo da el color rojo y parte del sabor a carne al cocinar.",
+    "gameplaySimplifications": [
+      "The DNA is drawn as a straight stretch and the cutting positions are invented.",
+      "Sizes are in kilobases (kb), thousands of letters."
+    ],
+    "gameplaySimplifications_es": [
+      "El ADN se dibuja como un trozo recto y las posiciones de corte son inventadas.",
+      "Los tamaños están en kilobases (kb), miles de letras."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Reyes, T. F.",
+          "Agrawal, A.",
+          "Chan, T.",
+          "et al."
+        ],
+        "year": 2023,
+        "title": "The safety of soy leghemoglobin protein preparation derived from Pichia pastoris expressing the soybean leghemoglobin gene",
+        "journal": "Journal of Toxicology",
+        "type": "paper",
+        "doi": "10.1155/2023/7398724"
+      }
+    ]
+  }
+}

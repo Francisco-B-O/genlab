@@ -1,0 +1,178 @@
+{
+  "id": "asm-neandertal",
+  "mode": "assemble",
+  "title": "DNA from a cousin who is gone",
+  "title_es": "ADN de un primo que ya no está",
+  "subtitle": "A Neandertal, in short broken pieces",
+  "subtitle_es": "Un neandertal, en trozos cortos y rotos",
+  "difficulty": "advanced",
+  "estimatedDuration": 9,
+  "objective": "Rebuild a stretch of Neandertal DNA from seven short reads. A repeat can make two joins look right: check the length.",
+  "objective_es": "Reconstruye un trozo de ADN de neandertal a partir de siete lecturas cortas. Un repetido puede hacer que dos uniones parezcan correctas: comprueba la longitud.",
+  "description": "Machines read DNA in short pieces, never all at once. Neighbouring pieces share a few letters, and that overlap shows how to put them back together.",
+  "description_es": "Las máquinas leen el ADN en trozos cortos, nunca de una vez. Los trozos vecinos comparten unas letras, y ese solape indica cómo volver a unirlos.",
+  "organism": {
+    "id": "neandertal-dna",
+    "commonName": "Neandertal bone",
+    "commonName_es": "Hueso de neandertal",
+    "scientificName": "Homo neanderthalensis",
+    "taxonomy": [
+      "Animalia",
+      "Chordata",
+      "Mammalia",
+      "Primates",
+      "Hominidae",
+      "Homo"
+    ],
+    "targetTissue": "bone",
+    "targetOrganelle": "cytoplasm",
+    "description": "An extinct human relative that lived in Europe and Asia.",
+    "description_es": "Un pariente humano extinto que vivió en Europa y Asia."
+  },
+  "exploration": [
+    {
+      "kind": "dna",
+      "label": "Old bones",
+      "label_es": "Huesos viejos",
+      "title": "DNA that survived in a cave",
+      "title_es": "ADN que sobrevivió en una cueva",
+      "description": "Bones from the cool, dry Vindija cave, in Croatia, kept some DNA. Most of what is in a bone like that comes from soil microbes, and the Neandertal part is broken into tiny pieces.",
+      "description_es": "Los huesos de la cueva fresca y seca de Vindija, en Croacia, conservaron algo de ADN. La mayor parte de lo que hay en un hueso así viene de microbios del suelo, y la parte neandertal está rota en trozos diminutos."
+    },
+    {
+      "kind": "dna",
+      "label": "Repeats",
+      "label_es": "Repetidos",
+      "title": "The hard part of assembly",
+      "title_es": "Lo difícil del ensamblaje",
+      "description": "Genomes are full of repeated stretches. A fragment inside a repeat can match two different places, which is what makes assembly hard.",
+      "description_es": "Los genomas están llenos de tramos repetidos. Un fragmento dentro de un repetido puede encajar en dos sitios distintos, y eso es lo que complica el ensamblaje."
+    }
+  ],
+  "assemble": {
+    "sequence": "ATGCCAGCGGCGACAGGTTGCTGTACAGGATTGCTGTTGCTATCCCTCGACGAT",
+    "fragments": [
+      "ATGCCAGCGGCGACA",
+      "GACAGGTTGCT",
+      "TGCTGTACAG",
+      "ACAGGATTGCT",
+      "TGCTGTTGCT",
+      "TGCTATCCC",
+      "TCCCTCGACGAT"
+    ],
+    "minOverlap": 4,
+    "story": "DNA taken from bones about forty thousand years old was read in millions of tiny, damaged pieces. Computers put them together, and the result could be compared with the genome of people today.",
+    "story_es": "El ADN sacado de huesos de unos cuarenta mil años se leyó en millones de trozos diminutos y dañados. Los ordenadores los unieron, y el resultado se pudo comparar con el genoma de las personas de hoy."
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Sequence",
+    "productLabel_es": "Secuencia",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Reads",
+        "label_es": "Lecturas",
+        "description": "The DNA is broken into short pieces.",
+        "description_es": "El ADN se rompe en trozos cortos.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Overlaps",
+        "label_es": "Solapes",
+        "description": "The software finds the letters shared by neighbours.",
+        "description_es": "El programa encuentra las letras que comparten los vecinos.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Sequence",
+        "label_es": "Secuencia",
+        "description": "The pieces are chained into the whole sequence.",
+        "description_es": "Los trozos se encadenan en la secuencia completa.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Look for the letters that repeat at the end of one fragment and at the start of another.",
+      "content_es": "Busca las letras que se repiten al final de un fragmento y al principio de otro.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Place the fragment that starts with ATG first. At the repeat, check which neighbour fits the following fragment too.",
+      "content_es": "Pon primero el fragmento que empieza por ATG. En el repetido, mira qué vecino encaja también con el fragmento siguiente.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "The order is: ATGCCAGCGGCGACA → GACAGGTTGCT → TGCTGTACAG → ACAGGATTGCT → TGCTGTTGCT → TGCTATCCC → TCCCTCGACGAT.",
+      "content_es": "El orden es: ATGCCAGCGGCGACA → GACAGGTTGCT → TGCTGTACAG → ACAGGATTGCT → TGCTGTTGCT → TGCTATCCC → TCCCTCGACGAT.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A relative read from bones",
+    "title_es": "Un pariente leído a partir de huesos",
+    "summary": "You rebuilt a stretch of the DNA of an extinct relative of ours from short, overlapping pieces.",
+    "summary_es": "Has reconstruido un trozo del ADN de un pariente extinto nuestro a partir de trozos cortos que se solapan.",
+    "realWorldImpact": "Comparing our genome with the Neandertal one showed that many people today carry a small share of Neandertal DNA, which means that our ancestors had children with them.",
+    "realWorldImpact_es": "Comparar nuestro genoma con el neandertal mostró que muchas personas de hoy llevan una pequeña parte de ADN neandertal, lo que significa que nuestros antepasados tuvieron hijos con ellos."
+  },
+  "science": {
+    "organism": "Homo neanderthalensis",
+    "realWorldCase": "In 2010 a team published the first draft of the Neandertal genome, based on bones of three individuals from Vindija cave, about 38,000 years old. People outside Africa carry roughly 1 to 4% of Neandertal ancestry.",
+    "realWorldCase_es": "En 2010 un equipo publicó el primer borrador del genoma neandertal, a partir de huesos de tres individuos de la cueva de Vindija, de unos 38 000 años. Las personas de fuera de África llevan aproximadamente entre un 1 y un 4 % de ascendencia neandertal.",
+    "scientificContext": "Ancient DNA is damaged: it is short, and some letters have chemically changed. Software has to filter out DNA from microbes and from the people who handled the bones, and then chain the overlapping reads.",
+    "scientificContext_es": "El ADN antiguo está dañado: es corto y algunas letras han cambiado químicamente. Un programa tiene que filtrar el ADN de los microbios y de las personas que manipularon los huesos, y encadenar luego las lecturas que se solapan.",
+    "gameplaySimplifications": [
+      "The fragments here have 8 to 14 letters; real ancient reads have around 50 to 100.",
+      "The sequence is invented; only the way of rebuilding it is real."
+    ],
+    "gameplaySimplifications_es": [
+      "Los fragmentos de aquí tienen de 8 a 14 letras; las lecturas antiguas reales rondan las 50 a 100.",
+      "La secuencia es inventada; solo es real la forma de reconstruirla."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Green, R. E.",
+          "Krause, J.",
+          "Briggs, A. W.",
+          "et al."
+        ],
+        "year": 2010,
+        "title": "A draft sequence of the Neandertal genome",
+        "journal": "Science",
+        "type": "paper",
+        "doi": "10.1126/science.1188021"
+      }
+    ]
+  }
+}

@@ -1,0 +1,281 @@
+{
+  "id": "tune-algae",
+  "mode": "tune",
+  "title": "Tune the algae pond",
+  "title_es": "Ajusta el estanque de algas",
+  "subtitle": "Light, gas and food",
+  "subtitle_es": "Luz, gas y alimento",
+  "difficulty": "intermediate",
+  "estimatedDuration": 6,
+  "objective": "Choose the settings of an algae culture so that it grows enough without going over budget.",
+  "objective_es": "Elige los ajustes de un cultivo de algas para que crezca lo suficiente sin pasarte del presupuesto.",
+  "description": "Algae live on light, carbon dioxide and nutrients. More of everything costs more, and too much of some things hurts them.",
+  "description_es": "Las algas viven de luz, dióxido de carbono y nutrientes. Más de todo cuesta más, y demasiado de algunas cosas les hace daño.",
+  "organism": {
+    "id": "algae-tune",
+    "commonName": "Microalgae",
+    "commonName_es": "Microalgas",
+    "scientificName": "Chlorella vulgaris",
+    "taxonomy": [
+      "Plantae",
+      "Chlorophyta",
+      "Trebouxiophyceae",
+      "Chlorellales",
+      "Chlorellaceae",
+      "Chlorella"
+    ],
+    "targetTissue": "single cell",
+    "targetOrganelle": "chloroplast",
+    "description": "Tiny green algae grown for food, feed and fuel.",
+    "description_es": "Algas verdes diminutas que se cultivan para alimento, pienso y combustible."
+  },
+  "exploration": [
+    {
+      "kind": "plant",
+      "label": "Algae",
+      "label_es": "Algas",
+      "title": "Sunlight turned into biomass",
+      "title_es": "Luz del sol convertida en biomasa",
+      "description": "Algae turn light and CO2 into sugars and oils. Some are grown to make food, feed or fuel.",
+      "description_es": "Las algas convierten luz y CO2 en azúcares y aceites. Algunas se cultivan para obtener alimento, pienso o combustible."
+    },
+    {
+      "kind": "flask",
+      "label": "The pond",
+      "label_es": "El estanque",
+      "title": "A balance of three things",
+      "title_es": "Un equilibrio de tres cosas",
+      "description": "Too little light or food and the algae grow slowly. Too much light burns them, and too many nutrients can turn the water toxic for them.",
+      "description_es": "Con poca luz o alimento las algas crecen despacio. Con demasiada luz se queman, y con demasiados nutrientes el agua puede volverse mala para ellas."
+    }
+  ],
+  "tune": {
+    "metricLabel": "Algae",
+    "metricLabel_es": "Algas",
+    "unit": "g/L",
+    "unit_es": "g/L",
+    "base": 10,
+    "target": 13,
+    "budget": 5,
+    "labels": {
+      "perCell": "Growth per cell",
+      "perCell_es": "Crecimiento por célula",
+      "growth": "Algae health",
+      "growth_es": "Salud de las algas"
+    },
+    "messages": {
+      "lowGrowth": "The algae are suffering: too much light or too many nutrients.",
+      "lowGrowth_es": "Las algas sufren: demasiada luz o demasiados nutrientes.",
+      "lowPerCell": "The algae grow slowly: they need more light, CO2 or nutrients.",
+      "lowPerCell_es": "Las algas crecen despacio: necesitan más luz, CO2 o nutrientes."
+    },
+    "knobs": [
+      {
+        "id": "light",
+        "label": "Light",
+        "label_es": "Luz",
+        "options": [
+          {
+            "id": "dim",
+            "label": "Dim",
+            "label_es": "Tenue",
+            "description": "Free, but the algae grow slowly.",
+            "description_es": "Gratis, pero las algas crecen despacio.",
+            "cost": 0,
+            "perCell": 0.6,
+            "growth": 1
+          },
+          {
+            "id": "bright",
+            "label": "Bright",
+            "label_es": "Intensa",
+            "description": "Good growth for a fair price.",
+            "description_es": "Buen crecimiento a un precio razonable.",
+            "cost": 2,
+            "perCell": 1.4,
+            "growth": 1
+          },
+          {
+            "id": "intense",
+            "label": "Very intense",
+            "label_es": "Muy intensa",
+            "description": "Fast, but it burns the algae.",
+            "description_es": "Rápida, pero quema las algas.",
+            "cost": 3,
+            "perCell": 1.8,
+            "growth": 0.5
+          }
+        ]
+      },
+      {
+        "id": "co2",
+        "label": "Carbon dioxide",
+        "label_es": "Dióxido de carbono",
+        "options": [
+          {
+            "id": "air",
+            "label": "Just air",
+            "label_es": "Solo aire",
+            "description": "Free, but there is little CO2.",
+            "description_es": "Gratis, pero hay poco CO2.",
+            "cost": 0,
+            "perCell": 0.8,
+            "growth": 1
+          },
+          {
+            "id": "enriched",
+            "label": "Enriched air",
+            "label_es": "Aire enriquecido",
+            "description": "More CO2 for the algae to use.",
+            "description_es": "Más CO2 para que lo aprovechen las algas.",
+            "cost": 2,
+            "perCell": 1.3,
+            "growth": 1
+          },
+          {
+            "id": "pure",
+            "label": "Pure CO2",
+            "label_es": "CO2 puro",
+            "description": "Costly, and it makes the water too acid.",
+            "description_es": "Caro, y vuelve el agua demasiado ácida.",
+            "cost": 3,
+            "perCell": 1.5,
+            "growth": 0.7
+          }
+        ]
+      },
+      {
+        "id": "food",
+        "label": "Nutrients",
+        "label_es": "Nutrientes",
+        "options": [
+          {
+            "id": "poor",
+            "label": "Poor",
+            "label_es": "Pocos",
+            "description": "Cheap, but the algae are underfed.",
+            "description_es": "Barato, pero las algas pasan hambre.",
+            "cost": 0,
+            "perCell": 0.7,
+            "growth": 0.8
+          },
+          {
+            "id": "balanced",
+            "label": "Balanced",
+            "label_es": "Equilibrados",
+            "description": "The right amount of nitrogen and phosphorus.",
+            "description_es": "La cantidad justa de nitrógeno y fósforo.",
+            "cost": 1,
+            "perCell": 1.2,
+            "growth": 1
+          },
+          {
+            "id": "rich",
+            "label": "Very rich",
+            "label_es": "Muy abundantes",
+            "description": "Too much and the culture gets unbalanced.",
+            "description_es": "Demasiado y el cultivo se desequilibra.",
+            "cost": 2,
+            "perCell": 1.4,
+            "growth": 0.55
+          }
+        ]
+      }
+    ]
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Algae",
+    "productLabel_es": "Algas",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Seed",
+        "label_es": "Sembrar",
+        "description": "A few algae in water.",
+        "description_es": "Unas pocas algas en el agua.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Grow",
+        "label_es": "Crecer",
+        "description": "They use light and CO2.",
+        "description_es": "Usan luz y CO2.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Harvest",
+        "label_es": "Cosechar",
+        "description": "The culture is collected.",
+        "description_es": "Se recoge el cultivo.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Algae need light, CO2 and nutrients, but each one can be too much.",
+      "content_es": "Las algas necesitan luz, CO2 y nutrientes, pero de cada cosa puede haber demasiado.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Very intense light, pure CO2 and a very rich pond hurt the algae and the budget. Look for the middle.",
+      "content_es": "La luz muy intensa, el CO2 puro y un estanque muy rico dañan a las algas y al presupuesto. Busca el punto medio.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Bright light, enriched air and balanced nutrients is not possible within budget; give up one of them.",
+      "content_es": "Luz intensa, aire enriquecido y nutrientes equilibrados no cabe en el presupuesto; renuncia a uno de ellos.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A green harvest",
+    "title_es": "Una cosecha verde",
+    "summary": "You balanced light, CO2 and nutrients to grow algae efficiently.",
+    "summary_es": "Has equilibrado luz, CO2 y nutrientes para cultivar algas de forma eficiente.",
+    "realWorldImpact": "Algae farms produce food supplements, animal feed and research into biofuels.",
+    "realWorldImpact_es": "Las granjas de algas producen complementos alimenticios, pienso y investigación en biocombustibles."
+  },
+  "science": {
+    "organism": "Chlorella vulgaris",
+    "realWorldCase": "Microalgae have been grown commercially since the 1960s, first in Japan and later across the world.",
+    "realWorldCase_es": "Las microalgas se cultivan comercialmente desde los años sesenta, primero en Japón y luego en todo el mundo.",
+    "scientificContext": "Photosynthesis saturates: beyond a certain light level, extra light only damages the photosystems. Nutrient balance also controls what the cells make.",
+    "scientificContext_es": "La fotosíntesis se satura: por encima de cierta cantidad de luz, la luz extra solo daña los fotosistemas. El equilibrio de nutrientes también controla lo que fabrican las células.",
+    "gameplaySimplifications": [
+      "Real cultures also depend on temperature, depth and mixing."
+    ],
+    "gameplaySimplifications_es": [
+      "Los cultivos reales también dependen de la temperatura, la profundidad y la mezcla."
+    ],
+    "references": []
+  }
+}

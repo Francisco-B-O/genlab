@@ -1,0 +1,369 @@
+{
+  "id": "fix-bread",
+  "mode": "diagnose",
+  "title": "The bread that did not rise",
+  "title_es": "El pan que no sube",
+  "subtitle": "Find the broken piece in the fermentation pathway",
+  "subtitle_es": "Encuentra la pieza rota en la ruta de la fermentación",
+  "difficulty": "beginner",
+  "estimatedDuration": 5,
+  "objective": "The pathway is already built, but the dough does not rise. Find which piece fails and how to treat it.",
+  "objective_es": "La ruta ya está montada, pero la masa no sube. Descubre qué pieza falla y cómo se arregla.",
+  "description": "Diagnosing is a different skill from building: you reason backwards from the symptom.",
+  "description_es": "Diagnosticar es una habilidad distinta de construir: se razona hacia atrás desde el síntoma.",
+  "organism": {
+    "id": "yeast-bread",
+    "commonName": "Baker's yeast",
+    "commonName_es": "Levadura de panadería",
+    "scientificName": "Saccharomyces cerevisiae",
+    "taxonomy": [
+      "Fungi",
+      "Ascomycota",
+      "Saccharomycetes",
+      "Saccharomycetales",
+      "Saccharomyces"
+    ],
+    "targetTissue": "single cell",
+    "targetOrganelle": "cytoplasm",
+    "description": "The yeast that makes bread rise.",
+    "description_es": "La levadura que hace subir el pan."
+  },
+  "exploration": [
+    {
+      "kind": "bread",
+      "label": "Problem",
+      "label_es": "Problema",
+      "title": "A flat loaf",
+      "title_es": "Un pan plano",
+      "description": "Bread rises thanks to gas made by yeast. Today the dough stayed flat after two hours.",
+      "description_es": "El pan sube gracias al gas que fabrica la levadura. Hoy la masa se ha quedado plana tras dos horas."
+    },
+    {
+      "kind": "yeast",
+      "label": "Yeast",
+      "label_es": "Levadura",
+      "title": "Detective work",
+      "title_es": "Trabajo de detective",
+      "description": "Scientists also diagnose: they compare what should happen with what happens, and test one piece at a time.",
+      "description_es": "Los científicos también diagnostican: comparan lo que debería pasar con lo que pasa y comprueban una pieza cada vez."
+    }
+  ],
+  "diagnose": {
+    "symptom": "The dough did not rise after two hours.",
+    "symptom_es": "La masa no ha subido tras dos horas.",
+    "clues": [
+      {
+        "text": "There is plenty of sugar in the dough.",
+        "text_es": "Hay azúcar de sobra en la masa."
+      },
+      {
+        "text": "A test shows the yeast's DNA is intact: the gene is fine.",
+        "text_es": "Un análisis muestra que el ADN de la levadura está intacto: el gen está bien."
+      },
+      {
+        "text": "The yeast was dissolved in water at about 70 °C.",
+        "text_es": "La levadura se disolvió en agua a unos 70 °C."
+      },
+      {
+        "text": "There are no bubbles at all.",
+        "text_es": "No hay ni una burbuja."
+      }
+    ],
+    "faultyIds": [
+      "enzyme_pdc"
+    ],
+    "notes": {
+      "gene_pdc": {
+        "text": "The test shows its DNA is intact, so the recipe is fine.",
+        "text_es": "El análisis muestra que su ADN está intacto, así que la receta está bien."
+      },
+      "enzyme_pdc": {
+        "text": "Enzymes are proteins, and heat bends them out of shape. At 70 °C they stop working for good.",
+        "text_es": "Las enzimas son proteínas y el calor las deforma. A 70 °C dejan de funcionar para siempre."
+      },
+      "rxn_ferment": {
+        "text": "The reaction is fine: it just has no working enzyme to run it.",
+        "text_es": "La reacción está bien: lo que pasa es que no tiene enzima que la haga funcionar."
+      },
+      "met_sugar": {
+        "text": "There is plenty of sugar, so the food is not the problem.",
+        "text_es": "Hay azúcar de sobra, así que la comida no es el problema."
+      },
+      "met_co2": {
+        "text": "The gas is missing, but that is a consequence, not the cause.",
+        "text_es": "Falta el gas, pero eso es una consecuencia, no la causa."
+      },
+      "met_ethanol": {
+        "text": "Alcohol is not needed for the dough to rise.",
+        "text_es": "El alcohol no hace falta para que la masa suba."
+      },
+      "phenotype_rise": {
+        "text": "It is the symptom, not the broken piece.",
+        "text_es": "Es el síntoma, no la pieza rota."
+      }
+    },
+    "fixes": [
+      {
+        "id": "f1",
+        "text": "Dissolve fresh yeast in lukewarm water (about 30–35 °C).",
+        "text_es": "Disolver levadura fresca en agua templada (unos 30–35 °C).",
+        "correct": true,
+        "reason": "Warm water wakes the yeast without damaging its enzymes. Heat above about 55 °C kills yeast.",
+        "reason_es": "El agua templada despierta a la levadura sin dañar sus enzimas. Por encima de unos 55 °C la levadura muere."
+      },
+      {
+        "id": "f2",
+        "text": "Add more sugar.",
+        "text_es": "Añadir más azúcar.",
+        "correct": false,
+        "reason": "There is already more than enough sugar. The problem is that the enzymes no longer work.",
+        "reason_es": "Ya hay azúcar de sobra. El problema es que las enzimas ya no funcionan."
+      },
+      {
+        "id": "f3",
+        "text": "Swap the yeast gene for another one.",
+        "text_es": "Cambiar el gen de la levadura por otro.",
+        "correct": false,
+        "reason": "The gene is fine. The enzyme it made was destroyed by heat; new yeast would make healthy ones.",
+        "reason_es": "El gen está bien. La enzima que fabricó la destruyó el calor; una levadura nueva fabricaría enzimas sanas."
+      },
+      {
+        "id": "f4",
+        "text": "Leave the dough in the fridge overnight.",
+        "text_es": "Dejar la masa en la nevera toda la noche.",
+        "correct": false,
+        "reason": "Cold only slows yeast down. It cannot bring back enzymes that heat has destroyed.",
+        "reason_es": "El frío solo frena a la levadura. No puede devolver la vida a unas enzimas que el calor ha destruido."
+      }
+    ]
+  },
+  "biologicalContext": {
+    "nodes": [
+      {
+        "id": "gene_pdc",
+        "type": "gene",
+        "label": "Yeast fermentation gene",
+        "label_es": "Gen de fermentación de la levadura",
+        "description": "The recipe for the enzymes that ferment sugar.",
+        "description_es": "La receta de las enzimas que fermentan el azúcar.",
+        "position": {
+          "x": -6,
+          "y": 0,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_pdc",
+        "type": "enzyme",
+        "label": "Fermentation enzymes",
+        "label_es": "Enzimas de fermentación",
+        "description": "Proteins that turn sugar into gas and alcohol.",
+        "description_es": "Proteínas que convierten el azúcar en gas y alcohol.",
+        "position": {
+          "x": -3,
+          "y": 0,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_ferment",
+        "type": "reaction",
+        "label": "Fermentation",
+        "label_es": "Fermentación",
+        "description": "Sugar → carbon dioxide + ethanol.",
+        "description_es": "Azúcar → dióxido de carbono + etanol.",
+        "position": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_sugar",
+        "type": "metabolite",
+        "label": "Sugar in the dough",
+        "label_es": "Azúcar de la masa",
+        "description": "The food of the yeast.",
+        "description_es": "La comida de la levadura.",
+        "position": {
+          "x": 0,
+          "y": 3.2,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_co2",
+        "type": "metabolite",
+        "label": "Carbon dioxide gas",
+        "label_es": "Gas dióxido de carbono",
+        "description": "Bubbles trapped in the dough.",
+        "description_es": "Burbujas atrapadas en la masa.",
+        "position": {
+          "x": 3.4,
+          "y": 1.6,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_ethanol",
+        "type": "metabolite",
+        "label": "Ethanol",
+        "label_es": "Etanol",
+        "description": "The alcohol, which mostly evaporates in the oven.",
+        "description_es": "El alcohol, que casi todo se evapora en el horno.",
+        "position": {
+          "x": 3.4,
+          "y": -1.6,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "phenotype_rise",
+        "type": "phenotype",
+        "label": "The dough rises",
+        "label_es": "La masa sube",
+        "description": "The bubbles make the dough grow.",
+        "description_es": "Las burbujas hacen crecer la masa.",
+        "position": {
+          "x": 6.6,
+          "y": 1.6,
+          "z": 0
+        },
+        "metadata": {}
+      }
+    ],
+    "edges": [
+      {
+        "id": "ref_gene_pdc_encodes_enzyme_pdc",
+        "source": "gene_pdc",
+        "target": "enzyme_pdc",
+        "type": "encodes",
+        "isRequired": true
+      },
+      {
+        "id": "ref_enzyme_pdc_catalyzes_rxn_ferment",
+        "source": "enzyme_pdc",
+        "target": "rxn_ferment",
+        "type": "catalyzes",
+        "isRequired": true
+      },
+      {
+        "id": "ref_rxn_ferment_consumes_met_sugar",
+        "source": "rxn_ferment",
+        "target": "met_sugar",
+        "type": "consumes",
+        "isRequired": true
+      },
+      {
+        "id": "ref_rxn_ferment_produces_met_co2",
+        "source": "rxn_ferment",
+        "target": "met_co2",
+        "type": "produces",
+        "isRequired": true
+      },
+      {
+        "id": "ref_rxn_ferment_produces_met_ethanol",
+        "source": "rxn_ferment",
+        "target": "met_ethanol",
+        "type": "produces",
+        "isRequired": true
+      },
+      {
+        "id": "ref_met_co2_influences_phenotype_rise",
+        "source": "met_co2",
+        "target": "phenotype_rise",
+        "type": "influences",
+        "isRequired": true
+      }
+    ]
+  },
+  "puzzle": {
+    "availableNodes": [
+      "gene_pdc",
+      "enzyme_pdc",
+      "rxn_ferment",
+      "met_sugar",
+      "met_co2",
+      "met_ethanol",
+      "phenotype_rise"
+    ],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Fermentation",
+    "productLabel_es": "Fermentación",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Diagnosis",
+        "label_es": "Diagnóstico",
+        "description": "Found and treated.",
+        "description_es": "Encontrado y tratado.",
+        "order": 1
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "The symptom is no gas. Ask: which piece is needed to make the gas, and what could have happened to it?",
+      "content_es": "El síntoma es que no hay gas. Pregúntate: ¿qué pieza hace falta para fabricar el gas y qué ha podido pasarle?",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "The clues say the gene is fine, there is sugar, and the water was very hot.",
+      "content_es": "Las pistas dicen que el gen está bien, que hay azúcar y que el agua estaba muy caliente.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "The fault is in the fermentation enzymes: heat has destroyed them.",
+      "content_es": "El fallo está en las enzimas de fermentación: el calor las ha destruido.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "Bread that rises",
+    "title_es": "Pan que sube",
+    "summary": "You diagnosed a fault by checking what works and what does not: the DNA was fine, the sugar was there, but the enzymes had been ruined by heat.",
+    "summary_es": "Has diagnosticado un fallo comprobando qué funciona y qué no: el ADN estaba bien, el azúcar estaba, pero el calor había arruinado las enzimas.",
+    "realWorldImpact": "Bakers and brewers manage temperature carefully because yeast enzymes only work in a limited range.",
+    "realWorldImpact_es": "Panaderos y cerveceros cuidan la temperatura porque las enzimas de la levadura solo funcionan en un rango limitado."
+  },
+  "science": {
+    "organism": "Saccharomyces cerevisiae",
+    "realWorldCase": "Baker's yeast has been used for thousands of years. Its fermentation gives off carbon dioxide, which raises dough, and ethanol, which mostly evaporates during baking.",
+    "realWorldCase_es": "La levadura de panadería se usa desde hace miles de años. Su fermentación libera dióxido de carbono, que hace subir la masa, y etanol, que se evapora casi todo al hornear.",
+    "scientificContext": "Yeast converts pyruvate to acetaldehyde and CO2 with pyruvate decarboxylase, then to ethanol with alcohol dehydrogenase. Like most enzymes, they are denatured by high temperatures.",
+    "scientificContext_es": "La levadura convierte el piruvato en acetaldehído y CO2 con la piruvato descarboxilasa, y después en etanol con la alcohol deshidrogenasa. Como la mayoría de enzimas, se desnaturalizan con temperaturas altas.",
+    "gameplaySimplifications": [
+      "Fermentation has several enzymes; the game groups them together."
+    ],
+    "gameplaySimplifications_es": [
+      "La fermentación tiene varias enzimas; el juego las agrupa."
+    ],
+    "references": []
+  }
+}

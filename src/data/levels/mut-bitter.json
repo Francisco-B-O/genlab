@@ -1,0 +1,179 @@
+{
+  "id": "mut-bitter",
+  "mode": "mutation",
+  "title": "Why broccoli tastes bitter to some",
+  "title_es": "Por qué el brócoli sabe amargo a algunos",
+  "subtitle": "A swap in a taste receptor",
+  "subtitle_es": "Un cambio en un receptor del gusto",
+  "difficulty": "intermediate",
+  "estimatedDuration": 5,
+  "objective": "Find the letter that changed in the gene and say what the change does to the protein.",
+  "objective_es": "Encuentra la letra que ha cambiado en el gen y di qué efecto tiene en la proteína.",
+  "description": "A change of one letter in DNA can change an amino acid, cut a protein short, or do nothing at all. Compare the two sequences codon by codon.",
+  "description_es": "Un cambio de una letra en el ADN puede cambiar un aminoácido, cortar una proteína o no hacer nada. Compara las dos secuencias codón a codón.",
+  "organism": {
+    "id": "taster-gene",
+    "commonName": "Taste receptor",
+    "commonName_es": "Receptor del gusto",
+    "scientificName": "Homo sapiens",
+    "taxonomy": [
+      "Animalia",
+      "Chordata",
+      "Mammalia",
+      "Primates",
+      "Hominidae",
+      "Homo"
+    ],
+    "targetTissue": "tongue",
+    "targetOrganelle": "cytoplasm",
+    "description": "A protein on the tongue that detects bitter compounds.",
+    "description_es": "Una proteína de la lengua que detecta compuestos amargos."
+  },
+  "exploration": [
+    {
+      "kind": "plant",
+      "label": "Taste",
+      "label_es": "Gusto",
+      "title": "Same dish, different taste",
+      "title_es": "El mismo plato, distinto sabor",
+      "description": "Some people find broccoli, cabbage and Brussels sprouts very bitter, and others hardly notice it. Part of the difference is in a gene.",
+      "description_es": "A unas personas el brócoli, la col y las coles de Bruselas les parecen muy amargos y otras casi no lo notan. Parte de la diferencia está en un gen."
+    },
+    {
+      "kind": "dna",
+      "label": "A swap",
+      "label_es": "Un cambio",
+      "title": "Proline to alanine",
+      "title_es": "De prolina a alanina",
+      "description": "The gene TAS2R38 makes a receptor on the tongue. Common versions of the gene differ in three amino acids, and together they make a strong or a weak receptor.",
+      "description_es": "El gen TAS2R38 fabrica un receptor de la lengua. Las versiones comunes del gen difieren en tres aminoácidos, y juntos hacen un receptor fuerte o débil."
+    }
+  ],
+  "mutation": {
+    "geneLabel": "Bitter taste receptor gene (illustrative)",
+    "geneLabel_es": "Gen de un receptor del gusto amargo (ilustrativo)",
+    "reference": "ATGTTCACTCCAGAGGTAAGC",
+    "mutant": "ATGTTCACTGCAGAGGTAAGC",
+    "story": "A real discovery with an invented sequence. A receptor on the tongue detects a bitter compound found in broccoli and cabbage. A swap of one amino acid, proline for alanine, changes how well it works.",
+    "story_es": "Un descubrimiento real con una secuencia inventada. Un receptor de la lengua detecta un compuesto amargo del brócoli y de la col. El cambio de un aminoácido, prolina por alanina, modifica lo bien que funciona.",
+    "explanations": {
+      "silent": "Not here: the amino acid changes.",
+      "silent_es": "Aquí no: el aminoácido cambia.",
+      "missense": "CCA (Pro) became GCA (Ala): one amino acid was swapped for another. In the real receptor, this swap and two more change how strongly a person tastes the bitterness of some vegetables.",
+      "missense_es": "CCA (Pro) pasó a GCA (Ala): un aminoácido se cambió por otro. En el receptor real, este cambio y otros dos modifican cuánto amargor nota una persona en algunas verduras.",
+      "nonsense": "Not here: no stop signal appears.",
+      "nonsense_es": "Aquí no: no aparece ninguna señal de fin."
+    }
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Effect",
+    "productLabel_es": "Efecto",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Compare",
+        "label_es": "Comparar",
+        "description": "Find the changed letter.",
+        "description_es": "Encuentra la letra cambiada.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Translate",
+        "label_es": "Traducir",
+        "description": "Read the codons.",
+        "description_es": "Lee los codones.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Effect",
+        "label_es": "Efecto",
+        "description": "Decide what it does.",
+        "description_es": "Decide qué hace.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Compare the two rows letter by letter. Only one is different.",
+      "content_es": "Compara las dos filas letra a letra. Solo una es distinta.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Look at the codon that contains the changed letter, before and after.",
+      "content_es": "Mira el codón que contiene la letra cambiada, antes y después.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "The change is in the fourth codon: CCA became GCA, so Pro became Ala (missense).",
+      "content_es": "El cambio está en el cuarto codón: CCA pasó a GCA, así que Pro pasó a Ala (de sentido erróneo).",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A swap that changes dinner",
+    "title_es": "Un cambio que altera la cena",
+    "summary": "You found a one-letter change that swaps an amino acid and changes how bitter a vegetable tastes.",
+    "summary_es": "Has encontrado un cambio de una letra que sustituye un aminoácido y modifica lo amargo que sabe una verdura.",
+    "realWorldImpact": "Taste genes help to explain why people like different foods, and food companies study them to design products that more people enjoy.",
+    "realWorldImpact_es": "Los genes del gusto ayudan a explicar por qué a la gente le gustan comidas distintas, y las empresas de alimentación los estudian para diseñar productos que gusten a más personas."
+  },
+  "science": {
+    "organism": "Homo sapiens",
+    "realWorldCase": "In 2003 a team identified TAS2R38 as the gene behind the ability to taste certain bitter compounds, such as the ones found in cabbage-family vegetables. Three amino acid swaps are common in the population.",
+    "realWorldCase_es": "En 2003 un equipo identificó TAS2R38 como el gen de la capacidad de notar ciertos compuestos amargos, como los de las verduras de la familia de la col. Tres cambios de aminoácidos son frecuentes en la población.",
+    "scientificContext": "A missense mutation swaps one amino acid for another. In a receptor, a swap in the right place changes how strongly the protein binds the bitter molecule.",
+    "scientificContext_es": "Una mutación de sentido erróneo cambia un aminoácido por otro. En un receptor, un cambio en el lugar adecuado modifica con qué fuerza la proteína se une a la molécula amarga.",
+    "gameplaySimplifications": [
+      "The real change is the one described, but the sequence around it is an invented short example."
+    ],
+    "gameplaySimplifications_es": [
+      "El cambio real es el que se describe, pero la secuencia que lo rodea es un ejemplo corto inventado."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Kim, U.-K.",
+          "Jorgenson, E.",
+          "Coon, H.",
+          "Leppert, M.",
+          "Risch, N.",
+          "Drayna, D."
+        ],
+        "year": 2003,
+        "title": "Positional cloning of the human quantitative trait locus underlying taste sensitivity to phenylthiocarbamide",
+        "journal": "Science",
+        "type": "paper",
+        "doi": "10.1126/science.1080190"
+      }
+    ]
+  }
+}

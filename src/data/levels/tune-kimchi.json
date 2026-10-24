@@ -1,0 +1,332 @@
+{
+  "id": "tune-kimchi",
+  "mode": "tune",
+  "title": "Tune the kimchi",
+  "title_es": "Ajusta el kimchi",
+  "subtitle": "Salt, temperature, time and brine",
+  "subtitle_es": "Sal, temperatura, tiempo y salmuera",
+  "difficulty": "intermediate",
+  "estimatedDuration": 6,
+  "objective": "Choose the settings of a kimchi fermentation to reach the acidity of a ripe kimchi without going over budget.",
+  "objective_es": "Elige los ajustes de una fermentación de kimchi para llegar a la acidez de un kimchi maduro sin pasarte del presupuesto.",
+  "description": "A cabbage turns into kimchi when lactic bacteria make acid. Salt, temperature, time and keeping it under the brine decide how it turns out.",
+  "description_es": "Una col se convierte en kimchi cuando las bacterias lácticas fabrican ácido. La sal, la temperatura, el tiempo y mantenerla bajo la salmuera deciden cómo sale.",
+  "organism": {
+    "id": "kimchi-tune",
+    "commonName": "Lactic bacteria of the cabbage",
+    "commonName_es": "Bacterias lácticas de la col",
+    "scientificName": "Leuconostoc mesenteroides",
+    "taxonomy": [
+      "Bacteria",
+      "Bacillota",
+      "Bacilli",
+      "Lactobacillales",
+      "Leuconostocaceae",
+      "Leuconostoc"
+    ],
+    "targetTissue": "cabbage leaf",
+    "targetOrganelle": "cytoplasm",
+    "description": "Bacteria that sour the cabbage.",
+    "description_es": "Bacterias que agrian la col."
+  },
+  "exploration": [
+    {
+      "kind": "plant",
+      "label": "Salt",
+      "label_es": "Sal",
+      "title": "Not too little, not too much",
+      "title_es": "Ni poca ni mucha",
+      "description": "Salt holds back the microbes that spoil food. Too little and they win; too much and it slows the lactic bacteria too.",
+      "description_es": "La sal frena a los microbios que estropean los alimentos. Con poca ganan ellos; con mucha frena también a las bacterias lácticas."
+    },
+    {
+      "kind": "bacterium",
+      "label": "Time and warmth",
+      "label_es": "Tiempo y calor",
+      "title": "Cold is slow, heat is rough",
+      "title_es": "El frío es lento, el calor es brusco",
+      "description": "Lactic bacteria work faster when it is warm, but a kimchi that ferments too fast turns sour and soft.",
+      "description_es": "Las bacterias lácticas trabajan más deprisa con calor, pero un kimchi que fermenta demasiado rápido se vuelve agrio y blando."
+    }
+  ],
+  "tune": {
+    "metricLabel": "Acidity",
+    "metricLabel_es": "Acidez",
+    "unit": "%",
+    "unit_es": "%",
+    "base": 0.2,
+    "target": 0.6,
+    "budget": 4,
+    "labels": {
+      "perCell": "Acid per bacterium",
+      "perCell_es": "Ácido por bacteria",
+      "growth": "Health of the bacteria",
+      "growth_es": "Salud de las bacterias"
+    },
+    "messages": {
+      "lowGrowth": "The bacteria are struggling: too little salt, too hot, or air getting in.",
+      "lowGrowth_es": "Las bacterias sufren: poca sal, demasiado calor o entra aire.",
+      "lowPerCell": "Not enough acid: it needs more time, more warmth or a better salt level.",
+      "lowPerCell_es": "Poca acidez: necesita más tiempo, más calor o una sal mejor."
+    },
+    "knobs": [
+      {
+        "id": "salt",
+        "label": "Salt",
+        "label_es": "Sal",
+        "options": [
+          {
+            "id": "low",
+            "label": "Little salt (1%)",
+            "label_es": "Poca sal (1 %)",
+            "description": "Other microbes get in.",
+            "description_es": "Entran otros microbios.",
+            "cost": 0,
+            "perCell": 1.0,
+            "growth": 0.55
+          },
+          {
+            "id": "mid",
+            "label": "A good amount (2.5%)",
+            "label_es": "Una buena cantidad (2,5 %)",
+            "description": "The lactic bacteria take over.",
+            "description_es": "Dominan las bacterias lácticas.",
+            "cost": 1,
+            "perCell": 1.25,
+            "growth": 1
+          },
+          {
+            "id": "high",
+            "label": "A lot of salt (5%)",
+            "label_es": "Mucha sal (5 %)",
+            "description": "Safe, but it slows the bacteria.",
+            "description_es": "Seguro, pero frena a las bacterias.",
+            "cost": 1,
+            "perCell": 0.8,
+            "growth": 0.7
+          }
+        ]
+      },
+      {
+        "id": "temp",
+        "label": "Temperature",
+        "label_es": "Temperatura",
+        "options": [
+          {
+            "id": "fridge",
+            "label": "Fridge, 4 °C",
+            "label_es": "Nevera, 4 °C",
+            "description": "Very slow.",
+            "description_es": "Muy lento.",
+            "cost": 0,
+            "perCell": 0.5,
+            "growth": 1
+          },
+          {
+            "id": "room",
+            "label": "Cool room, 15 °C",
+            "label_es": "Habitación fresca, 15 °C",
+            "description": "A calm, steady fermentation.",
+            "description_es": "Una fermentación tranquila y constante.",
+            "cost": 1,
+            "perCell": 1.3,
+            "growth": 1
+          },
+          {
+            "id": "warm",
+            "label": "Warm kitchen, 30 °C",
+            "label_es": "Cocina cálida, 30 °C",
+            "description": "Fast, but it can turn soft.",
+            "description_es": "Rápida, pero puede ponerse blando.",
+            "cost": 0,
+            "perCell": 1.6,
+            "growth": 0.75
+          }
+        ]
+      },
+      {
+        "id": "time",
+        "label": "Time",
+        "label_es": "Tiempo",
+        "options": [
+          {
+            "id": "short",
+            "label": "2 days",
+            "label_es": "2 días",
+            "description": "Hardly any acid yet.",
+            "description_es": "Todavía casi sin ácido.",
+            "cost": 0,
+            "perCell": 0.5,
+            "growth": 1
+          },
+          {
+            "id": "week",
+            "label": "1 week",
+            "label_es": "1 semana",
+            "description": "A ripe kimchi.",
+            "description_es": "Un kimchi maduro.",
+            "cost": 1,
+            "perCell": 1.6,
+            "growth": 1
+          },
+          {
+            "id": "month",
+            "label": "1 month",
+            "label_es": "1 mes",
+            "description": "Very sour and a little soft.",
+            "description_es": "Muy ácido y algo blando.",
+            "cost": 2,
+            "perCell": 1.9,
+            "growth": 0.8
+          }
+        ]
+      },
+      {
+        "id": "air",
+        "label": "Brine and air",
+        "label_es": "Salmuera y aire",
+        "options": [
+          {
+            "id": "open",
+            "label": "Open bowl",
+            "label_es": "Cuenco abierto",
+            "description": "Air lets moulds grow.",
+            "description_es": "El aire deja crecer los mohos.",
+            "cost": 0,
+            "perCell": 1.0,
+            "growth": 0.5
+          },
+          {
+            "id": "press",
+            "label": "Pressed under the brine",
+            "label_es": "Prensado bajo la salmuera",
+            "description": "No air reaches the cabbage.",
+            "description_es": "No llega aire a la col.",
+            "cost": 1,
+            "perCell": 1.3,
+            "growth": 1
+          },
+          {
+            "id": "sealed",
+            "label": "Sealed tight",
+            "label_es": "Cerrado herméticamente",
+            "description": "Gas builds up.",
+            "description_es": "Se acumula gas.",
+            "cost": 1,
+            "perCell": 1.1,
+            "growth": 0.8
+          }
+        ]
+      }
+    ]
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Acidity",
+    "productLabel_es": "Acidez",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Salt",
+        "label_es": "Salar",
+        "description": "Spoilers are held back.",
+        "description_es": "Se frena a los que estropean.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Ferment",
+        "label_es": "Fermentar",
+        "description": "Lactic bacteria make acid.",
+        "description_es": "Las bacterias lácticas fabrican ácido.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Kimchi",
+        "label_es": "Kimchi",
+        "description": "Ripe and crunchy.",
+        "description_es": "Maduro y crujiente.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Think about what lactic bacteria like: some salt, no air, and warmth that is not excessive.",
+      "content_es": "Piensa en lo que gusta a las bacterias lácticas: algo de sal, nada de aire y un calor sin exceso.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Little salt and air let other microbes in. Heat speeds up the acid but spoils the texture. Keep the budget in mind.",
+      "content_es": "Poca sal y aire dejan entrar a otros microbios. El calor acelera el ácido pero estropea la textura. Ten presente el presupuesto.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "A good amount of salt, a cool room, one week and pressing the cabbage under the brine reaches the target.",
+      "content_es": "Una buena cantidad de sal, una habitación fresca, una semana y prensar la col bajo la salmuera llegan al objetivo.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A balanced jar",
+    "title_es": "Un tarro equilibrado",
+    "summary": "You balanced four settings of a fermentation that people have done for centuries.",
+    "summary_es": "Has equilibrado cuatro ajustes de una fermentación que la gente hace desde hace siglos.",
+    "realWorldImpact": "Large kimchi factories control these same variables to get a steady taste, while home cooks adjust them by smell and experience.",
+    "realWorldImpact_es": "Las grandes fábricas de kimchi controlan estas mismas variables para conseguir un sabor constante, mientras que quien cocina en casa las ajusta por olor y experiencia."
+  },
+  "science": {
+    "organism": "Leuconostoc mesenteroides",
+    "realWorldCase": "Studies of the microbes of kimchi show that the type of microbe changes during the fermentation, and that temperature and salt change which microbes dominate and so the taste.",
+    "realWorldCase_es": "Los estudios de los microbios del kimchi muestran que el tipo de microbio cambia durante la fermentación, y que la temperatura y la sal cambian qué microbios dominan y, por tanto, el sabor.",
+    "scientificContext": "Ripe kimchi usually reaches an acidity of 0.5 to 1% lactic acid. Past that point it is too sour for most people.",
+    "scientificContext_es": "El kimchi maduro suele llegar a una acidez de 0,5 a 1 % de ácido láctico. Pasado ese punto es demasiado ácido para la mayoría.",
+    "gameplaySimplifications": [
+      "The numbers are illustrative. Each family and region has its own recipe and its own idea of the right sourness."
+    ],
+    "gameplaySimplifications_es": [
+      "Los números son ilustrativos. Cada familia y cada región tiene su receta y su idea del punto justo de acidez."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Jung, J. Y.",
+          "Lee, S. H.",
+          "Kim, J. M.",
+          "et al."
+        ],
+        "year": 2011,
+        "title": "Metagenomic analysis of kimchi, a traditional Korean fermented food",
+        "journal": "Applied and Environmental Microbiology",
+        "type": "paper",
+        "doi": "10.1128/aem.02157-10"
+      }
+    ]
+  }
+}

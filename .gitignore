@@ -1,0 +1,21 @@
+node_modules/
+dist/
+dist-ssr/
+*.local
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
+.vite/
+
+# local tooling
+dist-single/
+vite.single.config.ts
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
+
+# python bytecode
+__pycache__/
+*.pyc

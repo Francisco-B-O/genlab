@@ -1,0 +1,211 @@
+{
+  "id": "cut-plasmid",
+  "mode": "cut",
+  "title": "A crowded map",
+  "title_es": "Un mapa lleno",
+  "subtitle": "Five enzymes, one gene",
+  "subtitle_es": "Cinco enzimas, un gen",
+  "difficulty": "advanced",
+  "estimatedDuration": 8,
+  "objective": "Choose among five enzymes to isolate the gene. Some cut inside the gene, and one gives a band that looks right but is not.",
+  "objective_es": "Elige entre cinco enzimas para aislar el gen. Algunas cortan dentro del gen y una da una banda que parece correcta pero no lo es.",
+  "description": "Restriction enzymes are molecular scissors that cut at their own sequences. You need a cut right at each end of the gene and none inside it.",
+  "description_es": "Las enzimas de restricción son tijeras moleculares que cortan en sus propias secuencias. Necesitas un corte justo en cada extremo del gen y ninguno dentro.",
+  "organism": {
+    "id": "plasmid-map",
+    "commonName": "DNA with a target gene",
+    "commonName_es": "ADN con un gen objetivo",
+    "scientificName": "Cloning vector",
+    "taxonomy": [
+      "Method"
+    ],
+    "targetTissue": "nucleus",
+    "targetOrganelle": "nucleus",
+    "description": "A stretch of DNA with several cutting sites.",
+    "description_es": "Un trozo de ADN con varios sitios de corte."
+  },
+  "exploration": [
+    {
+      "kind": "dna",
+      "label": "The map",
+      "label_es": "El mapa",
+      "title": "Many sites",
+      "title_es": "Muchos sitios",
+      "description": "The longer the DNA, the more places an enzyme finds. Researchers choose enzymes that cut where they want and nowhere else.",
+      "description_es": "Cuanto más largo es el ADN, más sitios encuentra una enzima. Los investigadores eligen las que cortan donde quieren y en ningún otro lugar."
+    },
+    {
+      "kind": "bacterium",
+      "label": "The goal",
+      "label_es": "El objetivo",
+      "title": "A gene for a carrier",
+      "title_es": "Un gen para un vehículo",
+      "description": "The isolated gene will be joined to a plasmid so that bacteria can copy and use it.",
+      "description_es": "El gen aislado se unirá a un plásmido para que las bacterias puedan copiarlo y usarlo."
+    }
+  ],
+  "cut": {
+    "length": 15,
+    "gene": {
+      "label": "Target gene",
+      "label_es": "Gen objetivo",
+      "start": 5,
+      "end": 10
+    },
+    "enzymes": [
+      {
+        "id": "eco",
+        "label": "EcoRI",
+        "label_es": "EcoRI",
+        "description": "Recognises GAATTC.",
+        "description_es": "Reconoce GAATTC.",
+        "sites": [
+          5,
+          13
+        ]
+      },
+      {
+        "id": "bam",
+        "label": "BamHI",
+        "label_es": "BamHI",
+        "description": "Recognises GGATCC.",
+        "description_es": "Reconoce GGATCC.",
+        "sites": [
+          10,
+          2
+        ]
+      },
+      {
+        "id": "hind",
+        "label": "HindIII",
+        "label_es": "HindIII",
+        "description": "Recognises AAGCTT.",
+        "description_es": "Reconoce AAGCTT.",
+        "sites": [
+          7.5
+        ]
+      },
+      {
+        "id": "xho",
+        "label": "XhoI",
+        "label_es": "XhoI",
+        "description": "Recognises CTCGAG.",
+        "description_es": "Reconoce CTCGAG.",
+        "sites": [
+          3.5,
+          12
+        ]
+      },
+      {
+        "id": "sal",
+        "label": "SalI",
+        "label_es": "SalI",
+        "description": "Recognises GTCGAC.",
+        "description_es": "Reconoce GTCGAC.",
+        "sites": [
+          1,
+          14
+        ]
+      }
+    ],
+    "story": "A real map has many cutting sites. Reading it carefully is part of the work.",
+    "story_es": "Un mapa real tiene muchos sitios de corte. Leerlo con cuidado es parte del trabajo."
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Gene",
+    "productLabel_es": "Gen",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Cut",
+        "label_es": "Cortar",
+        "description": "The enzymes cut the DNA at their sites.",
+        "description_es": "Las enzimas cortan el ADN en sus sitios.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Run the gel",
+        "label_es": "Correr el gel",
+        "description": "The pieces separate by size.",
+        "description_es": "Los trozos se separan por tamaño.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Gene free",
+        "label_es": "Gen libre",
+        "description": "The gene is a piece of its own.",
+        "description_es": "El gen es un trozo por sí solo.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Same rule as always: one cut at each end of the gene and none inside. The gel can fool you.",
+      "content_es": "La misma regla de siempre: un corte en cada extremo del gen y ninguno dentro. El gel puede engañarte.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "One enzyme cuts only at the end of the gene and leaves a piece with the same size as the gene. Check the map, not just the sizes.",
+      "content_es": "Una enzima corta solo en el final del gen y deja un trozo con el mismo tamaño que el gen. Mira el mapa, no solo los tamaños.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "EcoRI cuts at the start and BamHI at the end. HindIII cuts inside.",
+      "content_es": "EcoRI corta al principio y BamHI al final. HindIII corta dentro.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "Reading the map well",
+    "title_es": "Leer bien el mapa",
+    "summary": "Among five enzymes you found the pair that isolates the gene and avoided the band that only looked right.",
+    "summary_es": "Entre cinco enzimas has encontrado la pareja que aísla el gen y has evitado la banda que solo lo parecía.",
+    "realWorldImpact": "Careful choice of enzymes is a daily task in any laboratory that works with genes.",
+    "realWorldImpact_es": "Elegir bien las enzimas es una tarea diaria en cualquier laboratorio que trabaje con genes."
+  },
+  "science": {
+    "organism": "Cloning vector",
+    "realWorldCase": "Werner Arber, Daniel Nathans and Hamilton Smith received the 1978 Nobel Prize in Physiology or Medicine for the discovery and use of restriction enzymes.",
+    "realWorldCase_es": "Werner Arber, Daniel Nathans y Hamilton Smith recibieron el Premio Nobel de Fisiología o Medicina de 1978 por el descubrimiento y la aplicación de las enzimas de restricción.",
+    "scientificContext": "Each restriction enzyme recognises a short sequence of DNA, usually 4 to 8 letters, and cuts there. Gel electrophoresis separates the fragments by length.",
+    "scientificContext_es": "Cada enzima de restricción reconoce una secuencia corta de ADN, normalmente de 4 a 8 letras, y corta ahí. La electroforesis en gel separa los fragmentos por longitud.",
+    "gameplaySimplifications": [
+      "The DNA is drawn as a straight stretch and the cutting positions are invented.",
+      "Sizes are in kilobases (kb), thousands of letters."
+    ],
+    "gameplaySimplifications_es": [
+      "El ADN se dibuja como un trozo recto y las posiciones de corte son inventadas.",
+      "Los tamaños están en kilobases (kb), miles de letras."
+    ],
+    "references": []
+  }
+}

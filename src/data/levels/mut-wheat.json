@@ -1,0 +1,177 @@
+{
+  "id": "mut-wheat",
+  "mode": "mutation",
+  "title": "The short wheat that fed millions",
+  "title_es": "El trigo bajo que alimentó a millones",
+  "subtitle": "A stop codon at the start of a growth gene",
+  "subtitle_es": "Un codón de fin al comienzo de un gen del crecimiento",
+  "difficulty": "advanced",
+  "estimatedDuration": 6,
+  "objective": "Find the letter that changed in the gene and say what the change does to the protein.",
+  "objective_es": "Encuentra la letra que ha cambiado en el gen y di qué efecto tiene en la proteína.",
+  "description": "A change of one letter in DNA can change an amino acid, cut a protein short, or do nothing at all. Compare the two sequences codon by codon.",
+  "description_es": "Un cambio de una letra en el ADN puede cambiar un aminoácido, cortar una proteína o no hacer nada. Compara las dos secuencias codón a codón.",
+  "organism": {
+    "id": "wheat-rht",
+    "commonName": "Wheat",
+    "commonName_es": "Trigo",
+    "scientificName": "Triticum aestivum",
+    "taxonomy": [
+      "Plantae",
+      "Tracheophyta",
+      "Liliopsida",
+      "Poales",
+      "Poaceae",
+      "Triticum"
+    ],
+    "targetTissue": "stem",
+    "targetOrganelle": "cytoplasm",
+    "description": "The cereal of most of the bread of the world.",
+    "description_es": "El cereal de la mayor parte del pan del mundo."
+  },
+  "exploration": [
+    {
+      "kind": "grain",
+      "label": "The wheat",
+      "label_es": "El trigo",
+      "title": "Short and sturdy",
+      "title_es": "Bajo y robusto",
+      "description": "Fertiliser made old, tall wheat grow too much and fall over. Short wheat could take more fertiliser and give more grain.",
+      "description_es": "El abono hacía que el trigo antiguo, alto, creciera demasiado y se tumbara. El trigo bajo podía recibir más abono y dar más grano."
+    },
+    {
+      "kind": "dna",
+      "label": "The brake",
+      "label_es": "El freno",
+      "title": "A growth protein that does not switch off",
+      "title_es": "Una proteína del crecimiento que no se apaga",
+      "description": "The normal protein holds growth back until the hormone gibberellin removes it. The dwarf versions cannot be removed, so growth stays held back.",
+      "description_es": "La proteína normal frena el crecimiento hasta que la hormona giberelina la elimina. Las versiones enanas no se pueden eliminar, así que el crecimiento sigue frenado."
+    }
+  ],
+  "mutation": {
+    "geneLabel": "Wheat growth gene (illustrative)",
+    "geneLabel_es": "Gen del crecimiento del trigo (ilustrativo)",
+    "reference": "ATGAAGCGGGAGCAGGAAGACGGC",
+    "mutant": "ATGAAGCGGGAGTAGGAAGACGGC",
+    "story": "A real change with an invented sequence. The wheat of the Green Revolution was short and sturdy, and did not fall over under the weight of grain. Its dwarf genes carry a stop codon near the start of a gene that controls growth.",
+    "story_es": "Un cambio real con una secuencia inventada. El trigo de la Revolución Verde era bajo y robusto, y no se tumbaba con el peso del grano. Sus genes enanos llevan un codón de fin cerca del comienzo de un gen que controla el crecimiento.",
+    "explanations": {
+      "silent": "Not here: the codon turns into a stop.",
+      "silent_es": "Aquí no: el codón se convierte en una parada.",
+      "missense": "Not here: the codon turns into a stop.",
+      "missense_es": "Aquí no: el codón se convierte en una parada.",
+      "nonsense": "CAG (Gln) became TAG, a stop codon. The message ends very early, and the plant makes a changed form of the growth protein that the hormone gibberellin cannot switch off, so the stems stay short.",
+      "nonsense_es": "CAG (Gln) pasó a TAG, un codón de fin. El mensaje termina muy pronto, y la planta fabrica una forma cambiada de la proteína del crecimiento que la hormona giberelina no puede desactivar, así que los tallos se quedan cortos."
+    }
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Effect",
+    "productLabel_es": "Efecto",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Compare",
+        "label_es": "Comparar",
+        "description": "Find the changed letter.",
+        "description_es": "Encuentra la letra cambiada.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Translate",
+        "label_es": "Traducir",
+        "description": "Read the codons.",
+        "description_es": "Lee los codones.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Effect",
+        "label_es": "Efecto",
+        "description": "Decide what it does.",
+        "description_es": "Decide qué hace.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Compare the two rows letter by letter. Only one is different.",
+      "content_es": "Compara las dos filas letra a letra. Solo una es distinta.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Look at the codon that contains the changed letter, before and after. Is the new codon a stop?",
+      "content_es": "Mira el codón que contiene la letra cambiada, antes y después. ¿El codón nuevo es de parada?",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "The change is in the fifth codon: CAG became TAG, a stop (nonsense).",
+      "content_es": "El cambio está en el quinto codón: CAG pasó a TAG, una parada (sin sentido).",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A stop that fed millions",
+    "title_es": "Una parada que alimentó a millones",
+    "summary": "You found a letter that creates a stop codon near the start of a gene, with an effect that is the opposite of what you might expect.",
+    "summary_es": "Has encontrado una letra que crea un codón de fin cerca del comienzo de un gen, con un efecto contrario a lo que podrías esperar.",
+    "realWorldImpact": "Short, sturdy wheat and rice varieties raised yields so much in the 20th century that the period is known as the Green Revolution.",
+    "realWorldImpact_es": "Las variedades de trigo y arroz bajas y robustas elevaron tanto los rendimientos en el siglo XX que ese período se conoce como la Revolución Verde."
+  },
+  "science": {
+    "organism": "Triticum aestivum",
+    "realWorldCase": "In 1999 a team showed that the dwarf genes of Green Revolution wheat, Rht-B1b and Rht-D1b, carry changes that create stop codons near the start of the gene, and that the plants make a growth-holding protein that the hormone cannot remove.",
+    "realWorldCase_es": "En 1999 un equipo mostró que los genes enanos del trigo de la Revolución Verde, Rht-B1b y Rht-D1b, llevan cambios que crean codones de fin cerca del comienzo del gen, y que las plantas fabrican una proteína que frena el crecimiento y que la hormona no puede eliminar.",
+    "scientificContext": "A nonsense mutation usually breaks a protein. Here the cell restarts reading later in the message, so a shortened protein is made that lacks the part that the hormone recognises. It is a rare case where a stop codon makes a gene more active, not less.",
+    "scientificContext_es": "Una mutación sin sentido suele romper una proteína. Aquí la célula reanuda la lectura más adelante en el mensaje, así que se fabrica una proteína acortada a la que le falta la parte que reconoce la hormona. Es un caso raro en que un codón de fin hace a un gen más activo, no menos.",
+    "gameplaySimplifications": [
+      "The real change is the one described, but the sequence around it is an invented short example."
+    ],
+    "gameplaySimplifications_es": [
+      "El cambio real es el que se describe, pero la secuencia que lo rodea es un ejemplo corto inventado."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Peng, J.",
+          "Richards, D. E.",
+          "Hartley, N. M.",
+          "et al."
+        ],
+        "year": 1999,
+        "title": "‘Green revolution’ genes encode mutant gibberellin response modulators",
+        "journal": "Nature",
+        "type": "paper",
+        "doi": "10.1038/22307"
+      }
+    ]
+  }
+}

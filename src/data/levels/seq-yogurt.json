@@ -1,0 +1,203 @@
+{
+  "id": "seq-yogurt",
+  "mode": "sequence",
+  "title": "From milk to yogurt",
+  "title_es": "De la leche al yogur",
+  "subtitle": "Bacteria that thicken milk",
+  "subtitle_es": "Bacterias que espesan la leche",
+  "difficulty": "beginner",
+  "estimatedDuration": 5,
+  "objective": "Order the steps that turn milk into yogurt.",
+  "objective_es": "Ordena los pasos que convierten la leche en yogur.",
+  "description": "Yogurt is milk changed by friendly bacteria. They eat the milk sugar and make an acid that thickens the milk.",
+  "description_es": "El yogur es leche transformada por bacterias amigas. Se comen el azúcar de la leche y fabrican un ácido que la espesa.",
+  "organism": {
+    "id": "lactobacillus-yogurt",
+    "commonName": "Yogurt bacteria",
+    "commonName_es": "Bacterias del yogur",
+    "scientificName": "Lactobacillus delbrueckii + Streptococcus thermophilus",
+    "taxonomy": [
+      "Bacteria",
+      "Bacillota",
+      "Bacilli",
+      "Lactobacillales"
+    ],
+    "targetTissue": "single cell",
+    "targetOrganelle": "cytoplasm",
+    "description": "Two bacteria that live together in yogurt.",
+    "description_es": "Dos bacterias que viven juntas en el yogur."
+  },
+  "exploration": [
+    {
+      "kind": "milk",
+      "label": "Milk",
+      "label_es": "Leche",
+      "title": "Sugar for bacteria",
+      "title_es": "Azúcar para las bacterias",
+      "description": "Milk contains a sugar, lactose. The yogurt bacteria love it and turn it into lactic acid.",
+      "description_es": "La leche contiene un azúcar, la lactosa. A las bacterias del yogur les encanta y la convierten en ácido láctico."
+    },
+    {
+      "kind": "bacterium",
+      "label": "Bacteria",
+      "label_es": "Bacterias",
+      "title": "Warm, not hot",
+      "title_es": "Templado, no caliente",
+      "description": "The bacteria grow best at about 43 °C. Colder and they are slow; hotter and they die.",
+      "description_es": "Las bacterias crecen mejor a unos 43 °C. Con menos frío van lentas; con más calor mueren."
+    }
+  ],
+  "sequence": {
+    "steps": [
+      {
+        "id": "heat",
+        "label": "Heat the milk",
+        "label_es": "Calentar la leche",
+        "description": "Heat removes unwanted microbes and makes the milk proteins ready to set.",
+        "description_es": "El calor elimina microbios no deseados y prepara las proteínas de la leche para cuajar.",
+        "needs": "Nothing: it is where it starts.",
+        "needs_es": "Nada: es el punto de partida."
+      },
+      {
+        "id": "cool",
+        "label": "Cool it to about 43 °C",
+        "label_es": "Enfriarla hasta unos 43 °C",
+        "description": "Warm enough for bacteria to grow, cool enough not to kill them.",
+        "description_es": "Lo bastante templada para que crezcan las bacterias, y no tanto como para matarlas.",
+        "needs": "The milk must already have been heated.",
+        "needs_es": "La leche ya tiene que haberse calentado."
+      },
+      {
+        "id": "culture",
+        "label": "Stir in a spoonful of live yogurt",
+        "label_es": "Añadir una cucharada de yogur vivo",
+        "description": "The living bacteria are added to the milk.",
+        "description_es": "Las bacterias vivas se añaden a la leche.",
+        "needs": "The milk must be cool enough, or the bacteria would die.",
+        "needs_es": "La leche tiene que estar lo bastante fría, o las bacterias morirían."
+      },
+      {
+        "id": "incubate",
+        "label": "Keep it warm for several hours",
+        "label_es": "Mantenerla templada varias horas",
+        "description": "The bacteria turn lactose into lactic acid.",
+        "description_es": "Las bacterias convierten la lactosa en ácido láctico.",
+        "needs": "The bacteria must already be in the milk.",
+        "needs_es": "Las bacterias ya tienen que estar en la leche."
+      },
+      {
+        "id": "set",
+        "label": "The acid makes the milk proteins clump",
+        "label_es": "El ácido hace que las proteínas se agrupen",
+        "description": "The liquid becomes a soft gel: yogurt.",
+        "description_es": "El líquido se convierte en un gel suave: yogur.",
+        "needs": "Acid has to be made first.",
+        "needs_es": "Primero hay que fabricar el ácido."
+      },
+      {
+        "id": "chill",
+        "label": "Chill it in the fridge",
+        "label_es": "Enfriarlo en la nevera",
+        "description": "Cold slows the bacteria down, so the yogurt does not get too sour.",
+        "description_es": "El frío frena a las bacterias, y el yogur no se pone demasiado ácido.",
+        "needs": "The yogurt must already be set.",
+        "needs_es": "El yogur ya tiene que haber cuajado."
+      }
+    ]
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Yogurt",
+    "productLabel_es": "Yogur",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Culture",
+        "label_es": "Cultivo",
+        "description": "Bacteria in warm milk.",
+        "description_es": "Bacterias en leche templada.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Acid",
+        "label_es": "Ácido",
+        "description": "Lactose becomes lactic acid.",
+        "description_es": "La lactosa se convierte en ácido láctico.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Yogurt",
+        "label_es": "Yogur",
+        "description": "The milk sets.",
+        "description_es": "La leche cuaja.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Bacteria need warmth to work, but heat can kill them. Think about the temperature at each step.",
+      "content_es": "Las bacterias necesitan calor para trabajar, pero el calor las puede matar. Piensa en la temperatura de cada paso.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Heat, cool, add the bacteria, wait, and only then chill.",
+      "content_es": "Calentar, enfriar, añadir las bacterias, esperar y solo entonces enfriar.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Heat → cool → culture → incubate → set → chill.",
+      "content_es": "Calentar → enfriar → cultivo → incubar → cuajar → enfriar.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A spoonful of yogurt makes a litre",
+    "title_es": "Una cucharada de yogur hace un litro",
+    "summary": "You ordered the steps so the bacteria are added at the right temperature and have time to make acid.",
+    "summary_es": "Has ordenado los pasos para que las bacterias se añadan a la temperatura justa y tengan tiempo de fabricar ácido.",
+    "realWorldImpact": "Yogurt is one of the oldest fermented foods. Each batch is started with a bit of the previous one.",
+    "realWorldImpact_es": "El yogur es uno de los alimentos fermentados más antiguos. Cada tanda se empieza con un poco de la anterior."
+  },
+  "science": {
+    "organism": "Lactobacillus delbrueckii + Streptococcus thermophilus",
+    "realWorldCase": "Fermented milks have been made for thousands of years. In the early 1900s Élie Metchnikoff popularised yogurt bacteria in Europe.",
+    "realWorldCase_es": "Las leches fermentadas se hacen desde hace miles de años. A principios del siglo XX Élie Metchnikoff popularizó las bacterias del yogur en Europa.",
+    "scientificContext": "Lactic acid bacteria ferment lactose to lactic acid. The pH falls to about 4.5, and the casein proteins of milk lose their charge and form a gel.",
+    "scientificContext_es": "Las bacterias lácticas fermentan la lactosa en ácido láctico. El pH baja a unos 4,5 y las proteínas de la leche, las caseínas, pierden carga y forman un gel.",
+    "gameplaySimplifications": [
+      "Some yogurts use other bacteria or add thickeners; this is the basic method."
+    ],
+    "gameplaySimplifications_es": [
+      "Algunos yogures usan otras bacterias o añaden espesantes; este es el método básico."
+    ],
+    "references": []
+  }
+}

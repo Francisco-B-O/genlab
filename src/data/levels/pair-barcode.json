@@ -1,0 +1,162 @@
+{
+  "id": "pair-barcode",
+  "mode": "pairing",
+  "title": "A barcode for fish",
+  "title_es": "Un código de barras para pescado",
+  "subtitle": "Fifteen letters of a barcode gene",
+  "subtitle_es": "Quince letras de un gen código de barras",
+  "difficulty": "beginner",
+  "estimatedDuration": 5,
+  "objective": "Write the second strand of this stretch of a fish barcode gene.",
+  "objective_es": "Escribe la segunda hebra de este trozo de un gen código de barras de un pez.",
+  "description": "Strands pair with strict rules. Work out each partner letter by letter, as the cell does.",
+  "description_es": "Las hebras se emparejan con reglas estrictas. Averigua cada pareja letra a letra, como hace la célula.",
+  "organism": {
+    "id": "pair-pair-barcode",
+    "commonName": "A strand of nucleic acid",
+    "commonName_es": "Una hebra de ácido nucleico",
+    "scientificName": "Nucleic acids",
+    "taxonomy": [
+      "Molecule"
+    ],
+    "targetTissue": "nucleus",
+    "targetOrganelle": "nucleus",
+    "description": "DNA and RNA strands.",
+    "description_es": "Hebras de ADN y ARN."
+  },
+  "exploration": [
+    {
+      "kind": "dna",
+      "label": "The barcode",
+      "label_es": "El código de barras",
+      "title": "A short gene, a clear name",
+      "title_es": "Un gen corto, un nombre claro",
+      "description": "A gene of the mitochondria called COI changes a little from species to species. A stretch of about 650 letters is enough to tell most animals apart.",
+      "description_es": "Un gen de las mitocondrias llamado COI cambia un poco de una especie a otra. Un trozo de unas 650 letras basta para distinguir a la mayoría de los animales."
+    },
+    {
+      "kind": "bottle",
+      "label": "At the shop",
+      "label_es": "En la tienda",
+      "title": "Is it the fish on the label?",
+      "title_es": "¿Es el pescado de la etiqueta?",
+      "description": "A fillet or a can has no head, no fins and no skin. Its DNA still tells which fish it came from.",
+      "description_es": "Un filete o una lata no tienen cabeza, ni aletas, ni piel. Su ADN sigue diciendo de qué pez viene."
+    }
+  ],
+  "pairing": {
+    "kind": "dna",
+    "template": "CCTCTATCTAGTATT",
+    "story": "Many species can be told apart by a short stretch of one gene, like a barcode. Copy this stretch, letter by letter, as a sequencing machine would.",
+    "story_es": "Muchas especies se distinguen por un trozo corto de un gen, como un código de barras. Copia este trozo, letra a letra, como haría una máquina de secuenciar."
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Strand",
+    "productLabel_es": "Hebra",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Template",
+        "label_es": "Molde",
+        "description": "The strand that exists.",
+        "description_es": "La hebra que ya existe.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Pairs",
+        "label_es": "Parejas",
+        "description": "Each base finds its partner.",
+        "description_es": "Cada base encuentra a su pareja.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Strand",
+        "label_es": "Hebra",
+        "description": "The new strand is complete.",
+        "description_es": "La hebra nueva está completa.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Go from left to right and pair each letter on its own.",
+      "content_es": "Ve de izquierda a derecha y empareja cada letra por separado.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "A pairs with T and C pairs with G, in both directions.",
+      "content_es": "A se une con T y C con G, en los dos sentidos.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "The partners are: G G A G A T A G A T C A T A A.",
+      "content_es": "Las parejas son: G G A G A T A G A T C A T A A.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "Pairs for a barcode",
+    "title_es": "Parejas para un código de barras",
+    "summary": "You paired a stretch of a barcode gene: the same rules a sequencing machine uses when it reads DNA.",
+    "summary_es": "Has emparejado un trozo de un gen código de barras: las mismas reglas que usa una máquina de secuenciar cuando lee ADN.",
+    "realWorldImpact": "DNA barcodes are used to check the names of fish and other foods, to find species in the wild and to identify animals from tiny samples.",
+    "realWorldImpact_es": "Los códigos de barras de ADN se usan para comprobar los nombres de pescados y otros alimentos, para encontrar especies en la naturaleza y para identificar animales a partir de muestras diminutas."
+  },
+  "science": {
+    "organism": "Nucleic acids",
+    "realWorldCase": "In 2003 a team proposed using a short stretch of the COI gene as a universal barcode for animals. Today there are public libraries with millions of barcodes.",
+    "realWorldCase_es": "En 2003 un equipo propuso usar un trozo corto del gen COI como código de barras universal para los animales. Hoy existen bibliotecas públicas con millones de códigos.",
+    "scientificContext": "Hydrogen bonds hold A with T (two bonds) and G with C (three bonds). That is what lets a machine copy a strand again and again.",
+    "scientificContext_es": "Los enlaces de hidrógeno mantienen unidas A con T (dos enlaces) y G con C (tres enlaces). Eso es lo que deja a una máquina copiar una hebra una y otra vez.",
+    "gameplaySimplifications": [
+      "The stretch is invented and much shorter than a real barcode of about 650 letters."
+    ],
+    "gameplaySimplifications_es": [
+      "El trozo es inventado y mucho más corto que un código real de unas 650 letras."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Hebert, P. D. N.",
+          "Cywinska, A.",
+          "Ball, S. L.",
+          "deWaard, J. R."
+        ],
+        "year": 2003,
+        "title": "Biological identifications through DNA barcodes",
+        "journal": "Proceedings of the Royal Society B",
+        "type": "paper",
+        "doi": "10.1098/rspb.2002.2218"
+      }
+    ]
+  }
+}

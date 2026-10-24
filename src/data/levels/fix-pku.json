@@ -1,0 +1,359 @@
+{
+  "id": "fix-pku",
+  "mode": "diagnose",
+  "title": "A missing enzyme: phenylketonuria",
+  "title_es": "Una enzima que falta: la fenilcetonuria",
+  "subtitle": "Follow the pathway and find where it stops",
+  "subtitle_es": "Sigue la ruta y descubre dónde se detiene",
+  "difficulty": "intermediate",
+  "estimatedDuration": 7,
+  "objective": "A baby's newborn screening shows a high level of one amino acid. Find the broken piece and how it is managed.",
+  "objective_es": "El cribado de un recién nacido muestra un nivel alto de un aminoácido. Encuentra la pieza rota y cómo se controla.",
+  "description": "Many genetic conditions come down to one enzyme that does not work, and a molecule that builds up.",
+  "description_es": "Muchas condiciones genéticas se reducen a una enzima que no funciona y una molécula que se acumula.",
+  "organism": {
+    "id": "human-pku",
+    "commonName": "Human body",
+    "commonName_es": "Cuerpo humano",
+    "scientificName": "Homo sapiens",
+    "taxonomy": [
+      "Animalia",
+      "Chordata",
+      "Mammalia",
+      "Primates",
+      "Hominidae",
+      "Homo"
+    ],
+    "targetTissue": "whole body",
+    "targetOrganelle": "cytoplasm",
+    "description": "A newborn, screened with a drop of blood from the heel.",
+    "description_es": "Un recién nacido, con la prueba de la gota de sangre del talón."
+  },
+  "exploration": [
+    {
+      "kind": "blood",
+      "label": "Screening",
+      "label_es": "Cribado",
+      "title": "The heel prick test",
+      "title_es": "La prueba del talón",
+      "description": "Newborns are tested for several conditions with a drop of blood. One of them is phenylketonuria, or PKU.",
+      "description_es": "A los recién nacidos se les analizan varias condiciones con una gota de sangre. Una de ellas es la fenilcetonuria, o PKU."
+    },
+    {
+      "kind": "pathway",
+      "label": "Pathway",
+      "label_es": "Ruta",
+      "title": "Where does it stop?",
+      "title_es": "¿Dónde se detiene?",
+      "description": "Proteins in food contain phenylalanine. The body normally converts the extra into another amino acid. Here that step is not working.",
+      "description_es": "Las proteínas de la comida contienen fenilalanina. El cuerpo normalmente convierte el sobrante en otro aminoácido. Aquí ese paso no funciona."
+    }
+  ],
+  "diagnose": {
+    "symptom": "The baby's blood has a very high level of phenylalanine and a low level of tyrosine.",
+    "symptom_es": "La sangre del bebé tiene un nivel muy alto de fenilalanina y bajo de tirosina.",
+    "clues": [
+      {
+        "text": "Phenylalanine from milk is entering the blood normally.",
+        "text_es": "La fenilalanina de la leche entra con normalidad en la sangre."
+      },
+      {
+        "text": "Phenylalanine is not being converted, so it accumulates.",
+        "text_es": "La fenilalanina no se convierte, así que se acumula."
+      },
+      {
+        "text": "Tyrosine is low because it is not being made from phenylalanine.",
+        "text_es": "La tirosina está baja porque no se fabrica a partir de la fenilalanina."
+      },
+      {
+        "text": "A parent and the baby both carry changes in one gene, inherited from both parents.",
+        "text_es": "La madre y el bebé llevan cambios en un gen, heredados de ambos progenitores."
+      }
+    ],
+    "faultyIds": [
+      "gene_pah",
+      "enzyme_pah"
+    ],
+    "notes": {
+      "met_phe_food": {
+        "text": "It enters normally; it is just not processed afterwards.",
+        "text_es": "Entra con normalidad; lo que pasa es que luego no se procesa."
+      },
+      "gene_pah": {
+        "text": "Changes in this gene are the root of the condition.",
+        "text_es": "Los cambios en este gen son la raíz de la condición."
+      },
+      "enzyme_pah": {
+        "text": "The enzyme made from the changed gene does not work properly, so the step is blocked.",
+        "text_es": "La enzima fabricada a partir del gen cambiado no funciona bien, así que el paso queda bloqueado."
+      },
+      "rxn_pah": {
+        "text": "It is the blocked step, but only because the enzyme is not working.",
+        "text_es": "Es el paso bloqueado, pero solo porque la enzima no funciona."
+      },
+      "met_tyr": {
+        "text": "It is low as a consequence.",
+        "text_es": "Está baja como consecuencia."
+      },
+      "met_phe_blood": {
+        "text": "It accumulates as a consequence: it is the signal that screening detects.",
+        "text_es": "Se acumula como consecuencia: es la señal que detecta el cribado."
+      }
+    },
+    "fixes": [
+      {
+        "id": "f1",
+        "text": "A low-phenylalanine diet from birth, with special formula and regular blood tests.",
+        "text_es": "Una dieta baja en fenilalanina desde el nacimiento, con fórmula especial y análisis de sangre periódicos.",
+        "correct": true,
+        "reason": "Limiting phenylalanine stops it from building up. Started early, this lets children develop normally.",
+        "reason_es": "Limitar la fenilalanina evita que se acumule. Empezando pronto, los niños pueden desarrollarse con normalidad."
+      },
+      {
+        "id": "f2",
+        "text": "Give extra protein to make up for it.",
+        "text_es": "Dar más proteína para compensar.",
+        "correct": false,
+        "reason": "More protein means more phenylalanine, which makes the build-up worse.",
+        "reason_es": "Más proteína significa más fenilalanina, lo que empeora la acumulación."
+      },
+      {
+        "id": "f3",
+        "text": "Remove all protein from the diet.",
+        "text_es": "Quitar toda la proteína de la dieta.",
+        "correct": false,
+        "reason": "Phenylalanine is essential and the body needs some, and it needs protein to grow. The aim is to limit it, not remove it.",
+        "reason_es": "La fenilalanina es esencial y el cuerpo necesita algo de ella, y necesita proteína para crecer. El objetivo es limitarla, no eliminarla."
+      },
+      {
+        "id": "f4",
+        "text": "Wait to see whether it resolves on its own.",
+        "text_es": "Esperar a ver si se arregla solo.",
+        "correct": false,
+        "reason": "It does not resolve by itself, and early treatment matters for the child's development.",
+        "reason_es": "No se arregla solo, y tratar pronto es importante para el desarrollo del niño."
+      }
+    ]
+  },
+  "biologicalContext": {
+    "nodes": [
+      {
+        "id": "met_phe_food",
+        "type": "metabolite",
+        "label": "Phenylalanine from food",
+        "label_es": "Fenilalanina de la comida",
+        "description": "An essential amino acid found in most protein foods.",
+        "description_es": "Un aminoácido esencial presente en casi todos los alimentos con proteínas.",
+        "position": {
+          "x": -6.5,
+          "y": 0,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "gene_pah",
+        "type": "gene",
+        "label": "PAH gene",
+        "label_es": "Gen PAH",
+        "description": "The recipe for the enzyme that processes phenylalanine.",
+        "description_es": "La receta de la enzima que procesa la fenilalanina.",
+        "position": {
+          "x": -3.4,
+          "y": 3.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_pah",
+        "type": "enzyme",
+        "label": "PAH enzyme",
+        "label_es": "Enzima PAH",
+        "description": "Converts phenylalanine into tyrosine, mostly in the liver.",
+        "description_es": "Convierte la fenilalanina en tirosina, sobre todo en el hígado.",
+        "position": {
+          "x": -0.4,
+          "y": 3.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_pah",
+        "type": "reaction",
+        "label": "Converting phenylalanine",
+        "label_es": "Convertir la fenilalanina",
+        "description": "Phenylalanine → tyrosine.",
+        "description_es": "Fenilalanina → tirosina.",
+        "position": {
+          "x": -0.4,
+          "y": 0,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_tyr",
+        "type": "metabolite",
+        "label": "Tyrosine",
+        "label_es": "Tirosina",
+        "description": "The product, used to make other molecules.",
+        "description_es": "El producto, que se usa para fabricar otras moléculas.",
+        "position": {
+          "x": 3,
+          "y": -2.6,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_phe_blood",
+        "type": "metabolite",
+        "label": "Phenylalanine in blood",
+        "label_es": "Fenilalanina en la sangre",
+        "description": "Builds up when it is not converted.",
+        "description_es": "Se acumula cuando no se convierte.",
+        "position": {
+          "x": 3,
+          "y": 2.6,
+          "z": 0
+        },
+        "metadata": {}
+      }
+    ],
+    "edges": [
+      {
+        "id": "ref_gene_pah_encodes_enzyme_pah",
+        "source": "gene_pah",
+        "target": "enzyme_pah",
+        "type": "encodes",
+        "isRequired": true
+      },
+      {
+        "id": "ref_enzyme_pah_catalyzes_rxn_pah",
+        "source": "enzyme_pah",
+        "target": "rxn_pah",
+        "type": "catalyzes",
+        "isRequired": true
+      },
+      {
+        "id": "ref_rxn_pah_consumes_met_phe_food",
+        "source": "rxn_pah",
+        "target": "met_phe_food",
+        "type": "consumes",
+        "isRequired": true
+      },
+      {
+        "id": "ref_rxn_pah_produces_met_tyr",
+        "source": "rxn_pah",
+        "target": "met_tyr",
+        "type": "produces",
+        "isRequired": true
+      },
+      {
+        "id": "ref_rxn_pah_consumes_met_phe_blood",
+        "source": "rxn_pah",
+        "target": "met_phe_blood",
+        "type": "consumes",
+        "isRequired": true
+      }
+    ]
+  },
+  "puzzle": {
+    "availableNodes": [
+      "met_phe_food",
+      "gene_pah",
+      "enzyme_pah",
+      "rxn_pah",
+      "met_tyr",
+      "met_phe_blood"
+    ],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Management",
+    "productLabel_es": "Control",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Diagnosis",
+        "label_es": "Diagnóstico",
+        "description": "Found and treated.",
+        "description_es": "Encontrado y tratado.",
+        "order": 1
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Follow the pathway: where does something pile up, and what is missing afterwards?",
+      "content_es": "Sigue la ruta: ¿dónde se acumula algo y qué falta después?",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Both ends tell the story: too much before the step, too little after it.",
+      "content_es": "Los dos extremos cuentan la historia: demasiado antes del paso, muy poco después.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "The enzyme PAH, and the gene that makes it, are the broken pieces.",
+      "content_es": "La enzima PAH, y el gen que la fabrica, son las piezas rotas.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "Found and managed",
+    "title_es": "Encontrado y controlado",
+    "summary": "You traced a build-up back to a blocked enzyme and a changed gene. Because the problem is a molecule that accumulates, controlling the diet controls the condition.",
+    "summary_es": "Has seguido una acumulación hasta una enzima bloqueada y un gen cambiado. Como el problema es una molécula que se acumula, controlar la dieta controla la condición.",
+    "realWorldImpact": "Newborn screening for PKU, introduced in the 1960s, prevents severe intellectual disability in the children it detects. It is one of the great successes of preventive medicine.",
+    "realWorldImpact_es": "El cribado neonatal de la PKU, introducido en los años 60, evita una discapacidad intelectual grave en los niños que detecta. Es uno de los grandes éxitos de la medicina preventiva."
+  },
+  "science": {
+    "organism": "Homo sapiens",
+    "realWorldCase": "Robert Guthrie developed a simple blood test for PKU in the early 1960s that made large-scale newborn screening possible.",
+    "realWorldCase_es": "Robert Guthrie desarrolló a principios de los años 60 una prueba de sangre sencilla para la PKU que hizo posible el cribado neonatal a gran escala.",
+    "scientificContext": "PKU is an autosomal recessive condition caused by variants in the PAH gene, which encodes phenylalanine hydroxylase. Untreated, phenylalanine accumulates and impairs brain development. Dietary restriction is the standard treatment.",
+    "scientificContext_es": "La PKU es una condición autosómica recesiva causada por variantes del gen PAH, que codifica la fenilalanina hidroxilasa. Sin tratar, la fenilalanina se acumula y perjudica el desarrollo del cerebro. La restricción dietética es el tratamiento habitual.",
+    "gameplaySimplifications": [
+      "The enzyme also needs a helper molecule, tetrahydrobiopterin, which is not shown.",
+      "Real management is planned by a medical team; the game only illustrates the idea."
+    ],
+    "gameplaySimplifications_es": [
+      "La enzima necesita también una molécula auxiliar, la tetrahidrobiopterina, que no aparece.",
+      "El control real lo planifica un equipo médico; el juego solo ilustra la idea."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Guthrie R",
+          "Susi A"
+        ],
+        "year": 1963,
+        "title": "A simple phenylalanine method for detecting phenylketonuria in large populations of newborn infants",
+        "journal": "Pediatrics",
+        "doi": "10.1542/peds.32.3.338",
+        "type": "paper"
+      }
+    ]
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "id": "seq-wine",
+  "mode": "sequence",
+  "title": "From grapes to red wine",
+  "title_es": "De la uva al vino tinto",
+  "subtitle": "Yeast does the middle of the work",
+  "subtitle_es": "La levadura hace la parte central del trabajo",
+  "difficulty": "beginner",
+  "estimatedDuration": 5,
+  "objective": "Put the steps of making red wine in order, and see where the yeast comes in.",
+  "objective_es": "Pon en orden los pasos para hacer vino tinto y descubre dónde entra la levadura.",
+  "description": "Wine is grape juice that yeast has turned into alcohol. For red wine the skins stay in during fermentation, which is where the colour comes from.",
+  "description_es": "El vino es zumo de uva que la levadura ha convertido en alcohol. En el vino tinto las pieles se quedan durante la fermentación, y de ahí sale el color.",
+  "organism": {
+    "id": "wine-yeast",
+    "commonName": "Grapes and yeast",
+    "commonName_es": "Uvas y levadura",
+    "scientificName": "Saccharomyces cerevisiae",
+    "taxonomy": [
+      "Fungi",
+      "Ascomycota",
+      "Saccharomycetes",
+      "Saccharomycetales",
+      "Saccharomycetaceae",
+      "Saccharomyces"
+    ],
+    "targetTissue": "grape must",
+    "targetOrganelle": "cytoplasm",
+    "description": "The yeast of wine, bread and beer.",
+    "description_es": "La levadura del vino, el pan y la cerveza."
+  },
+  "exploration": [
+    {
+      "kind": "bottle",
+      "label": "The grape",
+      "label_es": "La uva",
+      "title": "Sugar in the skin and the juice",
+      "title_es": "Azúcar en la piel y el jugo",
+      "description": "Ripe grapes contain about a fifth of their weight in sugar, and carry wild yeasts on their skin.",
+      "description_es": "Las uvas maduras contienen cerca de una quinta parte de su peso en azúcar y llevan levaduras silvestres en la piel."
+    },
+    {
+      "kind": "yeast",
+      "label": "The yeast",
+      "label_es": "La levadura",
+      "title": "Sugar to alcohol",
+      "title_es": "De azúcar a alcohol",
+      "description": "Yeast ferments the sugar into alcohol and carbon dioxide. It needs warmth, and it stops when the sugar runs out or the alcohol gets too high.",
+      "description_es": "La levadura fermenta el azúcar en alcohol y dióxido de carbono. Necesita calor, y se detiene cuando se acaba el azúcar o el alcohol sube demasiado."
+    }
+  ],
+  "sequence": {
+    "steps": [
+      {
+        "id": "harvest",
+        "label": "Harvest the ripe grapes",
+        "label_es": "Vendimiar las uvas maduras",
+        "description": "The grapes are full of sugar.",
+        "description_es": "Las uvas están llenas de azúcar.",
+        "needs": "Nothing: it is where it starts.",
+        "needs_es": "Nada: es el punto de partida."
+      },
+      {
+        "id": "crush",
+        "label": "Crush the grapes with their skins",
+        "label_es": "Estrujar las uvas con sus pieles",
+        "description": "The juice, the skins and the yeasts mix.",
+        "description_es": "El jugo, las pieles y las levaduras se mezclan.",
+        "needs": "There must be grapes first.",
+        "needs_es": "Primero tiene que haber uvas."
+      },
+      {
+        "id": "ferment",
+        "label": "Let the yeast ferment the sugar into alcohol",
+        "label_es": "Dejar que la levadura fermente el azúcar en alcohol",
+        "description": "The must warms up and bubbles; the skins give colour.",
+        "description_es": "El mosto se calienta y burbujea; las pieles dan color.",
+        "needs": "The juice and the yeast have to be together first.",
+        "needs_es": "El jugo y la levadura tienen que estar juntos antes."
+      },
+      {
+        "id": "press",
+        "label": "Press the skins and separate the wine",
+        "label_es": "Prensar las pieles y separar el vino",
+        "description": "The young wine is separated from the skins.",
+        "description_es": "El vino joven se separa de las pieles.",
+        "needs": "The sugar must have been fermented first.",
+        "needs_es": "El azúcar tiene que haberse fermentado antes."
+      },
+      {
+        "id": "settle",
+        "label": "Let the wine settle and draw it off the sediment",
+        "label_es": "Dejar reposar el vino y trasegarlo del sedimento",
+        "description": "The wine becomes clearer.",
+        "description_es": "El vino se aclara.",
+        "needs": "The skins have to be pressed away first.",
+        "needs_es": "Las pieles tienen que haberse prensado antes."
+      },
+      {
+        "id": "age",
+        "label": "Age the wine in barrels or tanks",
+        "label_es": "Criar el vino en barricas o depósitos",
+        "description": "Flavours change and soften.",
+        "description_es": "Los sabores cambian y se suavizan.",
+        "needs": "The wine has to be clear first.",
+        "needs_es": "El vino tiene que estar claro antes."
+      },
+      {
+        "id": "bottle",
+        "label": "Bottle the wine",
+        "label_es": "Embotellar el vino",
+        "description": "The wine is ready to keep and to drink.",
+        "description_es": "El vino está listo para guardar y beber.",
+        "needs": "The wine has to be aged first.",
+        "needs_es": "El vino tiene que estar criado antes."
+      }
+    ]
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Wine",
+    "productLabel_es": "Vino",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Start",
+        "label_es": "Inicio",
+        "description": "The process begins.",
+        "description_es": "Empieza el proceso.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Middle",
+        "label_es": "Desarrollo",
+        "description": "Each step prepares the next.",
+        "description_es": "Cada paso prepara el siguiente.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Result",
+        "label_es": "Resultado",
+        "description": "The process ends.",
+        "description_es": "El proceso termina.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "The yeast needs the juice first, and the wine can only be separated from the skins when fermentation has done its work.",
+      "content_es": "La levadura necesita primero el jugo, y el vino solo se puede separar de las pieles cuando la fermentación ha hecho su trabajo.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Harvest, crush, ferment, press, settle, age and bottle.",
+      "content_es": "Vendimiar, estrujar, fermentar, prensar, reposar, criar y embotellar.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Harvest → crush → ferment → press → settle → age → bottle.",
+      "content_es": "Vendimiar → estrujar → fermentar → prensar → reposar → criar → embotellar.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A chain with a microbe in the middle",
+    "title_es": "Una cadena con un microbio en medio",
+    "summary": "You followed the steps of wine making, with the yeast in the central step.",
+    "summary_es": "Has seguido los pasos de la elaboración del vino, con la levadura en el paso central.",
+    "realWorldImpact": "Wine is one of the oldest fermented foods, and wineries now choose their yeasts, as breweries and bakeries do, to control the flavour.",
+    "realWorldImpact_es": "El vino es uno de los alimentos fermentados más antiguos, y las bodegas eligen hoy sus levaduras, como hacen las cervecerías y las panaderías, para controlar el sabor."
+  },
+  "science": {
+    "organism": "Saccharomyces cerevisiae",
+    "realWorldCase": "Louis Pasteur showed in the 1860s that yeast cells carry out the fermentation of wine, and that other microbes spoil it.",
+    "realWorldCase_es": "Louis Pasteur mostró en la década de 1860 que las células de levadura llevan a cabo la fermentación del vino, y que otros microbios lo estropean.",
+    "scientificContext": "Red wine gets its colour from pigments in the skins, which dissolve in the alcohol as it forms. White wine is pressed before fermenting, so the skins stay out.",
+    "scientificContext_es": "El vino tinto obtiene su color de pigmentos de las pieles, que se disuelven en el alcohol a medida que se forma. El vino blanco se prensa antes de fermentar, así que las pieles se quedan fuera.",
+    "gameplaySimplifications": [
+      "Many steps are left out, such as adding sulphites or the second fermentation that some wines have."
+    ],
+    "gameplaySimplifications_es": [
+      "Se omiten muchos pasos, como añadir sulfitos o la segunda fermentación que tienen algunos vinos."
+    ],
+    "references": []
+  }
+}

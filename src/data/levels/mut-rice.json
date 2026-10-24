@@ -1,0 +1,178 @@
+{
+  "id": "mut-rice",
+  "mode": "mutation",
+  "title": "Fragrant rice",
+  "title_es": "Arroz aromático",
+  "subtitle": "Switching off a gene gives a scent",
+  "subtitle_es": "Apagar un gen da un aroma",
+  "difficulty": "intermediate",
+  "estimatedDuration": 5,
+  "objective": "Find the letter that changed in the gene and say what the change does to the protein.",
+  "objective_es": "Encuentra la letra que ha cambiado en el gen y di qué efecto tiene en la proteína.",
+  "description": "A change of one letter in DNA can change an amino acid, cut a protein short, or do nothing at all. Compare the two sequences codon by codon.",
+  "description_es": "Un cambio de una letra en el ADN puede cambiar un aminoácido, cortar una proteína o no hacer nada. Compara las dos secuencias codón a codón.",
+  "organism": {
+    "id": "rice-mut",
+    "commonName": "Rice",
+    "commonName_es": "Arroz",
+    "scientificName": "Oryza sativa",
+    "taxonomy": [
+      "Plantae",
+      "Tracheophyta",
+      "Liliopsida",
+      "Poales",
+      "Poaceae",
+      "Oryza"
+    ],
+    "targetTissue": "grain",
+    "targetOrganelle": "cytoplasm",
+    "description": "A cereal that feeds half of the world.",
+    "description_es": "Un cereal que alimenta a la mitad del mundo."
+  },
+  "exploration": [
+    {
+      "kind": "grain",
+      "label": "Rice",
+      "label_es": "Arroz",
+      "title": "A scent in the grain",
+      "title_es": "Un aroma en el grano",
+      "description": "Fragrant rice varieties are valued all over the world. Their scent comes from a small molecule that builds up in the grain.",
+      "description_es": "Las variedades de arroz aromático se valoran en todo el mundo. Su aroma viene de una molécula pequeña que se acumula en el grano."
+    },
+    {
+      "kind": "dna",
+      "label": "Lost function",
+      "label_es": "Función perdida",
+      "title": "Breaking an enzyme",
+      "title_es": "Romper una enzima",
+      "description": "In most rice, an enzyme removes the aroma molecule. In fragrant rice, the gene of that enzyme is broken, so the molecule stays.",
+      "description_es": "En casi todo el arroz, una enzima elimina la molécula del aroma. En el arroz aromático, el gen de esa enzima está roto, así que la molécula se queda."
+    }
+  ],
+  "mutation": {
+    "geneLabel": "Rice aroma gene (illustrative)",
+    "geneLabel_es": "Gen del aroma del arroz (ilustrativo)",
+    "reference": "ATGGCGCAGGAAAAGACC",
+    "mutant": "ATGGCGTAGGAAAAGACC",
+    "story": "A real mechanism with an invented sequence. Jasmine and basmati rice smell good because a gene that normally breaks down the aroma molecule does not work. Find the letter that breaks it.",
+    "story_es": "Un mecanismo real con una secuencia inventada. El arroz jazmín y el basmati huelen bien porque no funciona un gen que normalmente descompone la molécula del aroma. Encuentra la letra que lo rompe.",
+    "explanations": {
+      "silent": "Not here: the codon turns into a stop.",
+      "silent_es": "Aquí no: el codón se convierte en una parada.",
+      "missense": "Not here: the codon does not become another amino acid.",
+      "missense_es": "Aquí no: el codón no se convierte en otro aminoácido.",
+      "nonsense": "CAG (Gln) became TAG, a stop codon. The enzyme is cut short and cannot work, so the aroma molecule builds up and the rice smells of popcorn and jasmine.",
+      "nonsense_es": "CAG (Gln) pasó a TAG, un codón de fin. La enzima se corta y no puede funcionar, así que la molécula del aroma se acumula y el arroz huele a palomitas y a jazmín."
+    }
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Effect",
+    "productLabel_es": "Efecto",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Compare",
+        "label_es": "Comparar",
+        "description": "Find the changed letter.",
+        "description_es": "Encuentra la letra cambiada.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Translate",
+        "label_es": "Traducir",
+        "description": "Read the codons.",
+        "description_es": "Lee los codones.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Effect",
+        "label_es": "Efecto",
+        "description": "Decide what it does.",
+        "description_es": "Decide qué hace.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Compare the two rows letter by letter. Only one is different.",
+      "content_es": "Compara las dos filas letra a letra. Solo una es distinta.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Look at the codon with the changed letter. What did it code for, and what does it code for now?",
+      "content_es": "Mira el codón con la letra cambiada. ¿Qué codificaba y qué codifica ahora?",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "CAG (Gln) became TAG (stop): this is a nonsense mutation.",
+      "content_es": "CAG (Gln) pasó a TAG (fin): es una mutación sin sentido.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A scent from a broken gene",
+    "title_es": "Un aroma de un gen roto",
+    "summary": "You found a letter that creates a stop codon, which breaks an enzyme and lets the rice scent build up.",
+    "summary_es": "Has encontrado una letra que crea un codón de fin, que rompe una enzima y deja que se acumule el aroma del arroz.",
+    "realWorldImpact": "Knowing the gene lets breeders select fragrant rice quickly, and even edit the gene in other varieties.",
+    "realWorldImpact_es": "Conocer el gen permite a quienes mejoran el arroz seleccionar variedades aromáticas rápidamente, e incluso editar el gen en otras variedades."
+  },
+  "science": {
+    "organism": "Oryza sativa",
+    "realWorldCase": "In 2005 researchers showed that the gene for fragrance in rice, called BADH2, is broken in fragrant varieties, which accumulate the compound that smells of popcorn and jasmine.",
+    "realWorldCase_es": "En 2005 unos investigadores mostraron que el gen del aroma del arroz, llamado BADH2, está roto en las variedades aromáticas, que acumulan el compuesto que huele a palomitas y a jazmín.",
+    "scientificContext": "A loss-of-function change, such as an early stop codon or a deletion, in the BADH2 gene reduces the breakdown of 2-acetyl-1-pyrroline, the main aroma compound.",
+    "scientificContext_es": "Un cambio que hace perder la función, como un codón de fin temprano o una deleción, en el gen BADH2 reduce la degradación de la 2-acetil-1-pirrolina, el principal compuesto del aroma.",
+    "gameplaySimplifications": [
+      "The real change is the one described, but the sequence around it is an invented short example."
+    ],
+    "gameplaySimplifications_es": [
+      "El cambio real es el que se describe, pero la secuencia que lo rodea es un ejemplo corto inventado."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Bradbury, L. M. T.",
+          "Fitzgerald, T. L.",
+          "Henry, R. J.",
+          "Jin, Q.",
+          "Waters, D. L. E."
+        ],
+        "year": 2005,
+        "title": "The gene for fragrance in rice",
+        "journal": "Plant Biotechnology Journal",
+        "type": "paper",
+        "doi": "10.1111/j.1467-7652.2005.00131.x"
+      }
+    ]
+  }
+}

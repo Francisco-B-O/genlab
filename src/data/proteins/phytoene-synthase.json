@@ -1,0 +1,16 @@
+{
+  "id": "phytoene-synthase",
+  "name": "Phytoene synthase",
+  "gene": "psy",
+  "ecNumber": "2.5.1.32",
+  "scientificName": "NpPSY (Narcissus pseudonarcissus)",
+  "function": "Catalyzes the head-to-head condensation of two GGPP molecules to form 15-cis-phytoene, the first dedicated carotenoid precursor.",
+  "reaction": {
+    "substrates": ["GGPP", "GGPP"],
+    "products": ["15-cis-phytoene", "PPi", "PPi"],
+    "cofactors": ["Mg2+"]
+  },
+  "subcellularLocation": "plastid",
+  "rateLimit": true,
+  "molecularWeight_kDa": 47
+}

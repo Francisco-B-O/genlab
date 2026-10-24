@@ -1,0 +1,447 @@
+{
+  "id": "fix-indigo",
+  "mode": "diagnose",
+  "title": "Bacteria that stay white",
+  "title_es": "Bacterias que se quedan blancas",
+  "subtitle": "Why does the indigo culture not turn blue?",
+  "subtitle_es": "¿Por qué el cultivo de índigo no se pone azul?",
+  "difficulty": "intermediate",
+  "estimatedDuration": 7,
+  "objective": "The indigo pathway is built, but the culture stays white and smells of indole. Find the root cause.",
+  "objective_es": "La ruta del índigo está montada, pero el cultivo sigue blanco y huele a indol. Encuentra la causa de fondo.",
+  "description": "Careful: a missing product can be several steps away from the real cause.",
+  "description_es": "Cuidado: un producto que falta puede estar varios pasos más allá de la causa real.",
+  "organism": {
+    "id": "ecoli-indigo-fix",
+    "commonName": "E. coli",
+    "commonName_es": "E. coli",
+    "scientificName": "Escherichia coli",
+    "taxonomy": [
+      "Bacteria",
+      "Pseudomonadota",
+      "Gammaproteobacteria",
+      "Enterobacterales",
+      "Escherichia"
+    ],
+    "targetTissue": "single cell",
+    "targetOrganelle": "cytoplasm",
+    "description": "The laboratory bacterium of the indigo level.",
+    "description_es": "La bacteria de laboratorio del nivel del índigo."
+  },
+  "exploration": [
+    {
+      "kind": "jeans",
+      "label": "Problem",
+      "label_es": "Problema",
+      "title": "A white culture",
+      "title_es": "Un cultivo blanco",
+      "description": "The same strain that was blue last month now grows white.",
+      "description_es": "La misma cepa que el mes pasado salía azul ahora crece blanca."
+    },
+    {
+      "kind": "bacterium",
+      "label": "Culture",
+      "label_es": "Cultivo",
+      "title": "Follow the pathway",
+      "title_es": "Sigue la ruta",
+      "description": "Check each step from the start: where does the chain break?",
+      "description_es": "Revisa cada paso desde el principio: ¿dónde se rompe la cadena?"
+    }
+  ],
+  "diagnose": {
+    "symptom": "The culture smells strongly of indole but stays white: no blue at all.",
+    "symptom_es": "El cultivo huele mucho a indol pero sigue blanco: nada de azul.",
+    "clues": [
+      {
+        "text": "Tryptophanase works: the culture smells of indole.",
+        "text_es": "La triptofanasa funciona: el cultivo huele a indol."
+      },
+      {
+        "text": "The cells grew for many generations with no antibiotic.",
+        "text_es": "Las células han crecido muchas generaciones sin antibiótico."
+      },
+      {
+        "text": "Many cells have lost the plasmid that carried the added gene.",
+        "text_es": "Muchas células han perdido el plásmido que llevaba el gen añadido."
+      },
+      {
+        "text": "The few cells that kept the plasmid do turn blue.",
+        "text_es": "Las pocas células que conservan el plásmido sí se ponen azules."
+      }
+    ],
+    "faultyIds": [
+      "gene_fmo"
+    ],
+    "notes": {
+      "gene_tnaa": {
+        "text": "This gene works: the indole smell proves it.",
+        "text_es": "Este gen funciona: el olor a indol lo demuestra."
+      },
+      "enzyme_tnaa": {
+        "text": "It works; indole is being made.",
+        "text_es": "Funciona; se está fabricando indol."
+      },
+      "rxn_indole": {
+        "text": "It happens: there is indole in the culture.",
+        "text_es": "Ocurre: hay indol en el cultivo."
+      },
+      "met_trp": {
+        "text": "There is plenty, since indole is made.",
+        "text_es": "Hay de sobra, ya que se fabrica indol."
+      },
+      "met_indole": {
+        "text": "It builds up because nothing uses it afterwards.",
+        "text_es": "Se acumula porque después nada lo usa."
+      },
+      "gene_fmo": {
+        "text": "The cells lost the plasmid carrying this gene, so the second half of the pathway is missing.",
+        "text_es": "Las células han perdido el plásmido que lleva este gen, así que falta la segunda mitad de la ruta."
+      },
+      "enzyme_fmo": {
+        "text": "It is missing, yes, but that is a consequence. Look further upstream: why is it not being made?",
+        "text_es": "Es verdad que falta, pero es una consecuencia. Mira más arriba: ¿por qué no se fabrica?"
+      },
+      "rxn_oxidize": {
+        "text": "It does not happen, but only because its enzyme is not there.",
+        "text_es": "No ocurre, pero solo porque su enzima no está."
+      },
+      "met_indoxyl": {
+        "text": "It is missing as a result of the broken step before it.",
+        "text_es": "Falta como resultado del paso roto anterior."
+      },
+      "met_indigo": {
+        "text": "It is the product you were expecting, not the cause.",
+        "text_es": "Es el producto que esperabas, no la causa."
+      }
+    },
+    "fixes": [
+      {
+        "id": "f1",
+        "text": "Keep the plasmid with an antibiotic that only plasmid-carrying cells resist.",
+        "text_es": "Mantener el plásmido con un antibiótico al que solo resisten las células que lo llevan.",
+        "correct": true,
+        "reason": "Plasmids are a burden, and cells that lose them grow faster. Selection keeps only the cells that still have the gene.",
+        "reason_es": "Los plásmidos son una carga, y las células que los pierden crecen más rápido. La selección deja solo las células que aún tienen el gen."
+      },
+      {
+        "id": "f2",
+        "text": "Add more tryptophan to the medium.",
+        "text_es": "Añadir más triptófano al medio.",
+        "correct": false,
+        "reason": "The first half already works: indole is being made. More starting material will not fix the missing second half.",
+        "reason_es": "La primera mitad ya funciona: se fabrica indol. Más materia prima no arregla que falte la segunda mitad."
+      },
+      {
+        "id": "f3",
+        "text": "Bubble extra oxygen through the culture.",
+        "text_es": "Hacer pasar más oxígeno por el cultivo.",
+        "correct": false,
+        "reason": "Oxygen helps the last step, but the enzyme that comes before it is missing.",
+        "reason_es": "El oxígeno ayuda al último paso, pero falta la enzima que va antes."
+      },
+      {
+        "id": "f4",
+        "text": "Replace the tnaA gene with a new copy.",
+        "text_es": "Sustituir el gen tnaA por una copia nueva.",
+        "correct": false,
+        "reason": "tnaA works fine; the indole smell shows it. The fault is in the other gene.",
+        "reason_es": "tnaA funciona bien; el olor a indol lo demuestra. El fallo está en el otro gen."
+      }
+    ]
+  },
+  "biologicalContext": {
+    "nodes": [
+      {
+        "id": "gene_tnaa",
+        "type": "gene",
+        "label": "tnaA gene",
+        "label_es": "Gen tnaA",
+        "description": "E. coli's own gene for tryptophanase.",
+        "description_es": "El gen propio de E. coli de la triptofanasa.",
+        "position": {
+          "x": -7,
+          "y": 2,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_tnaa",
+        "type": "enzyme",
+        "label": "Tryptophanase",
+        "label_es": "Triptofanasa",
+        "description": "Turns tryptophan into indole.",
+        "description_es": "Convierte el triptófano en indol.",
+        "position": {
+          "x": -4,
+          "y": 2,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_indole",
+        "type": "reaction",
+        "label": "Making indole",
+        "label_es": "Fabricar indol",
+        "description": "Tryptophan → indole.",
+        "description_es": "Triptófano → indol.",
+        "position": {
+          "x": -1,
+          "y": 2,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_trp",
+        "type": "metabolite",
+        "label": "Tryptophan",
+        "label_es": "Triptófano",
+        "description": "An amino acid from the medium.",
+        "description_es": "Un aminoácido del medio.",
+        "position": {
+          "x": -1,
+          "y": 5,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_indole",
+        "type": "metabolite",
+        "label": "Indole",
+        "label_es": "Indol",
+        "description": "A smelly molecule: the starting point of indigo.",
+        "description_es": "Una molécula de olor fuerte: el punto de partida del índigo.",
+        "position": {
+          "x": 2.2,
+          "y": 2,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "gene_fmo",
+        "type": "gene",
+        "label": "FMO gene (on a plasmid)",
+        "label_es": "Gen FMO (en un plásmido)",
+        "description": "The added gene, carried on a plasmid.",
+        "description_es": "El gen añadido, que va en un plásmido.",
+        "position": {
+          "x": -7,
+          "y": -2,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_fmo",
+        "type": "enzyme",
+        "label": "FMO enzyme",
+        "label_es": "Enzima FMO",
+        "description": "Adds an oxygen atom to indole.",
+        "description_es": "Añade un átomo de oxígeno al indol.",
+        "position": {
+          "x": -4,
+          "y": -2,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_oxidize",
+        "type": "reaction",
+        "label": "Oxidizing indole",
+        "label_es": "Oxidar el indol",
+        "description": "Indole → indoxyl.",
+        "description_es": "Indol → indoxilo.",
+        "position": {
+          "x": -1,
+          "y": -2,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_indoxyl",
+        "type": "metabolite",
+        "label": "Indoxyl",
+        "label_es": "Indoxilo",
+        "description": "Colourless; pairs up in air.",
+        "description_es": "Incoloro; se empareja al aire.",
+        "position": {
+          "x": 2.2,
+          "y": -2,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_indigo",
+        "type": "metabolite",
+        "label": "Indigo",
+        "label_es": "Índigo",
+        "description": "The blue dye.",
+        "description_es": "El tinte azul.",
+        "position": {
+          "x": 5.4,
+          "y": -2,
+          "z": 0
+        },
+        "metadata": {}
+      }
+    ],
+    "edges": [
+      {
+        "id": "ref_gene_tnaa_encodes_enzyme_tnaa",
+        "source": "gene_tnaa",
+        "target": "enzyme_tnaa",
+        "type": "encodes",
+        "isRequired": true
+      },
+      {
+        "id": "ref_enzyme_tnaa_catalyzes_rxn_indole",
+        "source": "enzyme_tnaa",
+        "target": "rxn_indole",
+        "type": "catalyzes",
+        "isRequired": true
+      },
+      {
+        "id": "ref_rxn_indole_consumes_met_trp",
+        "source": "rxn_indole",
+        "target": "met_trp",
+        "type": "consumes",
+        "isRequired": true
+      },
+      {
+        "id": "ref_rxn_indole_produces_met_indole",
+        "source": "rxn_indole",
+        "target": "met_indole",
+        "type": "produces",
+        "isRequired": true
+      },
+      {
+        "id": "ref_gene_fmo_encodes_enzyme_fmo",
+        "source": "gene_fmo",
+        "target": "enzyme_fmo",
+        "type": "encodes",
+        "isRequired": true
+      },
+      {
+        "id": "ref_enzyme_fmo_catalyzes_rxn_oxidize",
+        "source": "enzyme_fmo",
+        "target": "rxn_oxidize",
+        "type": "catalyzes",
+        "isRequired": true
+      },
+      {
+        "id": "ref_rxn_oxidize_consumes_met_indole",
+        "source": "rxn_oxidize",
+        "target": "met_indole",
+        "type": "consumes",
+        "isRequired": true
+      },
+      {
+        "id": "ref_rxn_oxidize_produces_met_indoxyl",
+        "source": "rxn_oxidize",
+        "target": "met_indoxyl",
+        "type": "produces",
+        "isRequired": true
+      },
+      {
+        "id": "ref_met_indoxyl_influences_met_indigo",
+        "source": "met_indoxyl",
+        "target": "met_indigo",
+        "type": "influences",
+        "isRequired": true
+      }
+    ]
+  },
+  "puzzle": {
+    "availableNodes": [
+      "gene_tnaa",
+      "enzyme_tnaa",
+      "rxn_indole",
+      "met_trp",
+      "met_indole",
+      "gene_fmo",
+      "enzyme_fmo",
+      "rxn_oxidize",
+      "met_indoxyl",
+      "met_indigo"
+    ],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Indigo",
+    "productLabel_es": "Índigo",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Diagnosis",
+        "label_es": "Diagnóstico",
+        "description": "Found and treated.",
+        "description_es": "Encontrado y tratado.",
+        "order": 1
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Walk along the pathway: which steps work and where does it stop working?",
+      "content_es": "Recorre la ruta: ¿qué pasos funcionan y dónde deja de funcionar?",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Indole is made but never used, so the problem starts at the second half.",
+      "content_es": "Se fabrica indol pero nunca se usa, así que el problema empieza en la segunda mitad.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "The root cause is the FMO gene: the plasmid carrying it has been lost.",
+      "content_es": "La causa de fondo es el gen FMO: se ha perdido el plásmido que lo lleva.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "Root cause found",
+    "title_es": "Causa de fondo encontrada",
+    "summary": "You looked past the obvious missing piece and found the real cause: a lost plasmid. Good diagnosis means separating causes from consequences.",
+    "summary_es": "Has mirado más allá de la pieza que falta a simple vista y has encontrado la causa real: un plásmido perdido. Un buen diagnóstico separa causas de consecuencias.",
+    "realWorldImpact": "Losing plasmids is a common practical problem in production strains, so companies often integrate genes into the chromosome or keep a selection pressure.",
+    "realWorldImpact_es": "Perder plásmidos es un problema práctico habitual en las cepas de producción, así que las empresas suelen integrar los genes en el cromosoma o mantener una presión de selección."
+  },
+  "science": {
+    "organism": "Escherichia coli",
+    "realWorldCase": "Plasmid loss is a well-known problem when growing recombinant bacteria. A common remedy is to add an antibiotic to the medium, together with a resistance gene on the plasmid.",
+    "realWorldCase_es": "La pérdida de plásmidos es un problema bien conocido al cultivar bacterias recombinantes. Un remedio habitual es añadir un antibiótico al medio, junto con un gen de resistencia en el plásmido.",
+    "scientificContext": "Without selection pressure, cells that do not carry the plasmid divide faster and take over the culture. Selection or integration into the chromosome keeps the pathway stable.",
+    "scientificContext_es": "Sin presión de selección, las células sin plásmido se dividen más rápido y se hacen con el cultivo. La selección o la integración en el cromosoma mantienen estable la ruta.",
+    "gameplaySimplifications": [
+      "Real plasmids also carry the resistance gene that makes selection work."
+    ],
+    "gameplaySimplifications_es": [
+      "Los plásmidos reales llevan también el gen de resistencia que hace funcionar la selección."
+    ],
+    "references": []
+  }
+}

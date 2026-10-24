@@ -1,0 +1,161 @@
+{
+  "id": "pair-dna",
+  "mode": "pairing",
+  "title": "The two strands of DNA",
+  "title_es": "Las dos hebras del ADN",
+  "subtitle": "Every base has a partner",
+  "subtitle_es": "Cada base tiene su pareja",
+  "difficulty": "beginner",
+  "estimatedDuration": 4,
+  "objective": "Write the second strand of a piece of DNA: each base only fits with its partner.",
+  "objective_es": "Escribe la segunda hebra de un trozo de ADN: cada base solo encaja con su pareja.",
+  "description": "DNA has four letters, A, T, C and G. A always pairs with T, and C always pairs with G.",
+  "description_es": "El ADN tiene cuatro letras: A, T, C y G. La A siempre se une con la T, y la C siempre con la G.",
+  "organism": {
+    "id": "dna-molecule",
+    "commonName": "DNA molecule",
+    "commonName_es": "Molécula de ADN",
+    "scientificName": "Deoxyribonucleic acid",
+    "scientificName_es": "Ácido desoxirribonucleico",
+    "taxonomy": [
+      "Molecule"
+    ],
+    "targetTissue": "nucleus",
+    "targetOrganelle": "nucleus",
+    "description": "The molecule that stores the instructions of living things.",
+    "description_es": "La molécula que guarda las instrucciones de los seres vivos."
+  },
+  "exploration": [
+    {
+      "kind": "dna",
+      "label": "Letters",
+      "label_es": "Letras",
+      "title": "Four letters",
+      "title_es": "Cuatro letras",
+      "description": "DNA is written with four bases: A, T, C and G. Their order is the information.",
+      "description_es": "El ADN se escribe con cuatro bases: A, T, C y G. Su orden es la información."
+    },
+    {
+      "kind": "cell",
+      "label": "Two strands",
+      "label_es": "Dos hebras",
+      "title": "A ladder that twists",
+      "title_es": "Una escalera que se retuerce",
+      "description": "DNA is made of two strands held together by pairs of bases, like the steps of a twisted ladder.",
+      "description_es": "El ADN son dos hebras unidas por parejas de bases, como los peldaños de una escalera retorcida."
+    }
+  ],
+  "pairing": {
+    "kind": "dna",
+    "template": "TACGGATC",
+    "story": "One strand is already written. Write the other one, letter by letter.",
+    "story_es": "Una hebra ya está escrita. Escribe la otra, letra a letra."
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Strand",
+    "productLabel_es": "Hebra",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Template",
+        "label_es": "Molde",
+        "description": "The strand that already exists.",
+        "description_es": "La hebra que ya existe.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Pairs",
+        "label_es": "Parejas",
+        "description": "Each base meets its partner.",
+        "description_es": "Cada base encuentra a su pareja.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Strand",
+        "label_es": "Hebra",
+        "description": "The new strand is complete.",
+        "description_es": "La hebra nueva está completa.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Look at each letter of the top strand and find its partner.",
+      "content_es": "Mira cada letra de la hebra de arriba y busca a su pareja.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Remember: A pairs with T, and C pairs with G. It works both ways.",
+      "content_es": "Recuerda: A se une con T, y C con G. Funciona en los dos sentidos.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Write them in order: T→A, A→T, C→G, G→C, G→C, A→T, T→A, C→G.",
+      "content_es": "Escríbelas en orden: T→A, A→T, C→G, G→C, G→C, A→T, T→A, C→G.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "Two strands, one message",
+    "title_es": "Dos hebras, un mensaje",
+    "summary": "You wrote a strand from its partner. Because each base has exactly one partner, one strand holds all the information of the other.",
+    "summary_es": "Has escrito una hebra a partir de su pareja. Como cada base tiene una sola pareja, una hebra contiene toda la información de la otra.",
+    "realWorldImpact": "This is what lets a cell copy its DNA again and again: each strand is the template of a new one.",
+    "realWorldImpact_es": "Esto es lo que permite a una célula copiar su ADN una y otra vez: cada hebra es el molde de una nueva."
+  },
+  "science": {
+    "organism": "Deoxyribonucleic acid",
+    "realWorldCase": "In 1953 James Watson and Francis Crick proposed that DNA is a double helix whose strands are held together by pairs of bases. Their model used, among other data, X-ray images made by Rosalind Franklin and Raymond Gosling.",
+    "realWorldCase_es": "En 1953 James Watson y Francis Crick propusieron que el ADN es una doble hélice cuyas hebras se mantienen unidas por parejas de bases. Su modelo usó, entre otros datos, imágenes de rayos X hechas por Rosalind Franklin y Raymond Gosling.",
+    "scientificContext": "Adenine (A) pairs with thymine (T) through two hydrogen bonds, and cytosine (C) pairs with guanine (G) through three. The shape of each pair is what makes it fit only with its partner.",
+    "scientificContext_es": "La adenina (A) se une con la timina (T) con dos enlaces de hidrógeno, y la citosina (C) con la guanina (G) con tres. La forma de cada pareja es lo que hace que solo encaje con la suya.",
+    "gameplaySimplifications": [
+      "The two strands are written in the same direction to keep it simple; in reality they run in opposite directions."
+    ],
+    "gameplaySimplifications_es": [
+      "Las dos hebras se escriben en el mismo sentido para simplificar; en realidad van en sentidos opuestos."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Watson, J. D.",
+          "Crick, F. H. C."
+        ],
+        "year": 1953,
+        "title": "Molecular structure of nucleic acids: a structure for deoxyribose nucleic acid",
+        "journal": "Nature",
+        "doi": "10.1038/171737a0",
+        "type": "paper"
+      }
+    ]
+  }
+}

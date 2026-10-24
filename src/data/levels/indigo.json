@@ -1,0 +1,344 @@
+{
+  "id": "indigo",
+  "title": "Bacterial blue jeans",
+  "title_es": "Vaqueros azules bacterianos",
+  "subtitle": "Indigo dye made by E. coli",
+  "subtitle_es": "Tinte índigo fabricado por E. coli",
+  "difficulty": "intermediate",
+  "estimatedDuration": 9,
+  "objective": "Make E. coli produce indigo, the blue dye of jeans, from an amino acid it already has.",
+  "objective_es": "Haz que E. coli fabrique índigo, el tinte azul de los vaqueros, a partir de un aminoácido que ya tiene.",
+  "description": "Two enzymes and one step that happens on its own, in the air.",
+  "description_es": "Dos enzimas y un paso que ocurre solo, al aire.",
+  "organism": {
+    "id": "escherichia-coli-indigo",
+    "commonName": "E. coli",
+    "scientificName": "Escherichia coli",
+    "taxonomy": ["Bacteria", "Pseudomonadota", "Gammaproteobacteria", "Enterobacterales", "Escherichia"],
+    "targetTissue": "single cell",
+    "targetOrganelle": "cytoplasm",
+    "description": "A laboratory bacterium given one extra gene.",
+    "description_es": "Una bacteria de laboratorio a la que se le añade un gen."
+  },
+  "exploration": [
+    {
+      "kind": "jeans",
+      "label": "Product",
+      "label_es": "Producto",
+      "title": "The blue of jeans",
+      "title_es": "El azul de los vaqueros",
+      "description": "Indigo once came from plants. Today almost all of it is made from petroleum, using harsh chemicals.",
+      "description_es": "El índigo antes salía de plantas. Hoy casi todo se fabrica a partir del petróleo, usando productos químicos agresivos."
+    },
+    {
+      "kind": "bacterium",
+      "label": "Host",
+      "label_es": "Huésped",
+      "title": "A bacterium that turns blue",
+      "title_es": "Una bacteria que se vuelve azul",
+      "description": "In 1983 scientists noticed that E. coli carrying one extra gene turned its colonies blue. It was making indigo.",
+      "description_es": "En 1983 unos científicos vieron que las colonias de E. coli con un gen extra se volvían azules. Estaban fabricando índigo."
+    },
+    {
+      "kind": "pathway",
+      "label": "Pathway",
+      "label_es": "Ruta",
+      "title": "From amino acid to dye",
+      "title_es": "De aminoácido a tinte",
+      "description": "The bacterium's own enzyme makes indole. A new enzyme adds oxygen to it, and air does the rest.",
+      "description_es": "Una enzima propia de la bacteria fabrica indol. Una enzima nueva le añade oxígeno, y el aire hace el resto."
+    }
+  ],
+  "biologicalContext": {
+    "nodes": [
+      {
+        "id": "gene_tnaa",
+        "type": "gene",
+        "label": "tnaA gene",
+        "label_es": "Gen tnaA",
+        "description": "A gene E. coli already has, for the enzyme tryptophanase.",
+        "description_es": "Un gen que E. coli ya tiene, de la enzima triptofanasa.",
+        "scientificName": "tnaA (E. coli)",
+        "position": { "x": -7, "y": 2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "gene_fmo",
+        "type": "gene",
+        "label": "FMO gene",
+        "label_es": "Gen FMO",
+        "description": "The added gene: a flavin monooxygenase from another bacterium.",
+        "description_es": "El gen añadido: una flavina monooxigenasa de otra bacteria.",
+        "scientificName": "FMO (Methylophaga sp.)",
+        "position": { "x": -7, "y": -2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_tnaa",
+        "type": "enzyme",
+        "label": "Tryptophanase",
+        "label_es": "Triptofanasa",
+        "description": "Breaks the amino acid tryptophan, releasing indole.",
+        "description_es": "Rompe el aminoácido triptófano y libera indol.",
+        "scientificName": "Tryptophanase (EC 4.1.99.1)",
+        "position": { "x": -3.5, "y": 2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_fmo",
+        "type": "enzyme",
+        "label": "Monooxygenase (FMO)",
+        "label_es": "Monooxigenasa (FMO)",
+        "description": "Adds an oxygen atom to indole.",
+        "description_es": "Añade un átomo de oxígeno al indol.",
+        "position": { "x": -3.5, "y": -2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_indole",
+        "type": "reaction",
+        "label": "Making indole",
+        "label_es": "Fabricar indol",
+        "description": "Tryptophan → indole (plus pyruvate and ammonia).",
+        "description_es": "Triptófano → indol (más piruvato y amoníaco).",
+        "position": { "x": 0, "y": 2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_oxidize",
+        "type": "reaction",
+        "label": "Oxidizing indole",
+        "label_es": "Oxidar el indol",
+        "description": "Indole → indoxyl.",
+        "description_es": "Indol → indoxilo.",
+        "position": { "x": 0, "y": -2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_air",
+        "type": "reaction",
+        "label": "Pairing in air",
+        "label_es": "Emparejarse al aire",
+        "description": "Two indoxyl molecules join together in contact with oxygen. No enzyme is needed.",
+        "description_es": "Dos moléculas de indoxilo se unen al contacto con el oxígeno. No hace falta ninguna enzima.",
+        "position": { "x": 3.5, "y": -2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "met_trp",
+        "type": "metabolite",
+        "label": "Tryptophan",
+        "label_es": "Triptófano",
+        "description": "One of the amino acids every cell uses to build proteins.",
+        "description_es": "Uno de los aminoácidos que todas las células usan para fabricar proteínas.",
+        "position": { "x": 0, "y": 5, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "met_indole",
+        "type": "metabolite",
+        "label": "Indole",
+        "label_es": "Indol",
+        "description": "A small molecule with a strong smell. It is the starting point of indigo.",
+        "description_es": "Una molécula pequeña de olor fuerte. Es el punto de partida del índigo.",
+        "position": { "x": 3.5, "y": 2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "met_indoxyl",
+        "type": "metabolite",
+        "label": "Indoxyl",
+        "label_es": "Indoxilo",
+        "description": "Indole with an extra oxygen. Still colourless.",
+        "description_es": "Indol con un oxígeno extra. Todavía incoloro.",
+        "position": { "x": 0, "y": -5, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "met_o2",
+        "type": "metabolite",
+        "label": "Oxygen (O₂)",
+        "label_es": "Oxígeno (O₂)",
+        "description": "From the air. It drives the final pairing.",
+        "description_es": "Del aire. Impulsa el emparejamiento final.",
+        "position": { "x": 3.5, "y": -5, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "met_indigo",
+        "type": "metabolite",
+        "label": "Indigo",
+        "label_es": "Índigo",
+        "description": "The blue dye. It does not dissolve in water, so it stays on the fibres.",
+        "description_es": "El tinte azul. No se disuelve en agua, así que se queda en las fibras.",
+        "position": { "x": 7, "y": -2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "phenotype_jeans",
+        "type": "phenotype",
+        "label": "Blue jeans",
+        "label_es": "Vaqueros azules",
+        "description": "Cotton dyed with indigo: the classic denim blue.",
+        "description_es": "Algodón teñido con índigo: el azul clásico de los vaqueros.",
+        "position": { "x": 7, "y": 2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "met_anthocyanins",
+        "type": "metabolite",
+        "label": "Anthocyanins",
+        "label_es": "Antocianos",
+        "description": "The purple pigments of the tomato level. They dissolve in water and fade, so they do not work as a jeans dye.",
+        "description_es": "Los pigmentos morados del nivel del tomate. Se disuelven en agua y destiñen, así que no sirven para teñir vaqueros.",
+        "isDistractor": true,
+        "position": { "x": 7, "y": 5, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "gene_gfp",
+        "type": "gene",
+        "label": "gfp gene",
+        "label_es": "Gen gfp",
+        "description": "Makes cells glow green under blue light. A glowing protein is not a dye.",
+        "description_es": "Hace que las células brillen en verde con luz azul. Una proteína que brilla no es un tinte.",
+        "isDistractor": true,
+        "position": { "x": -7, "y": -5, "z": 0 },
+        "metadata": {}
+      }
+    ],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": ["gene_tnaa", "gene_fmo", "enzyme_tnaa", "enzyme_fmo", "rxn_indole", "rxn_oxidize", "rxn_air", "met_trp", "met_indole", "met_indoxyl", "met_o2", "met_indigo", "phenotype_jeans", "met_anthocyanins", "gene_gfp"],
+    "distractorNodes": ["met_anthocyanins", "gene_gfp"],
+    "requiredConnections": [
+      { "id": "req_tnaa", "sourceId": "gene_tnaa", "targetId": "enzyme_tnaa", "edgeType": "encodes",
+        "description": "E. coli already has this gene: half the pathway comes for free.",
+        "description_es": "E. coli ya tiene este gen: media ruta viene de regalo." },
+      { "id": "req_fmo", "sourceId": "gene_fmo", "targetId": "enzyme_fmo", "edgeType": "encodes",
+        "description": "The one added gene makes the enzyme that E. coli was missing.",
+        "description_es": "El único gen añadido fabrica la enzima que le faltaba a E. coli." },
+      { "id": "req_indole_cat", "sourceId": "enzyme_tnaa", "targetId": "rxn_indole", "edgeType": "catalyzes",
+        "description": "Tryptophanase runs the first step.",
+        "description_es": "La triptofanasa hace funcionar el primer paso." },
+      { "id": "req_indole_in", "sourceId": "rxn_indole", "targetId": "met_trp", "edgeType": "consumes",
+        "description": "The raw material is tryptophan, an amino acid from the cell's food.",
+        "description_es": "La materia prima es el triptófano, un aminoácido de la comida de la célula." },
+      { "id": "req_indole_out", "sourceId": "rxn_indole", "targetId": "met_indole", "edgeType": "produces",
+        "description": "Out comes indole.",
+        "description_es": "Sale indol." },
+      { "id": "req_ox_cat", "sourceId": "enzyme_fmo", "targetId": "rxn_oxidize", "edgeType": "catalyzes",
+        "description": "The monooxygenase runs the second step.",
+        "description_es": "La monooxigenasa hace funcionar el segundo paso." },
+      { "id": "req_ox_in", "sourceId": "rxn_oxidize", "targetId": "met_indole", "edgeType": "consumes",
+        "description": "It takes the indole made in the first step.",
+        "description_es": "Toma el indol fabricado en el primer paso." },
+      { "id": "req_ox_out", "sourceId": "rxn_oxidize", "targetId": "met_indoxyl", "edgeType": "produces",
+        "description": "Indoxyl comes out: one step away from blue.",
+        "description_es": "Sale indoxilo: a un paso del azul." },
+      { "id": "req_air_in", "sourceId": "rxn_air", "targetId": "met_indoxyl", "edgeType": "consumes",
+        "description": "New idea: some reactions happen on their own, without an enzyme.",
+        "description_es": "Idea nueva: algunas reacciones ocurren solas, sin enzima." },
+      { "id": "req_air_o2", "sourceId": "rxn_air", "targetId": "met_o2", "edgeType": "consumes",
+        "description": "Oxygen from the air drives it.",
+        "description_es": "La impulsa el oxígeno del aire." },
+      { "id": "req_air_out", "sourceId": "rxn_air", "targetId": "met_indigo", "edgeType": "produces",
+        "description": "Two indoxyls pair up into indigo, and the colony turns blue.",
+        "description_es": "Dos indoxilos se emparejan en índigo, y la colonia se vuelve azul." },
+      { "id": "req_jeans", "sourceId": "met_indigo", "targetId": "phenotype_jeans", "edgeType": "influences",
+        "description": "Indigo sticks to cotton: blue jeans without petroleum.",
+        "description_es": "El índigo se agarra al algodón: vaqueros azules sin petróleo." }
+    ],
+    "optionalConnections": [],
+    "invalidConnections": [
+      {
+        "sourceId": "enzyme_fmo",
+        "targetId": "rxn_air",
+        "reason": "This last step needs no enzyme: indoxyl pairs up by itself in air.",
+        "reason_es": "Este último paso no necesita enzima: el indoxilo se empareja solo al aire."
+      },
+      {
+        "sourceId": "met_trp",
+        "targetId": "met_indigo",
+        "reason": "Tryptophan does not become indigo on its own. There are three reactions in between.",
+        "reason_es": "El triptófano no se convierte solo en índigo. Entre medias hay tres reacciones."
+      },
+      {
+        "sourceId": "met_anthocyanins",
+        "targetId": "phenotype_jeans",
+        "reason": "Anthocyanins dissolve in water and fade in the wash. Jeans need indigo, which does not dissolve.",
+        "reason_es": "Los antocianos se disuelven en agua y se van con el lavado. Los vaqueros necesitan índigo, que no se disuelve."
+      }
+    ],
+    "winCondition": {
+      "type": "pathway_complete",
+      "targetNodeId": "phenotype_jeans",
+      "requiredConnectionIds": ["req_tnaa", "req_fmo", "req_indole_cat", "req_indole_in", "req_indole_out", "req_ox_cat", "req_ox_in", "req_ox_out", "req_air_in", "req_air_o2", "req_air_out", "req_jeans"],
+      "description": "Turn tryptophan into indigo."
+    }
+  },
+  "simulation": {
+    "productLabel": "Indigo",
+    "productLabel_es": "Índigo",
+    "steps": [
+      { "id": "sim_grow", "label": "Bacteria grow", "label_es": "Crecen las bacterias", "description": "E. coli grows on a medium with tryptophan.", "description_es": "E. coli crece en un medio con triptófano.", "order": 1 },
+      { "id": "sim_indole", "label": "Indole", "label_es": "Indol", "description": "Tryptophanase releases indole.", "description_es": "La triptofanasa libera indol.", "order": 2 },
+      { "id": "sim_indoxyl", "label": "Indoxyl", "label_es": "Indoxilo", "description": "The added enzyme turns indole into indoxyl.", "description_es": "La enzima añadida convierte el indol en indoxilo.", "order": 3 },
+      { "id": "sim_blue", "label": "Turning blue", "label_es": "Se vuelve azul", "description": "In air, indoxyl pairs into indigo.", "description_es": "Al aire, el indoxilo se empareja en índigo.", "order": 4 },
+      { "id": "sim_dye", "label": "Dyeing", "label_es": "Teñido", "description": "The indigo is collected and used to dye cotton.", "description_es": "El índigo se recoge y se usa para teñir algodón.", "order": 5 }
+    ]
+  },
+  "hints": [
+    { "level": 1, "title": "Big picture", "title_es": "Idea general",
+      "content": "Three reactions in a row. The first two have enzymes; the last one happens on its own in air.",
+      "content_es": "Tres reacciones seguidas. Las dos primeras tienen enzima; la última ocurre sola al aire.", "pointCost": 50 },
+    { "level": 2, "title": "Pathway order", "title_es": "Orden de la ruta",
+      "content": "Tryptophan → (tryptophanase) → indole → (FMO) → indoxyl → (air) → indigo → jeans.",
+      "content_es": "Triptófano → (triptofanasa) → indol → (FMO) → indoxilo → (aire) → índigo → vaqueros.", "pointCost": 100 },
+    { "level": 3, "title": "Guided solution", "title_es": "Solución guiada",
+      "content": "Each gene to its enzyme. Tryptophanase–Making indole; Making indole–Tryptophan and –Indole. FMO–Oxidizing indole; Oxidizing indole–Indole and –Indoxyl. Pairing in air–Indoxyl, –Oxygen and –Indigo. Indigo–Blue jeans.",
+      "content_es": "Cada gen con su enzima. Triptofanasa–Fabricar indol; Fabricar indol–Triptófano y –Indol. FMO–Oxidar el indol; Oxidar el indol–Indol y –Indoxilo. Emparejarse al aire–Indoxilo, –Oxígeno y –Índigo. Índigo–Vaqueros azules.", "pointCost": 150 }
+  ],
+  "completion": {
+    "title": "True blue",
+    "title_es": "Azul de verdad",
+    "summary": "You only had to add one gene: E. coli already had the first enzyme. And the final step needed no enzyme at all, just air.",
+    "summary_es": "Solo has tenido que añadir un gen: E. coli ya tenía la primera enzima. Y el último paso no necesitaba ninguna enzima, solo aire.",
+    "realWorldImpact": "Billions of pairs of jeans are dyed with indigo made from petroleum. Making it with microbes, from sugar, could avoid toxic chemicals and much of the dye industry's pollution. Several companies are working to scale it up.",
+    "realWorldImpact_es": "Miles de millones de vaqueros se tiñen con índigo fabricado a partir del petróleo. Fabricarlo con microbios, a partir de azúcar, podría evitar productos tóxicos y buena parte de la contaminación de la industria del tinte. Varias empresas trabajan para producirlo a gran escala."
+  },
+  "science": {
+    "organism": "Escherichia coli",
+    "realWorldCase": "In 1983 Burt Ensley and colleagues showed that E. coli expressing a bacterial dioxygenase turned blue by making indigo. Later work used flavin monooxygenases, and in 2018 a team added a plant enzyme that protects indoxyl with a sugar, so dyeing could be done without harsh reducing chemicals.",
+    "realWorldCase_es": "En 1983 Burt Ensley y sus colegas mostraron que E. coli con una dioxigenasa bacteriana se volvía azul porque fabricaba índigo. Trabajos posteriores usaron flavina monooxigenasas, y en 2018 un equipo añadió una enzima de planta que protege el indoxilo con un azúcar, para poder teñir sin productos reductores agresivos.",
+    "scientificContext": "E. coli tryptophanase (TnaA) converts tryptophan into indole. A flavin-containing monooxygenase or a dioxygenase hydroxylates indole to indoxyl, which spontaneously dimerizes and oxidizes in air to form indigo.",
+    "scientificContext_es": "La triptofanasa de E. coli (TnaA) convierte el triptófano en indol. Una monooxigenasa con flavina o una dioxigenasa hidroxila el indol a indoxilo, que se dimeriza y oxida espontáneamente al aire formando índigo.",
+    "gameplaySimplifications": [
+      "Indigo is insoluble, so dyeing usually requires reducing it to a soluble form first; the game skips the dyeing chemistry.",
+      "Bacteria make indigo in modest amounts; industrial production still faces cost and yield challenges."
+    ],
+    "gameplaySimplifications_es": [
+      "El índigo es insoluble, así que para teñir normalmente hay que reducirlo primero a una forma soluble; el juego se salta la química del teñido.",
+      "Las bacterias fabrican índigo en cantidades modestas; la producción industrial aún tiene retos de coste y rendimiento."
+    ],
+    "references": [
+      {
+        "authors": ["Ensley BD", "Ratzkin BJ", "Osslund TD", "Simon MJ", "Wackett LP", "Gibson DT"],
+        "year": 1983,
+        "title": "Expression of naphthalene oxidation genes in Escherichia coli results in the biosynthesis of indigo",
+        "journal": "Science",
+        "doi": "10.1126/science.6353574",
+        "type": "paper"
+      },
+      {
+        "authors": ["Hsu TM", "Welner DH", "Russ ZN", "Cervantes B", "Prathuri RL", "Adams PD", "Dueber JE"],
+        "year": 2018,
+        "title": "Employing a biochemical protecting group for a sustainable indigo dyeing strategy",
+        "journal": "Nature Chemical Biology",
+        "doi": "10.1038/nchembio.2552",
+        "type": "paper"
+      }
+    ]
+  }
+}

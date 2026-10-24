@@ -1,0 +1,320 @@
+{
+  "id": "detergent",
+  "title": "Enzymes in the washing machine",
+  "title_es": "Enzimas en la lavadora",
+  "subtitle": "Two enzymes that eat stains at low temperature",
+  "subtitle_es": "Dos enzimas que se comen las manchas en agua fría",
+  "difficulty": "beginner",
+  "estimatedDuration": 5,
+  "objective": "Put two bacterial enzymes in a detergent so it removes protein and starch stains, even in a cold wash.",
+  "objective_es": "Mete dos enzimas bacterianas en un detergente para que quite las manchas de proteína y de almidón, incluso lavando en frío.",
+  "description": "Two enzymes working side by side, each on its own kind of stain.",
+  "description_es": "Dos enzimas trabajando en paralelo, cada una con su tipo de mancha.",
+  "organism": {
+    "id": "bacillus-detergent",
+    "commonName": "Enzyme-making bacterium",
+    "commonName_es": "Bacteria fabricante de enzimas",
+    "scientificName": "Bacillus licheniformis",
+    "taxonomy": ["Bacteria", "Bacillota", "Bacilli", "Bacillales", "Bacillus"],
+    "targetTissue": "single cell",
+    "targetOrganelle": "secreted",
+    "description": "A soil bacterium that releases enzymes into its surroundings. Industry grows it in tanks to harvest them.",
+    "description_es": "Una bacteria del suelo que suelta enzimas a su alrededor. La industria la cultiva en tanques para recogerlas."
+  },
+  "exploration": [
+    {
+      "kind": "shirt",
+      "label": "Problem",
+      "label_es": "Problema",
+      "title": "A stained shirt",
+      "title_es": "Una camisa manchada",
+      "description": "Egg, milk or sauce stains are made of big molecules stuck to the fabric. Soap alone struggles to lift them, especially in cold water.",
+      "description_es": "Las manchas de huevo, leche o salsa son moléculas grandes pegadas a la tela. El jabón solo apenas puede con ellas, sobre todo en agua fría."
+    },
+    {
+      "kind": "bacterium",
+      "label": "Source",
+      "label_es": "Origen",
+      "title": "Bacillus bacteria",
+      "title_es": "Bacterias Bacillus",
+      "description": "Bacillus bacteria release enzymes to digest the food around them. Those same enzymes can digest stains.",
+      "description_es": "Las bacterias Bacillus sueltan enzimas para digerir la comida que tienen alrededor. Esas mismas enzimas pueden digerir manchas."
+    },
+    {
+      "kind": "pathway",
+      "label": "Plan",
+      "label_es": "Plan",
+      "title": "Two enzymes, two stains",
+      "title_es": "Dos enzimas, dos manchas",
+      "description": "One enzyme cuts proteins, the other cuts starch. Each one only recognises its own kind of stain.",
+      "description_es": "Una enzima corta proteínas y la otra corta almidón. Cada una solo reconoce su propio tipo de mancha."
+    }
+  ],
+  "biologicalContext": {
+    "nodes": [
+      {
+        "id": "gene_protease",
+        "type": "gene",
+        "label": "Subtilisin gene",
+        "label_es": "Gen de la subtilisina",
+        "description": "The recipe for a protein-cutting enzyme from Bacillus.",
+        "description_es": "La receta de una enzima de Bacillus que corta proteínas.",
+        "scientificName": "Subtilisin gene (Bacillus)",
+        "scientificName_es": "Gen de subtilisina (Bacillus)",
+        "position": { "x": -6.5, "y": 2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "gene_amylase",
+        "type": "gene",
+        "label": "Amylase gene",
+        "label_es": "Gen de la amilasa",
+        "description": "The recipe for a starch-cutting enzyme.",
+        "description_es": "La receta de una enzima que corta almidón.",
+        "scientificName": "α-amylase gene (Bacillus)",
+        "scientificName_es": "Gen de α-amilasa (Bacillus)",
+        "position": { "x": -6.5, "y": -2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_protease",
+        "type": "enzyme",
+        "label": "Subtilisin",
+        "label_es": "Subtilisina",
+        "description": "A protease: it cuts proteins into small pieces. Engineered versions keep working in the presence of bleach.",
+        "description_es": "Una proteasa: corta las proteínas en trozos pequeños. Las versiones mejoradas siguen funcionando aunque haya lejía en el detergente.",
+        "scientificName": "Subtilisin (EC 3.4.21.62)",
+        "position": { "x": -3, "y": 2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_amylase",
+        "type": "enzyme",
+        "label": "Amylase",
+        "label_es": "Amilasa",
+        "description": "Cuts starch into small sugars. The same kind of enzyme is in your saliva.",
+        "description_es": "Corta el almidón en azúcares pequeños. En tu saliva hay una enzima del mismo tipo.",
+        "scientificName": "α-amylase (EC 3.2.1.1)",
+        "position": { "x": -3, "y": -2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_protein",
+        "type": "reaction",
+        "label": "Cutting protein stains",
+        "label_es": "Cortar manchas de proteína",
+        "description": "The stain's proteins are cut into small fragments that dissolve in the water.",
+        "description_es": "Las proteínas de la mancha se cortan en fragmentos pequeños que se disuelven en el agua.",
+        "position": { "x": 0.5, "y": 2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_starch",
+        "type": "reaction",
+        "label": "Cutting starch stains",
+        "label_es": "Cortar manchas de almidón",
+        "description": "The starch in the stain is cut into small sugars that wash away.",
+        "description_es": "El almidón de la mancha se corta en azúcares pequeños que se van con el agua.",
+        "position": { "x": 0.5, "y": -2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "protein_stain",
+        "type": "protein",
+        "label": "Protein stains (egg, milk)",
+        "label_es": "Manchas de proteína (huevo, leche)",
+        "description": "Proteins stuck to the fibres of the fabric.",
+        "description_es": "Proteínas pegadas a las fibras de la tela.",
+        "position": { "x": 0.5, "y": 5, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "met_starch_stain",
+        "type": "metabolite",
+        "label": "Starch stains (sauce, potato)",
+        "label_es": "Manchas de almidón (salsa, patata)",
+        "description": "Long chains of sugar glued to the fabric.",
+        "description_es": "Largas cadenas de azúcar pegadas a la tela.",
+        "position": { "x": 0.5, "y": -5, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "met_peptides",
+        "type": "metabolite",
+        "label": "Small peptides",
+        "label_es": "Péptidos pequeños",
+        "description": "Short pieces of protein. They dissolve easily and are rinsed away.",
+        "description_es": "Trozos cortos de proteína. Se disuelven fácilmente y se van con el aclarado.",
+        "position": { "x": 4, "y": 2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "met_sugars",
+        "type": "metabolite",
+        "label": "Small sugars",
+        "label_es": "Azúcares pequeños",
+        "description": "The pieces of starch. They dissolve in water.",
+        "description_es": "Los trozos del almidón. Se disuelven en el agua.",
+        "position": { "x": 4, "y": -2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "phenotype_clean",
+        "type": "phenotype",
+        "label": "Clean clothes at 30 °C",
+        "label_es": "Ropa limpia a 30 °C",
+        "description": "The stains are gone without hot water, which saves energy.",
+        "description_es": "Las manchas desaparecen sin agua caliente, lo que ahorra energía.",
+        "position": { "x": 7.5, "y": 0, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "met_grease",
+        "type": "metabolite",
+        "label": "Oil stains",
+        "label_es": "Manchas de aceite",
+        "description": "Fats need a third kind of enzyme, a lipase. Neither of these two can cut them.",
+        "description_es": "Las grasas necesitan un tercer tipo de enzima, una lipasa. Ninguna de estas dos puede cortarlas.",
+        "isDistractor": true,
+        "position": { "x": 4, "y": 5, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_petase",
+        "type": "enzyme",
+        "label": "PETase",
+        "label_es": "PETasa",
+        "description": "The plastic-cutting enzyme from an earlier level. Polyester clothes are made of PET, so it would attack the fabric itself.",
+        "description_es": "La enzima que corta plástico de un nivel anterior. La ropa de poliéster está hecha de PET, así que atacaría a la propia tela.",
+        "isDistractor": true,
+        "position": { "x": -6.5, "y": -5, "z": 0 },
+        "metadata": {}
+      }
+    ],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": ["gene_protease", "gene_amylase", "enzyme_protease", "enzyme_amylase", "rxn_protein", "rxn_starch", "protein_stain", "met_starch_stain", "met_peptides", "met_sugars", "phenotype_clean", "met_grease", "enzyme_petase"],
+    "distractorNodes": ["met_grease", "enzyme_petase"],
+    "requiredConnections": [
+      { "id": "req_prot_gene", "sourceId": "gene_protease", "targetId": "enzyme_protease", "edgeType": "encodes",
+        "description": "The bacterium makes subtilisin and releases it into the tank.",
+        "description_es": "La bacteria fabrica subtilisina y la suelta al tanque." },
+      { "id": "req_amy_gene", "sourceId": "gene_amylase", "targetId": "enzyme_amylase", "edgeType": "encodes",
+        "description": "The amylase gene makes the second enzyme of the formula.",
+        "description_es": "El gen de la amilasa fabrica la segunda enzima de la fórmula." },
+      { "id": "req_prot_cat", "sourceId": "enzyme_protease", "targetId": "rxn_protein", "edgeType": "catalyzes",
+        "description": "Subtilisin cuts proteins, so it handles the protein stains.",
+        "description_es": "La subtilisina corta proteínas, así que se encarga de las manchas de proteína." },
+      { "id": "req_amy_cat", "sourceId": "enzyme_amylase", "targetId": "rxn_starch", "edgeType": "catalyzes",
+        "description": "Amylase cuts starch, so it handles the starch stains.",
+        "description_es": "La amilasa corta almidón, así que se encarga de las manchas de almidón." },
+      { "id": "req_prot_in", "sourceId": "rxn_protein", "targetId": "protein_stain", "edgeType": "consumes",
+        "description": "The reaction breaks up the proteins of the stain.",
+        "description_es": "La reacción deshace las proteínas de la mancha." },
+      { "id": "req_prot_out", "sourceId": "rxn_protein", "targetId": "met_peptides", "edgeType": "produces",
+        "description": "What is left are small peptides that dissolve.",
+        "description_es": "Lo que queda son péptidos pequeños que se disuelven." },
+      { "id": "req_starch_in", "sourceId": "rxn_starch", "targetId": "met_starch_stain", "edgeType": "consumes",
+        "description": "The reaction breaks up the starch of the stain.",
+        "description_es": "La reacción deshace el almidón de la mancha." },
+      { "id": "req_starch_out", "sourceId": "rxn_starch", "targetId": "met_sugars", "edgeType": "produces",
+        "description": "What is left are small sugars that dissolve.",
+        "description_es": "Lo que queda son azúcares pequeños que se disuelven." },
+      { "id": "req_clean_1", "sourceId": "met_peptides", "targetId": "phenotype_clean", "edgeType": "influences",
+        "description": "Once dissolved, the protein stain rinses away.",
+        "description_es": "Una vez disuelta, la mancha de proteína se va con el aclarado." },
+      { "id": "req_clean_2", "sourceId": "met_sugars", "targetId": "phenotype_clean", "edgeType": "influences",
+        "description": "Two pathways working side by side reach the same result: a clean shirt.",
+        "description_es": "Dos rutas trabajando en paralelo llegan al mismo resultado: una camisa limpia." }
+    ],
+    "optionalConnections": [],
+    "invalidConnections": [
+      {
+        "sourceId": "enzyme_protease",
+        "targetId": "rxn_starch",
+        "reason": "Subtilisin only fits proteins. Starch is a chain of sugars: that is the amylase's job.",
+        "reason_es": "La subtilisina solo encaja con proteínas. El almidón es una cadena de azúcares: eso es trabajo de la amilasa."
+      },
+      {
+        "sourceId": "enzyme_amylase",
+        "targetId": "rxn_protein",
+        "reason": "Amylase only cuts starch. For proteins you need the protease.",
+        "reason_es": "La amilasa solo corta almidón. Para las proteínas hace falta la proteasa."
+      },
+      {
+        "sourceId": "met_grease",
+        "targetId": "rxn_protein",
+        "reason": "Oil is a fat, not a protein. It would need a lipase.",
+        "reason_es": "El aceite es una grasa, no una proteína. Haría falta una lipasa."
+      },
+      {
+        "sourceId": "enzyme_petase",
+        "targetId": "rxn_protein",
+        "reason": "PETase cuts PET, and polyester clothes are PET. In a washing machine it would damage the fabric, not the stain.",
+        "reason_es": "La PETasa corta PET, y la ropa de poliéster es PET. En la lavadora dañaría la tela, no la mancha."
+      }
+    ],
+    "winCondition": {
+      "type": "pathway_complete",
+      "targetNodeId": "phenotype_clean",
+      "requiredConnectionIds": ["req_prot_gene", "req_amy_gene", "req_prot_cat", "req_amy_cat", "req_prot_in", "req_prot_out", "req_starch_in", "req_starch_out", "req_clean_1", "req_clean_2"],
+      "description": "Remove protein and starch stains with two enzymes."
+    }
+  },
+  "simulation": {
+    "productLabel": "Stains removed",
+    "productLabel_es": "Manchas eliminadas",
+    "steps": [
+      { "id": "sim_ferment", "label": "Fermentation", "label_es": "Fermentación", "description": "Bacillus grows in tanks and releases the enzymes.", "description_es": "Bacillus crece en tanques y suelta las enzimas.", "order": 1 },
+      { "id": "sim_formula", "label": "Into the detergent", "label_es": "Al detergente", "description": "The purified enzymes are added to the detergent.", "description_es": "Las enzimas purificadas se añaden al detergente.", "order": 2 },
+      { "id": "sim_wash", "label": "Cold wash", "label_es": "Lavado en frío", "description": "In the drum, each enzyme finds its kind of stain.", "description_es": "En el tambor, cada enzima encuentra su tipo de mancha.", "order": 3 },
+      { "id": "sim_rinse", "label": "Rinse", "label_es": "Aclarado", "description": "The small pieces are rinsed away.", "description_es": "Los trozos pequeños se van con el aclarado.", "order": 4 },
+      { "id": "sim_clean", "label": "Clean shirt", "label_es": "Camisa limpia", "description": "Clean clothes, using less energy.", "description_es": "Ropa limpia, gastando menos energía.", "order": 5 }
+    ]
+  },
+  "hints": [
+    { "level": 1, "title": "Big picture", "title_es": "Idea general",
+      "content": "There are two separate chains, one per kind of stain. They meet at the end.",
+      "content_es": "Hay dos cadenas separadas, una por tipo de mancha. Se juntan al final.", "pointCost": 50 },
+    { "level": 2, "title": "Pathway order", "title_es": "Orden de la ruta",
+      "content": "Subtilisin: protein stains → peptides. Amylase: starch stains → sugars. Both → clean clothes.",
+      "content_es": "Subtilisina: manchas de proteína → péptidos. Amilasa: manchas de almidón → azúcares. Los dos → ropa limpia.", "pointCost": 100 },
+    { "level": 3, "title": "Guided solution", "title_es": "Solución guiada",
+      "content": "Each gene to its enzyme. Subtilisin–Cutting protein stains; Cutting protein stains–Protein stains and –Small peptides. Amylase–Cutting starch stains; Cutting starch stains–Starch stains and –Small sugars. Small peptides and Small sugars–Clean clothes.",
+      "content_es": "Cada gen con su enzima. Subtilisina–Cortar manchas de proteína; Cortar manchas de proteína–Manchas de proteína y –Péptidos pequeños. Amilasa–Cortar manchas de almidón; Cortar manchas de almidón–Manchas de almidón y –Azúcares pequeños. Péptidos pequeños y Azúcares pequeños–Ropa limpia.", "pointCost": 150 }
+  ],
+  "completion": {
+    "title": "Spotless",
+    "title_es": "Impecable",
+    "summary": "You built two pathways that run side by side. Each enzyme only recognises its own kind of stain, so a good detergent combines several.",
+    "summary_es": "Has construido dos rutas que funcionan en paralelo. Cada enzima solo reconoce su tipo de mancha, por eso un buen detergente combina varias.",
+    "realWorldImpact": "Most laundry detergents today contain enzymes. They remove stains at 30 °C or less, and since heating water uses most of a wash's energy, washing cold cuts energy use and emissions.",
+    "realWorldImpact_es": "Hoy casi todos los detergentes llevan enzimas. Quitan manchas a 30 °C o menos, y como calentar el agua es lo que más energía gasta en un lavado, lavar en frío reduce el consumo y las emisiones."
+  },
+  "science": {
+    "organism": "Bacillus licheniformis and related Bacillus species",
+    "realWorldCase": "Bacterial proteases have been used in detergents since the 1960s. In the 1980s scientists changed a single amino acid of subtilisin so that bleach would no longer inactivate it, one of the first industrial uses of protein engineering.",
+    "realWorldCase_es": "Las proteasas bacterianas se usan en detergentes desde los años 60. En los 80 los científicos cambiaron un único aminoácido de la subtilisina para que la lejía no la inactivara, uno de los primeros usos industriales de la ingeniería de proteínas.",
+    "scientificContext": "Subtilisins are serine proteases secreted by Bacillus. Detergent formulations usually combine proteases, amylases, lipases and cellulases, produced by fermentation of Bacillus or fungal production strains and engineered to stay stable in alkaline, surfactant-rich and cold washing conditions.",
+    "scientificContext_es": "Las subtilisinas son proteasas de serina que secreta Bacillus. Los detergentes suelen combinar proteasas, amilasas, lipasas y celulasas, producidas por fermentación de cepas de Bacillus o de hongos y diseñadas para seguir estables en agua alcalina, con tensioactivos y fría.",
+    "gameplaySimplifications": [
+      "Real detergents contain several more enzymes, such as lipases for fats.",
+      "The enzymes are made in one tank and purified; the game draws both chains as if they ran inside one organism."
+    ],
+    "gameplaySimplifications_es": [
+      "Los detergentes reales llevan varias enzimas más, como lipasas para las grasas.",
+      "Las enzimas se fabrican en un tanque y se purifican; el juego dibuja las dos cadenas como si ocurrieran en un solo organismo."
+    ],
+    "references": [
+      {
+        "authors": ["Vojcic L", "Pitzler C", "Körfer G", "Jakob F", "Martinez R", "Maurer KH", "Schwaneberg U"],
+        "year": 2015,
+        "title": "Advances in protease engineering for laundry detergents",
+        "journal": "New Biotechnology",
+        "doi": "10.1016/j.nbt.2014.12.010",
+        "type": "review"
+      }
+    ]
+  }
+}

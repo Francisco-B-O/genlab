@@ -1,0 +1,376 @@
+{
+  "id": "flavr-savr",
+  "title": "The tomato that lasts",
+  "title_es": "El tomate que dura",
+  "subtitle": "Switching off one enzyme to slow the softening",
+  "subtitle_es": "Apagar una enzima para frenar el ablandamiento",
+  "difficulty": "intermediate",
+  "estimatedDuration": 7,
+  "objective": "Show how an enzyme softens a tomato, and how a copy of the gene in reverse can slow it down.",
+  "objective_es": "Muestra cómo una enzima ablanda un tomate y cómo una copia del gen al revés puede frenarla.",
+  "description": "As a tomato ripens, an enzyme breaks down the pectin that holds its cell walls together, and the fruit goes soft. Less of that enzyme means firmer tomatoes.",
+  "description_es": "Cuando un tomate madura, una enzima descompone la pectina que mantiene unidas las paredes de sus células, y el fruto se ablanda. Menos de esa enzima significa tomates más firmes.",
+  "organism": {
+    "id": "flavr-savr",
+    "commonName": "Tomato",
+    "commonName_es": "Tomate",
+    "scientificName": "Solanum lycopersicum",
+    "taxonomy": [
+      "Plantae",
+      "Tracheophyta",
+      "Magnoliopsida",
+      "Solanales",
+      "Solanaceae",
+      "Solanum"
+    ],
+    "targetTissue": "fruit",
+    "targetOrganelle": "cytoplasm",
+    "description": "A fruit that softens as it ripens.",
+    "description_es": "Un fruto que se ablanda al madurar."
+  },
+  "exploration": [
+    {
+      "kind": "tomato",
+      "label": "Softening",
+      "label_es": "Ablandamiento",
+      "title": "Why tomatoes spoil",
+      "title_es": "Por qué se estropean los tomates",
+      "description": "A tomato that is picked ripe softens quickly and bruises on the way to the shop. Growers pick them green and ripen them later, at the cost of flavour.",
+      "description_es": "Un tomate cosechado maduro se ablanda enseguida y se magulla en el camino a la tienda. Los agricultores los cogen verdes y los maduran después, a costa del sabor."
+    },
+    {
+      "kind": "dna",
+      "label": "The enzyme",
+      "label_es": "La enzima",
+      "title": "Polygalacturonase",
+      "title_es": "La poligalacturonasa",
+      "description": "The enzyme that breaks pectin is called polygalacturonase, or PG. Its gene is read more and more as the tomato ripens.",
+      "description_es": "La enzima que rompe la pectina se llama poligalacturonasa, o PG. Su gen se lee cada vez más a medida que madura el tomate."
+    },
+    {
+      "kind": "flask",
+      "label": "The trick",
+      "label_es": "El truco",
+      "title": "A gene read backwards",
+      "title_es": "Un gen leído al revés",
+      "description": "A copy of the PG gene inserted in reverse makes an RNA that pairs with the normal one and blocks it. This is called antisense.",
+      "description_es": "Una copia del gen PG insertada al revés fabrica un ARN que se empareja con el normal y lo bloquea. Se llama antisentido."
+    }
+  ],
+  "biologicalContext": {
+    "nodes": [
+      {
+        "id": "gene_pg",
+        "type": "gene",
+        "label": "PG gene",
+        "label_es": "Gen PG",
+        "description": "The recipe of polygalacturonase.",
+        "description_es": "La receta de la poligalacturonasa.",
+        "position": {
+          "x": 0.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_pg",
+        "type": "enzyme",
+        "label": "PG enzyme",
+        "label_es": "Enzima PG",
+        "description": "Polygalacturonase: it cuts pectin.",
+        "description_es": "Poligalacturonasa: corta la pectina.",
+        "position": {
+          "x": 3.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_pectin",
+        "type": "reaction",
+        "label": "Cutting pectin",
+        "label_es": "Cortar la pectina",
+        "description": "The glue of the cell walls is broken.",
+        "description_es": "Se rompe el pegamento de las paredes de las células.",
+        "position": {
+          "x": 6.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_pectin",
+        "type": "metabolite",
+        "label": "Wall pectin",
+        "label_es": "Pectina de la pared",
+        "description": "Holds the cells of the fruit together.",
+        "description_es": "Mantiene unidas las células del fruto.",
+        "position": {
+          "x": 6.0,
+          "y": 4.8,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_pieces",
+        "type": "metabolite",
+        "label": "Pectin pieces",
+        "label_es": "Trozos de pectina",
+        "description": "Small pieces: the wall loses strength.",
+        "description_es": "Trozos pequeños: la pared pierde resistencia.",
+        "position": {
+          "x": 9.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "phenotype_soft",
+        "type": "phenotype",
+        "label": "Soft fruit",
+        "label_es": "Fruto blando",
+        "description": "The tomato goes soft and spoils.",
+        "description_es": "El tomate se ablanda y se estropea.",
+        "position": {
+          "x": 12.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "gene_anti",
+        "type": "gene",
+        "label": "Reversed PG gene",
+        "label_es": "Gen PG al revés",
+        "description": "An inserted copy of the PG gene, in reverse.",
+        "description_es": "Una copia insertada del gen PG, al revés.",
+        "position": {
+          "x": 0.0,
+          "y": -2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_ethylene",
+        "type": "metabolite",
+        "label": "Ethylene",
+        "label_es": "Etileno",
+        "description": "The hormone that starts ripening in general.",
+        "description_es": "La hormona que inicia la maduración en general.",
+        "position": {
+          "x": 9.0,
+          "y": 4.8,
+          "z": 0
+        },
+        "metadata": {}
+      }
+    ],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [
+      "gene_pg",
+      "enzyme_pg",
+      "rxn_pectin",
+      "met_pectin",
+      "met_pieces",
+      "phenotype_soft",
+      "gene_anti",
+      "met_ethylene"
+    ],
+    "distractorNodes": [
+      "met_ethylene"
+    ],
+    "requiredConnections": [
+      {
+        "id": "req_enc",
+        "sourceId": "gene_pg",
+        "targetId": "enzyme_pg",
+        "edgeType": "encodes",
+        "description": "As the tomato ripens, the gene is read and PG is built.",
+        "description_es": "Al madurar el tomate, se lee el gen y se construye la PG."
+      },
+      {
+        "id": "req_cat",
+        "sourceId": "enzyme_pg",
+        "targetId": "rxn_pectin",
+        "edgeType": "catalyzes",
+        "description": "PG runs the cutting of pectin.",
+        "description_es": "La PG hace funcionar el corte de la pectina."
+      },
+      {
+        "id": "req_use",
+        "sourceId": "rxn_pectin",
+        "targetId": "met_pectin",
+        "edgeType": "consumes",
+        "description": "The reaction uses up wall pectin.",
+        "description_es": "La reacción gasta pectina de la pared."
+      },
+      {
+        "id": "req_prod",
+        "sourceId": "rxn_pectin",
+        "targetId": "met_pieces",
+        "edgeType": "produces",
+        "description": "And leaves small pieces.",
+        "description_es": "Y deja trozos pequeños."
+      },
+      {
+        "id": "req_soft",
+        "sourceId": "met_pieces",
+        "targetId": "phenotype_soft",
+        "edgeType": "influences",
+        "description": "With weak walls, the fruit goes soft.",
+        "description_es": "Con las paredes débiles, el fruto se ablanda."
+      }
+    ],
+    "optionalConnections": [
+      {
+        "id": "opt_anti",
+        "sourceId": "gene_anti",
+        "targetId": "gene_pg",
+        "edgeType": "represses",
+        "description": "The reversed copy makes an RNA that blocks the PG gene: less enzyme, firmer fruit.",
+        "description_es": "La copia al revés fabrica un ARN que bloquea el gen PG: menos enzima, fruto más firme.",
+        "bonusPoints": 100
+      }
+    ],
+    "invalidConnections": [
+      {
+        "sourceId": "met_ethylene",
+        "targetId": "phenotype_soft",
+        "reason": "Ethylene starts ripening as a whole, with many changes. It is not the enzyme that breaks pectin.",
+        "reason_es": "El etileno inicia la maduración en su conjunto, con muchos cambios. No es la enzima que rompe la pectina."
+      },
+      {
+        "sourceId": "met_pectin",
+        "targetId": "phenotype_soft",
+        "reason": "Pectin keeps the fruit firm. It is its breakdown that makes the fruit soft.",
+        "reason_es": "La pectina mantiene firme el fruto. Es su descomposición lo que lo ablanda."
+      }
+    ],
+    "winCondition": {
+      "type": "pathway_complete",
+      "targetNodeId": "phenotype_soft",
+      "requiredConnectionIds": [
+        "req_enc",
+        "req_cat",
+        "req_use",
+        "req_prod",
+        "req_soft"
+      ],
+      "description": "Show how the PG enzyme softens the tomato. Then try the trick that slows it down.",
+      "description_es": "Muestra cómo la enzima PG ablanda el tomate. Después prueba el truco que la frena."
+    }
+  },
+  "simulation": {
+    "productLabel": "Softening",
+    "productLabel_es": "Ablandamiento",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Gene read",
+        "label_es": "Gen leído",
+        "description": "PG is built.",
+        "description_es": "Se construye la PG.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Pectin cut",
+        "label_es": "Pectina cortada",
+        "description": "The walls weaken.",
+        "description_es": "Se debilitan las paredes.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Soft fruit",
+        "label_es": "Fruto blando",
+        "description": "The tomato spoils.",
+        "description_es": "El tomate se estropea.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Follow the enzyme that breaks the pectin of the walls. At the end, there is an extra gene you can use to slow it down.",
+      "content_es": "Sigue la enzima que rompe la pectina de las paredes. Al final hay un gen extra que puedes usar para frenarla.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Gene → PG enzyme → cutting pectin → pieces → soft fruit. The reaction also uses up wall pectin.",
+      "content_es": "Gen → enzima PG → cortar la pectina → trozos → fruto blando. La reacción también gasta pectina de la pared.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Optional: connect the reversed PG gene to the PG gene to see how it is blocked.",
+      "content_es": "Opcional: conecta el gen PG al revés con el gen PG para ver cómo se bloquea.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A firmer tomato",
+    "title_es": "Un tomate más firme",
+    "summary": "You saw how an enzyme softens a tomato, and how a gene inserted in reverse can lower it.",
+    "summary_es": "Has visto cómo una enzima ablanda un tomate y cómo un gen insertado al revés puede reducirla.",
+    "realWorldImpact": "This tomato, called Flavr Savr, reached the shops in 1994 in the United States and was the first genetically engineered whole food to be sold.",
+    "realWorldImpact_es": "Este tomate, llamado Flavr Savr, llegó a las tiendas en 1994 en Estados Unidos y fue el primer alimento entero modificado genéticamente que se vendió."
+  },
+  "science": {
+    "organism": "Solanum lycopersicum",
+    "realWorldCase": "In 1988 two teams reported that antisense RNA lowered the PG enzyme in tomato fruit. The tomato did not last on the market, but it showed that the idea works.",
+    "realWorldCase_es": "En 1988 dos equipos comunicaron que el ARN antisentido reducía la enzima PG en los frutos de tomate. El tomate no se mantuvo en el mercado, pero mostró que la idea funciona.",
+    "scientificContext": "The transgene is a PG sequence inserted backwards behind a promoter. The antisense RNA pairs with the PG messenger, blocking its translation and reducing PG activity.",
+    "scientificContext_es": "El transgén es una secuencia de PG insertada al revés tras un promotor. El ARN antisentido se empareja con el mensajero de la PG, bloquea su traducción y reduce la actividad de la PG.",
+    "gameplaySimplifications": [
+      "Softening depends on several enzymes, not only PG; the effect of lowering PG is partial."
+    ],
+    "gameplaySimplifications_es": [
+      "El ablandamiento depende de varias enzimas, no solo de la PG; el efecto de reducir la PG es parcial."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Smith, C. J. S.",
+          "Watson, C. F.",
+          "Ray, J.",
+          "et al."
+        ],
+        "year": 1988,
+        "title": "Antisense RNA inhibition of polygalacturonase gene expression in transgenic tomatoes",
+        "journal": "Nature",
+        "type": "paper",
+        "doi": "10.1038/334724a0"
+      },
+      {
+        "authors": [
+          "Sheehy, R. E.",
+          "Kramer, M.",
+          "Hiatt, W. R."
+        ],
+        "year": 1988,
+        "title": "Reduction of polygalacturonase activity in tomato fruit by antisense RNA",
+        "journal": "Proceedings of the National Academy of Sciences",
+        "type": "paper",
+        "doi": "10.1073/pnas.85.23.8805"
+      }
+    ]
+  }
+}

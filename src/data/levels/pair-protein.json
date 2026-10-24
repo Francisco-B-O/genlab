@@ -1,0 +1,163 @@
+{
+  "id": "pair-protein",
+  "mode": "pairing",
+  "title": "From a message to a protein",
+  "title_es": "Del mensaje a la proteína",
+  "subtitle": "Reading the genetic code",
+  "subtitle_es": "Leer el código genético",
+  "difficulty": "intermediate",
+  "estimatedDuration": 6,
+  "objective": "Read a messenger RNA three letters at a time and find the amino acid of each codon in the genetic code.",
+  "objective_es": "Lee un ARN mensajero de tres en tres letras y busca el aminoácido de cada codón en el código genético.",
+  "description": "A ribosome reads the message in groups of three letters called codons. Each codon stands for one amino acid, or for stop.",
+  "description_es": "Un ribosoma lee el mensaje en grupos de tres letras llamados codones. Cada codón es un aminoácido, o la señal de parada.",
+  "organism": {
+    "id": "protein-message",
+    "commonName": "Protein from a message",
+    "commonName_es": "Proteína a partir de un mensaje",
+    "scientificName": "Translation",
+    "scientificName_es": "Traducción",
+    "taxonomy": [
+      "Molecule"
+    ],
+    "targetTissue": "nucleus",
+    "targetOrganelle": "nucleus",
+    "description": "How a ribosome turns an RNA message into a chain of amino acids.",
+    "description_es": "Cómo un ribosoma convierte un mensaje de ARN en una cadena de aminoácidos."
+  },
+  "exploration": [
+    {
+      "kind": "cell",
+      "label": "The ribosome",
+      "label_es": "El ribosoma",
+      "title": "A reader of threes",
+      "title_es": "Un lector de tres en tres",
+      "description": "The ribosome moves along the messenger RNA, reading three letters at a time.",
+      "description_es": "El ribosoma avanza por el ARN mensajero leyendo tres letras cada vez."
+    },
+    {
+      "kind": "dna",
+      "label": "The code",
+      "label_es": "El código",
+      "title": "64 codons, 20 amino acids",
+      "title_es": "64 codones, 20 aminoácidos",
+      "description": "There are 64 possible codons and only 20 amino acids, so several codons can mean the same one. AUG means Met and also marks the start; three codons mean stop.",
+      "description_es": "Hay 64 codones posibles y solo 20 aminoácidos, así que varios codones pueden significar lo mismo. AUG significa Met y marca el inicio; tres codones significan parada."
+    }
+  ],
+  "pairing": {
+    "kind": "protein",
+    "template": "AUGGCUAAGUUUGGAUAA",
+    "story": "The ribosome reads this message codon by codon. Which amino acid does each one add?",
+    "story_es": "El ribosoma lee este mensaje codón a codón. ¿Qué aminoácido añade cada uno?"
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Protein",
+    "productLabel_es": "Proteína",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Start",
+        "label_es": "Inicio",
+        "description": "The ribosome finds AUG and starts reading.",
+        "description_es": "El ribosoma encuentra AUG y empieza a leer.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Chain",
+        "label_es": "Cadena",
+        "description": "Each codon adds one amino acid to the chain.",
+        "description_es": "Cada codón añade un aminoácido a la cadena.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Stop",
+        "label_es": "Parada",
+        "description": "A stop codon ends the protein.",
+        "description_es": "Un codón de parada termina la proteína.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Look up each codon in the genetic code table of the Goal panel.",
+      "content_es": "Busca cada codón en la tabla del código genético del panel Objetivo.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "The first codon is always AUG, and the last one is a stop codon.",
+      "content_es": "El primer codón es siempre AUG, y el último es un codón de parada.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "AUG = Met, GCU = Ala, AAG = Lys, UUU = Phe, GGA = Gly, UAA = Stop.",
+      "content_es": "AUG = Met, GCU = Ala, AAG = Lys, UUU = Phe, GGA = Gly, UAA = Fin.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A message turned into a protein",
+    "title_es": "Un mensaje convertido en proteína",
+    "summary": "You translated six codons into a short protein, the same way a ribosome does it. A change in one letter of the message can change an amino acid.",
+    "summary_es": "Has traducido seis codones en una proteína corta, igual que lo hace un ribosoma. Un cambio en una letra del mensaje puede cambiar un aminoácido.",
+    "realWorldImpact": "The genetic code is shared by almost all living things. That is why a gene from one organism can be read by another, the basis of genetic engineering.",
+    "realWorldImpact_es": "El código genético lo comparten casi todos los seres vivos. Por eso un gen de un organismo puede ser leído por otro, la base de la ingeniería genética."
+  },
+  "science": {
+    "organism": "Translation",
+    "realWorldCase": "In 1961 Marshall Nirenberg and Heinrich Matthaei made an RNA of only U letters and showed that it produced a protein of only phenylalanine: the first codon of the genetic code to be read.",
+    "realWorldCase_es": "En 1961 Marshall Nirenberg y Heinrich Matthaei fabricaron un ARN con solo letras U y demostraron que producía una proteína de solo fenilalanina: el primer codón del código genético que se leyó.",
+    "scientificContext": "Transfer RNAs carry each amino acid and recognise its codon on the messenger RNA. The ribosome joins the amino acids into a chain until it reaches a stop codon.",
+    "scientificContext_es": "Los ARN de transferencia llevan cada aminoácido y reconocen su codón en el ARN mensajero. El ribosoma une los aminoácidos en una cadena hasta llegar a un codón de parada.",
+    "gameplaySimplifications": [
+      "Real proteins have hundreds of amino acids; here a short message is translated.",
+      "The tray includes amino acids that do not appear in the message."
+    ],
+    "gameplaySimplifications_es": [
+      "Las proteínas reales tienen cientos de aminoácidos; aquí se traduce un mensaje corto.",
+      "La bandeja incluye aminoácidos que no aparecen en el mensaje."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Nirenberg, M. W.",
+          "Matthaei, J. H."
+        ],
+        "year": 1961,
+        "title": "The dependence of cell-free protein synthesis in E. coli upon naturally occurring or synthetic polyribonucleotides",
+        "journal": "Proceedings of the National Academy of Sciences",
+        "doi": "10.1073/pnas.47.10.1588",
+        "type": "paper"
+      }
+    ]
+  }
+}

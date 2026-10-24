@@ -1,0 +1,208 @@
+{
+  "id": "cut-gfp",
+  "mode": "cut",
+  "title": "Scissors for a glowing gene",
+  "title_es": "Tijeras para un gen que brilla",
+  "subtitle": "Cutting DNA exactly where it matters",
+  "subtitle_es": "Cortar el ADN justo donde importa",
+  "difficulty": "beginner",
+  "estimatedDuration": 5,
+  "objective": "Choose the restriction enzymes that cut the glow gene out of a stretch of DNA, without cutting the gene itself.",
+  "objective_es": "Elige las enzimas de restricción que sacan el gen que brilla de un trozo de ADN, sin cortar el propio gen.",
+  "description": "Restriction enzymes are molecular scissors: each one cuts DNA at a specific short sequence. You need a cut right at each end of the gene and none inside it.",
+  "description_es": "Las enzimas de restricción son tijeras moleculares: cada una corta el ADN en una secuencia corta concreta. Necesitas un corte justo en cada extremo del gen y ninguno dentro.",
+  "organism": {
+    "id": "aequorea-dna",
+    "commonName": "Glowing jellyfish DNA",
+    "commonName_es": "ADN de la medusa que brilla",
+    "scientificName": "Aequorea victoria",
+    "taxonomy": [
+      "Animalia",
+      "Cnidaria",
+      "Hydrozoa",
+      "Leptothecata",
+      "Aequoreidae",
+      "Aequorea"
+    ],
+    "targetTissue": "whole organism",
+    "targetOrganelle": "nucleus",
+    "description": "A jellyfish whose DNA holds the gene of a green glowing protein.",
+    "description_es": "Una medusa cuyo ADN guarda el gen de una proteína que brilla en verde."
+  },
+  "exploration": [
+    {
+      "kind": "jellyfish",
+      "label": "Jellyfish",
+      "label_es": "Medusa",
+      "title": "A gene that glows",
+      "title_es": "Un gen que brilla",
+      "description": "The jellyfish Aequorea victoria glows green thanks to one protein, GFP. Its gene is the piece we want to take.",
+      "description_es": "La medusa Aequorea victoria brilla en verde gracias a una proteína, la GFP. Su gen es el trozo que queremos llevarnos."
+    },
+    {
+      "kind": "dna",
+      "label": "Scissors",
+      "label_es": "Tijeras",
+      "title": "Enzymes that cut DNA",
+      "title_es": "Enzimas que cortan el ADN",
+      "description": "Bacteria use restriction enzymes to chop up the DNA of invading viruses. Each enzyme recognises a short sequence and cuts exactly there.",
+      "description_es": "Las bacterias usan enzimas de restricción para trocear el ADN de los virus invasores. Cada enzima reconoce una secuencia corta y corta justo ahí."
+    }
+  ],
+  "cut": {
+    "length": 10,
+    "gene": {
+      "label": "GFP gene",
+      "label_es": "Gen de la GFP",
+      "start": 3,
+      "end": 7
+    },
+    "enzymes": [
+      {
+        "id": "eco",
+        "label": "EcoRI",
+        "label_es": "EcoRI",
+        "description": "Recognises GAATTC.",
+        "description_es": "Reconoce GAATTC.",
+        "sites": [
+          3,
+          8
+        ]
+      },
+      {
+        "id": "bam",
+        "label": "BamHI",
+        "label_es": "BamHI",
+        "description": "Recognises GGATCC.",
+        "description_es": "Reconoce GGATCC.",
+        "sites": [
+          7
+        ]
+      },
+      {
+        "id": "hind",
+        "label": "HindIII",
+        "label_es": "HindIII",
+        "description": "Recognises AAGCTT.",
+        "description_es": "Reconoce AAGCTT.",
+        "sites": [
+          5
+        ]
+      }
+    ],
+    "story": "A stretch of DNA holds the gene of the glowing protein. Cut it out as a piece of its own.",
+    "story_es": "Un trozo de ADN guarda el gen de la proteína que brilla. Sácalo como un trozo por sí solo."
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Gene",
+    "productLabel_es": "Gen",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Cut",
+        "label_es": "Cortar",
+        "description": "The enzymes cut the DNA at their sites.",
+        "description_es": "Las enzimas cortan el ADN en sus sitios.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Run the gel",
+        "label_es": "Correr el gel",
+        "description": "The pieces separate by size.",
+        "description_es": "Los trozos se separan por tamaño.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Gene free",
+        "label_es": "Gen libre",
+        "description": "The gene is a piece of its own.",
+        "description_es": "El gen es un trozo por sí solo.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "The gene needs a cut right at its start, another right at its end, and none in between.",
+      "content_es": "El gen necesita un corte justo al principio, otro justo al final y ninguno en medio.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Look at the map: which scissors cut exactly where the gene starts, and which where it ends? Avoid the one that cuts inside.",
+      "content_es": "Mira el mapa: ¿qué tijeras cortan justo donde empieza el gen y cuáles donde acaba? Evita la que corta dentro.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Use EcoRI and BamHI together.",
+      "content_es": "Usa EcoRI y BamHI juntas.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "The gene, on its own",
+    "title_es": "El gen, por sí solo",
+    "summary": "You chose scissors that cut at both ends of the gene and nowhere inside it. In the gel, the gene shows up as a band of its own.",
+    "summary_es": "Has elegido unas tijeras que cortan en los dos extremos del gen y en ningún sitio de dentro. En el gel, el gen aparece como una banda propia.",
+    "realWorldImpact": "This is how a gene is taken from one organism to be put into another: cut it out, then join it to a carrier such as a plasmid.",
+    "realWorldImpact_es": "Así se saca un gen de un organismo para ponerlo en otro: se corta y luego se une a un transportador, como un plásmido."
+  },
+  "science": {
+    "organism": "Aequorea victoria",
+    "realWorldCase": "GFP was isolated from the jellyfish Aequorea victoria. In 1994 Martin Chalfie and colleagues showed that it also glows inside other organisms, which turned it into a universal marker.",
+    "realWorldCase_es": "La GFP se aisló de la medusa Aequorea victoria. En 1994 Martin Chalfie y sus colegas demostraron que también brilla dentro de otros organismos, lo que la convirtió en un marcador universal.",
+    "scientificContext": "A restriction enzyme recognises a short sequence of DNA and cuts there. The pieces are then separated in a gel by an electric current: small pieces move faster and farther, so each band is a fragment of one size.",
+    "scientificContext_es": "Una enzima de restricción reconoce una secuencia corta de ADN y corta ahí. Después los trozos se separan en un gel con una corriente eléctrica: los pequeños se mueven más rápido y más lejos, así que cada banda es un fragmento de un tamaño.",
+    "gameplaySimplifications": [
+      "The DNA is drawn as a straight stretch and the cutting positions are invented; real enzymes cut wherever their sequence appears.",
+      "Sizes are in kilobases (kb), thousands of letters of DNA."
+    ],
+    "gameplaySimplifications_es": [
+      "El ADN se dibuja como un trozo recto y las posiciones de corte son inventadas; las enzimas reales cortan donde aparece su secuencia.",
+      "Los tamaños están en kilobases (kb), miles de letras de ADN."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Chalfie, M.",
+          "Tu, Y.",
+          "Euskirchen, G.",
+          "Ward, W. W.",
+          "Prasher, D. C."
+        ],
+        "year": 1994,
+        "title": "Green fluorescent protein as a marker for gene expression",
+        "journal": "Science",
+        "doi": "10.1126/science.8303295",
+        "type": "paper"
+      }
+    ]
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "id": "crispr-8",
+  "mode": "crispr",
+  "title": "A tomato with more GABA",
+  "title_es": "Un tomate con más GABA",
+  "subtitle": "Cutting the brake of an enzyme",
+  "subtitle_es": "Cortar el freno de una enzima",
+  "difficulty": "intermediate",
+  "estimatedDuration": 8,
+  "objective": "Choose the guide that cuts inside the gene of an enzyme of the tomato, and only there.",
+  "objective_es": "Elige la guía que corta dentro del gen de una enzima del tomate, y solo ahí.",
+  "description": "GABA is a molecule that tomatoes make in small amounts. An enzyme makes it, and a short part of that enzyme acts as its own brake. Cutting the gene right there releases the brake, and the tomato makes much more GABA.",
+  "description_es": "El GABA es una molécula que los tomates fabrican en pequeñas cantidades. Una enzima lo fabrica, y una parte corta de esa enzima actúa como su propio freno. Cortar el gen justo ahí suelta el freno, y el tomate fabrica mucho más GABA.",
+  "organism": {
+    "id": "tomato-gaba",
+    "commonName": "Tomato",
+    "commonName_es": "Tomate",
+    "scientificName": "Solanum lycopersicum",
+    "taxonomy": [
+      "Plantae",
+      "Tracheophyta",
+      "Magnoliopsida",
+      "Solanales",
+      "Solanaceae",
+      "Solanum"
+    ],
+    "targetTissue": "fruit",
+    "targetOrganelle": "nucleus",
+    "description": "A fruit whose genes can be edited in the lab.",
+    "description_es": "Una fruta cuyos genes se pueden editar en el laboratorio."
+  },
+  "exploration": [
+    {
+      "kind": "tomato",
+      "label": "The idea",
+      "label_es": "La idea",
+      "title": "Release a brake",
+      "title_es": "Soltar un freno",
+      "description": "Some enzymes have a short part that keeps them in check. Editing that part, without touching the rest, gives an enzyme that works all the time.",
+      "description_es": "Algunas enzimas tienen una parte corta que las mantiene a raya. Editar esa parte, sin tocar el resto, da una enzima que trabaja todo el tiempo."
+    },
+    {
+      "kind": "dna",
+      "label": "The result",
+      "label_es": "El resultado",
+      "title": "More of a natural molecule",
+      "title_es": "Más de una molécula natural",
+      "description": "GABA is found in many foods. In edited tomatoes its content in the fruit rose many times over.",
+      "description_es": "El GABA está en muchos alimentos. En los tomates editados su contenido en el fruto subió muchas veces."
+    }
+  ],
+  "crispr": {
+    "genome": "GTGCAAGTGGAGGCCCGCGGGAAAGGCCCGTGGTTGCCGGTTACCAGGGGAACGGCACGCGGTCACAGGACTTATAATTAAAAGTTTGACATTGTCGACG",
+    "target": {
+      "label": "the brake of the enzyme",
+      "label_es": "el freno de la enzima",
+      "start": 22,
+      "end": 62
+    },
+    "guides": [
+      {
+        "id": "a",
+        "sequence": "CCGGTTAC"
+      },
+      {
+        "id": "b",
+        "sequence": "AAGGCCCG"
+      },
+      {
+        "id": "c",
+        "sequence": "ACGGCACG"
+      },
+      {
+        "id": "d",
+        "sequence": "CGTCGAGT"
+      }
+    ],
+    "mismatches": 1,
+    "story": "A stretch of the tomato gene for the enzyme that makes GABA. Edit the part that acts as a brake, and nothing else.",
+    "story_es": "Un trozo del gen del tomate de la enzima que fabrica GABA. Edita la parte que actúa como freno, y nada más."
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Cut",
+    "productLabel_es": "Corte",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Guide",
+        "label_es": "Guía",
+        "description": "The guide leads Cas9 to the target.",
+        "description_es": "La guía lleva a Cas9 al objetivo.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Cut",
+        "label_es": "Corte",
+        "description": "Cas9 cuts the DNA.",
+        "description_es": "Cas9 corta el ADN.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Repair",
+        "label_es": "Reparación",
+        "description": "The cell repairs it and the gene changes.",
+        "description_es": "La célula lo repara y el gen cambia.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Tap each guide and count where it sticks. Only one cuts exactly once, inside the blue area.",
+      "content_es": "Toca cada guía y cuenta dónde se pega. Solo una corta exactamente una vez, dentro de la zona azul.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Look for the PAM, a letter and then GG, right after the place where the guide sticks. One guide has a look-alike site elsewhere.",
+      "content_es": "Busca el PAM, una letra y luego GG, justo después del sitio donde se pega la guía. Una guía tiene un sitio parecido en otro lugar.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Choose guide C.",
+      "content_es": "Elige la guía C.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A brake released",
+    "title_es": "Un freno soltado",
+    "summary": "You chose the guide that cuts inside the brake of the enzyme without touching other places.",
+    "summary_es": "Has elegido la guía que corta dentro del freno de la enzima sin tocar otros lugares.",
+    "realWorldImpact": "Tomatoes with more GABA reached the market in Japan in 2021, one of the first gene-edited foods to be sold.",
+    "realWorldImpact_es": "Los tomates con más GABA llegaron al mercado en Japón en 2021, uno de los primeros alimentos editados genéticamente que se vendieron."
+  },
+  "science": {
+    "organism": "Solanum lycopersicum",
+    "realWorldCase": "In 2017 a Japanese team used CRISPR–Cas9 to edit a part of a tomato gene for an enzyme that makes GABA, and found that the fruits of the edited plants had many times the GABA of normal ones.",
+    "realWorldCase_es": "En 2017 un equipo japonés usó CRISPR–Cas9 para editar una parte de un gen del tomate que fabrica GABA, y comprobó que los frutos de las plantas editadas tenían muchas veces más GABA que los normales.",
+    "scientificContext": "Cutting inside the gene and letting the cell repair the cut changes a few letters. If the change removes the brake but keeps the rest of the enzyme, the enzyme is always on.",
+    "scientificContext_es": "Cortar dentro del gen y dejar que la célula repare el corte cambia unas pocas letras. Si el cambio quita el freno pero conserva el resto de la enzima, la enzima queda siempre encendida.",
+    "gameplaySimplifications": [
+      "Guides here have 8 letters so they fit on the screen; real ones have about 20.",
+      "The sequence is invented; only the idea is real."
+    ],
+    "gameplaySimplifications_es": [
+      "Las guías de aquí tienen 8 letras para que quepan en pantalla; las reales tienen unas 20.",
+      "La secuencia es inventada; solo la idea es real."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Nonaka, S.",
+          "Arai, C.",
+          "Takayama, M.",
+          "Matsukura, C.",
+          "Ezura, H."
+        ],
+        "year": 2017,
+        "title": "Efficient increase of γ-aminobutyric acid (GABA) content in tomato fruits by targeted mutagenesis",
+        "journal": "Scientific Reports",
+        "type": "paper",
+        "doi": "10.1038/s41598-017-06400-y"
+      }
+    ]
+  }
+}

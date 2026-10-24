@@ -1,0 +1,352 @@
+{
+  "id": "fix-sourdough",
+  "mode": "diagnose",
+  "title": "The starter that does not rise",
+  "title_es": "La masa madre que no sube",
+  "subtitle": "A jar forgotten in the fridge",
+  "subtitle_es": "Un tarro olvidado en la nevera",
+  "difficulty": "beginner",
+  "estimatedDuration": 5,
+  "objective": "A sourdough starter that used to bubble is now flat. Find the piece that fails and the fix.",
+  "objective_es": "Una masa madre que antes burbujeaba ahora está plana. Descubre qué pieza falla y cómo se arregla.",
+  "description": "The pathway is built, but something fails. Read the clues, find the broken piece, and choose the right treatment.",
+  "description_es": "La ruta está montada, pero algo falla. Lee las pistas, encuentra la pieza rota y elige el tratamiento correcto.",
+  "organism": {
+    "id": "sourdough-fix",
+    "commonName": "A sourdough starter",
+    "commonName_es": "Una masa madre",
+    "scientificName": "Yeast and lactic acid bacteria",
+    "taxonomy": [
+      "Fungi",
+      "Bacteria"
+    ],
+    "targetTissue": "single cell",
+    "targetOrganelle": "cytoplasm",
+    "description": "A living culture that should bubble.",
+    "description_es": "Un cultivo vivo que debería burbujear."
+  },
+  "exploration": [
+    {
+      "kind": "bread",
+      "label": "Problem",
+      "label_es": "Problema",
+      "title": "A flat starter",
+      "title_es": "Un cultivo plano",
+      "description": "The starter smells strange, has a grey liquid on top and shows no bubbles.",
+      "description_es": "El cultivo huele raro, tiene un líquido gris encima y no hay burbujas."
+    },
+    {
+      "kind": "yeast",
+      "label": "The microbes",
+      "label_es": "Los microbios",
+      "title": "They have to eat",
+      "title_es": "Tienen que comer",
+      "description": "Yeasts and bacteria live on the sugars of flour. If nobody feeds them, they run out of food and slow down.",
+      "description_es": "Las levaduras y las bacterias viven de los azúcares de la harina. Si nadie las alimenta, se quedan sin comida y se ralentizan."
+    }
+  ],
+  "biologicalContext": {
+    "nodes": [
+      {
+        "id": "met_flour",
+        "type": "metabolite",
+        "label": "Fresh flour",
+        "label_es": "Harina fresca",
+        "description": "The food of the microbes.",
+        "description_es": "La comida de los microbios.",
+        "position": {
+          "x": 0.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "gene_yeast",
+        "type": "gene",
+        "label": "Yeast genes",
+        "label_es": "Genes de levadura",
+        "description": "The recipes of the enzymes.",
+        "description_es": "Las recetas de las enzimas.",
+        "position": {
+          "x": 3.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_yeast",
+        "type": "enzyme",
+        "label": "Yeast enzymes",
+        "label_es": "Enzimas de levadura",
+        "description": "They run the fermentation.",
+        "description_es": "Hacen funcionar la fermentación.",
+        "position": {
+          "x": 6.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_ferment",
+        "type": "reaction",
+        "label": "Fermenting",
+        "label_es": "Fermentar",
+        "description": "Sugars → gas and acid.",
+        "description_es": "Azúcares → gas y ácido.",
+        "position": {
+          "x": 9.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_co2",
+        "type": "metabolite",
+        "label": "Gas",
+        "label_es": "Gas",
+        "description": "Carbon dioxide: the bubbles.",
+        "description_es": "Dióxido de carbono: las burbujas.",
+        "position": {
+          "x": 12.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "phenotype_rise",
+        "type": "phenotype",
+        "label": "Bubbles and rise",
+        "label_es": "Burbujas y subida",
+        "description": "What we should see.",
+        "description_es": "Lo que deberíamos ver.",
+        "position": {
+          "x": 15.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      }
+    ],
+    "edges": [
+      {
+        "id": "ref_gene_yeast_encodes_enzyme_yeast",
+        "source": "gene_yeast",
+        "target": "enzyme_yeast",
+        "type": "encodes",
+        "isRequired": true
+      },
+      {
+        "id": "ref_enzyme_yeast_catalyzes_rxn_ferment",
+        "source": "enzyme_yeast",
+        "target": "rxn_ferment",
+        "type": "catalyzes",
+        "isRequired": true
+      },
+      {
+        "id": "ref_rxn_ferment_consumes_met_flour",
+        "source": "rxn_ferment",
+        "target": "met_flour",
+        "type": "consumes",
+        "isRequired": true
+      },
+      {
+        "id": "ref_rxn_ferment_produces_met_co2",
+        "source": "rxn_ferment",
+        "target": "met_co2",
+        "type": "produces",
+        "isRequired": true
+      },
+      {
+        "id": "ref_met_co2_influences_phenotype_rise",
+        "source": "met_co2",
+        "target": "phenotype_rise",
+        "type": "influences",
+        "isRequired": true
+      }
+    ]
+  },
+  "puzzle": {
+    "availableNodes": [
+      "met_flour",
+      "gene_yeast",
+      "enzyme_yeast",
+      "rxn_ferment",
+      "met_co2",
+      "phenotype_rise"
+    ],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "diagnose": {
+    "symptom": "The starter shows no bubbles and does not rise.",
+    "symptom_es": "La masa madre no tiene burbujas y no sube.",
+    "clues": [
+      {
+        "text": "It has not been fed for three weeks.",
+        "text_es": "No se ha alimentado en tres semanas."
+      },
+      {
+        "text": "There is a grey liquid on top and a smell of nail-polish remover.",
+        "text_es": "Hay un líquido gris encima y un olor a quitaesmalte."
+      },
+      {
+        "text": "It has been kept at room temperature, about 22 °C.",
+        "text_es": "Se ha guardado a temperatura ambiente, unos 22 °C."
+      },
+      {
+        "text": "A microscope shows live yeast cells.",
+        "text_es": "Un microscopio muestra células de levadura vivas."
+      }
+    ],
+    "faultyIds": [
+      "met_flour"
+    ],
+    "notes": {
+      "met_flour": {
+        "text": "Three weeks without feeding: the microbes have used up the flour. This is the broken piece.",
+        "text_es": "Tres semanas sin alimentar: los microbios se han acabado la harina. Esta es la pieza rota."
+      },
+      "gene_yeast": {
+        "text": "A test shows live yeast, so their genes are fine.",
+        "text_es": "Un análisis muestra levadura viva, así que sus genes están bien."
+      },
+      "enzyme_yeast": {
+        "text": "The enzymes are there, but they have nothing to work on.",
+        "text_es": "Las enzimas están ahí, pero no tienen nada sobre lo que trabajar."
+      },
+      "rxn_ferment": {
+        "text": "It has almost stopped for lack of food. A consequence.",
+        "text_es": "Casi se ha parado por falta de comida. Una consecuencia."
+      },
+      "met_co2": {
+        "text": "Very little gas is made, as a consequence of the hunger.",
+        "text_es": "Se fabrica muy poco gas, como consecuencia del hambre."
+      },
+      "phenotype_rise": {
+        "text": "It is the symptom, not the broken piece.",
+        "text_es": "Es el síntoma, no la pieza rota."
+      }
+    },
+    "fixes": [
+      {
+        "id": "f1",
+        "text": "Pour off the liquid and feed the starter with fresh flour and water every day.",
+        "text_es": "Quitar el líquido y alimentar la masa madre con harina y agua frescas cada día.",
+        "correct": true,
+        "reason": "Fresh flour gives the microbes food, and in a few days of regular feeding the starter becomes lively again.",
+        "reason_es": "La harina fresca da comida a los microbios, y con unos días de alimentación regular la masa madre vuelve a estar activa."
+      },
+      {
+        "id": "f2",
+        "text": "Add more salt.",
+        "text_es": "Añadir más sal.",
+        "correct": false,
+        "reason": "Salt slows microbes down. It would make the starter even less active.",
+        "reason_es": "La sal frena a los microbios. Haría a la masa madre aún menos activa."
+      },
+      {
+        "id": "f3",
+        "text": "Bake it at a higher temperature.",
+        "text_es": "Hornearla a más temperatura.",
+        "correct": false,
+        "reason": "Baking would kill the microbes you are trying to revive.",
+        "reason_es": "Hornearla mataría a los microbios que quieres reanimar."
+      },
+      {
+        "id": "f4",
+        "text": "Replace the genes of the yeast.",
+        "text_es": "Cambiar los genes de la levadura.",
+        "correct": false,
+        "reason": "The genes are fine. The yeast is alive, just hungry.",
+        "reason_es": "Los genes están bien. La levadura está viva, solo que hambrienta."
+      }
+    ]
+  },
+  "simulation": {
+    "productLabel": "Diagnosis",
+    "productLabel_es": "Diagnóstico",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Diagnosis",
+        "label_es": "Diagnóstico",
+        "description": "Found and treated.",
+        "description_es": "Encontrado y tratado.",
+        "order": 1
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "The microbes are alive, so what is missing for them to work?",
+      "content_es": "Los microbios están vivos, ¿qué les falta para trabajar?",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "One clue says how long it has been since the last feeding.",
+      "content_es": "Una pista dice cuánto hace desde la última vez que se alimentó.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "The starter has run out of flour to eat.",
+      "content_es": "A la masa madre se le ha acabado la harina para comer.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "Feed it and it wakes up",
+    "title_es": "Aliméntala y despierta",
+    "summary": "You found that the microbes were alive but hungry: a starter needs regular feeding.",
+    "summary_es": "Has descubierto que los microbios estaban vivos pero hambrientos: una masa madre necesita alimentación regular.",
+    "realWorldImpact": "A starter that is looked after can last for generations, and some bakeries have kept theirs going for more than a century.",
+    "realWorldImpact_es": "Una masa madre bien cuidada puede durar generaciones, y algunas panaderías mantienen la suya desde hace más de un siglo."
+  },
+  "science": {
+    "organism": "Yeast and lactic acid bacteria",
+    "realWorldCase": "Studies of sourdoughs from different countries found that each one holds its own community of yeasts and lactic acid bacteria, which survive thanks to regular feeding.",
+    "realWorldCase_es": "Los estudios de masas madre de distintos países encontraron que cada una tiene su propia comunidad de levaduras y bacterias lácticas, que sobreviven gracias a la alimentación regular.",
+    "scientificContext": "A starved starter accumulates acids and ethanol, which can be smelled as acetone or solvent, and the liquid on top contains the by-products. Feeding dilutes them and restores growth.",
+    "scientificContext_es": "Una masa madre sin alimentar acumula ácidos y etanol, que huelen a acetona o disolvente, y el líquido de arriba contiene los subproductos. Alimentarla los diluye y recupera el crecimiento.",
+    "gameplaySimplifications": [
+      "A real starter has many species; here it is shown as a single pathway."
+    ],
+    "gameplaySimplifications_es": [
+      "Una masa madre real tiene muchas especies; aquí se muestra como una sola ruta."
+    ],
+    "references": [
+      {
+        "authors": [
+          "De Vuyst, L.",
+          "Neysens, P."
+        ],
+        "year": 2005,
+        "title": "The sourdough microflora: biodiversity and metabolic interactions",
+        "journal": "Trends in Food Science & Technology",
+        "type": "paper",
+        "doi": "10.1016/j.tifs.2004.02.012"
+      }
+    ]
+  }
+}

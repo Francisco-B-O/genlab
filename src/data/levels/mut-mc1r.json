@@ -1,0 +1,178 @@
+{
+  "id": "mut-mc1r",
+  "mode": "mutation",
+  "title": "The gene behind red hair",
+  "title_es": "El gen del pelo rojo",
+  "subtitle": "A swap that turns the pigment down",
+  "subtitle_es": "Un cambio que baja el pigmento",
+  "difficulty": "intermediate",
+  "estimatedDuration": 5,
+  "objective": "Find the letter that changed in the gene and say what the change does to the protein.",
+  "objective_es": "Encuentra la letra que ha cambiado en el gen y di qué efecto tiene en la proteína.",
+  "description": "A change of one letter in DNA can change an amino acid, cut a protein short, or do nothing at all. Compare the two sequences codon by codon.",
+  "description_es": "Un cambio de una letra en el ADN puede cambiar un aminoácido, cortar una proteína o no hacer nada. Compara las dos secuencias codón a codón.",
+  "organism": {
+    "id": "mc1r-gene",
+    "commonName": "Pigment receptor",
+    "commonName_es": "Receptor del pigmento",
+    "scientificName": "Homo sapiens",
+    "taxonomy": [
+      "Animalia",
+      "Chordata",
+      "Mammalia",
+      "Primates",
+      "Hominidae",
+      "Homo"
+    ],
+    "targetTissue": "hair follicle",
+    "targetOrganelle": "cytoplasm",
+    "description": "A protein that controls which pigment a hair cell makes.",
+    "description_es": "Una proteína que controla qué pigmento fabrica una célula del pelo."
+  },
+  "exploration": [
+    {
+      "kind": "cell",
+      "label": "Pigments",
+      "label_es": "Pigmentos",
+      "title": "Dark and red-yellow",
+      "title_es": "Oscuro y rojo-amarillo",
+      "description": "Hair gets its colour from two pigments. The dark one is the main one in black and brown hair; the red-yellow one dominates in red hair.",
+      "description_es": "El pelo recibe su color de dos pigmentos. El oscuro es el principal en el pelo negro y castaño; el rojo y amarillo domina en el pelo rojo."
+    },
+    {
+      "kind": "dna",
+      "label": "One receptor",
+      "label_es": "Un receptor",
+      "title": "The switch of the dark pigment",
+      "title_es": "El interruptor del pigmento oscuro",
+      "description": "When MC1R works well, it switches the cell towards the dark pigment. When two copies work less, the cell makes mostly the red-yellow one, which is why red hair is recessive.",
+      "description_es": "Cuando MC1R funciona bien, inclina a la célula hacia el pigmento oscuro. Cuando dos copias funcionan menos, la célula fabrica sobre todo el rojo y amarillo, por eso el pelo rojo es recesivo."
+    }
+  ],
+  "mutation": {
+    "geneLabel": "Pigment receptor gene (illustrative)",
+    "geneLabel_es": "Gen de un receptor del pigmento (ilustrativo)",
+    "reference": "ATGGCACGCTTCGAGGTC",
+    "mutant": "ATGGCATGCTTCGAGGTC",
+    "story": "A real change with an invented sequence. A receptor called MC1R tells skin and hair cells to make dark pigment. A swap of arginine for cysteine in it makes the receptor work less, and the hair comes out red.",
+    "story_es": "Un cambio real con una secuencia inventada. Un receptor llamado MC1R ordena a las células de la piel y del pelo que fabriquen pigmento oscuro. El cambio de arginina por cisteína lo hace trabajar menos, y el pelo sale rojo.",
+    "explanations": {
+      "silent": "Not here: the amino acid changes.",
+      "silent_es": "Aquí no: el aminoácido cambia.",
+      "missense": "CGC (Arg) became TGC (Cys): one amino acid was swapped for another. This real change, called R151C, lowers the activity of the receptor, so the cells make less dark pigment and more of the red-yellow one.",
+      "missense_es": "CGC (Arg) pasó a TGC (Cys): un aminoácido se cambió por otro. Este cambio real, llamado R151C, reduce la actividad del receptor, así que las células fabrican menos pigmento oscuro y más del rojo y amarillo.",
+      "nonsense": "Not here: no stop signal appears.",
+      "nonsense_es": "Aquí no: no aparece ninguna señal de fin."
+    }
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Effect",
+    "productLabel_es": "Efecto",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Compare",
+        "label_es": "Comparar",
+        "description": "Find the changed letter.",
+        "description_es": "Encuentra la letra cambiada.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Translate",
+        "label_es": "Traducir",
+        "description": "Read the codons.",
+        "description_es": "Lee los codones.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Effect",
+        "label_es": "Efecto",
+        "description": "Decide what it does.",
+        "description_es": "Decide qué hace.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Compare the two rows letter by letter. Only one is different.",
+      "content_es": "Compara las dos filas letra a letra. Solo una es distinta.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Look at the codon that contains the changed letter, before and after.",
+      "content_es": "Mira el codón que contiene la letra cambiada, antes y después.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "The change is in the third codon: CGC became TGC, so Arg became Cys (missense).",
+      "content_es": "El cambio está en el tercer codón: CGC pasó a TGC, así que Arg pasó a Cys (de sentido erróneo).",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A letter that changes the colour",
+    "title_es": "Una letra que cambia el color",
+    "summary": "You found a one-letter change that swaps an amino acid and lowers the activity of a receptor.",
+    "summary_es": "Has encontrado un cambio de una letra que sustituye un aminoácido y reduce la actividad de un receptor.",
+    "realWorldImpact": "The same receptor family colours the coats of horses, dogs and cattle, so breeders and veterinarians use this knowledge to predict coat colours.",
+    "realWorldImpact_es": "La misma familia de receptores colorea el pelaje de caballos, perros y ganado, así que quien los cría y los veterinarios usan este conocimiento para predecir colores."
+  },
+  "science": {
+    "organism": "Homo sapiens",
+    "realWorldCase": "In 1995 a team showed that people with red hair carry changes in the MC1R gene. Several different changes were found, and the R151C swap is one of the most common.",
+    "realWorldCase_es": "En 1995 un equipo mostró que las personas con pelo rojo llevan cambios en el gen MC1R. Se encontraron varios cambios distintos, y el de R151C es uno de los más frecuentes.",
+    "scientificContext": "A missense mutation swaps one amino acid for another. Here the swap lowers the activity of a receptor, so the balance between the two pigments moves towards the red-yellow one.",
+    "scientificContext_es": "Una mutación de sentido erróneo cambia un aminoácido por otro. Aquí el cambio reduce la actividad de un receptor, así que el equilibrio entre los dos pigmentos se mueve hacia el rojo y amarillo.",
+    "gameplaySimplifications": [
+      "The real change is the one described, but the sequence around it is an invented short example."
+    ],
+    "gameplaySimplifications_es": [
+      "El cambio real es el que se describe, pero la secuencia que lo rodea es un ejemplo corto inventado."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Valverde, P.",
+          "Healy, E.",
+          "Jackson, I.",
+          "Rees, J. L.",
+          "Thody, A. J."
+        ],
+        "year": 1995,
+        "title": "Variants of the melanocyte-stimulating hormone receptor gene are associated with red hair and fair skin in humans",
+        "journal": "Nature Genetics",
+        "type": "paper",
+        "doi": "10.1038/ng1195-328"
+      }
+    ]
+  }
+}

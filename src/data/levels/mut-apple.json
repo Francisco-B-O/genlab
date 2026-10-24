@@ -1,0 +1,163 @@
+{
+  "id": "mut-apple",
+  "mode": "mutation",
+  "title": "An apple that does not brown",
+  "title_es": "Una manzana que no se oscurece",
+  "subtitle": "A letter that cuts the protein short",
+  "subtitle_es": "Una letra que corta la proteína",
+  "difficulty": "intermediate",
+  "estimatedDuration": 4,
+  "objective": "Find the letter that changed in the gene and say what the change does to the protein.",
+  "objective_es": "Encuentra la letra que ha cambiado en el gen y di qué efecto tiene en la proteína.",
+  "description": "A change of one letter in DNA can change an amino acid, cut a protein short, or do nothing at all. Compare the two sequences codon by codon.",
+  "description_es": "Un cambio de una letra en el ADN puede cambiar un aminoácido, cortar una proteína o no hacer nada. Compara las dos secuencias codón a codón.",
+  "organism": {
+    "id": "malus-mut",
+    "commonName": "Apple",
+    "commonName_es": "Manzano",
+    "scientificName": "Malus domestica",
+    "taxonomy": [
+      "Plantae",
+      "Tracheophyta",
+      "Magnoliopsida",
+      "Rosales",
+      "Rosaceae",
+      "Malus"
+    ],
+    "targetTissue": "fruit",
+    "targetOrganelle": "cytoplasm",
+    "description": "A fruit tree.",
+    "description_es": "Un árbol frutal."
+  },
+  "exploration": [
+    {
+      "kind": "dna",
+      "label": "Browning",
+      "label_es": "Pardeamiento",
+      "title": "An enzyme and oxygen",
+      "title_es": "Una enzima y oxígeno",
+      "description": "When an apple is cut, an enzyme meets oxygen and turns compounds of the fruit brown.",
+      "description_es": "Al cortar una manzana, una enzima se encuentra con el oxígeno y oscurece compuestos de la fruta."
+    },
+    {
+      "kind": "dna",
+      "label": "Stop",
+      "label_es": "Fin",
+      "title": "A signal in the code",
+      "title_es": "Una señal en el código",
+      "description": "Three codons mean stop. If one appears too early, the protein stops being built and is usually useless.",
+      "description_es": "Tres codones significan fin. Si uno aparece demasiado pronto, la proteína deja de construirse y suele ser inútil."
+    }
+  ],
+  "mutation": {
+    "geneLabel": "Browning enzyme gene (illustrative)",
+    "geneLabel_es": "Gen de la enzima del pardeamiento (ilustrativo)",
+    "reference": "ATGGCACTGTGGGAACAA",
+    "mutant": "ATGGCACTGTGAGAACAA",
+    "story": "An invented example. This apple stays white when you cut it. The gene of the enzyme that browns it differs by one letter.",
+    "story_es": "Un ejemplo inventado. Esta manzana se queda blanca al cortarla. El gen de la enzima que la oscurece se diferencia en una letra.",
+    "explanations": {
+      "silent": "Not here: the codon changes into a stop.",
+      "silent_es": "Aquí no: el codón cambia a una señal de fin.",
+      "missense": "Not here: the codon does not become another amino acid.",
+      "missense_es": "Aquí no: el codón no se convierte en otro aminoácido.",
+      "nonsense": "TGG (Trp) became TGA, a stop codon. The protein is cut short and the enzyme cannot work, so the apple does not brown.",
+      "nonsense_es": "TGG (Trp) pasó a TGA, un codón de fin. La proteína se corta y la enzima no puede funcionar, así que la manzana no se oscurece."
+    }
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Effect",
+    "productLabel_es": "Efecto",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Compare",
+        "label_es": "Comparar",
+        "description": "Find the changed letter.",
+        "description_es": "Encuentra la letra cambiada.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Translate",
+        "label_es": "Traducir",
+        "description": "Read the codons.",
+        "description_es": "Lee los codones.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Effect",
+        "label_es": "Efecto",
+        "description": "Decide what it does.",
+        "description_es": "Decide qué hace.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Compare the two rows letter by letter. Only one is different.",
+      "content_es": "Compara las dos filas letra a letra. Solo una es distinta.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Look at the codon that contains the changed letter. What amino acid was it and what is it now?",
+      "content_es": "Mira el codón que contiene la letra cambiada. ¿Qué aminoácido era y qué es ahora?",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "TGG (Trp) became TGA (stop): this is a nonsense mutation.",
+      "content_es": "TGG (Trp) pasó a TGA (fin): es una mutación sin sentido.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A protein that never finishes",
+    "title_es": "Una proteína que no termina",
+    "summary": "You found a letter that creates a stop codon, so the enzyme is cut short.",
+    "summary_es": "Has encontrado una letra que crea un codón de fin, así que la enzima se corta.",
+    "realWorldImpact": "Turning off a gene on purpose is how some modern fruits and vegetables are made to brown more slowly.",
+    "realWorldImpact_es": "Apagar un gen a propósito es como se consiguen algunas frutas y verduras modernas que se oscurecen más despacio."
+  },
+  "science": {
+    "organism": "Malus domestica",
+    "realWorldCase": "Browning is caused by polyphenol oxidases. Some apple varieties on the market make less of these enzymes.",
+    "realWorldCase_es": "El pardeamiento lo causan las polifenol oxidasas. Algunas variedades de manzana del mercado fabrican menos de estas enzimas.",
+    "scientificContext": "A nonsense mutation creates a stop codon inside the gene. The protein is truncated and, in most cases, loses its function.",
+    "scientificContext_es": "Una mutación sin sentido crea un codón de fin dentro del gen. La proteína queda truncada y, en la mayoría de los casos, pierde su función.",
+    "gameplaySimplifications": [
+      "The sequence is an invented, short example, not a real gene."
+    ],
+    "gameplaySimplifications_es": [
+      "La secuencia es un ejemplo inventado y corto, no un gen real."
+    ],
+    "references": []
+  }
+}

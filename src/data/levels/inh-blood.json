@@ -1,0 +1,218 @@
+{
+  "id": "inh-blood",
+  "mode": "inherit",
+  "title": "How blood groups are inherited",
+  "title_es": "Cómo se heredan los grupos sanguíneos",
+  "subtitle": "Three alleles, four groups",
+  "subtitle_es": "Tres alelos, cuatro grupos",
+  "difficulty": "intermediate",
+  "estimatedDuration": 8,
+  "objective": "Fill in the Punnett squares for the ABO system, where there are three alleles and two of them are both visible together.",
+  "objective_es": "Rellena los cuadros de Punnett del sistema ABO, donde hay tres alelos y dos de ellos se ven a la vez.",
+  "description": "A and B are both expressed when together (codominance); O is hidden when it is with A or B.",
+  "description_es": "A y B se expresan los dos cuando están juntos (codominancia); O queda oculto cuando está con A o B.",
+  "organism": {
+    "id": "human-inherit-abo",
+    "commonName": "Human family",
+    "commonName_es": "Familia humana",
+    "scientificName": "Homo sapiens",
+    "taxonomy": [
+      "Animalia",
+      "Chordata",
+      "Mammalia",
+      "Primates",
+      "Hominidae",
+      "Homo"
+    ],
+    "targetTissue": "whole body",
+    "targetOrganelle": "nucleus",
+    "description": "Parents and their possible children.",
+    "description_es": "Progenitores y sus posibles hijos."
+  },
+  "exploration": [
+    {
+      "kind": "blood",
+      "label": "Blood",
+      "label_es": "Sangre",
+      "title": "Three alleles",
+      "title_es": "Tres alelos",
+      "description": "The ABO gene has three common versions: A, B and O. Each person has two, which gives four blood groups.",
+      "description_es": "El gen ABO tiene tres versiones frecuentes: A, B y O. Cada persona tiene dos, lo que da cuatro grupos sanguíneos."
+    },
+    {
+      "kind": "dna",
+      "label": "Rules",
+      "label_es": "Reglas",
+      "title": "Who hides whom",
+      "title_es": "Quién oculta a quién",
+      "description": "AA and AO both give group A; BB and BO give group B. AB shows both. Only OO gives group O.",
+      "description_es": "AA y AO dan grupo A; BB y BO dan grupo B. AB muestra los dos. Solo OO da grupo O."
+    }
+  ],
+  "inherit": {
+    "trait": "Blood groups",
+    "trait_es": "Grupos sanguíneos",
+    "alleles": [
+      "A",
+      "B",
+      "O"
+    ],
+    "phenotypes": {
+      "AA": "A",
+      "AO": "A",
+      "BB": "B",
+      "BO": "B",
+      "AB": "AB",
+      "OO": "O"
+    },
+    "phenotypeLabels": {
+      "A": "Group A",
+      "A_es": "Grupo A",
+      "B": "Group B",
+      "B_es": "Grupo B",
+      "AB": "Group AB",
+      "AB_es": "Grupo AB",
+      "O": "Group O",
+      "O_es": "Grupo O"
+    },
+    "scenarios": [
+      {
+        "id": "s1",
+        "parent1": "AO",
+        "parent2": "BO",
+        "parent1Label": "Group A, carries O",
+        "parent1Label_es": "Grupo A, lleva O",
+        "parent2Label": "Group B, carries O",
+        "parent2Label_es": "Grupo B, lleva O",
+        "question": "What is the probability that a child has group O?",
+        "question_es": "¿Qué probabilidad hay de que un hijo sea del grupo O?",
+        "target": "O",
+        "explanation": "Only the OO cell: 25%. The other three cells give A, B and AB.",
+        "explanation_es": "Solo la casilla OO: 25 %. Las otras tres dan A, B y AB."
+      },
+      {
+        "id": "s2",
+        "parent1": "AO",
+        "parent2": "AO",
+        "parent1Label": "Group A, carries O",
+        "parent1Label_es": "Grupo A, lleva O",
+        "parent2Label": "Group A, carries O",
+        "parent2Label_es": "Grupo A, lleva O",
+        "question": "Two people with group A. What is the probability that a child has group O?",
+        "question_es": "Dos personas del grupo A. ¿Qué probabilidad hay de que un hijo sea del grupo O?",
+        "target": "O",
+        "explanation": "The OO cell: 25%. Two parents with group A can have a child with group O if both carry an O allele.",
+        "explanation_es": "La casilla OO: 25 %. Dos progenitores del grupo A pueden tener un hijo del grupo O si los dos llevan un alelo O."
+      },
+      {
+        "id": "s3",
+        "parent1": "AB",
+        "parent2": "OO",
+        "parent1Label": "Group AB",
+        "parent1Label_es": "Grupo AB",
+        "parent2Label": "Group O",
+        "parent2Label_es": "Grupo O",
+        "question": "What is the probability that a child has group A?",
+        "question_es": "¿Qué probabilidad hay de que un hijo sea del grupo A?",
+        "target": "A",
+        "explanation": "Two cells are AO (group A) and two are BO (group B): 50% each. No child can be AB or O.",
+        "explanation_es": "Dos casillas son AO (grupo A) y dos son BO (grupo B): 50 % cada una. Ningún hijo puede ser AB ni O."
+      }
+    ]
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Probability",
+    "productLabel_es": "Probabilidad",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Parents",
+        "label_es": "Progenitores",
+        "description": "Each gives one allele.",
+        "description_es": "Cada uno da un alelo.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Square",
+        "label_es": "Cuadro",
+        "description": "All combinations.",
+        "description_es": "Todas las combinaciones.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Group",
+        "label_es": "Grupo",
+        "description": "Read the phenotype.",
+        "description_es": "Lee el fenotipo.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Fill the square first; then read the blood group of each cell using the rules.",
+      "content_es": "Rellena primero el cuadro; luego lee el grupo de cada casilla con las reglas.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Remember: O only shows when there are two O alleles. Anything with A or B shows that letter.",
+      "content_es": "Recuerda: O solo se ve cuando hay dos alelos O. Cualquier combinación con A o B muestra esa letra.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Count the cells with the group asked about: each is worth 25%.",
+      "content_es": "Cuenta las casillas del grupo por el que preguntan: cada una vale un 25 %.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "Surprising but logical",
+    "title_es": "Sorprendente pero lógico",
+    "summary": "You saw how two parents with the same group can have a child with another one. Hidden alleles travel through families without showing.",
+    "summary_es": "Has visto cómo dos progenitores del mismo grupo pueden tener un hijo de otro. Los alelos ocultos viajan por las familias sin mostrarse.",
+    "realWorldImpact": "Blood group inheritance was one of the earliest examples of Mendelian genetics in humans and is used in medicine every day.",
+    "realWorldImpact_es": "La herencia de los grupos sanguíneos fue uno de los primeros ejemplos de genética mendeliana en humanos y se usa en medicina a diario."
+  },
+  "science": {
+    "organism": "Homo sapiens",
+    "realWorldCase": "The inheritance of the ABO groups was shown in 1910 by Emil von Dungern and Ludwik Hirszfeld, a few years after Landsteiner discovered the groups.",
+    "realWorldCase_es": "La herencia de los grupos ABO la demostraron en 1910 Emil von Dungern y Ludwik Hirszfeld, pocos años después de que Landsteiner descubriera los grupos.",
+    "scientificContext": "ABO is a codominant system with a recessive allele. A and B alleles encode different glycosyltransferases and are co-expressed in AB individuals; the O allele encodes a non-functional enzyme.",
+    "scientificContext_es": "ABO es un sistema codominante con un alelo recesivo. Los alelos A y B codifican glicosiltransferasas distintas y se expresan a la vez en las personas AB; el alelo O codifica una enzima que no funciona.",
+    "gameplaySimplifications": [
+      "The Rh factor is a separate gene and is not included."
+    ],
+    "gameplaySimplifications_es": [
+      "El factor Rh es un gen aparte y no está incluido."
+    ],
+    "references": []
+  }
+}

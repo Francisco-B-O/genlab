@@ -1,0 +1,213 @@
+{
+  "id": "seq-hershey",
+  "mode": "sequence",
+  "title": "DNA or protein?",
+  "title_es": "¿ADN o proteína?",
+  "subtitle": "The blender experiment of 1952",
+  "subtitle_es": "El experimento de la batidora de 1952",
+  "difficulty": "intermediate",
+  "estimatedDuration": 6,
+  "objective": "Put the steps of the Hershey–Chase experiment in order and see what it showed about genes.",
+  "objective_es": "Ordena los pasos del experimento de Hershey y Chase y descubre qué reveló sobre los genes.",
+  "description": "Is the information of life stored in DNA or in proteins? In 1952, a team used a virus that infects bacteria and two radioactive labels to find out.",
+  "description_es": "¿La información de la vida está en el ADN o en las proteínas? En 1952, un equipo usó un virus que infecta bacterias y dos marcas radiactivas para averiguarlo.",
+  "organism": {
+    "id": "hershey-chase",
+    "commonName": "Bacteriophage T2 and E. coli",
+    "commonName_es": "Bacteriófago T2 y E. coli",
+    "scientificName": "Bacteriophage T2",
+    "taxonomy": [
+      "Virus",
+      "Caudoviricetes"
+    ],
+    "targetTissue": "single cell",
+    "targetOrganelle": "cytoplasm",
+    "description": "A virus that infects bacteria, made only of DNA and protein.",
+    "description_es": "Un virus que infecta bacterias, hecho solo de ADN y proteína."
+  },
+  "exploration": [
+    {
+      "kind": "bacterium",
+      "label": "The virus",
+      "label_es": "El virus",
+      "title": "Two ingredients only",
+      "title_es": "Solo dos ingredientes",
+      "description": "A bacteriophage is a coat of protein around DNA. When it infects a bacterium, something enters and makes new viruses.",
+      "description_es": "Un bacteriófago es una cubierta de proteína alrededor de ADN. Cuando infecta a una bacteria, algo entra y fabrica virus nuevos."
+    },
+    {
+      "kind": "dna",
+      "label": "The labels",
+      "label_es": "Las marcas",
+      "title": "Phosphorus and sulphur",
+      "title_es": "Fósforo y azufre",
+      "description": "DNA contains phosphorus but no sulphur; proteins contain sulphur but no phosphorus. Each can be tagged on its own.",
+      "description_es": "El ADN contiene fósforo pero no azufre; las proteínas contienen azufre pero no fósforo. Cada uno se puede marcar por separado."
+    }
+  ],
+  "sequence": {
+    "steps": [
+      {
+        "id": "label",
+        "label": "Label the DNA of some viruses with radioactive phosphorus and the protein of others with radioactive sulphur",
+        "label_es": "Marcar el ADN de unos virus con fósforo radiactivo y la proteína de otros con azufre radiactivo",
+        "description": "Now each part can be followed on its own.",
+        "description_es": "Ahora se puede seguir cada parte por separado.",
+        "needs": "Nothing: it is where it starts.",
+        "needs_es": "Nada: es el punto de partida."
+      },
+      {
+        "id": "infect",
+        "label": "Let the viruses infect bacteria",
+        "label_es": "Dejar que los virus infecten a las bacterias",
+        "description": "The viruses stick to the bacteria and inject something.",
+        "description_es": "Los virus se pegan a las bacterias e inyectan algo.",
+        "needs": "The viruses have to be labelled first.",
+        "needs_es": "Los virus tienen que estar marcados antes."
+      },
+      {
+        "id": "blend",
+        "label": "Shake the mixture in a kitchen blender",
+        "label_es": "Agitar la mezcla en una batidora de cocina",
+        "description": "The empty viral coats are shaken off the surface of the bacteria.",
+        "description_es": "Las cubiertas vacías de los virus se desprenden de la superficie de las bacterias.",
+        "needs": "The infection has to have happened first.",
+        "needs_es": "La infección tiene que haber ocurrido antes."
+      },
+      {
+        "id": "spin",
+        "label": "Spin it in a centrifuge",
+        "label_es": "Centrifugarla",
+        "description": "The heavy bacteria sink to the bottom and the light coats stay in the liquid.",
+        "description_es": "Las bacterias, más pesadas, se hunden en el fondo y las cubiertas, más ligeras, quedan en el líquido.",
+        "needs": "The coats must already be detached from the bacteria.",
+        "needs_es": "Las cubiertas ya tienen que estar separadas de las bacterias."
+      },
+      {
+        "id": "measure",
+        "label": "Measure the radioactivity of the bacteria and of the liquid",
+        "label_es": "Medir la radiactividad de las bacterias y del líquido",
+        "description": "The phosphorus (DNA) is inside the bacteria; most sulphur (protein) is outside.",
+        "description_es": "El fósforo (ADN) está dentro de las bacterias; casi todo el azufre (proteína) está fuera.",
+        "needs": "The bacteria and the liquid have to be separated first.",
+        "needs_es": "Las bacterias y el líquido tienen que estar separados antes."
+      },
+      {
+        "id": "conclude",
+        "label": "Conclude: the DNA is what carries the information to make new viruses",
+        "label_es": "Concluir: el ADN es lo que lleva la información para fabricar virus nuevos",
+        "description": "What entered the bacteria, and made new viruses, was DNA.",
+        "description_es": "Lo que entró en las bacterias, y fabricó virus nuevos, fue ADN.",
+        "needs": "The measurements must be in.",
+        "needs_es": "Tienen que estar hechas las mediciones."
+      }
+    ]
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Conclusion",
+    "productLabel_es": "Conclusión",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Start",
+        "label_es": "Inicio",
+        "description": "The process begins.",
+        "description_es": "Empieza el proceso.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Middle",
+        "label_es": "Desarrollo",
+        "description": "Each step prepares the next.",
+        "description_es": "Cada paso prepara el siguiente.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Result",
+        "label_es": "Resultado",
+        "description": "The process ends.",
+        "description_es": "El proceso termina.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "The labels must be put on before the infection, and the viruses must be separated before measuring.",
+      "content_es": "Las marcas hay que ponerlas antes de la infección, y los virus hay que separarlos antes de medir.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Label, infect, blend, spin, measure and, last of all, conclude.",
+      "content_es": "Marcar, infectar, batir, centrifugar, medir y, por último, concluir.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Label → infect → blend → spin → measure → conclude.",
+      "content_es": "Marcar → infectar → batir → centrifugar → medir → concluir.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "The blender that settled a question",
+    "title_es": "La batidora que resolvió una duda",
+    "summary": "You followed an experiment that gave strong evidence that DNA, not protein, carries the information of genes.",
+    "summary_es": "Has seguido un experimento que dio una prueba sólida de que el ADN, y no la proteína, lleva la información de los genes.",
+    "realWorldImpact": "It helped to turn DNA into the centre of biology, one year before the double helix was proposed.",
+    "realWorldImpact_es": "Ayudó a convertir el ADN en el centro de la biología, un año antes de que se propusiera la doble hélice."
+  },
+  "science": {
+    "organism": "Bacteriophage T2",
+    "realWorldCase": "Alfred Hershey and Martha Chase published the experiment in 1952. Hershey shared the 1969 Nobel Prize in Physiology or Medicine for work on viruses.",
+    "realWorldCase_es": "Alfred Hershey y Martha Chase publicaron el experimento en 1952. Hershey compartió el Premio Nobel de Fisiología o Medicina de 1969 por trabajos sobre virus.",
+    "scientificContext": "Phage T2 injects its DNA while its protein coat stays outside. The blender removes the coats; the label of phosphorus (DNA) is found inside the cells.",
+    "scientificContext_es": "El fago T2 inyecta su ADN mientras su cubierta de proteína queda fuera. La batidora separa las cubiertas; la marca de fósforo (ADN) se encuentra dentro de las células.",
+    "gameplaySimplifications": [
+      "In the real experiment a little of the protein label also stayed with the bacteria; here the result is simplified."
+    ],
+    "gameplaySimplifications_es": [
+      "En el experimento real un poco de la marca de proteína también se quedó con las bacterias; aquí el resultado está simplificado."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Hershey, A. D.",
+          "Chase, M."
+        ],
+        "year": 1952,
+        "title": "Independent functions of viral protein and nucleic acid in growth of bacteriophage",
+        "journal": "Journal of General Physiology",
+        "type": "paper",
+        "doi": "10.1085/jgp.36.1.39"
+      }
+    ]
+  }
+}

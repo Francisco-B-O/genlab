@@ -1,0 +1,250 @@
+{
+  "id": "build-banana",
+  "mode": "construct",
+  "title": "Bacteria that smell of banana",
+  "title_es": "Bacterias con olor a plátano",
+  "subtitle": "A scent factory: choose the right DNA parts",
+  "subtitle_es": "Una fábrica de aromas: elige las piezas de ADN correctas",
+  "difficulty": "beginner",
+  "estimatedDuration": 5,
+  "objective": "Assemble a construct that makes E. coli produce the smell of banana, using a gene from baker's yeast.",
+  "objective_es": "Monta una construcción que haga que E. coli produzca olor a plátano, usando un gen de la levadura de panadería.",
+  "description": "Not every part works in every organism: some are made for bacteria, others for yeast.",
+  "description_es": "No todas las piezas funcionan en todos los organismos: unas son para bacterias y otras para levaduras.",
+  "organism": {
+    "id": "ecoli-banana",
+    "commonName": "E. coli",
+    "commonName_es": "E. coli",
+    "scientificName": "Escherichia coli",
+    "taxonomy": [
+      "Bacteria",
+      "Pseudomonadota",
+      "Gammaproteobacteria",
+      "Enterobacterales",
+      "Escherichia"
+    ],
+    "targetTissue": "single cell",
+    "targetOrganelle": "cytoplasm",
+    "description": "The same laboratory bacterium, now carrying a gene from yeast.",
+    "description_es": "La misma bacteria de laboratorio, ahora con un gen de levadura."
+  },
+  "exploration": [
+    {
+      "kind": "bacterium",
+      "label": "Idea",
+      "label_es": "Idea",
+      "title": "A scent from DNA",
+      "title_es": "Un aroma hecho con ADN",
+      "description": "In 2006 a team of students entered the iGEM competition with bacteria that smelled of banana. The smell comes from isoamyl acetate, an ester that yeast also makes in beer and bread.",
+      "description_es": "En 2006 un equipo de estudiantes presentó en el concurso iGEM unas bacterias con olor a plátano. El olor viene del acetato de isoamilo, un éster que la levadura también produce en la cerveza y el pan."
+    },
+    {
+      "kind": "banana",
+      "label": "Gene",
+      "label_es": "Gen",
+      "title": "Borrowing a gene",
+      "title_es": "Tomar prestado un gen",
+      "description": "Baker's yeast has a gene, ATF1, for an enzyme that joins an alcohol to an acetyl group. Copying it into E. coli gives the bacteria the same trick.",
+      "description_es": "La levadura de panadería tiene un gen, ATF1, para una enzima que une un alcohol con un grupo acetilo. Copiarlo en E. coli le da a la bacteria el mismo truco."
+    }
+  ],
+  "construct": {
+    "solution": [
+      "p_strong",
+      "rbs_bact",
+      "atf1",
+      "term"
+    ],
+    "parts": [
+      {
+        "id": "p_strong",
+        "kind": "promoter",
+        "label": "Strong promoter",
+        "label_es": "Promotor fuerte",
+        "description": "A promoter that E. coli reads very efficiently.",
+        "description_es": "Un promotor que E. coli lee con mucha eficacia."
+      },
+      {
+        "id": "p_none",
+        "kind": "promoter",
+        "label": "Random DNA (no promoter)",
+        "label_es": "ADN al azar (sin promotor)",
+        "description": "A stretch of DNA that is not a promoter.",
+        "description_es": "Un trozo de ADN que no es un promotor.",
+        "wrongReason": "Without a promoter the RNA polymerase does not know where to start reading: nothing would be made.",
+        "wrongReason_es": "Sin promotor, la ARN polimerasa no sabe por dónde empezar a leer: no se fabricaría nada.",
+        "isDistractor": true
+      },
+      {
+        "id": "rbs_bact",
+        "kind": "rbs",
+        "label": "Bacterial RBS",
+        "label_es": "RBS bacteriano",
+        "description": "The landing strip for bacterial ribosomes.",
+        "description_es": "La pista de aterrizaje de los ribosomas bacterianos."
+      },
+      {
+        "id": "rbs_yeast",
+        "kind": "rbs",
+        "label": "Yeast-style start",
+        "label_es": "Inicio al estilo levadura",
+        "description": "How yeast ribosomes find where to start.",
+        "description_es": "Cómo encuentran los ribosomas de levadura dónde empezar.",
+        "wrongReason": "Yeast ribosomes start reading in a different way. In bacteria like E. coli you need a bacterial RBS.",
+        "wrongReason_es": "Los ribosomas de levadura empiezan a leer de otra forma. En bacterias como E. coli hace falta un RBS bacteriano.",
+        "isDistractor": true
+      },
+      {
+        "id": "atf1",
+        "kind": "gene",
+        "label": "ATF1 gene",
+        "label_es": "Gen ATF1",
+        "description": "From baker's yeast: an enzyme that joins isoamyl alcohol and acetyl-CoA into isoamyl acetate, the smell of banana.",
+        "description_es": "De la levadura de panadería: una enzima que une alcohol isoamílico y acetil-CoA en acetato de isoamilo, el olor a plátano."
+      },
+      {
+        "id": "lipase",
+        "kind": "gene",
+        "label": "Lipase gene",
+        "label_es": "Gen de lipasa",
+        "description": "Recipe for an enzyme that cuts fats.",
+        "description_es": "Receta de una enzima que corta grasas.",
+        "wrongReason": "A lipase cuts fats. It is not the enzyme that joins an alcohol to acetyl-CoA to make the banana smell.",
+        "wrongReason_es": "Una lipasa corta grasas. No es la enzima que une un alcohol con acetil-CoA para dar olor a plátano.",
+        "isDistractor": true
+      },
+      {
+        "id": "term",
+        "kind": "terminator",
+        "label": "Terminator",
+        "label_es": "Terminador",
+        "description": "Marks where the reading stops.",
+        "description_es": "Marca dónde termina la lectura."
+      }
+    ]
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Banana scent",
+    "productLabel_es": "Olor a plátano",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Reading the DNA",
+        "label_es": "Leer el ADN",
+        "description": "The polymerase starts at the strong promoter.",
+        "description_es": "La polimerasa empieza en el promotor fuerte.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Building the enzyme",
+        "label_es": "Construir la enzima",
+        "description": "Ribosomes build the ATF1 enzyme.",
+        "description_es": "Los ribosomas construyen la enzima ATF1.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Making the ester",
+        "label_es": "Fabricar el éster",
+        "description": "The enzyme joins the alcohol to acetyl-CoA.",
+        "description_es": "La enzima une el alcohol con el acetil-CoA.",
+        "order": 3
+      },
+      {
+        "id": "s4",
+        "label": "Banana in the air",
+        "label_es": "Plátano en el aire",
+        "description": "The volatile molecule escapes: the culture smells of banana.",
+        "description_es": "La molécula volátil escapa: el cultivo huele a plátano.",
+        "order": 4
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "A construct for bacteria needs bacterial parts. The gene comes from yeast, but the parts around it must suit E. coli.",
+      "content_es": "Una construcción para bacterias necesita piezas de bacteria. El gen viene de la levadura, pero las piezas de alrededor tienen que servir para E. coli.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Order: promoter, RBS, gene, terminator. Rule out the parts that do not belong in a bacterium or do not make the scent.",
+      "content_es": "Orden: promotor, RBS, gen, terminador. Descarta las piezas que no sirven en una bacteria o que no fabrican el aroma.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Strong promoter, bacterial RBS, ATF1 gene, terminator.",
+      "content_es": "Promotor fuerte, RBS bacteriano, gen ATF1 y terminador.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "The culture smells of banana",
+    "title_es": "El cultivo huele a plátano",
+    "summary": "You assembled a construct for a bacterium using a gene from yeast. A gene can travel between organisms, but the parts around it have to suit its new host.",
+    "summary_es": "Has montado una construcción para una bacteria con un gen de levadura. Un gen puede viajar entre organismos, pero las piezas que lo rodean tienen que servir para su nuevo huésped.",
+    "realWorldImpact": "Flavours and fragrances are big industries. Producing them with microbes, instead of extracting them from plants or making them from petroleum, is a growing field.",
+    "realWorldImpact_es": "Los sabores y las fragancias son una gran industria. Producirlos con microbios, en vez de extraerlos de plantas o fabricarlos con petróleo, es un campo en crecimiento."
+  },
+  "science": {
+    "organism": "Escherichia coli expressing yeast ATF1",
+    "realWorldCase": "The 2006 MIT iGEM team nicknamed their bacteria \"Eau d'coli\". Their cultures smelled of banana while growing and of wintergreen later.",
+    "realWorldCase_es": "El equipo del MIT en el iGEM de 2006 apodó a sus bacterias «Eau d'coli». Sus cultivos olían a plátano mientras crecían y a gaulteria más tarde.",
+    "scientificContext": "Alcohol acetyltransferase Atf1 transfers an acetyl group from acetyl-CoA to higher alcohols, forming volatile esters such as isoamyl acetate.",
+    "scientificContext_es": "La alcohol acetiltransferasa Atf1 transfiere un grupo acetilo del acetil-CoA a alcoholes superiores y forma ésteres volátiles como el acetato de isoamilo.",
+    "gameplaySimplifications": [
+      "E. coli needs isoamyl alcohol, which was added to the medium in the real experiment.",
+      "Real constructs also carry a plasmid backbone and a selection marker."
+    ],
+    "gameplaySimplifications_es": [
+      "E. coli necesita alcohol isoamílico, que en el experimento real se añadió al medio.",
+      "Las construcciones reales llevan además un plásmido base y un marcador de selección."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Verstrepen KJ",
+          "Van Laere SDM",
+          "Vanderhaegen BMP",
+          "Derdelinckx G",
+          "Dufour JP",
+          "Pretorius IS",
+          "Winderickx J",
+          "Thevelein JM",
+          "Delvaux FR"
+        ],
+        "year": 2003,
+        "title": "Expression levels of the yeast alcohol acetyltransferase genes ATF1, Lg-ATF1, and ATF2 control the formation of a broad range of volatile esters",
+        "journal": "Applied and Environmental Microbiology",
+        "doi": "10.1128/AEM.69.9.5228-5237.2003",
+        "type": "paper"
+      }
+    ]
+  }
+}

@@ -1,0 +1,308 @@
+{
+  "id": "tune-dough",
+  "mode": "tune",
+  "title": "Tune the dough",
+  "title_es": "Ajusta la masa",
+  "subtitle": "Four settings, one loaf that rises",
+  "subtitle_es": "Cuatro ajustes, un pan que sube",
+  "difficulty": "beginner",
+  "estimatedDuration": 5,
+  "objective": "Choose the settings so the dough rises enough without going over budget.",
+  "objective_es": "Elige los ajustes para que la masa suba lo suficiente sin pasarte del presupuesto.",
+  "description": "Every option has a good side and a downside, just like in a real fermenter.",
+  "description_es": "Cada opción tiene su lado bueno y su inconveniente, igual que en un fermentador de verdad.",
+  "organism": {
+    "id": "yeast-dough",
+    "commonName": "Baker's yeast",
+    "commonName_es": "Levadura de panadería",
+    "scientificName": "Saccharomyces cerevisiae",
+    "taxonomy": [
+      "Fungi",
+      "Ascomycota",
+      "Saccharomycetes",
+      "Saccharomycetales",
+      "Saccharomyces"
+    ],
+    "targetTissue": "single cell",
+    "targetOrganelle": "cytoplasm",
+    "description": "The yeast in bread dough.",
+    "description_es": "La levadura de la masa del pan."
+  },
+  "exploration": [
+    {
+      "kind": "bread",
+      "label": "Bread",
+      "label_es": "Pan",
+      "title": "A living ingredient",
+      "title_es": "Un ingrediente vivo",
+      "description": "Yeast is alive, so it responds to temperature, food and time. A baker adjusts all three.",
+      "description_es": "La levadura está viva, así que responde a la temperatura, el alimento y el tiempo. Una panadera ajusta las tres cosas."
+    }
+  ],
+  "tune": {
+    "metricLabel": "Rise",
+    "metricLabel_es": "Subida",
+    "unit": "%",
+    "unit_es": "%",
+    "base": 20,
+    "target": 60,
+    "budget": 7,
+    "labels": {
+      "perCell": "Gas made by the yeast",
+      "perCell_es": "Gas que fabrica la levadura",
+      "growth": "Yeast health",
+      "growth_es": "Salud de la levadura"
+    },
+    "messages": {
+      "lowGrowth": "The yeast is suffering: the water, the sugar or the time does not suit it.",
+      "lowGrowth_es": "La levadura sufre: el agua, el azúcar o el tiempo no le sientan bien.",
+      "lowPerCell": "The dough makes little gas: it needs more yeast, sugar or time.",
+      "lowPerCell_es": "La masa produce poco gas: necesita más levadura, azúcar o tiempo."
+    },
+    "knobs": [
+      {
+        "id": "yeast",
+        "label": "Amount of yeast",
+        "label_es": "Cantidad de levadura",
+        "options": [
+          {
+            "id": "little",
+            "label": "A little",
+            "label_es": "Poca",
+            "description": "Slow, but gentle.",
+            "description_es": "Lenta, pero suave.",
+            "cost": 1,
+            "perCell": 1,
+            "growth": 1
+          },
+          {
+            "id": "normal",
+            "label": "Normal",
+            "label_es": "Normal",
+            "description": "The usual amount.",
+            "description_es": "La cantidad habitual.",
+            "cost": 2,
+            "perCell": 1.5,
+            "growth": 1
+          },
+          {
+            "id": "lots",
+            "label": "A lot",
+            "label_es": "Mucha",
+            "description": "Fast, but runs out of food and tastes of yeast.",
+            "description_es": "Rápida, pero se queda sin comida y sabe a levadura.",
+            "cost": 3,
+            "perCell": 2,
+            "growth": 0.8
+          }
+        ]
+      },
+      {
+        "id": "water",
+        "label": "Water temperature",
+        "label_es": "Temperatura del agua",
+        "options": [
+          {
+            "id": "cold",
+            "label": "Cold, about 15 °C",
+            "label_es": "Fría, unos 15 °C",
+            "description": "Free, but the yeast hardly wakes up.",
+            "description_es": "Gratis, pero la levadura apenas se despierta.",
+            "cost": 0,
+            "perCell": 1,
+            "growth": 0.6
+          },
+          {
+            "id": "warm",
+            "label": "Lukewarm, about 35 °C",
+            "label_es": "Templada, unos 35 °C",
+            "description": "Where yeast is happiest.",
+            "description_es": "Donde la levadura está más a gusto.",
+            "cost": 1,
+            "perCell": 1,
+            "growth": 1
+          },
+          {
+            "id": "hot",
+            "label": "Hot, about 70 °C",
+            "label_es": "Caliente, unos 70 °C",
+            "description": "Fast to prepare, but heat kills yeast.",
+            "description_es": "Rápida de preparar, pero el calor mata la levadura.",
+            "cost": 1,
+            "perCell": 1,
+            "growth": 0.05
+          }
+        ]
+      },
+      {
+        "id": "sugar",
+        "label": "Sugar",
+        "label_es": "Azúcar",
+        "options": [
+          {
+            "id": "none",
+            "label": "None",
+            "label_es": "Nada",
+            "description": "Yeast lives on the flour's sugars, slowly.",
+            "description_es": "La levadura vive de los azúcares de la harina, despacio.",
+            "cost": 0,
+            "perCell": 1,
+            "growth": 0.8
+          },
+          {
+            "id": "some",
+            "label": "A pinch",
+            "label_es": "Una pizca",
+            "description": "Extra food to get going.",
+            "description_es": "Comida extra para arrancar.",
+            "cost": 1,
+            "perCell": 1.3,
+            "growth": 1
+          },
+          {
+            "id": "much",
+            "label": "A lot",
+            "label_es": "Mucho",
+            "description": "Too much sugar slows the yeast down.",
+            "description_es": "Demasiado azúcar frena a la levadura.",
+            "cost": 2,
+            "perCell": 1.5,
+            "growth": 0.7
+          }
+        ]
+      },
+      {
+        "id": "time",
+        "label": "Resting time",
+        "label_es": "Tiempo de reposo",
+        "options": [
+          {
+            "id": "h1",
+            "label": "1 hour",
+            "label_es": "1 hora",
+            "description": "Short.",
+            "description_es": "Corto.",
+            "cost": 1,
+            "perCell": 1,
+            "growth": 1
+          },
+          {
+            "id": "h2",
+            "label": "2 hours",
+            "label_es": "2 horas",
+            "description": "A common choice.",
+            "description_es": "Una elección habitual.",
+            "cost": 2,
+            "perCell": 1.6,
+            "growth": 1
+          },
+          {
+            "id": "h4",
+            "label": "4 hours",
+            "label_es": "4 horas",
+            "description": "The dough may collapse if left too long.",
+            "description_es": "La masa puede hundirse si se deja demasiado.",
+            "cost": 3,
+            "perCell": 2,
+            "growth": 0.9
+          }
+        ]
+      }
+    ]
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Rise",
+    "productLabel_es": "Subida",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Mix",
+        "label_es": "Amasar",
+        "description": "Yeast, water, sugar and flour.",
+        "description_es": "Levadura, agua, azúcar y harina.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Rest",
+        "label_es": "Reposo",
+        "description": "The yeast makes gas.",
+        "description_es": "La levadura fabrica gas.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Rise",
+        "label_es": "Subida",
+        "description": "The dough grows.",
+        "description_es": "La masa crece.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Warm, not hot. Sugar helps, but too much is a problem. Time helps, but not forever.",
+      "content_es": "Templada, no caliente. El azúcar ayuda, pero demasiado es un problema. El tiempo ayuda, pero no para siempre.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Try normal yeast, lukewarm water, a pinch of sugar and two hours.",
+      "content_es": "Prueba con levadura normal, agua templada, una pizca de azúcar y dos horas.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Normal yeast (2) + lukewarm water (1) + a pinch of sugar (1) + 2 hours (2) = cost 6, rise 62%.",
+      "content_es": "Levadura normal (2) + agua templada (1) + una pizca de azúcar (1) + 2 horas (2) = coste 6, subida 62 %.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "It rises",
+    "title_es": "Sube",
+    "summary": "You balanced four settings, each with a good side and a downside. That is the heart of tuning any biological process.",
+    "summary_es": "Has equilibrado cuatro ajustes, cada uno con su lado bueno y su inconveniente. Ese es el corazón de ajustar cualquier proceso biológico.",
+    "realWorldImpact": "Bakers, brewers and biotech engineers all tune temperature, nutrients and time, because living cells respond to all three.",
+    "realWorldImpact_es": "Panaderos, cerveceros e ingenieros biotecnológicos ajustan la temperatura, los nutrientes y el tiempo, porque las células vivas responden a los tres."
+  },
+  "science": {
+    "organism": "Saccharomyces cerevisiae",
+    "realWorldCase": "Yeast is most active at moderate temperatures. Above roughly 50–55 °C it dies, which is why water for dough should be lukewarm.",
+    "realWorldCase_es": "La levadura está más activa a temperaturas moderadas. Por encima de unos 50–55 °C muere, por eso el agua para la masa debe estar templada.",
+    "scientificContext": "Yeast fermentation rate depends on temperature, available sugar, osmotic conditions (very high sugar slows yeast) and time. The numbers in this level are simplified.",
+    "scientificContext_es": "La velocidad de fermentación de la levadura depende de la temperatura, el azúcar disponible, las condiciones osmóticas (el azúcar muy alto frena a la levadura) y el tiempo. Los números de este nivel están simplificados.",
+    "gameplaySimplifications": [
+      "The model multiplies a few numbers; real dough behaves in a more complex way."
+    ],
+    "gameplaySimplifications_es": [
+      "El modelo multiplica unos pocos números; la masa real se comporta de forma más compleja."
+    ],
+    "references": []
+  }
+}

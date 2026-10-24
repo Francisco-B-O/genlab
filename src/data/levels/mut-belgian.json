@@ -1,0 +1,179 @@
+{
+  "id": "mut-belgian",
+  "mode": "mutation",
+  "title": "The lost letter of the Belgian Blue",
+  "title_es": "La letra perdida de la vaca azul belga",
+  "subtitle": "A deletion that doubles the muscle",
+  "subtitle_es": "Una deleción que duplica el músculo",
+  "difficulty": "advanced",
+  "estimatedDuration": 7,
+  "objective": "Find the letter that is missing in the changed gene and say what it does to the protein.",
+  "objective_es": "Encuentra la letra que falta en el gen cambiado y di qué le hace a la proteína.",
+  "description": "A letter added or lost does not change one amino acid: it moves the place where the letters are cut into groups of three, so everything after it is read differently. Compare the two sequences from the start.",
+  "description_es": "Una letra añadida o perdida no cambia un solo aminoácido: mueve el sitio donde las letras se cortan en grupos de tres, así que todo lo que viene después se lee de otra manera. Compara las dos secuencias desde el principio.",
+  "organism": {
+    "id": "cattle-mstn-del",
+    "commonName": "Myostatin",
+    "commonName_es": "Miostatina",
+    "scientificName": "Bos taurus",
+    "taxonomy": [
+      "Animalia",
+      "Chordata",
+      "Mammalia",
+      "Artiodactyla",
+      "Bovidae",
+      "Bos"
+    ],
+    "targetTissue": "muscle",
+    "targetOrganelle": "cytoplasm",
+    "description": "A protein that limits the growth of muscles.",
+    "description_es": "Una proteína que limita el crecimiento de los músculos."
+  },
+  "exploration": [
+    {
+      "kind": "cell",
+      "label": "The brake",
+      "label_es": "El freno",
+      "title": "Myostatin",
+      "title_es": "La miostatina",
+      "description": "Myostatin tells muscles to stop growing. In Belgian Blue cattle the protein is not made properly, and the muscles grow far more.",
+      "description_es": "La miostatina dice a los músculos que dejen de crecer. En el ganado azul belga la proteína no se fabrica bien, y los músculos crecen mucho más."
+    },
+    {
+      "kind": "dna",
+      "label": "A deletion",
+      "label_es": "Una deleción",
+      "title": "Eleven letters, not a multiple of three",
+      "title_es": "Once letras, que no es múltiplo de tres",
+      "description": "A deletion of a multiple of three removes whole amino acids; one that is not a multiple of three shifts the reading. Eleven is not, so the gene is broken.",
+      "description_es": "Una deleción de un múltiplo de tres quita aminoácidos enteros; una que no es múltiplo de tres desplaza la lectura. Once no lo es, así que el gen se rompe."
+    }
+  ],
+  "mutation": {
+    "geneLabel": "Myostatin gene of cattle (illustrative)",
+    "geneLabel_es": "Gen de la miostatina del ganado (ilustrativo)",
+    "reference": "ATGGCTAAGCTGGAGCAGTAC",
+    "mutant": "ATGGCTAGCTGGAGCAGTAC",
+    "story": "A real kind of change, with an invented sequence. Belgian Blue cattle lack a few letters in the gene of myostatin, the brake of muscle growth. The real deletion has 11 letters; here a single missing letter does the same job. Find it in the original gene.",
+    "story_es": "Un tipo real de cambio, con una secuencia inventada. Al ganado azul belga le faltan unas letras en el gen de la miostatina, el freno del crecimiento muscular. La deleción real tiene 11 letras; aquí una sola letra que falta hace el mismo trabajo. Búscala en el gen original.",
+    "explanations": {
+      "silent": "Not here: the reading itself moves.",
+      "silent_es": "Aquí no: la propia lectura se desplaza.",
+      "missense": "Not here: more than one amino acid is affected.",
+      "missense_es": "Aquí no: se ve afectado más de un aminoácido.",
+      "nonsense": "Not here: the message does not simply stop.",
+      "nonsense_es": "Aquí no: el mensaje no se limita a parar.",
+      "frameshift": "Losing an A moved the reading frame. AAG became AGC and every amino acid after it changed. The real protein ends up short and useless, so the brake of the muscles is gone.",
+      "frameshift_es": "Perder una A movió la pauta de lectura. AAG pasó a AGC y todos los aminoácidos que le siguen cambiaron. La proteína real queda corta e inútil, así que el freno de los músculos desaparece."
+    }
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Effect",
+    "productLabel_es": "Efecto",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Compare",
+        "label_es": "Comparar",
+        "description": "Find the changed letter.",
+        "description_es": "Encuentra la letra cambiada.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Translate",
+        "label_es": "Traducir",
+        "description": "Read the codons.",
+        "description_es": "Lee los codones.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Effect",
+        "label_es": "Efecto",
+        "description": "Decide what it does.",
+        "description_es": "Decide qué hace.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Read both rows from the start. The changed gene is one letter shorter than the original.",
+      "content_es": "Lee las dos filas desde el principio. El gen cambiado es una letra más corto que el original.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "The rows agree until the third group of the original gene, where two A letters follow each other. Either of them can be the missing one.",
+      "content_es": "Las filas coinciden hasta el tercer grupo del gen original, donde dos letras A van seguidas. Cualquiera de ellas puede ser la que falta.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Tap one of the two A letters of the third group of the original gene. The effect is a frameshift.",
+      "content_es": "Toca una de las dos letras A del tercer grupo del gen original. El efecto es un cambio de pauta de lectura.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A letter less, a protein less",
+    "title_es": "Una letra menos, una proteína menos",
+    "summary": "You found a missing letter and saw that a deletion that is not a multiple of three scrambles everything that follows.",
+    "summary_es": "Has encontrado una letra que falta y has visto que una deleción que no es múltiplo de tres revuelve todo lo que viene después.",
+    "realWorldImpact": "Double-muscled cattle give lean meat, but calving is harder, so breeders weigh the benefit and the cost of the allele.",
+    "realWorldImpact_es": "El ganado de doble músculo da carne magra, pero los partos son más difíciles, así que quien cría sopesa el beneficio y el coste del alelo."
+  },
+  "science": {
+    "organism": "Bos taurus",
+    "realWorldCase": "In 1997 a team showed that the Belgian Blue breed carries an 11-letter deletion in the myostatin gene, which causes the double-muscled look.",
+    "realWorldCase_es": "En 1997 un equipo mostró que la raza azul belga lleva una deleción de 11 letras en el gen de la miostatina, que causa el aspecto de doble músculo.",
+    "scientificContext": "The deletion removes 11 letters of the coding sequence, so the reading frame shifts and a premature stop codon soon appears. The cell then makes a short protein that cannot work.",
+    "scientificContext_es": "La deleción quita 11 letras de la secuencia codificante, así que la pauta de lectura se desplaza y pronto aparece un codón de fin prematuro. La célula fabrica entonces una proteína corta que no puede funcionar.",
+    "gameplaySimplifications": [
+      "The real change is the one described, but the sequence is an invented short example, and the real change can be of more than one letter."
+    ],
+    "gameplaySimplifications_es": [
+      "El cambio real es el que se describe, pero la secuencia es un ejemplo corto inventado, y el cambio real puede ser de más de una letra."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Grobet, L.",
+          "Royo Martin, L. J.",
+          "Poncelet, D.",
+          "et al."
+        ],
+        "year": 1997,
+        "title": "A deletion in the bovine myostatin gene causes the double-muscled phenotype in cattle",
+        "journal": "Nature Genetics",
+        "type": "paper",
+        "doi": "10.1038/ng0997-71"
+      }
+    ]
+  }
+}

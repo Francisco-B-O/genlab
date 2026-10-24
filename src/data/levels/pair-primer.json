@@ -1,0 +1,148 @@
+{
+  "id": "pair-primer",
+  "mode": "pairing",
+  "title": "The primer that finds its place",
+  "title_es": "El cebador que encuentra su sitio",
+  "subtitle": "Sixteen letters to match a template",
+  "subtitle_es": "Dieciséis letras para casar con un molde",
+  "difficulty": "intermediate",
+  "estimatedDuration": 5,
+  "objective": "Write the strand that pairs with this template, letter by letter. That strand is the primer.",
+  "objective_es": "Escribe la hebra que se empareja con este molde, letra a letra. Esa hebra es el cebador.",
+  "description": "Strands pair with strict rules. Work out each partner letter by letter, as the cell does.",
+  "description_es": "Las hebras se emparejan con reglas estrictas. Averigua cada pareja letra a letra, como hace la célula.",
+  "organism": {
+    "id": "pair-pair-primer",
+    "commonName": "A strand of nucleic acid",
+    "commonName_es": "Una hebra de ácido nucleico",
+    "scientificName": "Nucleic acids",
+    "taxonomy": [
+      "Molecule"
+    ],
+    "targetTissue": "nucleus",
+    "targetOrganelle": "nucleus",
+    "description": "DNA and RNA strands.",
+    "description_es": "Hebras de ADN y ARN."
+  },
+  "exploration": [
+    {
+      "kind": "dna",
+      "label": "The primer",
+      "label_es": "El cebador",
+      "title": "A short key for a long lock",
+      "title_es": "Una llave corta para una cerradura larga",
+      "description": "A primer of about 20 letters sticks only where its partner letters are found, so it picks one stretch out of a whole genome.",
+      "description_es": "Un cebador de unas 20 letras solo se pega donde están sus letras pareja, así que elige un tramo entre todo un genoma."
+    },
+    {
+      "kind": "flask",
+      "label": "The cycle",
+      "label_es": "El ciclo",
+      "title": "Heat, cool, copy",
+      "title_es": "Calentar, enfriar, copiar",
+      "description": "The DNA is heated to open the strands, cooled so the primers stick, and warmed a little so an enzyme can extend them. Each cycle doubles the copies.",
+      "description_es": "El ADN se calienta para abrir las hebras, se enfría para que se peguen los cebadores y se templa un poco para que una enzima los alargue. Cada ciclo duplica las copias."
+    }
+  ],
+  "pairing": {
+    "kind": "dna",
+    "template": "AAGCTTGGCATCAGTA",
+    "story": "PCR starts with a short piece of DNA, the primer, that sticks to the start of the stretch to copy. Write the primer that pairs with this template.",
+    "story_es": "La PCR empieza con un trozo corto de ADN, el cebador, que se pega al principio del tramo que se quiere copiar. Escribe el cebador que se empareja con este molde."
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Strand",
+    "productLabel_es": "Hebra",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Template",
+        "label_es": "Molde",
+        "description": "The strand that exists.",
+        "description_es": "La hebra que ya existe.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Pairs",
+        "label_es": "Parejas",
+        "description": "Each base finds its partner.",
+        "description_es": "Cada base encuentra a su pareja.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Strand",
+        "label_es": "Hebra",
+        "description": "The new strand is complete.",
+        "description_es": "La hebra nueva está completa.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Go from left to right and pair each letter on its own.",
+      "content_es": "Ve de izquierda a derecha y empareja cada letra por separado.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "A pairs with T and C pairs with G, in both directions.",
+      "content_es": "A se une con T y C con G, en los dos sentidos.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "The partners are: T T C G A A C C G T A G T C A T.",
+      "content_es": "Las parejas son: T T C G A A C C G T A G T C A T.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A primer that fits",
+    "title_es": "Un cebador que encaja",
+    "summary": "You wrote a primer by applying the pairing rules: the same rules that make PCR so specific.",
+    "summary_es": "Has escrito un cebador aplicando las reglas de emparejamiento: las mismas que hacen tan específica a la PCR.",
+    "realWorldImpact": "PCR primers are the heart of many tests: tracing food, checking a pet, finding a virus or comparing species.",
+    "realWorldImpact_es": "Los cebadores de PCR son el corazón de muchas pruebas: rastrear alimentos, revisar una mascota, encontrar un virus o comparar especies."
+  },
+  "science": {
+    "organism": "Nucleic acids",
+    "realWorldCase": "The PCR method was invented in 1983 by Kary Mullis, who received the 1993 Nobel Prize in Chemistry. Its power comes from the primers.",
+    "realWorldCase_es": "El método de la PCR lo inventó en 1983 Kary Mullis, que recibió el Premio Nobel de Química de 1993. Su poder viene de los cebadores.",
+    "scientificContext": "Hydrogen bonds hold A with T (two bonds) and G with C (three bonds). A primer with more G and C sticks more firmly.",
+    "scientificContext_es": "Los enlaces de hidrógeno mantienen unidas A con T (dos enlaces) y G con C (tres enlaces). Un cebador con más G y C se pega con más fuerza.",
+    "gameplaySimplifications": [
+      "Strands are written in the same direction to keep it simple; real primers pair in opposite directions."
+    ],
+    "gameplaySimplifications_es": [
+      "Las hebras se escriben en el mismo sentido para simplificar; los cebadores reales se emparejan en sentidos opuestos."
+    ],
+    "references": []
+  }
+}

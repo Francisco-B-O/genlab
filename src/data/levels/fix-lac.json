@@ -1,0 +1,382 @@
+{
+  "id": "fix-lac",
+  "mode": "diagnose",
+  "title": "Colonies that stay white",
+  "title_es": "Colonias que se quedan blancas",
+  "subtitle": "A repressor that never lets go",
+  "subtitle_es": "Un represor que nunca suelta",
+  "difficulty": "advanced",
+  "estimatedDuration": 7,
+  "objective": "The plate has lactose and X-gal, but the colonies stay white. Find the piece that fails and the fix.",
+  "objective_es": "La placa tiene lactosa y X-gal, pero las colonias se quedan blancas. Descubre qué pieza falla y cómo se arregla.",
+  "description": "The pathway is built, but something fails. Read the clues, find the broken piece, and choose the right treatment.",
+  "description_es": "La ruta está montada, pero algo falla. Lee las pistas, encuentra la pieza rota y elige el tratamiento correcto.",
+  "organism": {
+    "id": "lac-fix",
+    "commonName": "E. coli strain",
+    "commonName_es": "Una cepa de E. coli",
+    "scientificName": "Escherichia coli",
+    "taxonomy": [
+      "Bacteria",
+      "Pseudomonadota",
+      "Gammaproteobacteria",
+      "Enterobacterales",
+      "Enterobacteriaceae",
+      "Escherichia"
+    ],
+    "targetTissue": "single cell",
+    "targetOrganelle": "cytoplasm",
+    "description": "Bacteria that should turn blue.",
+    "description_es": "Bacterias que deberían volverse azules."
+  },
+  "exploration": [
+    {
+      "kind": "bacterium",
+      "label": "Problem",
+      "label_es": "Problema",
+      "title": "A white plate",
+      "title_es": "Una placa blanca",
+      "description": "On a plate with lactose and X-gal, normal colonies turn blue. These stay white.",
+      "description_es": "En una placa con lactosa y X-gal, las colonias normales se vuelven azules. Estas se quedan blancas."
+    },
+    {
+      "kind": "dna",
+      "label": "The circuit",
+      "label_es": "El circuito",
+      "title": "Repressor and gene",
+      "title_es": "Represor y gen",
+      "description": "The lacZ gene is blocked by a repressor until lactose releases it.",
+      "description_es": "El gen lacZ está bloqueado por un represor hasta que la lactosa lo libera."
+    }
+  ],
+  "biologicalContext": {
+    "nodes": [
+      {
+        "id": "met_lactose",
+        "type": "metabolite",
+        "label": "Lactose (the signal)",
+        "label_es": "Lactosa (la señal)",
+        "description": "It should switch the repressor off.",
+        "description_es": "Debería apagar el represor.",
+        "position": {
+          "x": 0.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "protein_repressor",
+        "type": "protein",
+        "label": "Lac repressor",
+        "label_es": "Represor lac",
+        "description": "Blocks the gene until lactose arrives.",
+        "description_es": "Bloquea el gen hasta que llega la lactosa.",
+        "position": {
+          "x": 3.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "gene_lacz",
+        "type": "gene",
+        "label": "lacZ gene",
+        "label_es": "Gen lacZ",
+        "description": "The recipe of β-galactosidase.",
+        "description_es": "La receta de la β-galactosidasa.",
+        "position": {
+          "x": 6.0,
+          "y": 0.0,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_bgal",
+        "type": "enzyme",
+        "label": "β-gal enzyme",
+        "label_es": "Enzima β-gal",
+        "description": "β-galactosidase: it cuts X-gal.",
+        "description_es": "β-galactosidasa: corta el X-gal.",
+        "position": {
+          "x": 9.0,
+          "y": 0.0,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_xgal",
+        "type": "reaction",
+        "label": "Cutting X-gal",
+        "label_es": "Cortar el X-gal",
+        "description": "Releases a blue dye.",
+        "description_es": "Libera un colorante azul.",
+        "position": {
+          "x": 12.0,
+          "y": 0.0,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_blue",
+        "type": "metabolite",
+        "label": "Blue compound",
+        "label_es": "Compuesto azul",
+        "description": "The dye.",
+        "description_es": "El colorante.",
+        "position": {
+          "x": 15.0,
+          "y": 0.0,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "phenotype_blue",
+        "type": "phenotype",
+        "label": "Blue colony",
+        "label_es": "Colonia azul",
+        "description": "What we should see.",
+        "description_es": "Lo que deberíamos ver.",
+        "position": {
+          "x": 18.0,
+          "y": 0.0,
+          "z": 0
+        },
+        "metadata": {}
+      }
+    ],
+    "edges": [
+      {
+        "id": "ref_met_lactose_represses_protein_repressor",
+        "source": "met_lactose",
+        "target": "protein_repressor",
+        "type": "represses",
+        "isRequired": true
+      },
+      {
+        "id": "ref_protein_repressor_represses_gene_lacz",
+        "source": "protein_repressor",
+        "target": "gene_lacz",
+        "type": "represses",
+        "isRequired": true
+      },
+      {
+        "id": "ref_gene_lacz_encodes_enzyme_bgal",
+        "source": "gene_lacz",
+        "target": "enzyme_bgal",
+        "type": "encodes",
+        "isRequired": true
+      },
+      {
+        "id": "ref_enzyme_bgal_catalyzes_rxn_xgal",
+        "source": "enzyme_bgal",
+        "target": "rxn_xgal",
+        "type": "catalyzes",
+        "isRequired": true
+      },
+      {
+        "id": "ref_rxn_xgal_produces_met_blue",
+        "source": "rxn_xgal",
+        "target": "met_blue",
+        "type": "produces",
+        "isRequired": true
+      },
+      {
+        "id": "ref_met_blue_influences_phenotype_blue",
+        "source": "met_blue",
+        "target": "phenotype_blue",
+        "type": "influences",
+        "isRequired": true
+      }
+    ]
+  },
+  "puzzle": {
+    "availableNodes": [
+      "met_lactose",
+      "protein_repressor",
+      "gene_lacz",
+      "enzyme_bgal",
+      "rxn_xgal",
+      "met_blue",
+      "phenotype_blue"
+    ],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "diagnose": {
+    "symptom": "The colonies stay white on a plate with lactose and X-gal.",
+    "symptom_es": "Las colonias se quedan blancas en una placa con lactosa y X-gal.",
+    "clues": [
+      {
+        "text": "The sequence of the lacZ gene is correct.",
+        "text_es": "La secuencia del gen lacZ es correcta."
+      },
+      {
+        "text": "The plate does contain lactose and X-gal.",
+        "text_es": "La placa sí contiene lactosa y X-gal."
+      },
+      {
+        "text": "The repressor gene of this strain has a mutation in the part that binds lactose.",
+        "text_es": "El gen del represor de esta cepa tiene una mutación en la parte que se une a la lactosa."
+      },
+      {
+        "text": "The colonies are healthy and grow fast.",
+        "text_es": "Las colonias están sanas y crecen deprisa."
+      }
+    ],
+    "faultyIds": [
+      "protein_repressor"
+    ],
+    "notes": {
+      "met_lactose": {
+        "text": "The plate contains lactose. The signal is there.",
+        "text_es": "La placa contiene lactosa. La señal está presente."
+      },
+      "protein_repressor": {
+        "text": "A mutation in its lactose-binding part means lactose cannot switch it off. It stays on the DNA, so lacZ is blocked. This is the broken piece.",
+        "text_es": "Una mutación en la parte que se une a la lactosa hace que la lactosa no pueda apagarlo. Se queda sobre el ADN y lacZ queda bloqueado. Esta es la pieza rota."
+      },
+      "gene_lacz": {
+        "text": "The sequence is correct: the recipe is fine, it is just blocked.",
+        "text_es": "La secuencia es correcta: la receta está bien, solo que bloqueada."
+      },
+      "enzyme_bgal": {
+        "text": "It is not made because the gene is blocked. A consequence.",
+        "text_es": "No se fabrica porque el gen está bloqueado. Una consecuencia."
+      },
+      "rxn_xgal": {
+        "text": "Without the enzyme nothing cuts X-gal. A consequence.",
+        "text_es": "Sin la enzima nada corta el X-gal. Una consecuencia."
+      },
+      "met_blue": {
+        "text": "The dye never forms. A consequence.",
+        "text_es": "El colorante nunca se forma. Una consecuencia."
+      },
+      "phenotype_blue": {
+        "text": "It is the symptom, not the broken piece.",
+        "text_es": "Es el síntoma, no la pieza rota."
+      }
+    },
+    "fixes": [
+      {
+        "id": "f1",
+        "text": "Use a strain with a normal lac repressor.",
+        "text_es": "Usar una cepa con un represor lac normal.",
+        "correct": true,
+        "reason": "A repressor that lactose can switch off lets lacZ be read, and the colonies turn blue.",
+        "reason_es": "Un represor que la lactosa pueda apagar deja que se lea lacZ, y las colonias se vuelven azules."
+      },
+      {
+        "id": "f2",
+        "text": "Add more X-gal to the plate.",
+        "text_es": "Añadir más X-gal a la placa.",
+        "correct": false,
+        "reason": "X-gal is already there. Without the enzyme, more X-gal changes nothing.",
+        "reason_es": "El X-gal ya está. Sin la enzima, más X-gal no cambia nada."
+      },
+      {
+        "id": "f3",
+        "text": "Replace the lacZ gene with a new copy.",
+        "text_es": "Cambiar el gen lacZ por una copia nueva.",
+        "correct": false,
+        "reason": "The lacZ sequence is correct. A new copy would be blocked by the same repressor.",
+        "reason_es": "La secuencia de lacZ es correcta. Una copia nueva estaría bloqueada por el mismo represor."
+      },
+      {
+        "id": "f4",
+        "text": "Wait a few more days.",
+        "text_es": "Esperar unos días más.",
+        "correct": false,
+        "reason": "The gene is blocked, so more time will not help.",
+        "reason_es": "El gen está bloqueado, así que más tiempo no ayudará."
+      }
+    ]
+  },
+  "simulation": {
+    "productLabel": "Diagnosis",
+    "productLabel_es": "Diagnóstico",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Diagnosis",
+        "label_es": "Diagnóstico",
+        "description": "Found and treated.",
+        "description_es": "Encontrado y tratado.",
+        "order": 1
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "The gene is correct and the signal is present, so something between them is not doing its job.",
+      "content_es": "El gen es correcto y la señal está presente, así que algo entre ambos no hace su trabajo.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "One clue mentions a mutation. In which protein?",
+      "content_es": "Una pista habla de una mutación. ¿En qué proteína?",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "The repressor cannot be switched off by lactose.",
+      "content_es": "La lactosa no puede apagar el represor.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A switch that was jammed",
+    "title_es": "Un interruptor atascado",
+    "summary": "You found that the gene and the signal were fine: the repressor in the middle could not be switched off.",
+    "summary_es": "Has descubierto que el gen y la señal estaban bien: el represor del medio no se podía apagar.",
+    "realWorldImpact": "Strains with mutated repressors are used on purpose in experiments, to keep a gene off or on regardless of the signal.",
+    "realWorldImpact_es": "Se usan a propósito cepas con represores mutados en experimentos, para mantener un gen apagado o encendido sin importar la señal."
+  },
+  "science": {
+    "organism": "Escherichia coli",
+    "realWorldCase": "In the 1960s Jacob and Monod found mutants of the lac system that changed its behaviour, which helped them to work out how it is regulated.",
+    "realWorldCase_es": "En los años sesenta Jacob y Monod encontraron mutantes del sistema lac que cambiaban su comportamiento, lo que les ayudó a descubrir cómo se regula.",
+    "scientificContext": "Mutants of the lac repressor that cannot bind the inducer are called \"super-repressors\" (lacI^s): they keep the operon off even with lactose.",
+    "scientificContext_es": "Los mutantes del represor lac que no pueden unir el inductor se llaman «superrepresores» (lacI^s): mantienen el operón apagado incluso con lactosa.",
+    "gameplaySimplifications": [
+      "The repressor is shown as a single piece; in reality it is made of four identical parts."
+    ],
+    "gameplaySimplifications_es": [
+      "El represor aparece como una sola pieza; en realidad está formado por cuatro partes idénticas."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Jacob, F.",
+          "Monod, J."
+        ],
+        "year": 1961,
+        "title": "Genetic regulatory mechanisms in the synthesis of proteins",
+        "journal": "Journal of Molecular Biology",
+        "doi": "10.1016/S0022-2836(61)80072-7",
+        "type": "paper"
+      }
+    ]
+  }
+}

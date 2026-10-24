@@ -1,0 +1,397 @@
+{
+  "id": "firefly",
+  "title": "Cold light: the firefly",
+  "title_es": "Luz fría: la luciérnaga",
+  "subtitle": "An enzyme that makes light",
+  "subtitle_es": "Una enzima que fabrica luz",
+  "difficulty": "intermediate",
+  "estimatedDuration": 7,
+  "objective": "Connect the pieces of the reaction by which a firefly makes light.",
+  "objective_es": "Conecta las piezas de la reacción con la que una luciérnaga fabrica luz.",
+  "description": "The firefly enzyme luciferase uses a small molecule, luciferin, plus energy and oxygen, and releases the difference as light.",
+  "description_es": "La enzima de la luciérnaga, la luciferasa, usa una molécula pequeña, la luciferina, más energía y oxígeno, y libera la diferencia en forma de luz.",
+  "organism": {
+    "id": "firefly-pathway",
+    "commonName": "Firefly",
+    "commonName_es": "Luciérnaga",
+    "scientificName": "Photinus pyralis",
+    "taxonomy": [
+      "Animalia",
+      "Arthropoda",
+      "Insecta",
+      "Coleoptera",
+      "Lampyridae",
+      "Photinus"
+    ],
+    "targetTissue": "light organ",
+    "targetOrganelle": "cytoplasm",
+    "description": "A beetle that glows at night.",
+    "description_es": "Un escarabajo que brilla de noche."
+  },
+  "exploration": [
+    {
+      "kind": "jellyfish",
+      "label": "The glow",
+      "label_es": "El brillo",
+      "title": "Light without heat",
+      "title_es": "Luz sin calor",
+      "description": "A firefly turns almost all the energy of the reaction into light, so its light is cold.",
+      "description_es": "Una luciérnaga convierte casi toda la energía de la reacción en luz, por eso su luz es fría."
+    },
+    {
+      "kind": "dna",
+      "label": "The gene",
+      "label_es": "El gen",
+      "title": "A gene for light",
+      "title_es": "Un gen para la luz",
+      "description": "The luciferase gene was copied into other organisms, and now plants and bacteria can glow too.",
+      "description_es": "El gen de la luciferasa se copió en otros organismos, y ahora plantas y bacterias también pueden brillar."
+    },
+    {
+      "kind": "flask",
+      "label": "Use",
+      "label_es": "Uso",
+      "title": "A reporter of life",
+      "title_es": "Un indicador de vida",
+      "description": "Because the reaction needs ATP, the light shows that cells are alive and have energy.",
+      "description_es": "Como la reacción necesita ATP, la luz demuestra que las células están vivas y tienen energía."
+    }
+  ],
+  "biologicalContext": {
+    "nodes": [
+      {
+        "id": "gene_luc",
+        "type": "gene",
+        "label": "Luciferase gene",
+        "label_es": "Gen de la luciferasa",
+        "description": "The recipe of the enzyme that makes light.",
+        "description_es": "La receta de la enzima que fabrica luz.",
+        "position": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_luc",
+        "type": "enzyme",
+        "label": "Luciferase",
+        "label_es": "Luciferasa",
+        "description": "The enzyme that runs the light reaction.",
+        "description_es": "La enzima que hace funcionar la reacción de la luz.",
+        "position": {
+          "x": 3.0,
+          "y": 0.0,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_light",
+        "type": "reaction",
+        "label": "Light reaction",
+        "label_es": "Reacción de la luz",
+        "description": "Luciferin is oxidised and releases light.",
+        "description_es": "La luciferina se oxida y libera luz.",
+        "position": {
+          "x": 6.0,
+          "y": 0.0,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_luciferin",
+        "type": "metabolite",
+        "label": "Luciferin",
+        "label_es": "Luciferina",
+        "description": "The small molecule that is turned into light.",
+        "description_es": "La molécula pequeña que se convierte en luz.",
+        "position": {
+          "x": 3.0,
+          "y": 4.8,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_atp",
+        "type": "metabolite",
+        "label": "ATP (energy)",
+        "label_es": "ATP (energía)",
+        "description": "The energy currency of cells.",
+        "description_es": "La moneda de energía de las células.",
+        "position": {
+          "x": 6.0,
+          "y": 4.8,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_o2",
+        "type": "metabolite",
+        "label": "Oxygen",
+        "label_es": "Oxígeno",
+        "description": "Needed to oxidise luciferin.",
+        "description_es": "Necesario para oxidar la luciferina.",
+        "position": {
+          "x": 9.0,
+          "y": 4.8,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_oxyl",
+        "type": "metabolite",
+        "label": "Used luciferin",
+        "label_es": "Luciferina usada",
+        "description": "Oxyluciferin: what is left of luciferin once the light is released.",
+        "description_es": "Oxiluciferina: lo que queda de la luciferina una vez liberada la luz.",
+        "position": {
+          "x": 9.0,
+          "y": -2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "phenotype_glow",
+        "type": "phenotype",
+        "label": "Cold light",
+        "label_es": "Luz fría",
+        "description": "The yellow-green light of the firefly.",
+        "description_es": "La luz amarillo-verdosa de la luciérnaga.",
+        "position": {
+          "x": 9.0,
+          "y": 0.0,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "gene_gfp",
+        "type": "gene",
+        "label": "gfp gene",
+        "label_es": "Gen gfp",
+        "description": "The recipe of a protein that glows only under blue light.",
+        "description_es": "La receta de una proteína que solo brilla con luz azul.",
+        "position": {
+          "x": 0.0,
+          "y": 4.8,
+          "z": 0
+        },
+        "metadata": {}
+      }
+    ],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [
+      "gene_luc",
+      "enzyme_luc",
+      "rxn_light",
+      "met_luciferin",
+      "met_atp",
+      "met_o2",
+      "met_oxyl",
+      "phenotype_glow",
+      "gene_gfp"
+    ],
+    "distractorNodes": [
+      "gene_gfp"
+    ],
+    "requiredConnections": [
+      {
+        "id": "req_enc",
+        "sourceId": "gene_luc",
+        "targetId": "enzyme_luc",
+        "edgeType": "encodes",
+        "description": "The cell reads the gene and builds luciferase.",
+        "description_es": "La célula lee el gen y construye la luciferasa."
+      },
+      {
+        "id": "req_cat",
+        "sourceId": "enzyme_luc",
+        "targetId": "rxn_light",
+        "edgeType": "catalyzes",
+        "description": "Luciferase runs the light reaction.",
+        "description_es": "La luciferasa hace funcionar la reacción de la luz."
+      },
+      {
+        "id": "req_luciferin",
+        "sourceId": "rxn_light",
+        "targetId": "met_luciferin",
+        "edgeType": "consumes",
+        "description": "The reaction uses luciferin.",
+        "description_es": "La reacción usa luciferina."
+      },
+      {
+        "id": "req_atp",
+        "sourceId": "rxn_light",
+        "targetId": "met_atp",
+        "edgeType": "consumes",
+        "description": "It also needs energy: ATP.",
+        "description_es": "También necesita energía: ATP."
+      },
+      {
+        "id": "req_o2",
+        "sourceId": "rxn_light",
+        "targetId": "met_o2",
+        "edgeType": "consumes",
+        "description": "And oxygen, to oxidise luciferin.",
+        "description_es": "Y oxígeno, para oxidar la luciferina."
+      },
+      {
+        "id": "req_oxyl",
+        "sourceId": "rxn_light",
+        "targetId": "met_oxyl",
+        "edgeType": "produces",
+        "description": "What remains of luciferin is oxyluciferin.",
+        "description_es": "Lo que queda de la luciferina es oxiluciferina."
+      },
+      {
+        "id": "req_light",
+        "sourceId": "rxn_light",
+        "targetId": "phenotype_glow",
+        "edgeType": "produces",
+        "description": "The energy released leaves as light.",
+        "description_es": "La energía liberada sale en forma de luz."
+      }
+    ],
+    "optionalConnections": [],
+    "invalidConnections": [
+      {
+        "sourceId": "gene_gfp",
+        "targetId": "phenotype_glow",
+        "reason": "GFP does not make its own light: it needs blue light shone on it. The firefly makes its light with luciferase.",
+        "reason_es": "La GFP no fabrica luz propia: necesita que le iluminen con luz azul. La luciérnaga fabrica su luz con luciferasa."
+      },
+      {
+        "sourceId": "met_oxyl",
+        "targetId": "rxn_light",
+        "reason": "Oxyluciferin is what is left after the light. It is a product, not an ingredient.",
+        "reason_es": "La oxiluciferina es lo que queda tras la luz. Es un producto, no un ingrediente."
+      }
+    ],
+    "winCondition": {
+      "type": "pathway_complete",
+      "targetNodeId": "phenotype_glow",
+      "requiredConnectionIds": [
+        "req_enc",
+        "req_cat",
+        "req_luciferin",
+        "req_atp",
+        "req_o2",
+        "req_oxyl",
+        "req_light"
+      ],
+      "description": "Let luciferase use luciferin, ATP and oxygen to make light.",
+      "description_es": "Haz que la luciferasa use luciferina, ATP y oxígeno para fabricar luz."
+    }
+  },
+  "simulation": {
+    "productLabel": "Light",
+    "productLabel_es": "Luz",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Enzyme made",
+        "label_es": "Enzima fabricada",
+        "description": "Luciferase appears.",
+        "description_es": "Aparece la luciferasa.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Ingredients",
+        "label_es": "Ingredientes",
+        "description": "Luciferin, ATP and oxygen.",
+        "description_es": "Luciferina, ATP y oxígeno.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Reaction",
+        "label_es": "Reacción",
+        "description": "Luciferin is oxidised.",
+        "description_es": "La luciferina se oxida.",
+        "order": 3
+      },
+      {
+        "id": "s4",
+        "label": "Light",
+        "label_es": "Luz",
+        "description": "The firefly glows.",
+        "description_es": "La luciérnaga brilla.",
+        "order": 4
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "The reaction needs three ingredients: the small molecule that becomes light, energy and oxygen.",
+      "content_es": "La reacción necesita tres ingredientes: la molécula que se convierte en luz, energía y oxígeno.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Gene → luciferase → light reaction. The reaction uses luciferin, ATP and oxygen and makes oxyluciferin and light.",
+      "content_es": "Gen → luciferasa → reacción de la luz. La reacción usa luciferina, ATP y oxígeno y fabrica oxiluciferina y luz.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Connect: gene–luciferase, luciferase–reaction, reaction–luciferin, ATP and oxygen, reaction–oxyluciferin and reaction–light.",
+      "content_es": "Conecta: gen–luciferasa, luciferasa–reacción, reacción–luciferina, ATP y oxígeno, reacción–oxiluciferina y reacción–luz.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A living lamp",
+    "title_es": "Una lámpara viva",
+    "summary": "You followed the reaction that gives fireflies their glow: an enzyme, a small molecule, energy and oxygen.",
+    "summary_es": "Has seguido la reacción que hace brillar a las luciérnagas: una enzima, una molécula pequeña, energía y oxígeno.",
+    "realWorldImpact": "Luciferase is used in laboratories to see when genes switch on, and researchers have created plants that glow on their own.",
+    "realWorldImpact_es": "La luciferasa se usa en los laboratorios para ver cuándo se encienden los genes, y se han creado plantas que brillan por sí solas."
+  },
+  "science": {
+    "organism": "Photinus pyralis",
+    "realWorldCase": "In 2020 a team put the genes of a luminous mushroom into tobacco plants, which then glowed visibly on their own, without any added chemical.",
+    "realWorldCase_es": "En 2020 un equipo puso los genes de una seta luminosa en plantas de tabaco, que brillaron de forma visible por sí solas, sin añadir ningún compuesto.",
+    "scientificContext": "Firefly luciferase catalyses the oxidation of luciferin in the presence of ATP, Mg²⁺ and oxygen, forming an excited oxyluciferin that emits a photon when it relaxes.",
+    "scientificContext_es": "La luciferasa de luciérnaga cataliza la oxidación de la luciferina en presencia de ATP, Mg²⁺ y oxígeno y forma una oxiluciferina excitada que emite un fotón al relajarse.",
+    "gameplaySimplifications": [
+      "The reaction has two steps; here it is one. Magnesium is not shown.",
+      "The mushroom system in plants uses a different luciferin; the firefly one is used here."
+    ],
+    "gameplaySimplifications_es": [
+      "La reacción tiene dos pasos; aquí es uno. El magnesio no aparece.",
+      "El sistema de la seta en plantas usa otra luciferina; aquí se usa la de la luciérnaga."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Mitiouchkina, T.",
+          "Mishin, A. S.",
+          "Somermeyer, L. G.",
+          "et al."
+        ],
+        "year": 2020,
+        "title": "Plants with genetically encoded autoluminescence",
+        "journal": "Nature Biotechnology",
+        "doi": "10.1038/s41587-020-0500-9",
+        "type": "paper"
+      }
+    ]
+  }
+}

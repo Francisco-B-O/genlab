@@ -1,0 +1,163 @@
+{
+  "id": "mut-pepper",
+  "mode": "mutation",
+  "title": "A pepper that stays red",
+  "title_es": "Un pimiento que sigue rojo",
+  "subtitle": "A change that changes nothing",
+  "subtitle_es": "Un cambio que no cambia nada",
+  "difficulty": "beginner",
+  "estimatedDuration": 4,
+  "objective": "Find the letter that changed in the gene and say what the change does to the protein.",
+  "objective_es": "Encuentra la letra que ha cambiado en el gen y di qué efecto tiene en la proteína.",
+  "description": "A change of one letter in DNA can change an amino acid, cut a protein short, or do nothing at all. Compare the two sequences codon by codon.",
+  "description_es": "Un cambio de una letra en el ADN puede cambiar un aminoácido, cortar una proteína o no hacer nada. Compara las dos secuencias codón a codón.",
+  "organism": {
+    "id": "capsicum-mut",
+    "commonName": "Pepper",
+    "commonName_es": "Pimiento",
+    "scientificName": "Capsicum annuum",
+    "taxonomy": [
+      "Plantae",
+      "Tracheophyta",
+      "Magnoliopsida",
+      "Solanales",
+      "Solanaceae",
+      "Capsicum"
+    ],
+    "targetTissue": "fruit",
+    "targetOrganelle": "cytoplasm",
+    "description": "A plant with fruits that ripen from green to red.",
+    "description_es": "Una planta con frutos que maduran de verde a rojo."
+  },
+  "exploration": [
+    {
+      "kind": "dna",
+      "label": "Pepper",
+      "label_es": "Pimiento",
+      "title": "Red or green",
+      "title_es": "Rojo o verde",
+      "description": "A ripening pepper changes from green to red. A gene controls how the green colour is lost.",
+      "description_es": "Un pimiento al madurar pasa de verde a rojo. Un gen controla cómo se pierde el color verde."
+    },
+    {
+      "kind": "dna",
+      "label": "Synonyms",
+      "label_es": "Sinónimos",
+      "title": "Same amino acid, different code",
+      "title_es": "Mismo aminoácido, distinto código",
+      "description": "Several codons stand for the same amino acid. A change between them is silent.",
+      "description_es": "Varios codones representan el mismo aminoácido. Un cambio entre ellos es silencioso."
+    }
+  ],
+  "mutation": {
+    "geneLabel": "Pepper colour gene (illustrative)",
+    "geneLabel_es": "Gen del color del pimiento (ilustrativo)",
+    "reference": "ATGAAACTCGGTCCTTTA",
+    "mutant": "ATGAAACTCGGTCCCTTA",
+    "story": "An invented example. Two pepper plants give the same red fruit, but their gene differs by one letter. Find it and decide.",
+    "story_es": "Un ejemplo inventado. Dos pimenteros dan el mismo fruto rojo, pero su gen se diferencia en una letra. Encuéntrala y decide.",
+    "explanations": {
+      "silent": "CCT and CCC both stand for proline. The genetic code has several codons for most amino acids, so the protein is exactly the same.",
+      "silent_es": "CCT y CCC representan los dos la prolina. El código genético tiene varios codones para casi todos los aminoácidos, así que la proteína es exactamente la misma.",
+      "missense": "Not here: the amino acid stays the same.",
+      "missense_es": "Aquí no: el aminoácido sigue siendo el mismo.",
+      "nonsense": "Not here: no stop signal appears.",
+      "nonsense_es": "Aquí no: no aparece ninguna señal de fin."
+    }
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Effect",
+    "productLabel_es": "Efecto",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Compare",
+        "label_es": "Comparar",
+        "description": "Find the changed letter.",
+        "description_es": "Encuentra la letra cambiada.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Translate",
+        "label_es": "Traducir",
+        "description": "Read the codons.",
+        "description_es": "Lee los codones.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Effect",
+        "label_es": "Efecto",
+        "description": "Decide what it does.",
+        "description_es": "Decide qué hace.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Compare the two rows letter by letter. Only one is different.",
+      "content_es": "Compara las dos filas letra a letra. Solo una es distinta.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Look at the codon with the changed letter, before and after. Is the amino acid the same?",
+      "content_es": "Mira el codón con la letra cambiada, antes y después. ¿Es el mismo aminoácido?",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "CCT and CCC both mean proline: the mutation is silent.",
+      "content_es": "CCT y CCC significan prolina: la mutación es silenciosa.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A silent change",
+    "title_es": "Un cambio silencioso",
+    "summary": "You found a letter that changed but left the protein exactly the same.",
+    "summary_es": "Has encontrado una letra que ha cambiado pero deja la proteína exactamente igual.",
+    "realWorldImpact": "Silent changes are very common. They are useful to scientists because they act as markers to follow genes through families without changing what the gene does.",
+    "realWorldImpact_es": "Los cambios silenciosos son muy frecuentes. A los científicos les sirven de marcadores para seguir los genes por las familias sin cambiar lo que hace el gen."
+  },
+  "science": {
+    "organism": "Capsicum annuum",
+    "realWorldCase": "Most of the DNA differences between two individuals do not change any protein.",
+    "realWorldCase_es": "La mayoría de las diferencias de ADN entre dos individuos no cambia ninguna proteína.",
+    "scientificContext": "A silent mutation changes a codon into a synonym, one that stands for the same amino acid, so the protein does not change.",
+    "scientificContext_es": "Una mutación silenciosa cambia un codón por un sinónimo, uno que representa el mismo aminoácido, así que la proteína no cambia.",
+    "gameplaySimplifications": [
+      "The sequence is an invented, short example, not a real gene."
+    ],
+    "gameplaySimplifications_es": [
+      "La secuencia es un ejemplo inventado y corto, no un gen real."
+    ],
+    "references": []
+  }
+}

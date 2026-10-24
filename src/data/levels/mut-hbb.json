@@ -1,0 +1,158 @@
+{
+  "id": "mut-hbb",
+  "mode": "mutation",
+  "title": "One letter in haemoglobin",
+  "title_es": "Una letra en la hemoglobina",
+  "subtitle": "Find the change behind sickle cell disease",
+  "subtitle_es": "Encuentra el cambio que está detrás de la anemia falciforme",
+  "difficulty": "beginner",
+  "estimatedDuration": 5,
+  "objective": "Find the one letter that is different in the patient and say what it does to the protein.",
+  "objective_es": "Encuentra la única letra que es distinta en el paciente y di qué le hace a la proteína.",
+  "description": "The first mutation linked to a human disease at the molecular level was this very one.",
+  "description_es": "La primera mutación vinculada a una enfermedad humana a nivel molecular fue esta misma.",
+  "organism": {
+    "id": "human-inherit-pku",
+    "commonName": "Human family",
+    "commonName_es": "Familia humana",
+    "scientificName": "Homo sapiens",
+    "taxonomy": [
+      "Animalia",
+      "Chordata",
+      "Mammalia",
+      "Primates",
+      "Hominidae",
+      "Homo"
+    ],
+    "targetTissue": "whole body",
+    "targetOrganelle": "nucleus",
+    "description": "Parents and their possible children.",
+    "description_es": "Progenitores y sus posibles hijos."
+  },
+  "exploration": [
+    {
+      "kind": "blood",
+      "label": "Disease",
+      "label_es": "Enfermedad",
+      "title": "A tiny change",
+      "title_es": "Un cambio diminuto",
+      "description": "Sickle cell disease comes from a change in a single letter of the gene for β-globin. Reading the DNA three letters at a time shows what changes.",
+      "description_es": "La anemia falciforme viene de un cambio en una sola letra del gen de la β-globina. Leer el ADN de tres en tres letras muestra qué cambia."
+    },
+    {
+      "kind": "dna",
+      "label": "Reading",
+      "label_es": "Lectura",
+      "title": "Codons",
+      "title_es": "Codones",
+      "description": "Every group of three letters, a codon, stands for one amino acid. Change a letter and the amino acid may change.",
+      "description_es": "Cada grupo de tres letras, un codón, representa un aminoácido. Si cambias una letra, puede cambiar el aminoácido."
+    }
+  ],
+  "mutation": {
+    "geneLabel": "β-globin gene (start)",
+    "geneLabel_es": "Gen de la β-globina (inicio)",
+    "reference": "ATGGTGCATCTGACTCCTGAGGAGAAGTCT",
+    "mutant": "ATGGTGCATCTGACTCCTGTGGAGAAGTCT",
+    "story": "Haemoglobin carries oxygen in red blood cells. The patient has sickle cell disease. Compare the beginning of the β-globin gene in a healthy person (the original sequence) and in the patient (the changed one).",
+    "story_es": "La hemoglobina transporta oxígeno en los glóbulos rojos. El paciente tiene anemia falciforme. Compara el comienzo del gen de la β-globina en una persona sana (la secuencia original) y en el paciente (la cambiada).",
+    "explanations": {
+      "silent": "Not here: the amino acid changes.",
+      "silent_es": "Aquí no: el aminoácido cambia.",
+      "missense": "Glutamic acid is swapped for valine. That one swap makes haemoglobin molecules stick together when they lose oxygen, and the red cell bends into a sickle shape.",
+      "missense_es": "El ácido glutámico se cambia por valina. Ese único cambio hace que las moléculas de hemoglobina se peguen entre sí cuando pierden oxígeno, y el glóbulo rojo se curva en forma de hoz.",
+      "nonsense": "Not here: the change does not create a stop signal.",
+      "nonsense_es": "Aquí no: el cambio no crea una señal de fin."
+    }
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Effect",
+    "productLabel_es": "Efecto",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Compare",
+        "label_es": "Comparar",
+        "description": "Find the change.",
+        "description_es": "Encuentra el cambio.",
+        "order": 1
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Compare the two sequences letter by letter. Only one letter is different.",
+      "content_es": "Compara las dos secuencias letra a letra. Solo hay una letra distinta.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Look at the codons: the change is in the seventh group of three letters.",
+      "content_es": "Mira los codones: el cambio está en el séptimo grupo de tres letras.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "The second letter of the seventh codon changed from A to T.",
+      "content_es": "La segunda letra del séptimo codón cambió de A a T.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A letter that matters",
+    "title_es": "Una letra que importa",
+    "summary": "You found that a single change swaps one amino acid for another and changes how a protein behaves. Small DNA changes can have big effects.",
+    "summary_es": "Has encontrado que un solo cambio sustituye un aminoácido por otro y cambia cómo se comporta una proteína. Pequeños cambios en el ADN pueden tener grandes efectos.",
+    "realWorldImpact": "Understanding this change led to genetic tests, screening, and in 2023 the first approved gene-editing therapy for the disease.",
+    "realWorldImpact_es": "Entender este cambio llevó a pruebas genéticas, al cribado y, en 2023, a la primera terapia de edición génica aprobada para esta enfermedad."
+  },
+  "science": {
+    "organism": "Homo sapiens",
+    "realWorldCase": "In 1949 Linus Pauling showed that sickle cell haemoglobin is different from normal haemoglobin, and in 1957 Vernon Ingram showed that the difference is a single amino acid.",
+    "realWorldCase_es": "En 1949 Linus Pauling mostró que la hemoglobina falciforme es distinta de la normal, y en 1957 Vernon Ingram demostró que la diferencia es un solo aminoácido.",
+    "scientificContext": "The sickle cell variant changes codon 6 of mature β-globin from GAG (glutamic acid) to GTG (valine). The hydrophobic valine promotes polymerisation of deoxygenated haemoglobin.",
+    "scientificContext_es": "La variante falciforme cambia el codón 6 de la β-globina madura de GAG (ácido glutámico) a GTG (valina). La valina, hidrofóbica, favorece la polimerización de la hemoglobina desoxigenada.",
+    "gameplaySimplifications": [
+      "Only the start of the gene is shown, and it is the coding strand."
+    ],
+    "gameplaySimplifications_es": [
+      "Solo se muestra el comienzo del gen, y es la hebra codificante."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Ingram VM"
+        ],
+        "year": 1957,
+        "title": "Gene mutations in human haemoglobin: the chemical difference between normal and sickle cell haemoglobin",
+        "journal": "Nature",
+        "doi": "10.1038/180326a0",
+        "type": "paper"
+      }
+    ]
+  }
+}

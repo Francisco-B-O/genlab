@@ -1,0 +1,217 @@
+{
+  "id": "seq-factory",
+  "mode": "sequence",
+  "title": "From a gene to a product",
+  "title_es": "De un gen a un producto",
+  "subtitle": "The steps of a protein factory, in order",
+  "subtitle_es": "Los pasos de una fábrica de proteínas, en orden",
+  "difficulty": "beginner",
+  "estimatedDuration": 5,
+  "objective": "Order the steps a company follows to make a protein with bacteria, from the gene to the packaged product.",
+  "objective_es": "Ordena los pasos que sigue una empresa para fabricar una proteína con bacterias, desde el gen hasta el producto envasado.",
+  "description": "The same recipe is used for many products: enzymes for detergents, food ingredients, and some medicines.",
+  "description_es": "La misma receta se usa para muchos productos: enzimas para detergentes, ingredientes alimentarios y algunos medicamentos.",
+  "organism": {
+    "id": "lab-factory",
+    "commonName": "In the laboratory",
+    "commonName_es": "En el laboratorio",
+    "scientificName": "Laboratory procedure",
+    "taxonomy": [
+      "—"
+    ],
+    "targetTissue": "single cell",
+    "targetOrganelle": "cytoplasm",
+    "description": "A biotechnology plant that grows bacteria in tanks.",
+    "description_es": "Una planta biotecnológica que cultiva bacterias en tanques.",
+    "scientificName_es": "Procedimiento de laboratorio"
+  },
+  "exploration": [
+    {
+      "kind": "flask",
+      "label": "Factory",
+      "label_es": "Fábrica",
+      "title": "Bacteria as tiny factories",
+      "title_es": "Bacterias como pequeñas fábricas",
+      "description": "To make a protein in large amounts, companies give a gene to bacteria and grow them in huge tanks.",
+      "description_es": "Para fabricar una proteína en grandes cantidades, las empresas dan un gen a unas bacterias y las cultivan en enormes tanques."
+    },
+    {
+      "kind": "dna",
+      "label": "Steps",
+      "label_es": "Pasos",
+      "title": "A chain of dependencies",
+      "title_es": "Una cadena de dependencias",
+      "description": "Each step needs the previous one to be finished. Think about what has to exist before each step.",
+      "description_es": "Cada paso necesita que el anterior haya terminado. Piensa qué tiene que existir antes de cada paso."
+    }
+  ],
+  "sequence": {
+    "steps": [
+      {
+        "id": "copy",
+        "label": "Get the gene and copy it",
+        "label_es": "Conseguir el gen y copiarlo",
+        "description": "The gene for the protein is obtained and copied many times.",
+        "description_es": "Se consigue el gen de la proteína y se copia muchas veces.",
+        "needs": "Nothing: the gene is where it starts.",
+        "needs_es": "Nada: el gen es el punto de partida."
+      },
+      {
+        "id": "plasmid",
+        "label": "Paste the gene into a plasmid",
+        "label_es": "Pegar el gen en un plásmido",
+        "description": "The plasmid is a small ring of DNA that carries the gene into a cell.",
+        "description_es": "El plásmido es un pequeño anillo de ADN que lleva el gen a una célula.",
+        "needs": "The gene must already have been copied.",
+        "needs_es": "El gen ya tiene que estar copiado."
+      },
+      {
+        "id": "transform",
+        "label": "Put the plasmid into bacteria",
+        "label_es": "Meter el plásmido en las bacterias",
+        "description": "Some bacteria take up the plasmid and now carry the gene.",
+        "description_es": "Algunas bacterias absorben el plásmido y ya llevan el gen.",
+        "needs": "The gene must already be inside the plasmid.",
+        "needs_es": "El gen ya tiene que estar dentro del plásmido."
+      },
+      {
+        "id": "grow",
+        "label": "Grow the bacteria in a tank",
+        "label_es": "Cultivar las bacterias en un tanque",
+        "description": "They multiply and make the protein.",
+        "description_es": "Se multiplican y fabrican la proteína.",
+        "needs": "The bacteria must already carry the plasmid.",
+        "needs_es": "Las bacterias ya tienen que llevar el plásmido."
+      },
+      {
+        "id": "purify",
+        "label": "Collect and purify the protein",
+        "label_es": "Recoger y purificar la proteína",
+        "description": "The protein is separated from everything else in the culture.",
+        "description_es": "La proteína se separa de todo lo demás del cultivo.",
+        "needs": "The bacteria must already have made the protein.",
+        "needs_es": "Las bacterias ya tienen que haber fabricado la proteína."
+      },
+      {
+        "id": "test",
+        "label": "Test the purity and package it",
+        "label_es": "Comprobar la pureza y envasar",
+        "description": "Only protein that passes the tests is packaged.",
+        "description_es": "Solo se envasa la proteína que pasa los controles.",
+        "needs": "The protein must already be purified.",
+        "needs_es": "La proteína ya tiene que estar purificada."
+      }
+    ]
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Product",
+    "productLabel_es": "Producto",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Gene",
+        "label_es": "Gen",
+        "description": "The gene is ready.",
+        "description_es": "El gen está listo.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Plasmid",
+        "label_es": "Plásmido",
+        "description": "The gene is in its carrier.",
+        "description_es": "El gen está en su vehículo.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Bacteria",
+        "label_es": "Bacterias",
+        "description": "The bacteria carry the gene.",
+        "description_es": "Las bacterias llevan el gen.",
+        "order": 3
+      },
+      {
+        "id": "s4",
+        "label": "Tank",
+        "label_es": "Tanque",
+        "description": "The protein is made.",
+        "description_es": "Se fabrica la proteína.",
+        "order": 4
+      },
+      {
+        "id": "s5",
+        "label": "Product",
+        "label_es": "Producto",
+        "description": "Purified and packaged.",
+        "description_es": "Purificado y envasado.",
+        "order": 5
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Start from what you need first: the gene. The last thing is quality control.",
+      "content_es": "Empieza por lo primero que necesitas: el gen. Lo último es el control de calidad.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "The gene needs a vehicle, the vehicle needs a host, and the host needs time to make the protein.",
+      "content_es": "El gen necesita un vehículo, el vehículo necesita un huésped, y el huésped necesita tiempo para fabricar la proteína.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Copy the gene, paste it into a plasmid, put it into bacteria, grow them, purify the protein, test and package.",
+      "content_es": "Copiar el gen, pegarlo en un plásmido, meterlo en bacterias, cultivarlas, purificar la proteína, comprobarla y envasarla.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A working factory",
+    "title_es": "Una fábrica en marcha",
+    "summary": "You ordered the steps of a real biotechnology process. This pattern, a gene into a host, then growing and purifying, is behind many products.",
+    "summary_es": "Has ordenado los pasos de un proceso biotecnológico real. Este patrón, un gen en un huésped y después cultivar y purificar, está detrás de muchos productos.",
+    "realWorldImpact": "Many enzymes used in detergents, food and industry are produced this way, which is cheaper and more consistent than extracting them from their original source.",
+    "realWorldImpact_es": "Muchas enzimas que se usan en detergentes, alimentos e industria se producen así, lo que es más barato y más constante que extraerlas de su fuente original."
+  },
+  "science": {
+    "organism": "Recombinant protein production",
+    "realWorldCase": "Recombinant protein production in microorganisms began in the late 1970s with human insulin and is now routine for hundreds of products.",
+    "realWorldCase_es": "La producción de proteínas recombinantes en microorganismos empezó a finales de los años 70 con la insulina humana y hoy es rutina para cientos de productos.",
+    "scientificContext": "A typical workflow is: clone the gene into an expression plasmid, transform a host such as E. coli, scale up fermentation, harvest and purify the protein, and test its quality.",
+    "scientificContext_es": "Un flujo habitual es: clonar el gen en un plásmido de expresión, transformar un huésped como E. coli, escalar la fermentación, recoger y purificar la proteína y comprobar su calidad.",
+    "gameplaySimplifications": [
+      "Real processes include selection of the right bacteria and many quality checks."
+    ],
+    "gameplaySimplifications_es": [
+      "Los procesos reales incluyen seleccionar las bacterias correctas y muchos controles de calidad."
+    ],
+    "references": []
+  }
+}

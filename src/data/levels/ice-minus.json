@@ -1,0 +1,362 @@
+{
+  "id": "ice-minus",
+  "title": "Bacteria against frost",
+  "title_es": "Bacterias contra la helada",
+  "subtitle": "Ice that begins on a leaf",
+  "subtitle_es": "Hielo que empieza en una hoja",
+  "difficulty": "beginner",
+  "estimatedDuration": 6,
+  "objective": "Show how a bacterium on a leaf makes ice form on a frosty night, and so damages the plant.",
+  "objective_es": "Muestra cómo una bacteria de una hoja hace que se forme hielo en una noche de helada y así daña a la planta.",
+  "description": "Pure water can stay liquid below zero. A protein on the outside of some bacteria gives ice a place to start, so frost damage comes sooner.",
+  "description_es": "El agua pura puede seguir líquida por debajo de cero. Una proteína de la superficie de algunas bacterias da al hielo un sitio donde empezar, y el daño por helada llega antes.",
+  "organism": {
+    "id": "pseudomonas-ice",
+    "commonName": "Pseudomonas syringae",
+    "commonName_es": "Pseudomonas syringae",
+    "scientificName": "Pseudomonas syringae",
+    "taxonomy": [
+      "Bacteria",
+      "Pseudomonadota",
+      "Gammaproteobacteria",
+      "Pseudomonadales",
+      "Pseudomonadaceae",
+      "Pseudomonas"
+    ],
+    "targetTissue": "leaf",
+    "targetOrganelle": "cytoplasm",
+    "description": "A common bacterium of leaves.",
+    "description_es": "Una bacteria común de las hojas."
+  },
+  "exploration": [
+    {
+      "kind": "plant",
+      "label": "The frost",
+      "label_es": "La helada",
+      "title": "Ice inside leaves kills cells",
+      "title_es": "El hielo en las hojas mata células",
+      "description": "When ice forms in a leaf, crystals burst the cells. Fruit crops can lose their blossoms in one cold night.",
+      "description_es": "Cuando se forma hielo en una hoja, los cristales revientan las células. Los cultivos de fruta pueden perder las flores en una sola noche fría."
+    },
+    {
+      "kind": "bacterium",
+      "label": "The bacterium",
+      "label_es": "La bacteria",
+      "title": "A seed for ice",
+      "title_es": "Una semilla de hielo",
+      "description": "Some bacteria carry a protein that makes water freeze at about -2 °C instead of -8 °C, so ice starts on their surface.",
+      "description_es": "Algunas bacterias llevan una proteína que hace que el agua se congele a unos -2 °C en vez de a -8 °C, así que el hielo empieza en su superficie."
+    },
+    {
+      "kind": "dna",
+      "label": "The idea",
+      "label_es": "La idea",
+      "title": "Remove one gene",
+      "title_es": "Quitar un gen",
+      "description": "Researchers made a version of the bacterium without the gene of the ice protein, and sprayed it on plants so that it took the place of the natural ones.",
+      "description_es": "Unos investigadores fabricaron una versión de la bacteria sin el gen de la proteína del hielo, y la rociaron sobre las plantas para que ocupara el lugar de las naturales."
+    }
+  ],
+  "biologicalContext": {
+    "nodes": [
+      {
+        "id": "gene_ina",
+        "type": "gene",
+        "label": "ina gene",
+        "label_es": "Gen ina",
+        "description": "The recipe of the ice protein.",
+        "description_es": "La receta de la proteína del hielo.",
+        "position": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "protein_ina",
+        "type": "protein",
+        "label": "Ice protein",
+        "label_es": "Proteína del hielo",
+        "description": "A protein on the surface of the bacterium that gives ice a place to start.",
+        "description_es": "Una proteína de la superficie de la bacteria que da al hielo un sitio donde empezar.",
+        "position": {
+          "x": 3.0,
+          "y": 0.0,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_ice",
+        "type": "reaction",
+        "label": "Forming ice",
+        "label_es": "Formar hielo",
+        "description": "Water organises into ice crystals.",
+        "description_es": "El agua se organiza en cristales de hielo.",
+        "position": {
+          "x": 6.0,
+          "y": 0.0,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_water",
+        "type": "metabolite",
+        "label": "Water on the leaf",
+        "label_es": "Agua en la hoja",
+        "description": "A thin film, liquid below zero.",
+        "description_es": "Una película fina, líquida por debajo de cero.",
+        "position": {
+          "x": 6.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_ice",
+        "type": "metabolite",
+        "label": "Ice crystals",
+        "label_es": "Cristales de hielo",
+        "description": "They grow and burst the cells.",
+        "description_es": "Crecen y revientan las células.",
+        "position": {
+          "x": 9.0,
+          "y": 0.0,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "phenotype_frost",
+        "type": "phenotype",
+        "label": "Frost damage",
+        "label_es": "Daño por helada",
+        "description": "The blossoms and leaves turn brown.",
+        "description_es": "Las flores y las hojas se ponen marrones.",
+        "position": {
+          "x": 12.0,
+          "y": 0.0,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "gene_afp",
+        "type": "gene",
+        "label": "Antifreeze gene",
+        "label_es": "Gen anticongelante",
+        "description": "The recipe of a protein that stops ice from growing. The opposite of this system.",
+        "description_es": "La receta de una proteína que impide que crezca el hielo. Lo contrario de este sistema.",
+        "position": {
+          "x": 0.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_salt",
+        "type": "metabolite",
+        "label": "Salt",
+        "label_es": "Sal",
+        "description": "It lowers the freezing point. Not part of this pathway.",
+        "description_es": "Baja el punto de congelación. No forma parte de esta ruta.",
+        "position": {
+          "x": 9.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      }
+    ],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [
+      "gene_ina",
+      "protein_ina",
+      "rxn_ice",
+      "met_water",
+      "met_ice",
+      "phenotype_frost",
+      "gene_afp",
+      "met_salt"
+    ],
+    "distractorNodes": [
+      "gene_afp",
+      "met_salt"
+    ],
+    "requiredConnections": [
+      {
+        "id": "req_enc",
+        "sourceId": "gene_ina",
+        "targetId": "protein_ina",
+        "edgeType": "encodes",
+        "description": "The bacterium reads the gene and builds the ice protein.",
+        "description_es": "La bacteria lee el gen y construye la proteína del hielo."
+      },
+      {
+        "id": "req_cat",
+        "sourceId": "protein_ina",
+        "targetId": "rxn_ice",
+        "edgeType": "catalyzes",
+        "description": "The protein gives ice a place to start, so water freezes at a milder cold.",
+        "description_es": "La proteína da al hielo un sitio donde empezar, así que el agua se congela con un frío menos intenso."
+      },
+      {
+        "id": "req_water",
+        "sourceId": "rxn_ice",
+        "targetId": "met_water",
+        "edgeType": "consumes",
+        "description": "The water on the leaf is what freezes.",
+        "description_es": "El agua de la hoja es lo que se congela."
+      },
+      {
+        "id": "req_ice",
+        "sourceId": "rxn_ice",
+        "targetId": "met_ice",
+        "edgeType": "produces",
+        "description": "Ice crystals appear.",
+        "description_es": "Aparecen cristales de hielo."
+      },
+      {
+        "id": "req_damage",
+        "sourceId": "met_ice",
+        "targetId": "phenotype_frost",
+        "edgeType": "influences",
+        "description": "The crystals burst the cells of the leaf and the blossoms.",
+        "description_es": "Los cristales revientan las células de la hoja y de las flores."
+      }
+    ],
+    "optionalConnections": [],
+    "invalidConnections": [
+      {
+        "sourceId": "gene_afp",
+        "targetId": "phenotype_frost",
+        "reason": "Antifreeze proteins do the opposite: they stop ice crystals from growing. They would protect the plant.",
+        "reason_es": "Las proteínas anticongelantes hacen lo contrario: impiden que crezcan los cristales de hielo. Protegerían a la planta."
+      },
+      {
+        "sourceId": "met_water",
+        "targetId": "phenotype_frost",
+        "reason": "Liquid water does not hurt the leaf. It is the ice crystals that burst the cells.",
+        "reason_es": "El agua líquida no daña la hoja. Son los cristales de hielo los que revientan las células."
+      }
+    ],
+    "winCondition": {
+      "type": "pathway_complete",
+      "targetNodeId": "phenotype_frost",
+      "requiredConnectionIds": [
+        "req_enc",
+        "req_cat",
+        "req_water",
+        "req_ice",
+        "req_damage"
+      ],
+      "description": "Show how an ice protein on a bacterium leads to frost damage.",
+      "description_es": "Muestra cómo una proteína del hielo de una bacteria lleva a una helada que daña la planta."
+    }
+  },
+  "simulation": {
+    "productLabel": "Frost",
+    "productLabel_es": "Helada",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Gene read",
+        "label_es": "Gen leído",
+        "description": "The ice protein is built.",
+        "description_es": "Se construye la proteína del hielo.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "A cold night",
+        "label_es": "Una noche fría",
+        "description": "Water on the leaf is at -3 °C.",
+        "description_es": "El agua de la hoja está a -3 °C.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Ice",
+        "label_es": "Hielo",
+        "description": "Crystals start on the bacterium.",
+        "description_es": "Empiezan los cristales sobre la bacteria.",
+        "order": 3
+      },
+      {
+        "id": "s4",
+        "label": "Damage",
+        "label_es": "Daño",
+        "description": "The cells burst.",
+        "description_es": "Las células revientan.",
+        "order": 4
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Ice needs a place to start. Follow how the bacterium gives it one.",
+      "content_es": "El hielo necesita un sitio donde empezar. Sigue cómo se lo da la bacteria.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Gene → ice protein → forming ice. The reaction uses water and makes crystals, and the crystals cause the damage.",
+      "content_es": "Gen → proteína del hielo → formar hielo. La reacción gasta agua y fabrica cristales, y los cristales causan el daño.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Connect: ina gene–ice protein, ice protein–forming ice, forming ice–water, forming ice–crystals and crystals–frost damage.",
+      "content_es": "Conecta: gen ina–proteína del hielo, proteína del hielo–formar hielo, formar hielo–agua, formar hielo–cristales y cristales–daño por helada.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "One gene, one frost",
+    "title_es": "Un gen, una helada",
+    "summary": "You followed how a single bacterial protein can make a plant freeze at a milder cold.",
+    "summary_es": "Has seguido cómo una sola proteína bacteriana puede hacer que una planta se congele con un frío más suave.",
+    "realWorldImpact": "Without the gene, bacteria that fail to nucleate ice could take the place of those that do, and so protect a crop from frost.",
+    "realWorldImpact_es": "Sin el gen, unas bacterias que no inician el hielo podrían ocupar el lugar de las que sí lo hacen y así proteger un cultivo de la helada."
+  },
+  "science": {
+    "organism": "Pseudomonas syringae",
+    "realWorldCase": "In 1987 a strain of Pseudomonas syringae without the ice gene was sprayed on a field of strawberries in California, the first outdoor test of a genetically engineered microbe.",
+    "realWorldCase_es": "En 1987 se roció una cepa de Pseudomonas syringae sin el gen del hielo sobre un campo de fresas en California, la primera prueba al aire libre de un microbio modificado genéticamente.",
+    "scientificContext": "Ice-nucleating proteins of P. syringae arrange water molecules like an ice lattice. Plants with these bacteria freeze at about -2 °C, while plants without them can supercool to about -8 °C.",
+    "scientificContext_es": "Las proteínas de P. syringae que inician el hielo ordenan las moléculas de agua como una red de hielo. Las plantas con estas bacterias se congelan a unos -2 °C, mientras que sin ellas pueden sobreenfriarse hasta unos -8 °C.",
+    "gameplaySimplifications": [
+      "The test and the public debate around it are not part of the level. The bacterium and its protein are simplified."
+    ],
+    "gameplaySimplifications_es": [
+      "La prueba y el debate público que la rodeó no forman parte del nivel. La bacteria y su proteína están simplificadas."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Lindow, S. E.",
+          "Arny, D. C.",
+          "Upper, C. D."
+        ],
+        "year": 1982,
+        "title": "Bacterial ice nucleation: a factor in frost injury to plants",
+        "journal": "Plant Physiology",
+        "type": "paper",
+        "doi": "10.1104/pp.70.4.1084"
+      }
+    ]
+  }
+}

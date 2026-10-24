@@ -1,0 +1,203 @@
+{
+  "id": "crispr-6",
+  "mode": "crispr",
+  "title": "A mushroom that stays white",
+  "title_es": "Una seta que sigue blanca",
+  "subtitle": "Turning down the browning enzyme",
+  "subtitle_es": "Bajar la enzima del pardeamiento",
+  "difficulty": "advanced",
+  "estimatedDuration": 9,
+  "objective": "Choose the guide that cuts inside a gene for the browning enzyme of a mushroom, and only there.",
+  "objective_es": "Elige la guía que corta dentro de un gen de la enzima del pardeamiento de una seta, y solo ahí.",
+  "description": "White button mushrooms turn brown when they are bruised or stored, because of an enzyme. Cutting the gene of the enzyme in a few letters can lower the browning.",
+  "description_es": "Los champiñones se ponen marrones cuando se golpean o se guardan, por culpa de una enzima. Cortar el gen de la enzima y cambiarle unas pocas letras puede bajar el pardeamiento.",
+  "organism": {
+    "id": "mushroom-ppo",
+    "commonName": "Button mushroom",
+    "commonName_es": "Champiñón",
+    "scientificName": "Agaricus bisporus",
+    "taxonomy": [
+      "Fungi",
+      "Basidiomycota",
+      "Agaricomycetes",
+      "Agaricales",
+      "Agaricaceae",
+      "Agaricus"
+    ],
+    "targetTissue": "cap",
+    "targetOrganelle": "nucleus",
+    "description": "The most eaten mushroom in the world.",
+    "description_es": "La seta más consumida del mundo."
+  },
+  "exploration": [
+    {
+      "kind": "plant",
+      "label": "The problem",
+      "label_es": "El problema",
+      "title": "Brown caps in the shop",
+      "title_es": "Sombreros marrones en la tienda",
+      "description": "Browning does not make a mushroom unsafe, but shoppers choose white ones, so a lot of food is thrown away.",
+      "description_es": "El pardeamiento no hace a una seta insegura, pero quien compra elige las blancas, así que se tira mucha comida."
+    },
+    {
+      "kind": "dna",
+      "label": "The edit",
+      "label_es": "La edición",
+      "title": "A small change in a gene",
+      "title_es": "Un cambio pequeño en un gen",
+      "description": "The mushroom has several genes for polyphenol oxidase. Editing one of them with Cas9, and changing a few letters, lowers the activity of the enzyme.",
+      "description_es": "La seta tiene varios genes de polifenol oxidasa. Editar uno de ellos con Cas9, cambiando unas pocas letras, baja la actividad de la enzima."
+    },
+    {
+      "kind": "cell",
+      "label": "A rule",
+      "label_es": "Una norma",
+      "title": "Edits with no foreign genes",
+      "title_es": "Ediciones sin genes ajenos",
+      "description": "The edit adds no DNA from another species, which is why some regulators have treated this kind of change as similar to one that could appear by chance.",
+      "description_es": "La edición no añade ADN de otra especie, por eso algunos reguladores han tratado este tipo de cambio como parecido a uno que podría aparecer por azar."
+    }
+  ],
+  "crispr": {
+    "genome": "CGTTCTGATGAAACCGATAGGAGCAAAAGCCACGAACTATGGTCGCTCTCTCCGAGTGTTGGAATTATTGGCGTCGTGCGGGGAGTTATCGGTTATTAACATGTGATC",
+    "target": {
+      "label": "the gene of polyphenol oxidase",
+      "label_es": "el gen de la polifenol oxidasa",
+      "start": 28,
+      "end": 70
+    },
+    "guides": [
+      {
+        "id": "a",
+        "sequence": "CTCTCTCC"
+      },
+      {
+        "id": "b",
+        "sequence": "GGAATTAT"
+      },
+      {
+        "id": "c",
+        "sequence": "AGGCGGGC"
+      },
+      {
+        "id": "d",
+        "sequence": "ACGAACTA"
+      },
+      {
+        "id": "e",
+        "sequence": "AAACCGAT"
+      }
+    ],
+    "mismatches": 1,
+    "story": "A stretch of DNA of a button mushroom with the gene for the browning enzyme. Edit the gene, and nothing else.",
+    "story_es": "Un trozo de ADN de un champiñón con el gen de la enzima del pardeamiento. Edita el gen, y nada más."
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Cut",
+    "productLabel_es": "Corte",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Guide",
+        "label_es": "Guía",
+        "description": "The guide leads Cas9 to the target.",
+        "description_es": "La guía lleva a Cas9 al objetivo.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Cut",
+        "label_es": "Corte",
+        "description": "Cas9 cuts the DNA.",
+        "description_es": "Cas9 corta el ADN.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Repair",
+        "label_es": "Reparación",
+        "description": "The cell repairs it and the gene changes.",
+        "description_es": "La célula lo repara y el gen cambia.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Tap each guide and count where it sticks. Only one cuts exactly once, inside the blue area.",
+      "content_es": "Toca cada guía y cuenta dónde se pega. Solo una corta exactamente una vez, dentro de la zona azul.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Look for the PAM, a letter and then GG, right after the place where the guide sticks. Watch out for look-alike sites in other places.",
+      "content_es": "Busca el PAM, una letra y luego GG, justo después del sitio donde se pega la guía. Cuidado con los sitios parecidos de otros lugares.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Choose guide D.",
+      "content_es": "Elige la guía D.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A mushroom with less brown",
+    "title_es": "Una seta con menos marrón",
+    "summary": "You chose a guide that cuts only inside the gene of the browning enzyme.",
+    "summary_es": "Has elegido una guía que corta solo dentro del gen de la enzima del pardeamiento.",
+    "realWorldImpact": "Less browning means fewer mushrooms thrown away, because the ones that look good last longer on the shelf.",
+    "realWorldImpact_es": "Menos pardeamiento significa menos setas tiradas, porque las que tienen buen aspecto duran más en el estante."
+  },
+  "science": {
+    "organism": "Agaricus bisporus",
+    "realWorldCase": "In 2016 the United States Department of Agriculture said that a button mushroom edited with CRISPR to reduce browning did not need the review that applies to many genetically modified organisms.",
+    "realWorldCase_es": "En 2016 el Departamento de Agricultura de Estados Unidos dijo que un champiñón editado con CRISPR para reducir el pardeamiento no necesitaba la revisión que se aplica a muchos organismos modificados genéticamente.",
+    "scientificContext": "Cas9 cuts where the guide sticks if a PAM follows. The cell repairs the cut in a way that often adds or removes letters, and that can switch a gene off or turn it down.",
+    "scientificContext_es": "Cas9 corta donde se pega la guía si le sigue un PAM. La célula repara el corte de una forma que a menudo añade o quita letras, y eso puede apagar o bajar un gen.",
+    "gameplaySimplifications": [
+      "Guides here have 8 letters so they fit on the screen; real ones have about 20.",
+      "The sequence is invented; the real mushroom has several copies of the gene."
+    ],
+    "gameplaySimplifications_es": [
+      "Las guías de aquí tienen 8 letras para que quepan en pantalla; las reales tienen unas 20.",
+      "La secuencia es inventada; la seta real tiene varias copias del gen."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Waltz, E."
+        ],
+        "year": 2016,
+        "title": "Gene-edited CRISPR mushroom escapes US regulation",
+        "journal": "Nature",
+        "type": "news",
+        "doi": "10.1038/nature.2016.19754"
+      }
+    ]
+  }
+}

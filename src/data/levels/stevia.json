@@ -1,0 +1,348 @@
+{
+  "id": "stevia",
+  "title": "A sweetener from a leaf",
+  "title_es": "Un edulcorante de una hoja",
+  "subtitle": "Adding sugar units to a bitter molecule",
+  "subtitle_es": "Añadir unidades de azúcar a una molécula amarga",
+  "difficulty": "intermediate",
+  "estimatedDuration": 7,
+  "objective": "Show how an enzyme adds sugar units to steviol and makes the sweet molecule of stevia.",
+  "objective_es": "Muestra cómo una enzima añade unidades de azúcar al esteviol y fabrica la molécula dulce de la estevia.",
+  "description": "The leaves of the stevia plant make molecules that are hundreds of times sweeter than sugar but have no calories. The sweetness depends on how many sugar units are stuck to a core molecule.",
+  "description_es": "Las hojas de la planta de estevia fabrican moléculas cientos de veces más dulces que el azúcar pero sin calorías. El dulzor depende de cuántas unidades de azúcar están pegadas a una molécula central.",
+  "organism": {
+    "id": "stevia-leaf",
+    "commonName": "Stevia",
+    "commonName_es": "Estevia",
+    "scientificName": "Stevia rebaudiana",
+    "taxonomy": [
+      "Plantae",
+      "Tracheophyta",
+      "Magnoliopsida",
+      "Asterales",
+      "Asteraceae",
+      "Stevia"
+    ],
+    "targetTissue": "leaf",
+    "targetOrganelle": "cytoplasm",
+    "description": "A plant of South America whose leaves taste sweet.",
+    "description_es": "Una planta de Sudamérica cuyas hojas saben dulce."
+  },
+  "exploration": [
+    {
+      "kind": "plant",
+      "label": "The leaf",
+      "label_es": "La hoja",
+      "title": "Sweet with no sugar",
+      "title_es": "Dulce sin azúcar",
+      "description": "The sweet molecules of the leaf are called steviol glycosides: a core, steviol, with sugar units attached.",
+      "description_es": "Las moléculas dulces de la hoja se llaman glucósidos de esteviol: un núcleo, el esteviol, con unidades de azúcar unidas."
+    },
+    {
+      "kind": "cell",
+      "label": "The enzymes",
+      "label_es": "Las enzimas",
+      "title": "Sugar by sugar",
+      "title_es": "Azúcar a azúcar",
+      "description": "Enzymes called glycosyltransferases take a sugar from a carrier and add it to steviol. More units usually mean a sweeter, less bitter taste.",
+      "description_es": "Unas enzimas llamadas glicosiltransferasas toman un azúcar de un transportador y lo añaden al esteviol. Más unidades suelen significar un sabor más dulce y menos amargo."
+    }
+  ],
+  "biologicalContext": {
+    "nodes": [
+      {
+        "id": "gene_ugt",
+        "type": "gene",
+        "label": "UGT genes",
+        "label_es": "Genes UGT",
+        "description": "The recipe of the enzyme that adds sugar units.",
+        "description_es": "La receta de la enzima que añade unidades de azúcar.",
+        "position": {
+          "x": 0.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_ugt",
+        "type": "enzyme",
+        "label": "Glycosyltransferase",
+        "label_es": "Glicosiltransferasa",
+        "description": "The enzyme that sticks sugar onto steviol.",
+        "description_es": "La enzima que pega azúcar al esteviol.",
+        "position": {
+          "x": 3.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_glyc",
+        "type": "reaction",
+        "label": "Adding sugar units",
+        "label_es": "Añadir unidades de azúcar",
+        "description": "A sugar is moved from its carrier to the steviol.",
+        "description_es": "Un azúcar pasa de su transportador al esteviol.",
+        "position": {
+          "x": 6.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_steviol",
+        "type": "metabolite",
+        "label": "Steviol",
+        "label_es": "Esteviol",
+        "description": "The core of the sweet molecules.",
+        "description_es": "El núcleo de las moléculas dulces.",
+        "position": {
+          "x": 9.0,
+          "y": 4.8,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_udpglc",
+        "type": "metabolite",
+        "label": "UDP-glucose",
+        "label_es": "UDP-glucosa",
+        "description": "The carrier that gives the sugar.",
+        "description_es": "El transportador que da el azúcar.",
+        "position": {
+          "x": 9.0,
+          "y": 0.0,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_reba",
+        "type": "metabolite",
+        "label": "Rebaudioside",
+        "label_es": "Rebaudiósido",
+        "description": "The sweet molecule of stevia.",
+        "description_es": "La molécula dulce de la estevia.",
+        "position": {
+          "x": 9.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "phenotype_sweet",
+        "type": "phenotype",
+        "label": "Sweet, no calories",
+        "label_es": "Dulce, sin calorías",
+        "description": "The taste of the sweetener.",
+        "description_es": "El sabor del edulcorante.",
+        "position": {
+          "x": 12.0,
+          "y": 2.4,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_sucrose",
+        "type": "metabolite",
+        "label": "Table sugar",
+        "label_es": "Azúcar de mesa",
+        "description": "What the sweetener replaces.",
+        "description_es": "Lo que reemplaza el edulcorante.",
+        "position": {
+          "x": 3.0,
+          "y": 4.8,
+          "z": 0
+        },
+        "metadata": {}
+      }
+    ],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [
+      "gene_ugt",
+      "enzyme_ugt",
+      "rxn_glyc",
+      "met_steviol",
+      "met_udpglc",
+      "met_reba",
+      "phenotype_sweet",
+      "met_sucrose"
+    ],
+    "distractorNodes": [
+      "met_sucrose"
+    ],
+    "requiredConnections": [
+      {
+        "id": "req_enc",
+        "sourceId": "gene_ugt",
+        "targetId": "enzyme_ugt",
+        "edgeType": "encodes",
+        "description": "The plant reads the UGT genes and builds the enzyme.",
+        "description_es": "La planta lee los genes UGT y construye la enzima."
+      },
+      {
+        "id": "req_cat",
+        "sourceId": "enzyme_ugt",
+        "targetId": "rxn_glyc",
+        "edgeType": "catalyzes",
+        "description": "The enzyme runs the reaction.",
+        "description_es": "La enzima hace funcionar la reacción."
+      },
+      {
+        "id": "req_steviol",
+        "sourceId": "rxn_glyc",
+        "targetId": "met_steviol",
+        "edgeType": "consumes",
+        "description": "The reaction uses steviol as the core.",
+        "description_es": "La reacción gasta esteviol como núcleo."
+      },
+      {
+        "id": "req_udp",
+        "sourceId": "rxn_glyc",
+        "targetId": "met_udpglc",
+        "edgeType": "consumes",
+        "description": "It also uses the carrier with the sugar.",
+        "description_es": "También gasta el transportador con el azúcar."
+      },
+      {
+        "id": "req_reba",
+        "sourceId": "rxn_glyc",
+        "targetId": "met_reba",
+        "edgeType": "produces",
+        "description": "The result is the sweet molecule.",
+        "description_es": "El resultado es la molécula dulce."
+      },
+      {
+        "id": "req_sweet",
+        "sourceId": "met_reba",
+        "targetId": "phenotype_sweet",
+        "edgeType": "influences",
+        "description": "The molecule fits the sweet receptors of the tongue.",
+        "description_es": "La molécula encaja en los receptores del dulce de la lengua."
+      }
+    ],
+    "optionalConnections": [],
+    "invalidConnections": [
+      {
+        "sourceId": "met_sucrose",
+        "targetId": "enzyme_ugt",
+        "reason": "Table sugar is not what the enzyme uses: it takes its sugar from UDP-glucose.",
+        "reason_es": "El azúcar de mesa no es lo que usa la enzima: toma su azúcar de la UDP-glucosa."
+      },
+      {
+        "sourceId": "met_steviol",
+        "targetId": "phenotype_sweet",
+        "reason": "Steviol alone is not the sweet molecule: it needs sugar units to taste sweet.",
+        "reason_es": "El esteviol solo no es la molécula dulce: necesita unidades de azúcar para saber dulce."
+      }
+    ],
+    "winCondition": {
+      "type": "pathway_complete",
+      "targetNodeId": "phenotype_sweet",
+      "requiredConnectionIds": [
+        "req_enc",
+        "req_cat",
+        "req_steviol",
+        "req_udp",
+        "req_reba",
+        "req_sweet"
+      ],
+      "description": "Show how stevia makes a molecule that tastes sweet without calories.",
+      "description_es": "Muestra cómo la estevia fabrica una molécula que sabe dulce sin calorías."
+    }
+  },
+  "simulation": {
+    "productLabel": "Sweetener",
+    "productLabel_es": "Edulcorante",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Gene read",
+        "label_es": "Gen leído",
+        "description": "The enzyme is built.",
+        "description_es": "Se construye la enzima.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Core and sugar",
+        "label_es": "Núcleo y azúcar",
+        "description": "Steviol and UDP-glucose meet.",
+        "description_es": "El esteviol y la UDP-glucosa se encuentran.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Sugar added",
+        "label_es": "Azúcar añadido",
+        "description": "A sweeter molecule is made.",
+        "description_es": "Se fabrica una molécula más dulce.",
+        "order": 3
+      },
+      {
+        "id": "s4",
+        "label": "Sweet",
+        "label_es": "Dulce",
+        "description": "The tongue notices it.",
+        "description_es": "La lengua lo nota.",
+        "order": 4
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "The enzyme needs two things: the core molecule and a carrier that brings the sugar.",
+      "content_es": "La enzima necesita dos cosas: la molécula central y un transportador que trae el azúcar.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Gene → enzyme → adding sugar units. The reaction uses steviol and UDP-glucose and makes the sweet molecule.",
+      "content_es": "Gen → enzima → añadir unidades de azúcar. La reacción gasta esteviol y UDP-glucosa y fabrica la molécula dulce.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Connect: UGT genes–enzyme, enzyme–reaction, reaction–steviol, reaction–UDP-glucose, reaction–rebaudioside and rebaudioside–sweet.",
+      "content_es": "Conecta: genes UGT–enzima, enzima–reacción, reacción–esteviol, reacción–UDP-glucosa, reacción–rebaudiósido y rebaudiósido–dulce.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "Sweetness by design",
+    "title_es": "Dulzor por diseño",
+    "summary": "You followed the step that turns a bitter-tasting core into a sweet molecule, adding sugar units one by one.",
+    "summary_es": "Has seguido el paso que convierte un núcleo de sabor amargo en una molécula dulce, añadiendo unidades de azúcar una a una.",
+    "realWorldImpact": "The best-tasting stevia molecules are rare in the leaf. Today some are made by yeast with the stevia genes, which gives a sweetener without needing huge fields of the plant.",
+    "realWorldImpact_es": "Las moléculas de estevia de mejor sabor son raras en la hoja. Hoy algunas las fabrican levaduras con los genes de la estevia, lo que da un edulcorante sin necesidad de enormes campos de la planta."
+  },
+  "science": {
+    "organism": "Stevia rebaudiana",
+    "realWorldCase": "Stevia plants of South America have been used for centuries by the Guaraní people as a sweetener. The enzymes that build the sweet molecules have been studied and put into yeast.",
+    "realWorldCase_es": "Los guaraníes de Sudamérica usan desde hace siglos las plantas de estevia como edulcorante. Las enzimas que fabrican las moléculas dulces se han estudiado y se han puesto en levaduras.",
+    "scientificContext": "UGT enzymes transfer a glucose from UDP-glucose to specific places of steviol. The more glucose units, and the way they are linked, the cleaner the sweet taste.",
+    "scientificContext_es": "Las enzimas UGT transfieren una glucosa desde la UDP-glucosa a lugares concretos del esteviol. Cuantas más unidades de glucosa, y según cómo se unan, más limpio es el sabor dulce.",
+    "gameplaySimplifications": [
+      "Several different UGT enzymes work in a row; here they are shown as one piece."
+    ],
+    "gameplaySimplifications_es": [
+      "Varias enzimas UGT distintas trabajan seguidas; aquí se muestran como una sola pieza."
+    ],
+    "references": []
+  }
+}

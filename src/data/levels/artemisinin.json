@@ -1,0 +1,483 @@
+{
+  "id": "artemisinin",
+  "title": "Antimalarial yeast",
+  "title_es": "Levadura antimalaria",
+  "subtitle": "Brewing the precursor of artemisinin",
+  "subtitle_es": "Fermentar el precursor de la artemisinina",
+  "difficulty": "advanced",
+  "estimatedDuration": 15,
+  "objective": "Rebuild in baker's yeast the plant pathway that makes artemisinic acid, the starting material for the antimalarial drug artemisinin.",
+  "objective_es": "Reconstruye en la levadura de panadería la ruta vegetal que fabrica ácido artemisínico, la materia prima del medicamento antimalárico artemisinina.",
+  "description": "Move four genes from a plant and from yeast itself into a single production strain.",
+  "description_es": "Junta cuatro genes de una planta y de la propia levadura en una sola cepa productora.",
+  "organism": {
+    "id": "saccharomyces-cerevisiae-artemisinin",
+    "commonName": "Baker's yeast",
+    "commonName_es": "Levadura de panadería",
+    "scientificName": "Saccharomyces cerevisiae (engineered)",
+    "scientificName_es": "Saccharomyces cerevisiae (modificada)",
+    "taxonomy": ["Fungi", "Ascomycota", "Saccharomycetes", "Saccharomycetales", "Saccharomyces"],
+    "targetTissue": "single cell",
+    "targetOrganelle": "cytoplasm and endoplasmic reticulum",
+    "description": "The same yeast used for bread and beer, engineered with genes from the sweet wormwood plant.",
+    "description_es": "La misma levadura del pan y la cerveza, modificada con genes de la planta Artemisia annua."
+  },
+  "exploration": [
+    {
+      "kind": "plant",
+      "label": "Source",
+      "label_es": "Origen",
+      "title": "Sweet wormwood",
+      "title_es": "Ajenjo dulce",
+      "description": "Artemisia annua makes artemisinin, one of the most effective malaria drugs. But the plant grows slowly and harvests vary from year to year.",
+      "description_es": "Artemisia annua fabrica artemisinina, uno de los medicamentos más eficaces contra la malaria. Pero la planta crece despacio y las cosechas varían de un año a otro."
+    },
+    {
+      "kind": "yeast",
+      "label": "Host",
+      "label_es": "Huésped",
+      "title": "Baker's yeast",
+      "title_es": "Levadura de panadería",
+      "description": "Yeast grows in steel tanks all year round. If it carries the plant's genes, it can produce the drug's precursor reliably.",
+      "description_es": "La levadura crece en tanques de acero todo el año. Si lleva los genes de la planta, puede producir el precursor del medicamento de forma constante."
+    },
+    {
+      "kind": "cell",
+      "label": "Cell",
+      "label_es": "Célula",
+      "title": "Inside the yeast cell",
+      "title_es": "Dentro de la célula de levadura",
+      "description": "Yeast already makes a molecule called FPP to build its membranes. We will divert part of it towards the drug.",
+      "description_es": "La levadura ya fabrica una molécula llamada FPP para construir sus membranas. Vamos a desviar parte de ella hacia el medicamento."
+    },
+    {
+      "kind": "pathway",
+      "label": "Pathway",
+      "label_es": "Ruta",
+      "title": "Four genes, four reactions",
+      "title_es": "Cuatro genes, cuatro reacciones",
+      "description": "Boost the supply of FPP, turn it into amorphadiene, oxidize it to artemisinic acid, and finish the job with chemistry in the factory.",
+      "description_es": "Aumenta el suministro de FPP, conviértelo en amorfadieno, oxídalo a ácido artemisínico y termina el trabajo con química en la fábrica."
+    }
+  ],
+  "biologicalContext": {
+    "nodes": [
+      {
+        "id": "gene_thmg1",
+        "type": "gene",
+        "label": "tHMG1 gene",
+        "label_es": "Gen tHMG1",
+        "description": "A shortened version of a yeast gene. Its enzyme is no longer slowed down by the cell, so more FPP is made.",
+        "description_es": "Una versión acortada de un gen de la levadura. Su enzima ya no está frenada por la célula, así que se fabrica más FPP.",
+        "scientificName": "tHMG1 (truncated HMG-CoA reductase, S. cerevisiae)",
+        "scientificName_es": "tHMG1 (HMG-CoA reductasa truncada, S. cerevisiae)",
+        "position": { "x": -8, "y": 3.2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "gene_ads",
+        "type": "gene",
+        "label": "ADS gene",
+        "label_es": "Gen ADS",
+        "description": "Gene from Artemisia annua for amorphadiene synthase, the first enzyme of the artemisinin branch.",
+        "description_es": "Gen de Artemisia annua de la amorfadieno sintasa, la primera enzima de la rama de la artemisinina.",
+        "scientificName": "ADS (Artemisia annua)",
+        "position": { "x": -8, "y": 0.8, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "gene_cyp",
+        "type": "gene",
+        "label": "CYP71AV1 gene",
+        "label_es": "Gen CYP71AV1",
+        "description": "Gene from Artemisia annua for a cytochrome P450 enzyme that oxidizes amorphadiene.",
+        "description_es": "Gen de Artemisia annua de una enzima citocromo P450 que oxida el amorfadieno.",
+        "scientificName": "CYP71AV1 (Artemisia annua)",
+        "position": { "x": -8, "y": -1.8, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "gene_cpr",
+        "type": "gene",
+        "label": "CPR1 gene",
+        "label_es": "Gen CPR1",
+        "description": "Gene from Artemisia annua for the partner enzyme that feeds electrons to CYP71AV1.",
+        "description_es": "Gen de Artemisia annua de la enzima compañera que le pasa electrones a CYP71AV1.",
+        "scientificName": "CPR1 (Artemisia annua cytochrome P450 reductase)",
+        "scientificName_es": "CPR1 (citocromo P450 reductasa de Artemisia annua)",
+        "position": { "x": -8, "y": -4.2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_thmgr",
+        "type": "enzyme",
+        "label": "tHMGR",
+        "label_es": "tHMGR",
+        "description": "The key enzyme of the mevalonate pathway, now working at full speed.",
+        "description_es": "La enzima clave de la ruta del mevalonato, ahora trabajando a toda velocidad.",
+        "scientificName": "HMG-CoA reductase, truncated (EC 1.1.1.34)",
+        "scientificName_es": "HMG-CoA reductasa truncada (EC 1.1.1.34)",
+        "position": { "x": -4.5, "y": 3.2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_ads",
+        "type": "enzyme",
+        "label": "Amorphadiene synthase",
+        "label_es": "Amorfadieno sintasa",
+        "description": "Folds the linear FPP molecule into the ring-shaped amorphadiene.",
+        "description_es": "Pliega la molécula lineal de FPP en el amorfadieno, que tiene forma de anillos.",
+        "scientificName": "Amorpha-4,11-diene synthase (EC 4.2.3.24)",
+        "scientificName_es": "Amorfa-4,11-dieno sintasa (EC 4.2.3.24)",
+        "position": { "x": -4.5, "y": 0.8, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_cyp",
+        "type": "enzyme",
+        "label": "CYP71AV1",
+        "label_es": "CYP71AV1",
+        "description": "A P450 enzyme that adds oxygen to amorphadiene in three steps, ending with artemisinic acid.",
+        "description_es": "Una enzima P450 que añade oxígeno al amorfadieno en tres pasos, hasta llegar al ácido artemisínico.",
+        "scientificName": "Amorphadiene oxidase (CYP71AV1)",
+        "scientificName_es": "Amorfadieno oxidasa (CYP71AV1)",
+        "position": { "x": -4.5, "y": -1.8, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_cpr",
+        "type": "enzyme",
+        "label": "CPR1 reductase",
+        "label_es": "Reductasa CPR1",
+        "description": "Supplies the electrons that CYP71AV1 needs. Without its partner, the P450 enzyme barely works.",
+        "description_es": "Aporta los electrones que necesita CYP71AV1. Sin su compañera, la enzima P450 apenas funciona.",
+        "scientificName": "NADPH-cytochrome P450 reductase",
+        "scientificName_es": "NADPH-citocromo P450 reductasa",
+        "position": { "x": -4.5, "y": -4.2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_mva",
+        "type": "reaction",
+        "label": "Mevalonate pathway",
+        "label_es": "Ruta del mevalonato",
+        "description": "A chain of yeast reactions that turns acetyl-CoA into FPP. tHMGR controls its speed.",
+        "description_es": "Una cadena de reacciones de la levadura que convierte acetil-CoA en FPP. La tHMGR controla su velocidad.",
+        "position": { "x": -1, "y": 3.2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_cyclize",
+        "type": "reaction",
+        "label": "FPP cyclization",
+        "label_es": "Ciclación del FPP",
+        "description": "FPP → amorphadiene. The first step that belongs only to the artemisinin pathway.",
+        "description_es": "FPP → amorfadieno. El primer paso que pertenece solo a la ruta de la artemisinina.",
+        "position": { "x": -1, "y": 0.8, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_oxidize",
+        "type": "reaction",
+        "label": "Three-step oxidation",
+        "label_es": "Oxidación en tres pasos",
+        "description": "Amorphadiene → artemisinic alcohol → artemisinic aldehyde → artemisinic acid.",
+        "description_es": "Amorfadieno → alcohol artemisínico → aldehído artemisínico → ácido artemisínico.",
+        "position": { "x": -1, "y": -1.8, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_chem",
+        "type": "reaction",
+        "label": "Chemical conversion",
+        "label_es": "Conversión química",
+        "description": "Outside the yeast: chemists purify artemisinic acid and convert it into artemisinin using light and oxygen.",
+        "description_es": "Fuera de la levadura: los químicos purifican el ácido artemisínico y lo convierten en artemisinina usando luz y oxígeno.",
+        "position": { "x": 5.5, "y": -1.2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "met_acetylcoa",
+        "type": "metabolite",
+        "label": "Acetyl-CoA",
+        "label_es": "Acetil-CoA",
+        "description": "A basic building block the yeast makes from sugar.",
+        "description_es": "Una pieza básica que la levadura fabrica a partir del azúcar.",
+        "position": { "x": 2.5, "y": 4.4, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "met_fpp",
+        "type": "metabolite",
+        "label": "FPP",
+        "label_es": "FPP",
+        "description": "Farnesyl pyrophosphate: a 15-carbon molecule. Yeast normally uses it to make sterols for its membranes.",
+        "description_es": "Farnesil pirofosfato: una molécula de 15 carbonos. La levadura la usa normalmente para fabricar esteroles para sus membranas.",
+        "scientificName": "Farnesyl pyrophosphate",
+        "position": { "x": 2.5, "y": 2, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "met_amorphadiene",
+        "type": "metabolite",
+        "label": "Amorphadiene",
+        "label_es": "Amorfadieno",
+        "description": "The carbon skeleton of artemisinin, still without the oxygen atoms it needs.",
+        "description_es": "El esqueleto de carbono de la artemisinina, todavía sin los átomos de oxígeno que necesita.",
+        "scientificName": "Amorpha-4,11-diene",
+        "position": { "x": 2.5, "y": -0.4, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "met_aa",
+        "type": "metabolite",
+        "label": "Artemisinic acid",
+        "label_es": "Ácido artemisínico",
+        "description": "The final product of the yeast. It is collected from the culture and sent to chemists.",
+        "description_es": "El producto final de la levadura. Se recoge del cultivo y se envía a los químicos.",
+        "position": { "x": 2.5, "y": -2.8, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "met_artemisinin",
+        "type": "metabolite",
+        "label": "Artemisinin",
+        "label_es": "Artemisinina",
+        "description": "The active drug. Its unusual peroxide bridge is what attacks the malaria parasite.",
+        "description_es": "El medicamento activo. Su peculiar puente de peróxido es lo que ataca al parásito de la malaria.",
+        "position": { "x": 8.5, "y": -2.8, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "phenotype_drug",
+        "type": "phenotype",
+        "label": "Malaria medicine",
+        "label_es": "Medicamento contra la malaria",
+        "description": "Artemisinin-based combination therapies are the standard treatment for malaria worldwide.",
+        "description_es": "Las terapias combinadas con artemisinina son el tratamiento estándar de la malaria en todo el mundo.",
+        "position": { "x": 8.5, "y": 0.6, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "organelle_er",
+        "type": "organelle",
+        "label": "Endoplasmic reticulum",
+        "label_es": "Retículo endoplasmático",
+        "description": "A network of membranes inside the cell. P450 enzymes like CYP71AV1 are anchored to it.",
+        "description_es": "Una red de membranas dentro de la célula. Las enzimas P450 como CYP71AV1 están ancladas en ella.",
+        "position": { "x": -1, "y": -4.4, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "gene_erg9",
+        "type": "gene",
+        "label": "ERG9 gene",
+        "label_es": "Gen ERG9",
+        "description": "A yeast gene whose enzyme sends FPP towards sterols. It competes with our pathway, so in the real strain it is turned down, not added.",
+        "description_es": "Un gen de la levadura cuya enzima lleva el FPP hacia los esteroles. Compite con nuestra ruta, así que en la cepa real se reduce, no se añade.",
+        "isDistractor": true,
+        "position": { "x": 5.5, "y": 4.4, "z": 0 },
+        "metadata": {}
+      },
+      {
+        "id": "met_quinine",
+        "type": "metabolite",
+        "label": "Quinine",
+        "label_es": "Quinina",
+        "description": "An older antimalarial from the bark of the cinchona tree. It is made by a completely different pathway.",
+        "description_es": "Un antimalárico más antiguo, de la corteza del árbol de la quina. Se fabrica por una ruta completamente distinta.",
+        "isDistractor": true,
+        "position": { "x": 5.5, "y": 2, "z": 0 },
+        "metadata": {}
+      }
+    ],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [
+      "gene_thmg1", "gene_ads", "gene_cyp", "gene_cpr",
+      "enzyme_thmgr", "enzyme_ads", "enzyme_cyp", "enzyme_cpr",
+      "rxn_mva", "rxn_cyclize", "rxn_oxidize", "rxn_chem",
+      "met_acetylcoa", "met_fpp", "met_amorphadiene", "met_aa", "met_artemisinin",
+      "phenotype_drug", "organelle_er", "gene_erg9", "met_quinine"
+    ],
+    "distractorNodes": ["gene_erg9", "met_quinine"],
+    "requiredConnections": [
+      { "id": "req_thmg1", "sourceId": "gene_thmg1", "targetId": "enzyme_thmgr", "edgeType": "encodes",
+        "description": "Extra copies of the shortened gene make an enzyme the cell cannot slow down.",
+        "description_es": "Copias extra del gen acortado fabrican una enzima que la célula no puede frenar." },
+      { "id": "req_ads", "sourceId": "gene_ads", "targetId": "enzyme_ads", "edgeType": "encodes",
+        "description": "The plant gene gives yeast an enzyme it has never had.",
+        "description_es": "El gen de la planta le da a la levadura una enzima que nunca había tenido." },
+      { "id": "req_cyp", "sourceId": "gene_cyp", "targetId": "enzyme_cyp", "edgeType": "encodes",
+        "description": "The P450 gene from Artemisia annua makes the oxidizing enzyme.",
+        "description_es": "El gen P450 de Artemisia annua fabrica la enzima oxidante." },
+      { "id": "req_cpr", "sourceId": "gene_cpr", "targetId": "enzyme_cpr", "edgeType": "encodes",
+        "description": "Its partner reductase comes from the same plant, so the two work well together.",
+        "description_es": "Su reductasa compañera viene de la misma planta, así que las dos trabajan bien juntas." },
+      { "id": "req_mva_cat", "sourceId": "enzyme_thmgr", "targetId": "rxn_mva", "edgeType": "catalyzes",
+        "description": "tHMGR sets the pace of the whole mevalonate pathway.",
+        "description_es": "La tHMGR marca el ritmo de toda la ruta del mevalonato." },
+      { "id": "req_mva_in", "sourceId": "rxn_mva", "targetId": "met_acetylcoa", "edgeType": "consumes",
+        "description": "Everything starts from acetyl-CoA, which the yeast makes from sugar.",
+        "description_es": "Todo empieza en el acetil-CoA, que la levadura fabrica a partir del azúcar." },
+      { "id": "req_mva_out", "sourceId": "rxn_mva", "targetId": "met_fpp", "edgeType": "produces",
+        "description": "The pathway ends in FPP, the branching point between sterols and our drug.",
+        "description_es": "La ruta termina en FPP, el punto donde se separan los esteroles y nuestro medicamento." },
+      { "id": "req_cyc_cat", "sourceId": "enzyme_ads", "targetId": "rxn_cyclize", "edgeType": "catalyzes",
+        "description": "Amorphadiene synthase folds FPP into rings.",
+        "description_es": "La amorfadieno sintasa pliega el FPP en anillos." },
+      { "id": "req_cyc_in", "sourceId": "rxn_cyclize", "targetId": "met_fpp", "edgeType": "consumes",
+        "description": "This reaction takes FPP away from the sterol route.",
+        "description_es": "Esta reacción le quita FPP a la ruta de los esteroles." },
+      { "id": "req_cyc_out", "sourceId": "rxn_cyclize", "targetId": "met_amorphadiene", "edgeType": "produces",
+        "description": "The result is amorphadiene, the skeleton of artemisinin.",
+        "description_es": "El resultado es el amorfadieno, el esqueleto de la artemisinina." },
+      { "id": "req_ox_cyp", "sourceId": "enzyme_cyp", "targetId": "rxn_oxidize", "edgeType": "catalyzes",
+        "description": "CYP71AV1 adds oxygen atoms to amorphadiene in three steps.",
+        "description_es": "CYP71AV1 añade átomos de oxígeno al amorfadieno en tres pasos." },
+      { "id": "req_ox_cpr", "sourceId": "enzyme_cpr", "targetId": "rxn_oxidize", "edgeType": "catalyzes",
+        "description": "Two enzymes run this reaction together: CPR1 hands the electrons to CYP71AV1.",
+        "description_es": "Dos enzimas hacen funcionar juntas esta reacción: CPR1 le pasa los electrones a CYP71AV1." },
+      { "id": "req_ox_in", "sourceId": "rxn_oxidize", "targetId": "met_amorphadiene", "edgeType": "consumes",
+        "description": "Amorphadiene is the starting point of the oxidation.",
+        "description_es": "El amorfadieno es el punto de partida de la oxidación." },
+      { "id": "req_ox_out", "sourceId": "rxn_oxidize", "targetId": "met_aa", "edgeType": "produces",
+        "description": "Artemisinic acid is the last molecule the yeast makes.",
+        "description_es": "El ácido artemisínico es la última molécula que fabrica la levadura." },
+      { "id": "req_chem_in", "sourceId": "rxn_chem", "targetId": "met_aa", "edgeType": "consumes",
+        "description": "Chemists take the artemisinic acid purified from the tanks.",
+        "description_es": "Los químicos toman el ácido artemisínico purificado de los tanques." },
+      { "id": "req_chem_out", "sourceId": "rxn_chem", "targetId": "met_artemisinin", "edgeType": "produces",
+        "description": "A few chemical steps, one of them driven by light, give artemisinin.",
+        "description_es": "Unos pocos pasos químicos, uno de ellos impulsado por la luz, dan la artemisinina." },
+      { "id": "req_drug", "sourceId": "met_artemisinin", "targetId": "phenotype_drug", "edgeType": "influences",
+        "description": "Combined with a partner drug, artemisinin becomes the standard treatment for malaria.",
+        "description_es": "Combinada con otro fármaco, la artemisinina se convierte en el tratamiento estándar de la malaria." }
+    ],
+    "optionalConnections": [
+      {
+        "id": "opt_er",
+        "sourceId": "enzyme_cyp",
+        "targetId": "organelle_er",
+        "edgeType": "localizes_to",
+        "description": "P450 enzymes such as CYP71AV1 are anchored in the membrane of the endoplasmic reticulum.",
+        "description_es": "Las enzimas P450 como CYP71AV1 están ancladas en la membrana del retículo endoplasmático.",
+        "bonusPoints": 50
+      }
+    ],
+    "invalidConnections": [
+      {
+        "sourceId": "gene_erg9",
+        "targetId": "rxn_cyclize",
+        "reason": "ERG9 sends FPP to sterols, the opposite of what we want. In the real strain this gene is turned down.",
+        "reason_es": "ERG9 lleva el FPP hacia los esteroles, justo lo contrario de lo que queremos. En la cepa real este gen se reduce."
+      },
+      {
+        "sourceId": "met_quinine",
+        "targetId": "phenotype_drug",
+        "reason": "Quinine also treats malaria, but it comes from a different tree and a different pathway. This yeast cannot make it.",
+        "reason_es": "La quinina también trata la malaria, pero viene de otro árbol y de otra ruta. Esta levadura no puede fabricarla."
+      },
+      {
+        "sourceId": "met_aa",
+        "targetId": "phenotype_drug",
+        "reason": "Artemisinic acid is not the drug yet. It still has to be chemically converted into artemisinin.",
+        "reason_es": "El ácido artemisínico todavía no es el medicamento. Aún hay que convertirlo químicamente en artemisinina."
+      }
+    ],
+    "winCondition": {
+      "type": "pathway_complete",
+      "targetNodeId": "phenotype_drug",
+      "requiredConnectionIds": [
+        "req_thmg1", "req_ads", "req_cyp", "req_cpr",
+        "req_mva_cat", "req_mva_in", "req_mva_out",
+        "req_cyc_cat", "req_cyc_in", "req_cyc_out",
+        "req_ox_cyp", "req_ox_cpr", "req_ox_in", "req_ox_out",
+        "req_chem_in", "req_chem_out", "req_drug"
+      ],
+      "description": "Go from sugar to artemisinin."
+    }
+  },
+  "simulation": {
+    "productLabel": "Artemisinic acid",
+    "productLabel_es": "Ácido artemisínico",
+    "steps": [
+      { "id": "sim_genes", "label": "Four genes switched on", "label_es": "Cuatro genes encendidos", "description": "The engineered yeast reads tHMG1, ADS, CYP71AV1 and CPR1.", "description_es": "La levadura modificada lee tHMG1, ADS, CYP71AV1 y CPR1.", "order": 1 },
+      { "id": "sim_mva", "label": "More FPP", "label_es": "Más FPP", "description": "The boosted mevalonate pathway fills the cell with FPP.", "description_es": "La ruta del mevalonato reforzada llena la célula de FPP.", "order": 2 },
+      { "id": "sim_cyc", "label": "Amorphadiene", "label_es": "Amorfadieno", "description": "ADS turns FPP into amorphadiene.", "description_es": "ADS convierte el FPP en amorfadieno.", "order": 3 },
+      { "id": "sim_ox", "label": "Oxidation", "label_es": "Oxidación", "description": "CYP71AV1 and CPR1 produce artemisinic acid.", "description_es": "CYP71AV1 y CPR1 producen ácido artemisínico.", "order": 4 },
+      { "id": "sim_chem", "label": "Chemistry", "label_es": "Química", "description": "The acid is purified and converted into artemisinin.", "description_es": "El ácido se purifica y se convierte en artemisinina.", "order": 5 },
+      { "id": "sim_drug", "label": "Medicine", "label_es": "Medicamento", "description": "Artemisinin is formulated into combination therapies.", "description_es": "La artemisinina se formula en terapias combinadas.", "order": 6 }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "There are four genes and each one makes one enzyme. Three reactions happen inside the yeast and one in the chemistry lab. Follow the carbon: sugar → acetyl-CoA → FPP → amorphadiene → artemisinic acid → artemisinin.",
+      "content_es": "Hay cuatro genes y cada uno fabrica una enzima. Tres reacciones ocurren dentro de la levadura y una en el laboratorio de química. Sigue al carbono: azúcar → acetil-CoA → FPP → amorfadieno → ácido artemisínico → artemisinina.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Pathway order",
+      "title_es": "Orden de la ruta",
+      "content": "tHMGR runs the mevalonate pathway (acetyl-CoA → FPP). ADS runs the cyclization (FPP → amorphadiene). CYP71AV1 and CPR1 run the oxidation together (amorphadiene → artemisinic acid). The chemical conversion needs no enzyme.",
+      "content_es": "La tHMGR hace funcionar la ruta del mevalonato (acetil-CoA → FPP). ADS hace funcionar la ciclación (FPP → amorfadieno). CYP71AV1 y CPR1 hacen funcionar juntas la oxidación (amorfadieno → ácido artemisínico). La conversión química no necesita enzima.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Guided solution",
+      "title_es": "Solución guiada",
+      "content": "Connect each gene to its enzyme. Then: tHMGR–Mevalonate pathway, Mevalonate pathway–Acetyl-CoA, Mevalonate pathway–FPP; Amorphadiene synthase–FPP cyclization, FPP cyclization–FPP, FPP cyclization–Amorphadiene; CYP71AV1 and CPR1–Three-step oxidation, Three-step oxidation–Amorphadiene, Three-step oxidation–Artemisinic acid; Chemical conversion–Artemisinic acid, Chemical conversion–Artemisinin; Artemisinin–Malaria medicine.",
+      "content_es": "Conecta cada gen con su enzima. Después: tHMGR–Ruta del mevalonato, Ruta del mevalonato–Acetil-CoA, Ruta del mevalonato–FPP; Amorfadieno sintasa–Ciclación del FPP, Ciclación del FPP–FPP, Ciclación del FPP–Amorfadieno; CYP71AV1 y CPR1–Oxidación en tres pasos, Oxidación en tres pasos–Amorfadieno, Oxidación en tres pasos–Ácido artemisínico; Conversión química–Ácido artemisínico, Conversión química–Artemisinina; Artemisinina–Medicamento contra la malaria.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A medicine from a brewery",
+    "title_es": "Un medicamento salido de un fermentador",
+    "summary": "You moved a plant pathway into yeast: you boosted its own supply of FPP, added three plant enzymes to turn it into artemisinic acid, and finished with chemistry to obtain artemisinin.",
+    "summary_es": "Has trasladado una ruta vegetal a la levadura: has reforzado su propio suministro de FPP, has añadido tres enzimas de la planta para convertirlo en ácido artemisínico y has terminado con química para obtener artemisinina.",
+    "realWorldImpact": "Malaria still causes hundreds of thousands of deaths every year. Semi-synthetic artemisinin made from yeast offers a supply that does not depend on harvests, helping to stabilise the price of the medicine.",
+    "realWorldImpact_es": "La malaria sigue causando cientos de miles de muertes cada año. La artemisinina semisintética fabricada con levadura ofrece un suministro que no depende de las cosechas y ayuda a estabilizar el precio del medicamento."
+  },
+  "science": {
+    "organism": "Saccharomyces cerevisiae expressing Artemisia annua genes",
+    "realWorldCase": "In 2006 Jay Keasling's group made yeast produce artemisinic acid. In 2013 an improved strain reached production levels high enough for industry, and the pharmaceutical company Sanofi began making semi-synthetic artemisinin.",
+    "realWorldCase_es": "En 2006 el grupo de Jay Keasling consiguió que la levadura produjera ácido artemisínico. En 2013 una cepa mejorada alcanzó niveles de producción suficientes para la industria, y la farmacéutica Sanofi empezó a fabricar artemisinina semisintética.",
+    "scientificContext": "The engineered strain overexpresses a truncated HMG-CoA reductase and other mevalonate pathway genes, and reduces ERG9 expression so that more FPP is available. Amorphadiene synthase, CYP71AV1 with its reductase CPR1 and cytochrome b5, and two plant dehydrogenases convert FPP into artemisinic acid, which is then converted chemically into artemisinin.",
+    "scientificContext_es": "La cepa modificada sobreexpresa una HMG-CoA reductasa truncada y otros genes de la ruta del mevalonato, y reduce la expresión de ERG9 para que haya más FPP disponible. La amorfadieno sintasa, CYP71AV1 con su reductasa CPR1 y el citocromo b5, y dos deshidrogenasas de la planta convierten el FPP en ácido artemisínico, que después se transforma químicamente en artemisinina.",
+    "gameplaySimplifications": [
+      "The mevalonate pathway has several enzymes; the game shows only tHMGR.",
+      "The industrial strain also uses cytochrome b5 and two plant dehydrogenases (ADH1 and ALDH1) for the oxidation steps.",
+      "Reducing ERG9 is part of the real design, but the game treats ERG9 as a piece that does not belong."
+    ],
+    "gameplaySimplifications_es": [
+      "La ruta del mevalonato tiene varias enzimas; el juego solo muestra la tHMGR.",
+      "La cepa industrial usa también el citocromo b5 y dos deshidrogenasas de la planta (ADH1 y ALDH1) para los pasos de oxidación.",
+      "Reducir ERG9 forma parte del diseño real, pero el juego trata ERG9 como una pieza que no encaja."
+    ],
+    "references": [
+      {
+        "authors": ["Ro DK", "Paradise EM", "Ouellet M", "Fisher KJ", "Newman KL", "Ndungu JM", "Ho KA", "Eachus RA", "Ham TS", "Kirby J", "Chang MCY", "Withers ST", "Shiba Y", "Sarpong R", "Keasling JD"],
+        "year": 2006,
+        "title": "Production of the antimalarial drug precursor artemisinic acid in engineered yeast",
+        "journal": "Nature",
+        "doi": "10.1038/nature04640",
+        "type": "paper"
+      },
+      {
+        "authors": ["Paddon CJ", "Westfall PJ", "Pitera DJ", "Benjamin K", "Fisher K", "McPhee D"],
+        "year": 2013,
+        "title": "High-level semi-synthetic production of the potent antimalarial artemisinin",
+        "journal": "Nature",
+        "doi": "10.1038/nature12051",
+        "type": "paper"
+      }
+    ]
+  }
+}

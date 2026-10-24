@@ -1,0 +1,518 @@
+{
+  "id": "blood-groups",
+  "title": "Blood groups: A, B and AB",
+  "title_es": "Grupos sanguíneos: A, B y AB",
+  "subtitle": "One gene, two versions, two sugars",
+  "subtitle_es": "Un gen, dos versiones, dos azúcares",
+  "difficulty": "intermediate",
+  "estimatedDuration": 8,
+  "objective": "Build the AB blood group: two versions of one gene make two enzymes, and each adds a different sugar to the surface of red blood cells.",
+  "objective_es": "Construye el grupo sanguíneo AB: dos versiones de un gen fabrican dos enzimas, y cada una añade un azúcar distinto a la superficie de los glóbulos rojos.",
+  "description": "The same chain of gene, enzyme, reaction and molecule, running twice side by side.",
+  "description_es": "La misma cadena de gen, enzima, reacción y molécula, funcionando dos veces en paralelo.",
+  "organism": {
+    "id": "human-abo",
+    "commonName": "Human body",
+    "commonName_es": "Cuerpo humano",
+    "scientificName": "Homo sapiens",
+    "taxonomy": [
+      "Animalia",
+      "Chordata",
+      "Mammalia",
+      "Primates",
+      "Hominidae",
+      "Homo"
+    ],
+    "targetTissue": "whole body",
+    "targetOrganelle": "cytoplasm",
+    "description": "The red blood cells of a person with blood group AB.",
+    "description_es": "Los glóbulos rojos de una persona con grupo sanguíneo AB."
+  },
+  "exploration": [
+    {
+      "kind": "blood",
+      "label": "Blood",
+      "label_es": "Sangre",
+      "title": "Why blood groups exist",
+      "title_es": "Por qué existen los grupos sanguíneos",
+      "description": "Red blood cells carry sugars on their surface. Which sugars depends on the ABO gene, and they are what a transfusion has to match.",
+      "description_es": "Los glóbulos rojos llevan azúcares en su superficie. Cuáles dependa del gen ABO, y son los que debe respetar una transfusión."
+    },
+    {
+      "kind": "dna",
+      "label": "Gene",
+      "label_es": "Gen",
+      "title": "Versions of one gene",
+      "title_es": "Versiones de un mismo gen",
+      "description": "The ABO gene comes in versions called A, B and O. Version A makes an enzyme that adds one sugar; version B makes a slightly different enzyme that adds another.",
+      "description_es": "El gen ABO viene en versiones llamadas A, B y O. La versión A fabrica una enzima que añade un azúcar; la versión B fabrica una enzima un poco distinta que añade otro."
+    }
+  ],
+  "biologicalContext": {
+    "nodes": [
+      {
+        "id": "gene_a",
+        "type": "gene",
+        "label": "ABO gene, version A",
+        "label_es": "Gen ABO, versión A",
+        "description": "The recipe for enzyme A.",
+        "description_es": "La receta de la enzima A.",
+        "position": {
+          "x": -7.5,
+          "y": 2.8,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "gene_b",
+        "type": "gene",
+        "label": "ABO gene, version B",
+        "label_es": "Gen ABO, versión B",
+        "description": "The recipe for enzyme B.",
+        "description_es": "La receta de la enzima B.",
+        "position": {
+          "x": -7.5,
+          "y": -2.8,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_a",
+        "type": "enzyme",
+        "label": "Enzyme A",
+        "label_es": "Enzima A",
+        "description": "Adds the sugar N-acetylgalactosamine.",
+        "description_es": "Añade el azúcar N-acetilgalactosamina.",
+        "position": {
+          "x": -4,
+          "y": 2.8,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "enzyme_b",
+        "type": "enzyme",
+        "label": "Enzyme B",
+        "label_es": "Enzima B",
+        "description": "Adds the sugar galactose.",
+        "description_es": "Añade el azúcar galactosa.",
+        "position": {
+          "x": -4,
+          "y": -2.8,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_a",
+        "type": "reaction",
+        "label": "Adding sugar A",
+        "label_es": "Añadir el azúcar A",
+        "description": "Enzyme A attaches its sugar to the H substance.",
+        "description_es": "La enzima A pega su azúcar a la sustancia H.",
+        "position": {
+          "x": -0.5,
+          "y": 2.8,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "rxn_b",
+        "type": "reaction",
+        "label": "Adding sugar B",
+        "label_es": "Añadir el azúcar B",
+        "description": "Enzyme B attaches its sugar to the H substance.",
+        "description_es": "La enzima B pega su azúcar a la sustancia H.",
+        "position": {
+          "x": -0.5,
+          "y": -2.8,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_h",
+        "type": "metabolite",
+        "label": "H substance",
+        "label_es": "Sustancia H",
+        "description": "The base on every red cell, before sugars are added.",
+        "description_es": "La base que hay en todos los glóbulos rojos, antes de añadir azúcares.",
+        "position": {
+          "x": -0.5,
+          "y": 0,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_sugar_a",
+        "type": "metabolite",
+        "label": "Sugar for A",
+        "label_es": "Azúcar para el grupo A",
+        "description": "The building block enzyme A attaches.",
+        "description_es": "La pieza que pega la enzima A.",
+        "position": {
+          "x": 3,
+          "y": 5.2,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_sugar_b",
+        "type": "metabolite",
+        "label": "Sugar for B",
+        "label_es": "Azúcar para el grupo B",
+        "description": "The building block enzyme B attaches.",
+        "description_es": "La pieza que pega la enzima B.",
+        "position": {
+          "x": 3,
+          "y": -5.2,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_antigen_a",
+        "type": "metabolite",
+        "label": "Antigen A",
+        "label_es": "Antígeno A",
+        "description": "The finished A sugar chain on the cell surface.",
+        "description_es": "La cadena de azúcar A terminada, en la superficie de la célula.",
+        "position": {
+          "x": 3.4,
+          "y": 2.2,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "met_antigen_b",
+        "type": "metabolite",
+        "label": "Antigen B",
+        "label_es": "Antígeno B",
+        "description": "The finished B sugar chain on the cell surface.",
+        "description_es": "La cadena de azúcar B terminada, en la superficie de la célula.",
+        "position": {
+          "x": 3.4,
+          "y": -2.2,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "phenotype_ab",
+        "type": "phenotype",
+        "label": "Blood group AB",
+        "label_es": "Grupo sanguíneo AB",
+        "description": "Both antigens are present: a person can receive A, B, AB or O red cells.",
+        "description_es": "Los dos antígenos están presentes: la persona puede recibir glóbulos rojos A, B, AB u O.",
+        "position": {
+          "x": 7,
+          "y": 0,
+          "z": 0
+        },
+        "metadata": {}
+      },
+      {
+        "id": "gene_o",
+        "type": "gene",
+        "label": "ABO gene, version O",
+        "label_es": "Gen ABO, versión O",
+        "description": "A version that makes no working enzyme, so nothing is added.",
+        "description_es": "Una versión que no fabrica ninguna enzima que funcione, así que no se añade nada.",
+        "position": {
+          "x": -7.5,
+          "y": 0,
+          "z": 0
+        },
+        "metadata": {},
+        "isDistractor": true
+      },
+      {
+        "id": "met_anti",
+        "type": "metabolite",
+        "label": "Anti-B antibodies",
+        "label_es": "Anticuerpos anti-B",
+        "description": "Found in the blood of people who lack B. They are in the plasma, not on the red cell.",
+        "description_es": "Están en la sangre de las personas que no tienen B. Van en el plasma, no en el glóbulo rojo.",
+        "position": {
+          "x": 7,
+          "y": 4.6,
+          "z": 0
+        },
+        "metadata": {},
+        "isDistractor": true
+      }
+    ],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [
+      "gene_a",
+      "gene_b",
+      "enzyme_a",
+      "enzyme_b",
+      "rxn_a",
+      "rxn_b",
+      "met_h",
+      "met_sugar_a",
+      "met_sugar_b",
+      "met_antigen_a",
+      "met_antigen_b",
+      "phenotype_ab",
+      "gene_o",
+      "met_anti"
+    ],
+    "distractorNodes": [
+      "gene_o",
+      "met_anti"
+    ],
+    "requiredConnections": [
+      {
+        "id": "req_ga",
+        "sourceId": "gene_a",
+        "targetId": "enzyme_a",
+        "edgeType": "encodes",
+        "description": "Version A of the gene makes enzyme A.",
+        "description_es": "La versión A del gen fabrica la enzima A."
+      },
+      {
+        "id": "req_gb",
+        "sourceId": "gene_b",
+        "targetId": "enzyme_b",
+        "edgeType": "encodes",
+        "description": "Version B makes enzyme B.",
+        "description_es": "La versión B fabrica la enzima B."
+      },
+      {
+        "id": "req_ca",
+        "sourceId": "enzyme_a",
+        "targetId": "rxn_a",
+        "edgeType": "catalyzes",
+        "description": "Enzyme A runs its reaction.",
+        "description_es": "La enzima A hace funcionar su reacción."
+      },
+      {
+        "id": "req_cb",
+        "sourceId": "enzyme_b",
+        "targetId": "rxn_b",
+        "edgeType": "catalyzes",
+        "description": "Enzyme B runs its reaction.",
+        "description_es": "La enzima B hace funcionar su reacción."
+      },
+      {
+        "id": "req_ha",
+        "sourceId": "rxn_a",
+        "targetId": "met_h",
+        "edgeType": "consumes",
+        "description": "Both reactions start from the same H substance.",
+        "description_es": "Las dos reacciones parten de la misma sustancia H."
+      },
+      {
+        "id": "req_hb",
+        "sourceId": "rxn_b",
+        "targetId": "met_h",
+        "edgeType": "consumes",
+        "description": "The H substance is shared: that is why one cell can have both.",
+        "description_es": "La sustancia H se comparte: por eso una misma célula puede tener las dos."
+      },
+      {
+        "id": "req_sa",
+        "sourceId": "rxn_a",
+        "targetId": "met_sugar_a",
+        "edgeType": "consumes",
+        "description": "Reaction A uses its own sugar…",
+        "description_es": "La reacción A usa su propio azúcar…"
+      },
+      {
+        "id": "req_sb",
+        "sourceId": "rxn_b",
+        "targetId": "met_sugar_b",
+        "edgeType": "consumes",
+        "description": "…and reaction B uses a different one.",
+        "description_es": "…y la reacción B usa uno distinto."
+      },
+      {
+        "id": "req_pa",
+        "sourceId": "rxn_a",
+        "targetId": "met_antigen_a",
+        "edgeType": "produces",
+        "description": "Out comes antigen A.",
+        "description_es": "Sale el antígeno A."
+      },
+      {
+        "id": "req_pb",
+        "sourceId": "rxn_b",
+        "targetId": "met_antigen_b",
+        "edgeType": "produces",
+        "description": "Out comes antigen B.",
+        "description_es": "Sale el antígeno B."
+      },
+      {
+        "id": "req_ia",
+        "sourceId": "met_antigen_a",
+        "targetId": "phenotype_ab",
+        "edgeType": "influences",
+        "description": "A on the surface…",
+        "description_es": "A en la superficie…"
+      },
+      {
+        "id": "req_ib",
+        "sourceId": "met_antigen_b",
+        "targetId": "phenotype_ab",
+        "edgeType": "influences",
+        "description": "…plus B on the surface gives group AB.",
+        "description_es": "…más B en la superficie da el grupo AB."
+      }
+    ],
+    "optionalConnections": [],
+    "invalidConnections": [
+      {
+        "sourceId": "gene_o",
+        "targetId": "enzyme_a",
+        "reason": "The O version does not make enzyme A. It makes no working enzyme at all, which is why group O cells have only the H substance.",
+        "reason_es": "La versión O no fabrica la enzima A. No fabrica ninguna enzima que funcione, y por eso las células del grupo O solo tienen la sustancia H."
+      },
+      {
+        "sourceId": "met_anti",
+        "targetId": "phenotype_ab",
+        "reason": "Anti-B antibodies float in the plasma and would attack B cells. A person with group AB does not make them.",
+        "reason_es": "Los anticuerpos anti-B están en el plasma y atacarían las células B. Una persona de grupo AB no los fabrica."
+      },
+      {
+        "sourceId": "gene_a",
+        "targetId": "rxn_a",
+        "reason": "A gene does not run reactions: it makes an enzyme, and the enzyme runs the reaction.",
+        "reason_es": "Un gen no hace funcionar reacciones: fabrica una enzima, y la enzima hace funcionar la reacción."
+      }
+    ],
+    "winCondition": {
+      "type": "pathway_complete",
+      "targetNodeId": "phenotype_ab",
+      "requiredConnectionIds": [
+        "req_ga",
+        "req_gb",
+        "req_ca",
+        "req_cb",
+        "req_ha",
+        "req_hb",
+        "req_sa",
+        "req_sb",
+        "req_pa",
+        "req_pb",
+        "req_ia",
+        "req_ib"
+      ],
+      "description": "Build the AB group.",
+      "description_es": "Construye el grupo AB."
+    }
+  },
+  "simulation": {
+    "productLabel": "Antigens",
+    "productLabel_es": "Antígenos",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Two gene versions",
+        "label_es": "Dos versiones del gen",
+        "description": "A person with group AB inherited version A from one parent and B from the other.",
+        "description_es": "Una persona de grupo AB ha heredado la versión A de un progenitor y la B del otro.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Two enzymes",
+        "label_es": "Dos enzimas",
+        "description": "Each version makes its own enzyme.",
+        "description_es": "Cada versión fabrica su propia enzima.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Two sugars",
+        "label_es": "Dos azúcares",
+        "description": "Each enzyme adds a different sugar to the H substance.",
+        "description_es": "Cada enzima añade un azúcar distinto a la sustancia H.",
+        "order": 3
+      },
+      {
+        "id": "s4",
+        "label": "Cell surface",
+        "label_es": "Superficie celular",
+        "description": "Both antigens appear on every red cell.",
+        "description_es": "Los dos antígenos aparecen en cada glóbulo rojo.",
+        "order": 4
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "The pathway for A and the pathway for B are the same, with different enzyme and sugar. Build both.",
+      "content_es": "La ruta del A y la del B son iguales, con otra enzima y otro azúcar. Construye las dos.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Both reactions share the H substance as starting point. Each uses its own sugar.",
+      "content_es": "Las dos reacciones comparten la sustancia H como punto de partida. Cada una usa su propio azúcar.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Gene A–Enzyme A–Adding sugar A–(H substance, Sugar for A, Antigen A); same for B; then both antigens to Blood group AB.",
+      "content_es": "Gen A–Enzima A–Añadir azúcar A–(sustancia H, azúcar para A, antígeno A); igual para B; y los dos antígenos con el grupo AB.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "Two sugars, one cell",
+    "title_es": "Dos azúcares, una célula",
+    "summary": "You built two parallel pathways that share a starting point. This is exactly how blood groups work: the difference between A and B is one small change in an enzyme.",
+    "summary_es": "Has construido dos rutas paralelas que comparten un punto de partida. Así funcionan los grupos sanguíneos: la diferencia entre A y B es un pequeño cambio en una enzima.",
+    "realWorldImpact": "Matching blood groups is essential in transfusions and transplants. Group O red cells, which carry no A or B sugar, can be given to most people in emergencies.",
+    "realWorldImpact_es": "Respetar los grupos sanguíneos es esencial en transfusiones y trasplantes. Los glóbulos rojos de grupo O, que no llevan azúcar A ni B, pueden darse a casi todo el mundo en una emergencia."
+  },
+  "science": {
+    "organism": "Homo sapiens",
+    "realWorldCase": "Karl Landsteiner discovered the ABO groups in 1900, which made safe blood transfusions possible. He received the Nobel Prize in 1930.",
+    "realWorldCase_es": "Karl Landsteiner descubrió los grupos ABO en 1900, lo que hizo posibles las transfusiones seguras. Recibió el Premio Nobel en 1930.",
+    "scientificContext": "The ABO gene encodes a glycosyltransferase. The A and B alleles differ by a few amino acids that change which sugar the enzyme transfers (N-acetylgalactosamine or galactose) to the H antigen. Alleles O carry a mutation that leaves the enzyme inactive.",
+    "scientificContext_es": "El gen ABO codifica una glicosiltransferasa. Los alelos A y B se diferencian en unos pocos aminoácidos que cambian el azúcar que la enzima transfiere (N-acetilgalactosamina o galactosa) al antígeno H. Los alelos O llevan una mutación que deja la enzima inactiva.",
+    "gameplaySimplifications": [
+      "Sugar donors are shown as simple molecules.",
+      "The Rh factor (+/−) is a separate system and is not shown."
+    ],
+    "gameplaySimplifications_es": [
+      "Los donantes de azúcar se muestran como moléculas sencillas.",
+      "El factor Rh (+/−) es un sistema aparte y no aparece."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Yamamoto F",
+          "Clausen H",
+          "White T",
+          "Marken J",
+          "Hakomori S"
+        ],
+        "year": 1990,
+        "title": "Molecular genetic basis of the histo-blood group ABO system",
+        "journal": "Nature",
+        "doi": "10.1038/345229a0",
+        "type": "paper"
+      }
+    ]
+  }
+}

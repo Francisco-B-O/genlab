@@ -1,0 +1,234 @@
+{
+  "id": "seq-barcode",
+  "mode": "sequence",
+  "title": "Is it the fish on the label?",
+  "title_es": "¿Es el pescado de la etiqueta?",
+  "subtitle": "From a fillet to a name, step by step",
+  "subtitle_es": "De un filete a un nombre, paso a paso",
+  "difficulty": "intermediate",
+  "estimatedDuration": 6,
+  "objective": "Put the steps of a DNA barcode test in order and see how a laboratory names a fish from a small piece.",
+  "objective_es": "Pon en orden los pasos de una prueba de código de barras de ADN y descubre cómo un laboratorio nombra un pez a partir de un trozo pequeño.",
+  "description": "Fish fillets all look alike. A laboratory can tell what species a fillet comes from by reading a short stretch of its DNA.",
+  "description_es": "Todos los filetes de pescado se parecen. Un laboratorio puede decir de qué especie es un filete leyendo un trozo corto de su ADN.",
+  "organism": {
+    "id": "fish-barcode",
+    "commonName": "A fillet and a library",
+    "commonName_es": "Un filete y una biblioteca",
+    "scientificName": "DNA barcoding",
+    "taxonomy": [
+      "Method"
+    ],
+    "targetTissue": "muscle",
+    "targetOrganelle": "cytoplasm",
+    "description": "A method that names a species from a short DNA sequence.",
+    "description_es": "Un método que nombra una especie a partir de una secuencia corta de ADN."
+  },
+  "exploration": [
+    {
+      "kind": "bottle",
+      "label": "The question",
+      "label_es": "La pregunta",
+      "title": "A name on a label",
+      "title_es": "Un nombre en una etiqueta",
+      "description": "When fish is sold as fillets or as a cooked dish, the buyer cannot check the species. A test can.",
+      "description_es": "Cuando el pescado se vende en filetes o en un plato cocinado, quien compra no puede comprobar la especie. Una prueba sí puede."
+    },
+    {
+      "kind": "dna",
+      "label": "The method",
+      "label_es": "El método",
+      "title": "Read, then compare",
+      "title_es": "Leer y comparar",
+      "description": "A short stretch of the COI gene is read and compared with a public library of barcodes of known species. The best match gives the name.",
+      "description_es": "Se lee un trozo corto del gen COI y se compara con una biblioteca pública de códigos de especies conocidas. La mejor coincidencia da el nombre."
+    }
+  ],
+  "sequence": {
+    "steps": [
+      {
+        "id": "sample",
+        "label": "Take a tiny piece of the fish",
+        "label_es": "Tomar un trocito del pescado",
+        "description": "A few milligrams are enough.",
+        "description_es": "Bastan unos pocos miligramos.",
+        "needs": "Nothing: it is where it starts.",
+        "needs_es": "Nada: es el punto de partida."
+      },
+      {
+        "id": "extract",
+        "label": "Extract the DNA from the sample",
+        "label_es": "Extraer el ADN de la muestra",
+        "description": "The cells are opened and the DNA is cleaned.",
+        "description_es": "Se abren las células y se limpia el ADN.",
+        "needs": "There must be a sample to open.",
+        "needs_es": "Tiene que haber una muestra que abrir."
+      },
+      {
+        "id": "pcr",
+        "label": "Copy the barcode region with PCR",
+        "label_es": "Copiar la región del código con PCR",
+        "description": "Millions of copies of just that stretch are made.",
+        "description_es": "Se hacen millones de copias de ese trozo.",
+        "needs": "The DNA has to be extracted first.",
+        "needs_es": "El ADN tiene que estar extraído antes."
+      },
+      {
+        "id": "read",
+        "label": "Read the letters of the copies in a sequencer",
+        "label_es": "Leer las letras de las copias en un secuenciador",
+        "description": "The machine gives the sequence of the barcode.",
+        "description_es": "La máquina da la secuencia del código.",
+        "needs": "The copies have to exist first.",
+        "needs_es": "Las copias tienen que existir antes."
+      },
+      {
+        "id": "compare",
+        "label": "Compare the sequence with a library of barcodes",
+        "label_es": "Comparar la secuencia con una biblioteca de códigos",
+        "description": "Software looks for the most similar barcodes.",
+        "description_es": "Un programa busca los códigos más parecidos.",
+        "needs": "The sequence has to be read first.",
+        "needs_es": "La secuencia tiene que estar leída antes."
+      },
+      {
+        "id": "name",
+        "label": "Name the species with the best match",
+        "label_es": "Nombrar la especie de mejor coincidencia",
+        "description": "The result is a species name.",
+        "description_es": "El resultado es el nombre de una especie.",
+        "needs": "The comparison has to be done first.",
+        "needs_es": "La comparación tiene que estar hecha antes."
+      },
+      {
+        "id": "check",
+        "label": "Check the name against the label",
+        "label_es": "Comprobar el nombre con la etiqueta",
+        "description": "If they do not agree, the fish was sold under the wrong name.",
+        "description_es": "Si no coinciden, el pescado se vendió con un nombre equivocado.",
+        "needs": "You need the name of the species first.",
+        "needs_es": "Necesitas antes el nombre de la especie."
+      }
+    ]
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Species name",
+    "productLabel_es": "Nombre de la especie",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Start",
+        "label_es": "Inicio",
+        "description": "The process begins.",
+        "description_es": "Empieza el proceso.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Middle",
+        "label_es": "Desarrollo",
+        "description": "Each step prepares the next.",
+        "description_es": "Cada paso prepara el siguiente.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Result",
+        "label_es": "Resultado",
+        "description": "The process ends.",
+        "description_es": "El proceso termina.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "The test goes from the sample to the DNA, to many copies, to a sequence, to a name.",
+      "content_es": "La prueba va de la muestra al ADN, a muchas copias, a una secuencia y a un nombre.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Sample, extract, copy, read, compare, name and, last of all, check the label.",
+      "content_es": "Muestra, extraer, copiar, leer, comparar, nombrar y, por último, comprobar la etiqueta.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Sample → extract → PCR → read → compare → name → check.",
+      "content_es": "Muestra → extraer → PCR → leer → comparar → nombrar → comprobar.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A name from a piece of DNA",
+    "title_es": "Un nombre a partir de un trozo de ADN",
+    "summary": "You followed the steps that name a species from a tiny sample, without needing to see the animal.",
+    "summary_es": "Has seguido los pasos que nombran una especie a partir de una muestra diminuta, sin necesidad de ver el animal.",
+    "realWorldImpact": "The same method is used by food inspectors, by people who study wildlife and by museums that need to name old specimens.",
+    "realWorldImpact_es": "El mismo método lo usan quienes inspeccionan alimentos, quienes estudian la fauna y los museos que necesitan nombrar ejemplares antiguos."
+  },
+  "science": {
+    "organism": "DNA barcoding",
+    "realWorldCase": "Studies of fish sold in North American shops and restaurants found that a share of the samples were sold under a name that did not match the species found by barcoding.",
+    "realWorldCase_es": "Estudios de pescado vendido en tiendas y restaurantes de Norteamérica encontraron que una parte de las muestras se vendía con un nombre que no coincidía con la especie hallada por el código de barras.",
+    "scientificContext": "PCR copies only the region between two short primers, so the same primers work for many species. Public libraries hold barcodes of hundreds of thousands of species.",
+    "scientificContext_es": "La PCR copia solo la región entre dos cebadores cortos, así que los mismos cebadores sirven para muchas especies. Las bibliotecas públicas guardan códigos de cientos de miles de especies.",
+    "gameplaySimplifications": [
+      "A real laboratory also controls for contamination and checks both strands of the DNA."
+    ],
+    "gameplaySimplifications_es": [
+      "Un laboratorio real también controla la contaminación y revisa las dos hebras del ADN."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Hebert, P. D. N.",
+          "Cywinska, A.",
+          "Ball, S. L.",
+          "deWaard, J. R."
+        ],
+        "year": 2003,
+        "title": "Biological identifications through DNA barcodes",
+        "journal": "Proceedings of the Royal Society B",
+        "type": "paper",
+        "doi": "10.1098/rspb.2002.2218"
+      },
+      {
+        "authors": [
+          "Wong, E. H.-K.",
+          "Hanner, R. H."
+        ],
+        "year": 2008,
+        "title": "DNA barcoding detects market substitution in North American seafood",
+        "journal": "Food Research International",
+        "type": "paper",
+        "doi": "10.1016/j.foodres.2008.07.005"
+      }
+    ]
+  }
+}

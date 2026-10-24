@@ -1,0 +1,16 @@
+{
+  "id": "phytoene-desaturase",
+  "name": "Carotene desaturase (bacterial)",
+  "gene": "crtI",
+  "ecNumber": "1.3.99.28",
+  "scientificName": "EuCrtI (Erwinia uredovora / Pantoea ananatis)",
+  "function": "Bacterial flavoprotein enzyme that performs four sequential desaturation steps, converting phytoene to lycopene in a single multifunctional enzyme. Replaces two plant enzymes (PDS and ZDS) in the Golden Rice construct.",
+  "reaction": {
+    "substrates": ["phytoene", "FAD", "NAD+"],
+    "products": ["lycopene", "FADH2", "NADH"],
+    "cofactors": ["FAD"]
+  },
+  "subcellularLocation": "plastid",
+  "steps": 4,
+  "molecularWeight_kDa": 53
+}

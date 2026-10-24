@@ -1,0 +1,177 @@
+{
+  "id": "mut-tiger",
+  "mode": "mutation",
+  "title": "Why some tigers are white",
+  "title_es": "Por qué algunos tigres son blancos",
+  "subtitle": "A swap in a pigment transporter",
+  "subtitle_es": "Un cambio en un transportador de pigmento",
+  "difficulty": "intermediate",
+  "estimatedDuration": 5,
+  "objective": "Find the letter that changed in the gene and say what the change does to the protein.",
+  "objective_es": "Encuentra la letra que ha cambiado en el gen y di qué efecto tiene en la proteína.",
+  "description": "A change of one letter in DNA can change an amino acid, cut a protein short, or do nothing at all. Compare the two sequences codon by codon.",
+  "description_es": "Un cambio de una letra en el ADN puede cambiar un aminoácido, cortar una proteína o no hacer nada. Compara las dos secuencias codón a codón.",
+  "organism": {
+    "id": "tiger-gene",
+    "commonName": "Pigment transporter",
+    "commonName_es": "Transportador del pigmento",
+    "scientificName": "Panthera tigris",
+    "taxonomy": [
+      "Animalia",
+      "Chordata",
+      "Mammalia",
+      "Carnivora",
+      "Felidae",
+      "Panthera"
+    ],
+    "targetTissue": "skin",
+    "targetOrganelle": "cytoplasm",
+    "description": "A protein of the pigment cells of the tiger.",
+    "description_es": "Una proteína de las células del pigmento del tigre."
+  },
+  "exploration": [
+    {
+      "kind": "cell",
+      "label": "The tiger",
+      "label_es": "El tigre",
+      "title": "White, not albino",
+      "title_es": "Blanco, no albino",
+      "description": "A white tiger has blue eyes and black or brown stripes. Albinos would have no pigment at all, so the cause is a different gene.",
+      "description_es": "Un tigre blanco tiene los ojos azules y rayas negras o marrones. Un albino no tendría ningún pigmento, así que la causa es otro gen."
+    },
+    {
+      "kind": "dna",
+      "label": "The swap",
+      "label_es": "El cambio",
+      "title": "Alanine to valine",
+      "title_es": "De alanina a valina",
+      "description": "Alanine and valine are both small, but the swap, in the middle of the protein, makes it work worse. A tiger needs two copies to be white.",
+      "description_es": "La alanina y la valina son pequeñas, pero el cambio, en medio de la proteína, la hace funcionar peor. Un tigre necesita dos copias para ser blanco."
+    }
+  ],
+  "mutation": {
+    "geneLabel": "Pigment transporter gene (illustrative)",
+    "geneLabel_es": "Gen de un transportador del pigmento (ilustrativo)",
+    "reference": "ATGAAGGCTGGACTCCAA",
+    "mutant": "ATGAAGGTTGGACTCCAA",
+    "story": "A real change with an invented sequence. White tigers are not albino: they have blue eyes and dark stripes. They carry two copies of a swap of one amino acid, alanine for valine, in a protein that moves pigment materials in the cells.",
+    "story_es": "Un cambio real con una secuencia inventada. Los tigres blancos no son albinos: tienen ojos azules y rayas oscuras. Llevan dos copias de un cambio de un aminoácido, alanina por valina, en una proteína que mueve materiales del pigmento en las células.",
+    "explanations": {
+      "silent": "Not here: the amino acid changes.",
+      "silent_es": "Aquí no: el aminoácido cambia.",
+      "missense": "GCT (Ala) became GTT (Val): one amino acid was swapped for another. This real change in a gene called SLC45A2 removes the red-yellow pigment of the fur, and the tiger is white.",
+      "missense_es": "GCT (Ala) pasó a GTT (Val): un aminoácido se cambió por otro. Este cambio real, en un gen llamado SLC45A2, quita el pigmento rojo y amarillo del pelaje, y el tigre es blanco.",
+      "nonsense": "Not here: no stop signal appears.",
+      "nonsense_es": "Aquí no: no aparece ninguna señal de fin."
+    }
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Effect",
+    "productLabel_es": "Efecto",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Compare",
+        "label_es": "Comparar",
+        "description": "Find the changed letter.",
+        "description_es": "Encuentra la letra cambiada.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Translate",
+        "label_es": "Traducir",
+        "description": "Read the codons.",
+        "description_es": "Lee los codones.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Effect",
+        "label_es": "Efecto",
+        "description": "Decide what it does.",
+        "description_es": "Decide qué hace.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Compare the two rows letter by letter. Only one is different.",
+      "content_es": "Compara las dos filas letra a letra. Solo una es distinta.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Look at the codon that contains the changed letter, before and after.",
+      "content_es": "Mira el codón que contiene la letra cambiada, antes y después.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "The change is in the third codon: GCT became GTT, so Ala became Val (missense).",
+      "content_es": "El cambio está en el tercer codón: GCT pasó a GTT, así que Ala pasó a Val (de sentido erróneo).",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A white coat from a swap",
+    "title_es": "Un pelaje blanco por un cambio",
+    "summary": "You found a one-letter change that swaps an amino acid and makes a tiger white.",
+    "summary_es": "Has encontrado un cambio de una letra que sustituye un aminoácido y hace blanco a un tigre.",
+    "realWorldImpact": "White tigers in zoos come from a few related animals, which shows how a rare recessive allele spreads when relatives are bred together.",
+    "realWorldImpact_es": "Los tigres blancos de los zoos vienen de unos pocos animales emparentados, lo que muestra cómo se extiende un alelo recesivo raro cuando se cruzan parientes."
+  },
+  "science": {
+    "organism": "Panthera tigris",
+    "realWorldCase": "In 2013 a team showed that white tigers carry two copies of an A477V change in the gene SLC45A2, the same gene that is behind the cream colour of horses.",
+    "realWorldCase_es": "En 2013 un equipo mostró que los tigres blancos llevan dos copias de un cambio A477V en el gen SLC45A2, el mismo gen que está detrás del color crema de los caballos.",
+    "scientificContext": "A missense mutation swaps one amino acid for another. Here the protein carries less of the material needed for the red-yellow pigment, while the black stripes, made with another pigment, stay.",
+    "scientificContext_es": "Una mutación de sentido erróneo cambia un aminoácido por otro. Aquí la proteína lleva menos del material necesario para el pigmento rojo y amarillo, mientras las rayas negras, hechas con otro pigmento, se mantienen.",
+    "gameplaySimplifications": [
+      "The real change is the one described, but the sequence around it is an invented short example."
+    ],
+    "gameplaySimplifications_es": [
+      "El cambio real es el que se describe, pero la secuencia que lo rodea es un ejemplo corto inventado."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Xu, X.",
+          "Dong, G.-X.",
+          "Hu, X.-S.",
+          "et al."
+        ],
+        "year": 2013,
+        "title": "The genetic basis of white tigers",
+        "journal": "Current Biology",
+        "type": "paper",
+        "doi": "10.1016/j.cub.2013.04.054"
+      }
+    ]
+  }
+}

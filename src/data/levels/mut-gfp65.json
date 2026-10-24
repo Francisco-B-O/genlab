@@ -1,0 +1,176 @@
+{
+  "id": "mut-gfp65",
+  "mode": "mutation",
+  "title": "A brighter jellyfish protein",
+  "title_es": "Una proteína de medusa más brillante",
+  "subtitle": "One amino acid, a better glow",
+  "subtitle_es": "Un aminoácido, mejor brillo",
+  "difficulty": "intermediate",
+  "estimatedDuration": 5,
+  "objective": "Find the letter that changed in the gene and say what the change does to the protein.",
+  "objective_es": "Encuentra la letra que ha cambiado en el gen y di qué efecto tiene en la proteína.",
+  "description": "A change of one letter in DNA can change an amino acid, cut a protein short, or do nothing at all. Compare the two sequences codon by codon.",
+  "description_es": "Un cambio de una letra en el ADN puede cambiar un aminoácido, cortar una proteína o no hacer nada. Compara las dos secuencias codón a codón.",
+  "organism": {
+    "id": "gfp-mut",
+    "commonName": "GFP",
+    "commonName_es": "GFP",
+    "scientificName": "Aequorea victoria",
+    "taxonomy": [
+      "Animalia",
+      "Cnidaria",
+      "Hydrozoa",
+      "Leptothecata",
+      "Aequoreidae",
+      "Aequorea"
+    ],
+    "targetTissue": "single cell",
+    "targetOrganelle": "cytoplasm",
+    "description": "The glowing protein of a jellyfish.",
+    "description_es": "La proteína que brilla de una medusa."
+  },
+  "exploration": [
+    {
+      "kind": "jellyfish",
+      "label": "GFP",
+      "label_es": "GFP",
+      "title": "A glow that scientists improved",
+      "title_es": "Un brillo que los científicos mejoraron",
+      "description": "The original GFP of the jellyfish glows only moderately. Researchers changed single amino acids to make it brighter and to give it other colours.",
+      "description_es": "La GFP original de la medusa brilla solo moderadamente. Los investigadores cambiaron aminoácidos sueltos para que brillara más y para darle otros colores."
+    },
+    {
+      "kind": "dna",
+      "label": "A single change",
+      "label_es": "Un solo cambio",
+      "title": "Ser65 to Thr",
+      "title_es": "De Ser65 a Thr",
+      "description": "Position 65 is the first amino acid of the chromophore. Replacing serine by threonine there makes a big difference.",
+      "description_es": "La posición 65 es el primer aminoácido del cromóforo. Cambiar ahí la serina por treonina marca una gran diferencia."
+    }
+  ],
+  "mutation": {
+    "geneLabel": "GFP chromophore region (illustrative)",
+    "geneLabel_es": "Región del cromóforo de la GFP (ilustrativa)",
+    "reference": "ATGGGACTGTCTTACGGCGTG",
+    "mutant": "ATGGGACTGACTTACGGCGTG",
+    "story": "A real discovery with an invented sequence. The glowing part of GFP is built from three amino acids: Ser, Tyr and Gly. Changing the first one made the protein glow brighter.",
+    "story_es": "Un descubrimiento real con una secuencia inventada. La parte de la GFP que brilla se construye con tres aminoácidos: Ser, Tyr y Gly. Cambiar el primero hizo que la proteína brillara más.",
+    "explanations": {
+      "silent": "Not here: the amino acid changes.",
+      "silent_es": "Aquí no: el aminoácido cambia.",
+      "missense": "TCT (Ser) became ACT (Thr): one amino acid was swapped for another. This real change, called S65T, makes GFP brighter and faster to mature.",
+      "missense_es": "TCT (Ser) pasó a ACT (Thr): un aminoácido se cambió por otro. Este cambio real, llamado S65T, hace que la GFP brille más y madure más deprisa.",
+      "nonsense": "Not here: no stop signal appears.",
+      "nonsense_es": "Aquí no: no aparece ninguna señal de fin."
+    }
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Effect",
+    "productLabel_es": "Efecto",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Compare",
+        "label_es": "Comparar",
+        "description": "Find the changed letter.",
+        "description_es": "Encuentra la letra cambiada.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Translate",
+        "label_es": "Traducir",
+        "description": "Read the codons.",
+        "description_es": "Lee los codones.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Effect",
+        "label_es": "Efecto",
+        "description": "Decide what it does.",
+        "description_es": "Decide qué hace.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Compare the two rows letter by letter. Only one is different.",
+      "content_es": "Compara las dos filas letra a letra. Solo una es distinta.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Look at the codon that contains the changed letter, before and after.",
+      "content_es": "Mira el codón que contiene la letra cambiada, antes y después.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "The change is in the fourth codon: TCT became ACT, so Ser became Thr (missense).",
+      "content_es": "El cambio está en el cuarto codón: TCT pasó a ACT, así que Ser pasó a Thr (de sentido erróneo).",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A better lamp",
+    "title_es": "Una lámpara mejor",
+    "summary": "You found a one-letter change that swaps an amino acid and improves the glow of a protein.",
+    "summary_es": "Has encontrado un cambio de una letra que cambia un aminoácido y mejora el brillo de una proteína.",
+    "realWorldImpact": "Improved versions of GFP are among the most used tools of biology, because they let us watch molecules inside living cells.",
+    "realWorldImpact_es": "Las versiones mejoradas de la GFP están entre las herramientas más usadas de la biología, porque permiten ver moléculas dentro de células vivas."
+  },
+  "science": {
+    "organism": "Aequorea victoria",
+    "realWorldCase": "In 1995 Roger Tsien's group reported GFP mutants with brighter and more stable fluorescence, among them the change of serine 65 to threonine. Tsien shared the 2008 Nobel Prize in Chemistry.",
+    "realWorldCase_es": "En 1995 el grupo de Roger Tsien describió mutantes de GFP con una fluorescencia más brillante y estable, entre ellos el cambio de la serina 65 por treonina. Tsien compartió el Premio Nobel de Química de 2008.",
+    "scientificContext": "A missense mutation swaps one amino acid for another. In the chromophore region, the swap changes how the chromophore forms and absorbs light.",
+    "scientificContext_es": "Una mutación de sentido erróneo cambia un aminoácido por otro. En la región del cromóforo, el cambio altera cómo se forma el cromóforo y cómo absorbe la luz.",
+    "gameplaySimplifications": [
+      "The real change is the one described, but the sequence around it is an invented short example."
+    ],
+    "gameplaySimplifications_es": [
+      "El cambio real es el que se describe, pero la secuencia que lo rodea es un ejemplo corto inventado."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Heim, R.",
+          "Cubitt, A. B.",
+          "Tsien, R. Y."
+        ],
+        "year": 1995,
+        "title": "Improved green fluorescence",
+        "journal": "Nature",
+        "type": "paper",
+        "doi": "10.1038/373663b0"
+      }
+    ]
+  }
+}

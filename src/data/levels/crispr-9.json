@@ -1,0 +1,206 @@
+{
+  "id": "crispr-9",
+  "mode": "crispr",
+  "title": "A pig that the virus cannot enter",
+  "title_es": "Un cerdo en el que el virus no puede entrar",
+  "subtitle": "Editing the door that a virus uses",
+  "subtitle_es": "Editar la puerta que usa un virus",
+  "difficulty": "advanced",
+  "estimatedDuration": 9,
+  "objective": "Choose the guide that edits the gene of the receptor that the virus uses, and only there.",
+  "objective_es": "Elige la guía que edita el gen del receptor que usa el virus, y solo ese.",
+  "description": "A virus of pigs enters their cells through a protein on the surface. Editing the part of the gene that the virus needs can give pigs that do not catch the disease, without adding genes from another species.",
+  "description_es": "Un virus de los cerdos entra en sus células a través de una proteína de la superficie. Editar la parte del gen que necesita el virus puede dar cerdos que no contraen la enfermedad, sin añadir genes de otra especie.",
+  "organism": {
+    "id": "pig-cd163",
+    "commonName": "Pig",
+    "commonName_es": "Cerdo",
+    "scientificName": "Sus scrofa",
+    "taxonomy": [
+      "Animalia",
+      "Chordata",
+      "Mammalia",
+      "Artiodactyla",
+      "Suidae",
+      "Sus"
+    ],
+    "targetTissue": "lung cells",
+    "targetOrganelle": "nucleus",
+    "description": "A farm animal with a disease that costs a lot of money.",
+    "description_es": "Un animal de granja con una enfermedad que cuesta mucho dinero."
+  },
+  "exploration": [
+    {
+      "kind": "cell",
+      "label": "The disease",
+      "label_es": "La enfermedad",
+      "title": "A virus of pigs only",
+      "title_es": "Un virus solo de cerdos",
+      "description": "The disease, called PRRS, makes sows lose their piglets and young pigs sick. It is one of the most costly diseases of pig farming, and it does not infect people.",
+      "description_es": "La enfermedad, llamada PRRS, hace que las cerdas pierdan a sus lechones y que los cerdos jóvenes enfermen. Es una de las enfermedades más costosas de la cría de cerdos, y no infecta a las personas."
+    },
+    {
+      "kind": "dna",
+      "label": "The door",
+      "label_es": "La puerta",
+      "title": "A receptor the virus needs",
+      "title_es": "Un receptor que necesita el virus",
+      "description": "The virus attaches to a receptor called CD163 on a type of immune cell. Removing a small part of the receptor gives cells that the virus cannot enter, while the rest of the protein still works.",
+      "description_es": "El virus se une a un receptor llamado CD163 de un tipo de célula inmune. Quitar una parte pequeña del receptor da células en las que el virus no puede entrar, mientras que el resto de la proteína sigue funcionando."
+    },
+    {
+      "kind": "cell",
+      "label": "Care",
+      "label_es": "Cuidado",
+      "title": "Edit only the door",
+      "title_es": "Editar solo la puerta",
+      "description": "A guide that cuts in other places of the genome could damage other genes. That is why only the guide that cuts exactly once, in the right place, is the right one.",
+      "description_es": "Una guía que corta en otros lugares del genoma podría dañar otros genes. Por eso solo vale la guía que corta exactamente una vez, en el sitio justo."
+    }
+  ],
+  "crispr": {
+    "genome": "CAACTTTCGTGTACTGCAGCCGAGGAGAAATGCCGCCGGGGGGTAAGTAGCTGGTCAGTTTATGAACAAAACAAGTTCATAGGGAACTAACTCGGTGGGGTACTTACTGGCG",
+    "target": {
+      "label": "the part of the receptor that the virus needs",
+      "label_es": "la parte del receptor que necesita el virus",
+      "start": 30,
+      "end": 74
+    },
+    "guides": [
+      {
+        "id": "a",
+        "sequence": "GAATAACC"
+      },
+      {
+        "id": "b",
+        "sequence": "ACTCGGTG"
+      },
+      {
+        "id": "c",
+        "sequence": "GTTTATGA"
+      },
+      {
+        "id": "d",
+        "sequence": "TGCCGCCG"
+      },
+      {
+        "id": "e",
+        "sequence": "TAAGTAGC"
+      }
+    ],
+    "mismatches": 1,
+    "story": "A stretch of the pig gene for the receptor CD163. Edit the part that the virus needs, and nothing else.",
+    "story_es": "Un trozo del gen del cerdo del receptor CD163. Edita la parte que necesita el virus, y nada más."
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Cut",
+    "productLabel_es": "Corte",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Guide",
+        "label_es": "Guía",
+        "description": "The guide leads Cas9 to the target.",
+        "description_es": "La guía lleva a Cas9 al objetivo.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Cut",
+        "label_es": "Corte",
+        "description": "Cas9 cuts the DNA.",
+        "description_es": "Cas9 corta el ADN.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Repair",
+        "label_es": "Reparación",
+        "description": "The cell repairs it and the gene changes.",
+        "description_es": "La célula lo repara y el gen cambia.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Tap each guide and count where it sticks. Only one cuts exactly once, inside the blue area.",
+      "content_es": "Toca cada guía y cuenta dónde se pega. Solo una corta exactamente una vez, dentro de la zona azul.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "Two guides do not find a good site or a PAM, one cuts in another place and one cuts inside and also at a look-alike site elsewhere.",
+      "content_es": "Dos guías no encuentran un buen sitio o un PAM, una corta en otro lugar y una corta dentro y también en un sitio parecido de otro sitio.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Choose guide E.",
+      "content_es": "Elige la guía E.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A door closed to a virus",
+    "title_es": "Una puerta cerrada a un virus",
+    "summary": "You chose a guide that edits only the receptor that the virus needs.",
+    "summary_es": "Has elegido una guía que edita solo el receptor que necesita el virus.",
+    "realWorldImpact": "Disease-resistant livestock could mean fewer animals lost, less use of medicines and lower costs for farms.",
+    "realWorldImpact_es": "Un ganado resistente a las enfermedades podría significar menos animales perdidos, menos uso de medicamentos y menores costes para las granjas."
+  },
+  "science": {
+    "organism": "Sus scrofa",
+    "realWorldCase": "In 2016 a team reported pigs edited in the CD163 gene that were protected from the PRRS virus. Regulators later reviewed pigs edited in this way for food use.",
+    "realWorldCase_es": "En 2016 un equipo describió cerdos editados en el gen CD163 que quedaban protegidos del virus PRRS. Más tarde, algunos reguladores revisaron cerdos editados de esta forma para su uso como alimento.",
+    "scientificContext": "Cas9 cuts where the guide sticks if a PAM follows. The cell repairs the cut, often by deleting letters, which here removes the part of the receptor that the virus recognises.",
+    "scientificContext_es": "Cas9 corta donde se pega la guía si le sigue un PAM. La célula repara el corte, a menudo borrando letras, lo que aquí quita la parte del receptor que reconoce el virus.",
+    "gameplaySimplifications": [
+      "Guides here have 8 letters so they fit on the screen; real ones have about 20.",
+      "The sequence is invented; the real edit removes a stretch of a whole exon."
+    ],
+    "gameplaySimplifications_es": [
+      "Las guías de aquí tienen 8 letras para que quepan en pantalla; las reales tienen unas 20.",
+      "La secuencia es inventada; la edición real elimina un tramo de un exón entero."
+    ],
+    "references": [
+      {
+        "authors": [
+          "Whitworth, K. M.",
+          "Rowland, R. R. R.",
+          "Ewen, C. L.",
+          "et al."
+        ],
+        "year": 2016,
+        "title": "Gene-edited pigs are protected from porcine reproductive and respiratory syndrome virus",
+        "journal": "Nature Biotechnology",
+        "type": "paper",
+        "doi": "10.1038/nbt.3434"
+      }
+    ]
+  }
+}

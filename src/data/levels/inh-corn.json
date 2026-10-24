@@ -1,0 +1,210 @@
+{
+  "id": "inh-corn",
+  "mode": "inherit",
+  "title": "Sweet corn or starchy corn",
+  "title_es": "Maíz dulce o maíz harinoso",
+  "subtitle": "A hidden recessive allele",
+  "subtitle_es": "Un alelo recesivo escondido",
+  "difficulty": "beginner",
+  "estimatedDuration": 5,
+  "objective": "Fill in the Punnett squares for corn kernels: starchy is dominant and sweet shows only with two sweet alleles.",
+  "objective_es": "Rellena los cuadros de Punnett de los granos de maíz: el harinoso es dominante y el dulce solo se ve con dos alelos dulces.",
+  "description": "Sweet corn is sweet because of a recessive allele that stops the plant from turning sugar into starch.",
+  "description_es": "El maíz dulce es dulce por un alelo recesivo que impide que la planta convierta el azúcar en almidón.",
+  "organism": {
+    "id": "zea-mays",
+    "commonName": "Corn",
+    "commonName_es": "Maíz",
+    "scientificName": "Zea mays",
+    "taxonomy": [
+      "Plantae",
+      "Tracheophyta",
+      "Liliopsida",
+      "Poales",
+      "Poaceae",
+      "Zea"
+    ],
+    "targetTissue": "kernel",
+    "targetOrganelle": "cytoplasm",
+    "description": "A cereal grown all over the world.",
+    "description_es": "Un cereal que se cultiva en todo el mundo."
+  },
+  "exploration": [
+    {
+      "kind": "corn",
+      "label": "Kernels",
+      "label_es": "Granos",
+      "title": "Sugar or starch",
+      "title_es": "Azúcar o almidón",
+      "description": "Most corn turns its sugar into starch as the kernel ripens. Sweet corn keeps more of the sugar.",
+      "description_es": "La mayoría del maíz convierte su azúcar en almidón cuando el grano madura. El maíz dulce conserva más azúcar."
+    },
+    {
+      "kind": "dna",
+      "label": "Alleles",
+      "label_es": "Alelos",
+      "title": "One allele is enough",
+      "title_es": "Un alelo es suficiente",
+      "description": "A plant with one starchy allele makes enough of the enzyme, so it is starchy. Only ss plants are sweet.",
+      "description_es": "Una planta con un alelo harinoso fabrica suficiente enzima, así que es harinosa. Solo las plantas ss son dulces."
+    }
+  ],
+  "inherit": {
+    "trait": "Kernel type",
+    "trait_es": "Tipo de grano",
+    "alleles": [
+      "S",
+      "s"
+    ],
+    "phenotypes": {
+      "SS": "starchy",
+      "Ss": "starchy",
+      "ss": "sweet"
+    },
+    "phenotypeLabels": {
+      "starchy": "Starchy kernel",
+      "starchy_es": "Grano harinoso",
+      "sweet": "Sweet kernel",
+      "sweet_es": "Grano dulce"
+    },
+    "scenarios": [
+      {
+        "id": "s1",
+        "parent1": "SS",
+        "parent2": "ss",
+        "parent1Label": "Starchy (pure)",
+        "parent1Label_es": "Harinoso (puro)",
+        "parent2Label": "Sweet",
+        "parent2Label_es": "Dulce",
+        "question": "A starchy plant (SS) is crossed with a sweet one (ss). What is the probability of a starchy kernel?",
+        "question_es": "Se cruza una planta harinosa (SS) con una dulce (ss). ¿Qué probabilidad hay de un grano harinoso?",
+        "target": "starchy",
+        "explanation": "All four cells are Ss and S hides s: every kernel is starchy (100%).",
+        "explanation_es": "Las cuatro casillas son Ss y S oculta a s: todos los granos son harinosos (100 %)."
+      },
+      {
+        "id": "s2",
+        "parent1": "Ss",
+        "parent2": "Ss",
+        "parent1Label": "Starchy, carries s",
+        "parent1Label_es": "Harinoso, lleva s",
+        "parent2Label": "Starchy, carries s",
+        "parent2Label_es": "Harinoso, lleva s",
+        "question": "Two starchy plants that both carry s are crossed. What is the probability of a sweet kernel?",
+        "question_es": "Se cruzan dos plantas harinosas que llevan s las dos. ¿Qué probabilidad hay de un grano dulce?",
+        "target": "sweet",
+        "explanation": "Only the ss cell is sweet: 25%.",
+        "explanation_es": "Solo la casilla ss es dulce: 25 %."
+      },
+      {
+        "id": "s3",
+        "parent1": "Ss",
+        "parent2": "ss",
+        "parent1Label": "Starchy, carries s",
+        "parent1Label_es": "Harinoso, lleva s",
+        "parent2Label": "Sweet",
+        "parent2Label_es": "Dulce",
+        "question": "A starchy plant that carries s is crossed with a sweet one. What is the probability of a sweet kernel?",
+        "question_es": "Se cruza una planta harinosa que lleva s con una dulce. ¿Qué probabilidad hay de un grano dulce?",
+        "target": "sweet",
+        "explanation": "Two cells are ss (sweet) and two are Ss (starchy): 50% each.",
+        "explanation_es": "Dos casillas son ss (dulces) y dos son Ss (harinosas): 50 % cada una."
+      }
+    ]
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Probability",
+    "productLabel_es": "Probabilidad",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Parents",
+        "label_es": "Progenitores",
+        "description": "Each gives one allele.",
+        "description_es": "Cada uno da un alelo.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Square",
+        "label_es": "Cuadro",
+        "description": "All combinations.",
+        "description_es": "Todas las combinaciones.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Trait",
+        "label_es": "Rasgo",
+        "description": "Read the result.",
+        "description_es": "Lee el resultado.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Fill the square first; then look at each cell: does it have at least one S?",
+      "content_es": "Rellena primero el cuadro; luego mira cada casilla: ¿tiene al menos una S?",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "S is dominant, so SS and Ss are both starchy. Only ss is sweet.",
+      "content_es": "S es dominante, así que SS y Ss son harinosos. Solo ss es dulce.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Count the cells with the kernel type asked about: each is worth 25%.",
+      "content_es": "Cuenta las casillas del tipo de grano por el que preguntan: cada una vale un 25 %.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "A sweet surprise",
+    "title_es": "Una sorpresa dulce",
+    "summary": "You saw that sweet kernels can appear from two starchy parents that both hide a sweet allele.",
+    "summary_es": "Has visto que pueden aparecer granos dulces de dos progenitores harinosos que esconden los dos un alelo dulce.",
+    "realWorldImpact": "Breeders use this logic to produce new varieties: they keep track of hidden alleles to know what a cross will give.",
+    "realWorldImpact_es": "Quienes mejoran plantas usan esta lógica para crear variedades nuevas: siguen los alelos escondidos para saber qué dará un cruce."
+  },
+  "science": {
+    "organism": "Zea mays",
+    "realWorldCase": "Sweet corn varieties come from natural mutations in genes of starch synthesis that farmers noticed and kept.",
+    "realWorldCase_es": "Las variedades de maíz dulce vienen de mutaciones naturales en genes de la síntesis de almidón que los agricultores notaron y conservaron.",
+    "scientificContext": "Kernels with two sweet alleles cannot finish converting sugar to starch, so they keep the sugar and wrinkle as they dry.",
+    "scientificContext_es": "Los granos con dos alelos dulces no terminan de convertir el azúcar en almidón, así que conservan el azúcar y se arrugan al secarse.",
+    "gameplaySimplifications": [
+      "Several genes affect sweetness in real corn; here only one is followed."
+    ],
+    "gameplaySimplifications_es": [
+      "En el maíz real varios genes afectan a la dulzura; aquí solo se sigue uno."
+    ],
+    "references": []
+  }
+}

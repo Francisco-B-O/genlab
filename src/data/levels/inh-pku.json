@@ -1,0 +1,212 @@
+{
+  "id": "inh-pku",
+  "mode": "inherit",
+  "title": "How PKU is inherited",
+  "title_es": "Cómo se hereda la PKU",
+  "subtitle": "Punnett squares for a recessive condition",
+  "subtitle_es": "Cuadros de Punnett para una condición recesiva",
+  "difficulty": "intermediate",
+  "estimatedDuration": 7,
+  "objective": "Fill in the Punnett squares and work out the chances for children of carriers and non-carriers.",
+  "objective_es": "Rellena los cuadros de Punnett y calcula las probabilidades para los hijos de personas portadoras y no portadoras.",
+  "description": "A recessive condition shows up only when a child receives the changed allele from both parents.",
+  "description_es": "Una condición recesiva solo aparece cuando el hijo recibe el alelo cambiado de ambos progenitores.",
+  "organism": {
+    "id": "human-inherit-pku",
+    "commonName": "Human family",
+    "commonName_es": "Familia humana",
+    "scientificName": "Homo sapiens",
+    "taxonomy": [
+      "Animalia",
+      "Chordata",
+      "Mammalia",
+      "Primates",
+      "Hominidae",
+      "Homo"
+    ],
+    "targetTissue": "whole body",
+    "targetOrganelle": "nucleus",
+    "description": "Parents and their possible children.",
+    "description_es": "Progenitores y sus posibles hijos."
+  },
+  "exploration": [
+    {
+      "kind": "dna",
+      "label": "Alleles",
+      "label_es": "Alelos",
+      "title": "Two copies of each gene",
+      "title_es": "Dos copias de cada gen",
+      "description": "We carry two copies of most genes, one from each parent. A recessive condition appears only when both copies are the changed version.",
+      "description_es": "Llevamos dos copias de casi todos los genes, una de cada progenitor. Una condición recesiva aparece solo cuando las dos copias son la versión cambiada."
+    },
+    {
+      "kind": "blood",
+      "label": "Carriers",
+      "label_es": "Portadores",
+      "title": "Carriers have no symptoms",
+      "title_es": "Los portadores no tienen síntomas",
+      "description": "A carrier has one changed copy and one normal one, and is healthy. Two carriers can have a child with the condition.",
+      "description_es": "Un portador tiene una copia cambiada y una normal, y está sano. Dos portadores pueden tener un hijo con la condición."
+    }
+  ],
+  "inherit": {
+    "trait": "Phenylketonuria (PKU)",
+    "trait_es": "Fenilcetonuria (PKU)",
+    "alleles": [
+      "P",
+      "p"
+    ],
+    "phenotypes": {
+      "PP": "unaffected",
+      "Pp": "carrier",
+      "pp": "affected"
+    },
+    "phenotypeLabels": {
+      "unaffected": "Not affected",
+      "unaffected_es": "Sin la condición",
+      "carrier": "Carrier",
+      "carrier_es": "Portador/a",
+      "affected": "Affected",
+      "affected_es": "Con la condición"
+    },
+    "scenarios": [
+      {
+        "id": "s1",
+        "parent1": "Pp",
+        "parent2": "Pp",
+        "parent1Label": "Carrier, no symptoms",
+        "parent1Label_es": "Portador/a, sin síntomas",
+        "parent2Label": "Carrier, no symptoms",
+        "parent2Label_es": "Portador/a, sin síntomas",
+        "question": "What is the probability that a child has the condition?",
+        "question_es": "¿Qué probabilidad hay de que un hijo tenga la condición?",
+        "target": "affected",
+        "explanation": "Only the pp cell: 1 in 4, or 25%. Two of the four children (50%) would be carriers like their parents.",
+        "explanation_es": "Solo la casilla pp: 1 de 4, un 25 %. Dos de cada cuatro hijos (50 %) serían portadores como sus progenitores."
+      },
+      {
+        "id": "s2",
+        "parent1": "PP",
+        "parent2": "Pp",
+        "parent1Label": "Not a carrier",
+        "parent1Label_es": "No es portador/a",
+        "parent2Label": "Carrier, no symptoms",
+        "parent2Label_es": "Portador/a, sin síntomas",
+        "question": "What is the probability that a child is a carrier?",
+        "question_es": "¿Qué probabilidad hay de que un hijo sea portador?",
+        "target": "carrier",
+        "explanation": "Two of the four cells are Pp: 50%. No child can have the condition, because one parent only passes on P.",
+        "explanation_es": "Dos de las cuatro casillas son Pp: 50 %. Ningún hijo puede tener la condición, porque un progenitor solo transmite P."
+      },
+      {
+        "id": "s3",
+        "parent1": "Pp",
+        "parent2": "pp",
+        "parent1Label": "Carrier, no symptoms",
+        "parent1Label_es": "Portador/a, sin síntomas",
+        "parent2Label": "Has the condition",
+        "parent2Label_es": "Tiene la condición",
+        "question": "What is the probability that a child has the condition?",
+        "question_es": "¿Qué probabilidad hay de que un hijo tenga la condición?",
+        "target": "affected",
+        "explanation": "Two of the four cells are pp: 50%. The other two are carriers.",
+        "explanation_es": "Dos de las cuatro casillas son pp: 50 %. Las otras dos son portadoras."
+      }
+    ]
+  },
+  "biologicalContext": {
+    "nodes": [],
+    "edges": []
+  },
+  "puzzle": {
+    "availableNodes": [],
+    "distractorNodes": [],
+    "requiredConnections": [],
+    "optionalConnections": [],
+    "invalidConnections": [],
+    "winCondition": {
+      "type": "connections_complete",
+      "requiredConnectionIds": [],
+      "description": "Solve the level.",
+      "description_es": "Resuelve el nivel."
+    }
+  },
+  "simulation": {
+    "productLabel": "Probability",
+    "productLabel_es": "Probabilidad",
+    "steps": [
+      {
+        "id": "s1",
+        "label": "Parents",
+        "label_es": "Progenitores",
+        "description": "Each gives one allele.",
+        "description_es": "Cada uno da un alelo.",
+        "order": 1
+      },
+      {
+        "id": "s2",
+        "label": "Square",
+        "label_es": "Cuadro",
+        "description": "All combinations.",
+        "description_es": "Todas las combinaciones.",
+        "order": 2
+      },
+      {
+        "id": "s3",
+        "label": "Probability",
+        "label_es": "Probabilidad",
+        "description": "Count the cells.",
+        "description_es": "Cuenta las casillas.",
+        "order": 3
+      }
+    ]
+  },
+  "hints": [
+    {
+      "level": 1,
+      "title": "Big picture",
+      "title_es": "Idea general",
+      "content": "Each parent gives one of their two alleles to each child. The square lists every combination.",
+      "content_es": "Cada progenitor da a cada hijo uno de sus dos alelos. El cuadro lista todas las combinaciones.",
+      "pointCost": 50
+    },
+    {
+      "level": 2,
+      "title": "Next step",
+      "title_es": "Siguiente paso",
+      "content": "The row is the allele from one parent and the column the allele from the other. Combine them in each cell.",
+      "content_es": "La fila es el alelo de un progenitor y la columna el del otro. Combínalos en cada casilla.",
+      "pointCost": 100
+    },
+    {
+      "level": 3,
+      "title": "Solution",
+      "title_es": "Solución",
+      "content": "Count how many of the four cells show the result you are asked about: each is worth 25%.",
+      "content_es": "Cuenta cuántas de las cuatro casillas muestran el resultado que te piden: cada una vale un 25 %.",
+      "pointCost": 150
+    }
+  ],
+  "completion": {
+    "title": "Chances, not certainties",
+    "title_es": "Probabilidades, no certezas",
+    "summary": "You turned genotypes into probabilities. Remember: each pregnancy has the same chances, whatever happened with previous children.",
+    "summary_es": "Has convertido genotipos en probabilidades. Recuerda: cada embarazo tiene las mismas probabilidades, pase lo que pase con los hijos anteriores.",
+    "realWorldImpact": "Genetic counselling uses these calculations, together with tests, to explain risks to families.",
+    "realWorldImpact_es": "El consejo genético usa estos cálculos, junto con pruebas, para explicar los riesgos a las familias."
+  },
+  "science": {
+    "organism": "Homo sapiens",
+    "realWorldCase": "PKU is autosomal recessive. About 1 in 50 people of European descent is a carrier of a variant in the PAH gene, although the numbers vary a lot between populations.",
+    "realWorldCase_es": "La PKU es autosómica recesiva. Alrededor de 1 de cada 50 personas de ascendencia europea es portadora de una variante en el gen PAH, aunque las cifras varían mucho entre poblaciones.",
+    "scientificContext": "Mendel's laws describe how alleles segregate. For an autosomal recessive trait, two heterozygous parents have a 25% chance of an affected child, 50% of a carrier and 25% of a child with no copy of the variant, in each pregnancy.",
+    "scientificContext_es": "Las leyes de Mendel describen cómo se separan los alelos. En un rasgo autosómico recesivo, dos progenitores heterocigotos tienen un 25 % de probabilidad de un hijo afectado, un 50 % de un portador y un 25 % de un hijo sin ninguna copia de la variante, en cada embarazo.",
+    "gameplaySimplifications": [
+      "Real conditions can involve many different variants of one gene."
+    ],
+    "gameplaySimplifications_es": [
+      "Las condiciones reales pueden implicar muchas variantes distintas de un mismo gen."
+    ],
+    "references": []
+  }
+}
